@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "description": "Dynamic runtime configuration overrides for automation",
+    "lastUpdated": "2026-05-22"
+  },
+  "testExecution": {
+    "maxRetries": 2,
+    "slowMoMs": 0,
+    "defaultTimeout": 60000,
+    "navigationTimeout": 30000,
+    "actionTimeout": 15000,
+    "screenshotOnFailure": true,
+    "videoOnFailure": true,
+    "traceOnFirstRetry": true
+  },
+  "orderHold": {
+    "defaultHoldHours": 24,
+    "testHoldHours": 0,
+    "description": "In test environments, hold can be set to 0 for faster test execution"
+  },
+  "apiPolling": {
+    "maxWaitMs": 120000,
+    "intervalMs": 5000,
+    "description": "Used when polling for order status changes"
+  },
+  "environments": {
+    "local": {
+      "baseUrl": "https://rakbulqapart.s6-tastewp.com",
+      "apiBaseUrl": "https://hoodslypartnersconnector3.kinsta.cloud",
+      "debugMode": true
+    },
+    "staging": {
+      "baseUrl": "https://rakbulqapart.s6-tastewp.com",
+      "apiBaseUrl": "https://hoodslypartnersconnector3.kinsta.cloud",
+      "debugMode": false
+    },
+    "ci": {
+      "debugMode": false,
+      "workers": 2
+    }
+  }
+}

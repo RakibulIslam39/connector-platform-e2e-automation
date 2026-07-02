@@ -1,0 +1,69 @@
+{
+  "partners": [
+    {
+      "id": "partner-b2b-001",
+      "name": "TestPartnerB2B",
+      "type": "b2b",
+      "skuPrefix": "TPB",
+      "platformType": "wordpress",
+      "websiteUrl": "https://rakbulqapart.s6-tastewp.com",
+      "colorStyle": "select",
+      "ventilationEnabled": true,
+      "trimsEnabled": true,
+      "sizesEnabled": true,
+      "discountPercent": 20,
+      "ventilationDiscountPercent": 10,
+      "description": "Standard B2B partner for testing wholesale flows"
+    },
+    {
+      "id": "partner-b2c-001",
+      "name": "TestPartnerB2C",
+      "type": "b2c",
+      "skuPrefix": "TPC",
+      "platformType": "wordpress",
+      "websiteUrl": "https://rakbulqapart.s6-tastewp.com",
+      "colorStyle": "swatch",
+      "ventilationEnabled": true,
+      "trimsEnabled": false,
+      "sizesEnabled": true,
+      "discountPercent": 0,
+      "description": "B2C retail partner for testing consumer-facing flows"
+    },
+    {
+      "id": "partner-shopify-001",
+      "name": "TestShopifyPartner",
+      "type": "b2c",
+      "skuPrefix": "TSP",
+      "platformType": "shopify",
+      "websiteUrl": "https://testshopifypartner.myshopify.com",
+      "colorStyle": "swatch",
+      "ventilationEnabled": true,
+      "trimsEnabled": true,
+      "sizesEnabled": true,
+      "discountPercent": 15,
+      "description": "Shopify-based partner for cross-platform order testing"
+    }
+  ],
+  "environments": {
+    "staging": {
+      "websiteUrl": "https://rakbulqapart.s6-tastewp.com"
+    },
+    "local": {
+      "websiteUrl": "https://rakbulqapart.s6-tastewp.com"
+    }
+  },
+  "partnerManagement": {
+    "existingPartner": "Automation_Partner",
+    "addProducts": ["VEN-DBC", "VEN-BSH"],
+    "removeProducts": ["VEN-DBC"],
+    "addColors": ["Raw / Unfinished"],
+    "removeColors": ["Raw / Unfinished"],
+    "skuPrefix": "Auto",
+    "searchPartner": "Automation_Partner"
+  },
+  "productManagement": {
+    "existingProduct": "VEN-DBC (Double Curved)",
+    "addPartner": "Automation_Partner",
+    "removePartner": "Automation_Partner"
+  }
+}

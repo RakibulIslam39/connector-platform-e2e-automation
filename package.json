@@ -1,0 +1,78 @@
+{
+  "name": "connector-platform2.0-e2e-automation",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Playwright E2E automation framework for Connector Platform 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env ENV=local playwright test",
+    "test:auth": "cross-env ENV=local playwright test tests/auth/",
+    "test:dashboard": "cross-env ENV=local playwright test tests/connector/connector-hub-dashboard.spec.js",
+    "test:api": "cross-env ENV=local SKIP_AUTH=true playwright test tests/api/",
+    "test:connector": "cross-env ENV=local playwright test tests/connector/",
+    "test:hub": "cross-env ENV=local playwright test tests/hoodsly-hub/",
+    "test:wrh": "cross-env ENV=local playwright test tests/wrh-hub/",
+    "test:wiks": "cross-env ENV=local playwright test tests/wiks-hub/",
+    "test:partner-site": "cross-env ENV=local playwright test tests/partner-site/",
+    "test:platform-settings": "cross-env ENV=local playwright test tests/connector/platform-settings.spec.js",
+    "test:partner-mgmt": "cross-env ENV=local playwright test tests/connector/partner-management.spec.js",
+    "test:connector-search": "cross-env ENV=local playwright test tests/hoodsly-hub/connector-order-search.spec.js",
+    "test:wrh-status": "cross-env ENV=local playwright test tests/wrh-hub/wrh-order-status-update.spec.js",
+    "test:ci": "cross-env ENV=ci SKIP_AUTH=true playwright test tests/api/",
+    "test:ci:all": "cross-env ENV=ci playwright test",
+    "test:staging": "cross-env ENV=staging playwright test",
+    "test:staging:api": "cross-env ENV=staging SKIP_AUTH=true playwright test tests/api/",
+    "test:headed": "cross-env ENV=local playwright test --headed",
+    "test:debug": "cross-env ENV=local playwright test --debug",
+    "test:ui": "cross-env ENV=local playwright test --ui",
+    "test:chromium": "cross-env ENV=local playwright test --project=chromium",
+    "test:firefox": "cross-env ENV=local playwright test --project=firefox",
+    "test:webkit": "cross-env ENV=local playwright test --project=webkit",
+    "report": "playwright show-report reports/html",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docker:build": "docker build -t connector-platform-e2e .",
+    "docker:run": "docker-compose up --exit-code-from e2e e2e",
+    "docker:smoke": "docker-compose run --rm e2e npm run test:smoke",
+    "inspect:products": "node scripts/inspect-api.js products",
+    "inspect:mapping": "node scripts/inspect-api.js attributes-mapping",
+    "inspect:api": "node scripts/inspect-api.js",
+    "responses:open": "explorer reports\\api-responses",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "automation",
+    "connector-platform",
+    "wordpress",
+    "woocommerce"
+  ],
+  "author": "Rakibul Islam — Hypemill QA Team",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "@playwright/test": "^1.52.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.5.0",
+    "eslint": "^9.27.0",
+    "eslint-plugin-playwright": "^2.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3",
+    "winston": "^3.17.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

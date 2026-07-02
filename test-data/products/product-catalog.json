@@ -1,0 +1,741 @@
+{
+  "_meta": {
+    "description": "Live product catalog synced from Connector Platform API",
+    "source": "GET https://hoodslypartnersconnector3.kinsta.cloud/wp-json/connector-platform/v1/products",
+    "lastUpdated": "2026-05-22",
+    "partnerType": "b2c",
+    "totalProducts": 44
+  },
+  "categories": {
+    "wood-hoods": {
+      "label": "Wood Hoods",
+      "slug": "wood-hoods-product-category",
+      "count": 40
+    },
+    "quick-shipping": {
+      "label": "Quick Shipping",
+      "slug": "quick-shipping",
+      "count": 3
+    },
+    "floating-shelves": {
+      "label": "Floating Shelves",
+      "slug": "floating-shelves",
+      "count": 1
+    }
+  },
+  "products": [
+    {
+      "id": 1690,
+      "sku": "VEN-ANBS",
+      "title": "Angled With Brass Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "30\" x 30\"",
+        "36\" x 36\"",
+        "48\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished",
+        "Primed / Paint Ready",
+        "Shaker White:USCD"
+      ],
+      "sampleMasterSku": "VEN-ANBS-3636-RAW"
+    },
+    {
+      "id": 1695,
+      "sku": "VEN-ANSS",
+      "title": "Angled With Steel Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "30\" x 36\"",
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished",
+        "Primed / Paint Ready"
+      ],
+      "sampleMasterSku": "VEN-ANSS-3036-RAW"
+    },
+    {
+      "id": 1696,
+      "sku": "VEN-CCX",
+      "title": "Curved",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "30\" x 36\"",
+        "36\" x 36\"",
+        "42\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished",
+        "Shaker Antique White:USCD"
+      ],
+      "sampleMasterSku": "VEN-CCX-3036-RAW"
+    },
+    {
+      "id": 1698,
+      "sku": "VEN-VCX",
+      "title": "Sloped",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-VCX-3636-RAW"
+    },
+    {
+      "id": 1700,
+      "sku": "VEN-CCR",
+      "title": "Curved With Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "30\" x 36\"",
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished",
+        "Primed / Paint Ready"
+      ],
+      "sampleMasterSku": "VEN-CCR-3036-RAW"
+    },
+    {
+      "id": 1702,
+      "sku": "VEN-CMGMG",
+      "title": "Curved With Brass Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CMGMG-3636-RAW"
+    },
+    {
+      "id": 1704,
+      "sku": "VEN-CMSMS",
+      "title": "Curved With Steel Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CMSMS-3636-RAW"
+    },
+    {
+      "id": 1706,
+      "sku": "VEN-CNT",
+      "title": "Curved Without Trim",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CNT-3636-RAW"
+    },
+    {
+      "id": 1708,
+      "sku": "VEN-CGSB",
+      "title": "Curved With Brass Strapping & Buttons",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CGSB-3636-RAW"
+    },
+    {
+      "id": 1710,
+      "sku": "VEN-CBA",
+      "title": "Curved With Brass Apron",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CBA-3636-RAW"
+    },
+    {
+      "id": 1712,
+      "sku": "VEN-CAA",
+      "title": "Curved With Arched Apron",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CAA-3636-RAW"
+    },
+    {
+      "id": 1714,
+      "sku": "VEN-CWC",
+      "title": "Curved Hood With Corbels",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CWC-3636-RAW"
+    },
+    {
+      "id": 1716,
+      "sku": "VEN-BST",
+      "title": "Bell Style Straight",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-BST-3636-RAW"
+    },
+    {
+      "id": 1718,
+      "sku": "VEN-BSH",
+      "title": "Bell Style With Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-BSH-3636-RAW"
+    },
+    {
+      "id": 1720,
+      "sku": "VEN-MCX",
+      "title": "Tapered",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "30\" x 36\"",
+        "36\" x 36\"",
+        "48\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished",
+        "Primed / Paint Ready",
+        "Dove White:TA Cabinetry"
+      ],
+      "sampleMasterSku": "VEN-MCX-3036-RAW"
+    },
+    {
+      "id": 1722,
+      "sku": "VEN-MLS",
+      "title": "Tapered With Shiplap",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-MLS-3636-RAW"
+    },
+    {
+      "id": 1724,
+      "sku": "VEN-MMSMS",
+      "title": "Tapered With Steel Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-MMSMS-3636-RAW"
+    },
+    {
+      "id": 1726,
+      "sku": "VEN-MMGMG",
+      "title": "Tapered With Brass Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-MMGMG-3636-RAW"
+    },
+    {
+      "id": 1728,
+      "sku": "VEN-MCR",
+      "title": "Tapered With Reclaimed Wood Band",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-MCR-3636-RAW"
+    },
+    {
+      "id": 1730,
+      "sku": "VEN-TWS",
+      "title": "Tapered With Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-TWS-3636-RAW"
+    },
+    {
+      "id": 1732,
+      "sku": "VEN-FRM",
+      "title": "Shaker Tapered",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished",
+        "Shaker White:USCD"
+      ],
+      "sampleMasterSku": "VEN-FRM-3636-RAW"
+    },
+    {
+      "id": 1734,
+      "sku": "VEN-FRX",
+      "title": "Shaker Tapered X",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-FRX-3636-RAW"
+    },
+    {
+      "id": 1736,
+      "sku": "VEN-TNT",
+      "title": "Tapered Without Trim",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-TNT-3636-RAW"
+    },
+    {
+      "id": 1738,
+      "sku": "VEN-BNT",
+      "title": "Box Straight",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "30\" x 36\"",
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished",
+        "Primed / Paint Ready"
+      ],
+      "sampleMasterSku": "VEN-BNT-3036-RAW"
+    },
+    {
+      "id": 1740,
+      "sku": "VEN-BSNT",
+      "title": "Box Straight With Shiplap",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-BSNT-3636-RAW"
+    },
+    {
+      "id": 1742,
+      "sku": "VEN-BCS",
+      "title": "Box With Trim",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-BCS-3636-RAW"
+    },
+    {
+      "id": 1744,
+      "sku": "VEN-BWS",
+      "title": "Box With Shiplap & Walnut Band",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-BWS-3636-RAW"
+    },
+    {
+      "id": 1746,
+      "sku": "VEN-BWT",
+      "title": "Box Without Trim",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-BWT-3636-RAW"
+    },
+    {
+      "id": 1748,
+      "sku": "VEN-VCR",
+      "title": "Sloped With Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-VCR-3636-RAW"
+    },
+    {
+      "id": 1750,
+      "sku": "VEN-VMSMS",
+      "title": "Sloped With Steel Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-VMSMS-3636-RAW"
+    },
+    {
+      "id": 1752,
+      "sku": "VEN-VMGMG",
+      "title": "Sloped With Brass Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-VMGMG-3636-RAW"
+    },
+    {
+      "id": 1754,
+      "sku": "VEN-SNT",
+      "title": "Sloped Without Trim",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-SNT-3636-RAW"
+    },
+    {
+      "id": 1756,
+      "sku": "VEN-LCX",
+      "title": "Angled",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-LCX-3636-RAW"
+    },
+    {
+      "id": 1758,
+      "sku": "VEN-AWS",
+      "title": "Angled With Strapping",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-AWS-3636-RAW"
+    },
+    {
+      "id": 1760,
+      "sku": "VEN-LWX",
+      "title": "Angled With Walnut Band",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-LWX-3636-RAW"
+    },
+    {
+      "id": 1762,
+      "sku": "VEN-ANT",
+      "title": "Angled Without Trim",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-ANT-3636-RAW"
+    },
+    {
+      "id": 1764,
+      "sku": "VEN-SCB",
+      "title": "Scoop With Brass Strapping And Buttons",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-SCB-3636-RAW"
+    },
+    {
+      "id": 1766,
+      "sku": "VEN-SCS",
+      "title": "Scoop With Steel Strapping And Buttons",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-SCS-3636-RAW"
+    },
+    {
+      "id": 2471,
+      "sku": "VEN-CSL",
+      "title": "Curved Slim",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-CSL-3636-RAW"
+    },
+    {
+      "id": 5082,
+      "sku": "VEN-DBC",
+      "title": "Double Curved",
+      "category": "Wood Hoods",
+      "categorySlug": "wood-hoods-product-category",
+      "productType": "wood-hood",
+      "testSizes": [
+        "36\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-DBC-3636-RAW"
+    },
+    {
+      "id": 1774,
+      "sku": "VEN-QSPCCX",
+      "title": "Curved Quick Ship",
+      "category": "Quick Shipping",
+      "categorySlug": "quick-shipping",
+      "productType": "quick-ship",
+      "inventoryLogic": "one-in-one-out",
+      "testSizes": [
+        "30\" x 36\""
+      ],
+      "testColors": [
+        "Primed / Paint Ready"
+      ],
+      "sampleMasterSku": "VEN-QSPCCX-3036-PRM"
+    },
+    {
+      "id": 5070,
+      "sku": "VEN-QSPCCR",
+      "title": "Curved With Strapping Quick Ship",
+      "category": "Quick Shipping",
+      "categorySlug": "quick-shipping",
+      "productType": "quick-ship",
+      "inventoryLogic": "one-in-one-out",
+      "testSizes": [
+        "30\" x 36\""
+      ],
+      "testColors": [
+        "Raw / Unfinished"
+      ],
+      "sampleMasterSku": "VEN-QSPCCR-3036-RAW"
+    },
+    {
+      "id": 5072,
+      "sku": "VEN-QSPCCXWHT",
+      "title": "Curved Shaker White Quick Ship",
+      "category": "Quick Shipping",
+      "categorySlug": "quick-shipping",
+      "productType": "quick-ship",
+      "inventoryLogic": "one-in-one-out",
+      "testSizes": [
+        "30\" x 36\""
+      ],
+      "testColors": [
+        "Shaker White:USCD"
+      ],
+      "sampleMasterSku": "VEN-QSPCCXWHT-3036-USCDSHW"
+    },
+    {
+      "id": 2330,
+      "sku": "VEN-FLS",
+      "title": "Floating Shelves",
+      "category": "Floating Shelves",
+      "categorySlug": "floating-shelves",
+      "productType": "floating-shelf",
+      "courierType": "ups",
+      "testColors": [
+        "Raw / Unfinished",
+        "Natural Stain:Hoodsly"
+      ],
+      "sampleMasterSku": "VEN-FLS-FSW30-RAW",
+      "note": "Uses Select Width instead of Size. Shipped via UPS, not LTL."
+    }
+  ],
+  "smokeProducts": [
+    {
+      "sku": "VEN-ANBS",
+      "id": 1690,
+      "reason": "Most complex Wood Hood — full attribute set"
+    },
+    {
+      "sku": "VEN-CCX",
+      "id": 1696,
+      "reason": "Best-selling Curved hood"
+    },
+    {
+      "sku": "VEN-MCX",
+      "id": 1720,
+      "reason": "Best-selling Tapered hood"
+    },
+    {
+      "sku": "VEN-BNT",
+      "id": 1738,
+      "reason": "Box Straight — simplest Wood Hood"
+    },
+    {
+      "sku": "VEN-QSPCCX",
+      "id": 1774,
+      "reason": "Quick Ship product with one-in-one-out inventory"
+    },
+    {
+      "sku": "VEN-FLS",
+      "id": 2330,
+      "reason": "Floating Shelf — UPS courier, different flow"
+    }
+  ]
+}

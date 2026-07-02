@@ -1,0 +1,18 @@
+[  300732ms] TypeError: wpLink.textarea.focus is not a function
+    at Object.close (https://hoodslypartnersconnector3.kinsta.cloud/wp-includes/js/wplink.min.js?ver=7.0:2:4311)
+    at HTMLButtonElement.<anonymous> (https://hoodslypartnersconnector3.kinsta.cloud/wp-includes/js/wplink.min.js?ver=7.0:2:1221)
+    at HTMLButtonElement.dispatch (https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/load-scripts.php?c=1&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils,moxiejs,plupload&ver=7.0:2:40035)
+    at HTMLButtonElement.<anonymous> (https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/load-scripts.php?c=1&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils,moxiejs,plupload&ver=7.0:2:38006)
+    at eval (eval at <anonymous> (eval at evaluate (:302:30)), <anonymous>:1:119)
+    at eval (eval at evaluate (:302:30), <anonymous>:4:50)
+    at UtilityScript.evaluate (<anonymous>:304:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+[  348090ms] TypeError: wpLink.textarea.focus is not a function
+    at Object.close (https://hoodslypartnersconnector3.kinsta.cloud/wp-includes/js/wplink.min.js?ver=7.0:2:4311)
+    at HTMLButtonElement.<anonymous> (https://hoodslypartnersconnector3.kinsta.cloud/wp-includes/js/wplink.min.js?ver=7.0:2:1221)
+    at HTMLButtonElement.dispatch (https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/load-scripts.php?c=1&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils,moxiejs,plupload&ver=7.0:2:40035)
+    at HTMLButtonElement.<anonymous> (https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/load-scripts.php?c=1&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils,moxiejs,plupload&ver=7.0:2:38006)
+    at eval (eval at <anonymous> (eval at evaluate (:302:30)), <anonymous>:1:119)
+    at eval (eval at evaluate (:302:30), <anonymous>:4:50)
+    at UtilityScript.evaluate (<anonymous>:304:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)

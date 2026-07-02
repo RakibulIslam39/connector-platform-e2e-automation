@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "user-admin-001",
+      "role": "admin",
+      "username": "USE_ENV:WP_ADMIN_USER",
+      "password": "USE_ENV:WP_ADMIN_PASS",
+      "description": "WordPress admin — full access to Connector Platform and Hub",
+      "access": ["connector-platform", "hoodsly-hub", "wrh-hub", "wiks-hub"]
+    },
+    {
+      "id": "user-partner-001",
+      "role": "partner",
+      "username": "USE_ENV:WP_PARTNER_USER",
+      "password": "USE_ENV:WP_PARTNER_PASS",
+      "description": "Partner user — restricted to own orders only",
+      "access": ["partner-site"],
+      "restrictions": ["cannot-see-other-partner-orders", "cannot-see-vendor-orders"]
+    },
+    {
+      "id": "user-hub-admin-001",
+      "role": "hub-admin",
+      "username": "USE_ENV:HUB_ADMIN_USER",
+      "password": "USE_ENV:HUB_ADMIN_PASS",
+      "description": "HoodslyHub admin — manages all partner orders",
+      "access": ["hoodsly-hub", "wrh-hub", "wiks-hub"]
+    }
+  ],
+  "note": "Usernames and passwords prefixed with USE_ENV: are loaded from environment variables at runtime"
+}

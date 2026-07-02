@@ -1,0 +1,691 @@
+{
+  "success": true,
+  "data": {
+    "Size": [
+      {
+        "value": "30\" x 30\"",
+        "sku": "3030"
+      },
+      {
+        "value": "30\" Width x 36\" Height",
+        "sku": "3036"
+      },
+      {
+        "value": "31\" x 36\"",
+        "sku": "3136"
+      },
+      {
+        "value": "30\" x 36\"",
+        "sku": "3036"
+      },
+      {
+        "value": "30\" Width x 48\" Height",
+        "sku": "3048"
+      },
+      {
+        "value": "31\" x 48\"",
+        "sku": "3148"
+      },
+      {
+        "value": "30\" x 48\"",
+        "sku": "3048"
+      },
+      {
+        "value": "36\" Width x 36\" Height",
+        "sku": "3636"
+      },
+      {
+        "value": "37\" x 36\"",
+        "sku": "3736"
+      },
+      {
+        "value": "36\" x 30\"",
+        "sku": "3630"
+      },
+      {
+        "value": "36\" Width x 48\" Height",
+        "sku": "3648"
+      },
+      {
+        "value": "37\" x 48\"",
+        "sku": "3748"
+      },
+      {
+        "value": "36\" x 36\"",
+        "sku": "3636"
+      },
+      {
+        "value": "43\" x 36\"",
+        "sku": "4336"
+      },
+      {
+        "value": "36\" x 48\"",
+        "sku": "3648"
+      },
+      {
+        "value": "43\" x 48\"",
+        "sku": "4348"
+      },
+      {
+        "value": "42\" x 30\"",
+        "sku": "4230"
+      },
+      {
+        "value": "49\" x 36\"",
+        "sku": "4936"
+      },
+      {
+        "value": "42\" x 36\"",
+        "sku": "4236"
+      },
+      {
+        "value": "49\" x 48\"",
+        "sku": "4948"
+      },
+      {
+        "value": "42\" x 48\"",
+        "sku": "4248"
+      },
+      {
+        "value": "55\" x 36\"",
+        "sku": "5536"
+      },
+      {
+        "value": "48\" x 30\"",
+        "sku": "4830"
+      },
+      {
+        "value": "55\" x 48\"",
+        "sku": "5548"
+      },
+      {
+        "value": "48\" x 36\"",
+        "sku": "4836"
+      },
+      {
+        "value": "61\" x 36\"",
+        "sku": "6136"
+      },
+      {
+        "value": "48\" x 48\"",
+        "sku": "4848"
+      },
+      {
+        "value": "61\" x 48\"",
+        "sku": "6148"
+      },
+      {
+        "value": "54\" x 30\"",
+        "sku": "5430"
+      },
+      {
+        "value": "54\" x 36\"",
+        "sku": "5436"
+      },
+      {
+        "value": "54\" x 48\"",
+        "sku": "5448"
+      },
+      {
+        "value": "60\" x 30\"",
+        "sku": "6030"
+      },
+      {
+        "value": "60\" x 36\"",
+        "sku": "6036"
+      },
+      {
+        "value": "60\" x 48\"",
+        "sku": "6048"
+      }
+    ],
+    "Increase Depth": [
+      {
+        "value": "18\" Interior Depth (Standard)",
+        "sku": "ID18-RSH"
+      },
+      {
+        "value": "Increase Interior Depth To 19.3125\"",
+        "sku": "ID19-RSH"
+      },
+      {
+        "value": "Increase Interior Depth To 20.5\"",
+        "sku": "ID20-RSH"
+      },
+      {
+        "value": "Increase Interior Depth To 22.5\"",
+        "sku": "ID22-RSH"
+      }
+    ],
+    "Crown Molding": [
+      {
+        "value": "Steel Crown Molding",
+        "sku": "MSCI"
+      },
+      {
+        "value": "Brass Crown Molding",
+        "sku": "MGCI"
+      },
+      {
+        "value": "Installed",
+        "sku": "INC"
+      },
+      {
+        "value": "Loose (Not Installed)",
+        "sku": "CLS"
+      }
+    ],
+    "Reduce Height": [
+      {
+        "value": "Remove 1\"",
+        "sku": "RH1"
+      },
+      {
+        "value": "Remove 2\"",
+        "sku": "RH2"
+      },
+      {
+        "value": "Remove 3\"",
+        "sku": "RH3"
+      },
+      {
+        "value": "Remove 4\"",
+        "sku": "RH4"
+      },
+      {
+        "value": "Remove 5\"",
+        "sku": "RH5"
+      },
+      {
+        "value": "Remove 6\"",
+        "sku": "RH6"
+      }
+    ],
+    "Extend Your Chimney": [
+      {
+        "value": "6\" Extension",
+        "sku": "CH6"
+      },
+      {
+        "value": "6\" Extension",
+        "sku": "CH6"
+      },
+      {
+        "value": "12\" Extension",
+        "sku": "CH12"
+      },
+      {
+        "value": "12\" Extension",
+        "sku": "CH12"
+      },
+      {
+        "value": "24\" Extension",
+        "sku": "CH24"
+      },
+      {
+        "value": "24\" Extension",
+        "sku": "CH24"
+      },
+      {
+        "value": "24\" Extension",
+        "sku": "CH24"
+      }
+    ],
+    "Add Solid Bottom": [
+      {
+        "value": "Yes",
+        "sku": "SB"
+      }
+    ],
+    "Select Width": [
+      {
+        "value": "24\"",
+        "sku": "FSW24"
+      },
+      {
+        "value": "27\"",
+        "sku": "FSW27"
+      },
+      {
+        "value": "30\"",
+        "sku": "FSW30"
+      },
+      {
+        "value": "33\"",
+        "sku": "FSW33"
+      },
+      {
+        "value": "36\"",
+        "sku": "FSW36"
+      },
+      {
+        "value": "39\"",
+        "sku": "FSW39"
+      },
+      {
+        "value": "42\"",
+        "sku": "FSW42"
+      }
+    ],
+    "Partner Colors": [
+      {
+        "value": "Raw / Unfinished",
+        "sku": "RAW"
+      },
+      {
+        "value": "Primed / Paint Ready",
+        "sku": "PRM"
+      },
+      {
+        "value": "Shaker Antique White:USCD",
+        "sku": "USCDSAW"
+      },
+      {
+        "value": "Shaker White:USCD",
+        "sku": "USCDSHW"
+      },
+      {
+        "value": "Casselberry Antique White:USCD",
+        "sku": "USCDCAW"
+      },
+      {
+        "value": "Edgeline White:USCD",
+        "sku": "USCDELW"
+      },
+      {
+        "value": "Oxford Sage:USCD",
+        "sku": "USCDOFS"
+      },
+      {
+        "value": "Oxford White:USCD",
+        "sku": "USCDOFW"
+      },
+      {
+        "value": "Shaker Black:USCD",
+        "sku": "USCDSHB"
+      },
+      {
+        "value": "Shaker Dove:USCD",
+        "sku": "USCDSHD"
+      },
+      {
+        "value": "Shaker Gray:USCD",
+        "sku": "USCDSHG"
+      },
+      {
+        "value": "Shaker Navy:USCD",
+        "sku": "USCDSHN"
+      },
+      {
+        "value": "Torrance Dove:USCD",
+        "sku": "USCDTOD"
+      },
+      {
+        "value": "Torrance White:USCD",
+        "sku": "USCDTOW"
+      },
+      {
+        "value": "York Antique White:USCD",
+        "sku": "USCDYAW"
+      },
+      {
+        "value": "Casselberry Saddle:USCD",
+        "sku": "USCDCAS"
+      },
+      {
+        "value": "Oxford Mist:USCD",
+        "sku": "USCDOFM"
+      },
+      {
+        "value": "Oxford Toffee:USCD",
+        "sku": "USCDOFT"
+      },
+      {
+        "value": "Shaker Cinder:USCD",
+        "sku": "USCDSHC"
+      },
+      {
+        "value": "Shaker Honey:USCD",
+        "sku": "USCDSHH"
+      },
+      {
+        "value": "Verona Midnight Navy:USCD",
+        "sku": "USCDVMN"
+      },
+      {
+        "value": "Verona Pure Blanc:USCD",
+        "sku": "USCDVPB"
+      },
+      {
+        "value": "Beige Gray:TA Cabinetry",
+        "sku": "TABEI00001"
+      },
+      {
+        "value": "Blue:Hoodsly",
+        "sku": "HOOBLU00001"
+      },
+      {
+        "value": "Charcoal Black:TA Cabinetry",
+        "sku": "TACHA00001"
+      },
+      {
+        "value": "Dove White:TA Cabinetry",
+        "sku": "TADOV00001"
+      },
+      {
+        "value": "Gray:TA Cabinetry",
+        "sku": "TAGRA00001"
+      },
+      {
+        "value": "Tuscan Green:TA Cabinetry",
+        "sku": "TATUS00001"
+      },
+      {
+        "value": "White:TA Cabinetry",
+        "sku": "TAWHIT00001"
+      },
+      {
+        "value": "Oak:TA Cabinetry",
+        "sku": "TAOAK00001"
+      },
+      {
+        "value": "Slate Brown:TA Cabinetry",
+        "sku": "TASLA00001"
+      },
+      {
+        "value": "Black:Hoodsly",
+        "sku": "HOOBLA00001"
+      },
+      {
+        "value": "Antique White:Hoodsly",
+        "sku": "HOOANT00001"
+      },
+      {
+        "value": "Light Gray:Hoodsly",
+        "sku": "HOOLIG00001"
+      },
+      {
+        "value": "Espresso Stain:Hoodsly",
+        "sku": "HOOESP00001"
+      },
+      {
+        "value": "Chocolate Stain:Hoodsly",
+        "sku": "HOOCHO00001"
+      },
+      {
+        "value": "Saddle Stain:Hoodsly",
+        "sku": "HOOSAD00001"
+      },
+      {
+        "value": "American Walnut Stain:Hoodsly",
+        "sku": "HOOAME00001"
+      },
+      {
+        "value": "Stained Gray:Hoodsly",
+        "sku": "HOOSGRY00001"
+      },
+      {
+        "value": "Natural Stain:Hoodsly",
+        "sku": "HOONAT00001"
+      },
+      {
+        "value": "Latte Stain:Hoodsly",
+        "sku": "HOOLAT00001"
+      },
+      {
+        "value": "Clover Green:Hoodsly",
+        "sku": "HOOCLO00001"
+      },
+      {
+        "value": "Sterling Gray:Jarlin",
+        "sku": "JARSTE00001"
+      },
+      {
+        "value": "Weston Shaker:Jarlin",
+        "sku": "JARWES00001"
+      },
+      {
+        "value": "Toffee Shaker:Jarlin",
+        "sku": "JARTOF00001"
+      },
+      {
+        "value": "Soda White:Jarlin",
+        "sku": "JARSOD00001"
+      },
+      {
+        "value": "Smoky Gray:Jarlin",
+        "sku": "JARSMO00001"
+      },
+      {
+        "value": "Perla:Jarlin",
+        "sku": "JARPER00001"
+      },
+      {
+        "value": "Ebony Shaker:Jarlin",
+        "sku": "JAREBO00001"
+      },
+      {
+        "value": "Charlton:Jarlin",
+        "sku": "JARCHA00001"
+      },
+      {
+        "value": "New Port:Jarlin",
+        "sku": "JARNEW00001"
+      },
+      {
+        "value": "Aria Blue:Jarlin",
+        "sku": "JARARI00001"
+      },
+      {
+        "value": "Avalon:Jarlin",
+        "sku": "JARAVA00001"
+      },
+      {
+        "value": "Karamel:TA Cabinetry",
+        "sku": "TAKAR00001"
+      },
+      {
+        "value": "Dove White Shaker:Jarlin",
+        "sku": "JARDOV00001"
+      },
+      {
+        "value": "White Oak:TA Cabinetry",
+        "sku": "TAWHI00001"
+      },
+      {
+        "value": "Blue:TA Cabinetry",
+        "sku": "TABLU00001"
+      },
+      {
+        "value": "Doric Charcoal Black:TA Cabinetry",
+        "sku": "TADOR00001"
+      },
+      {
+        "value": "Alabaster Paint:Jim Bishop",
+        "sku": "JBALP"
+      },
+      {
+        "value": "Black Paint:Jim Bishop",
+        "sku": "JBBP"
+      },
+      {
+        "value": "Gale Force Paint:Jim Bishop",
+        "sku": "JBGFP"
+      },
+      {
+        "value": "Iron Paint:Jim Bishop",
+        "sku": "JBIRP"
+      },
+      {
+        "value": "Ash Paint:Homemark",
+        "sku": "HOMASP"
+      },
+      {
+        "value": "Charcoal Paint:Homemark",
+        "sku": "HOMCHP"
+      },
+      {
+        "value": "Cloud Paint:Homemark",
+        "sku": "HOMCLP"
+      },
+      {
+        "value": "Everglade Paint:Homemark",
+        "sku": "HOMEVP"
+      },
+      {
+        "value": "Gray Paint:Homemark",
+        "sku": "HOMGRP"
+      },
+      {
+        "value": "Keystone Paint:Homemark",
+        "sku": "HOMKYP"
+      },
+      {
+        "value": "Navy Paint:Homemark",
+        "sku": "HOMNVP"
+      },
+      {
+        "value": "Shale Paint:Homemark",
+        "sku": "HOMSHP"
+      },
+      {
+        "value": "White Paint:Homemark",
+        "sku": "HOMWHP"
+      },
+      {
+        "value": "Amesbury Mist Slab:JSI",
+        "sku": "JSIAMS"
+      },
+      {
+        "value": "Amesbury White Slab:JSI",
+        "sku": "JSIAWS"
+      },
+      {
+        "value": "Essex Castle:JSI",
+        "sku": "JSIESC"
+      },
+      {
+        "value": "Essex Lunar:JSI",
+        "sku": "JSIESL"
+      },
+      {
+        "value": "Essex White:JSI",
+        "sku": "JSIESW"
+      },
+      {
+        "value": "Essex Norwich:JSI",
+        "sku": "JSIESN"
+      },
+      {
+        "value": "Essex Truffle:JSI",
+        "sku": "JSIEST"
+      },
+      {
+        "value": "Trenton Recessed:JSI",
+        "sku": "JSITRR"
+      },
+      {
+        "value": "Upton Brown Recessed:JSI",
+        "sku": "JSIUBR"
+      },
+      {
+        "value": "Yarmouth Raised:JSI",
+        "sku": "JSIYAR"
+      },
+      {
+        "value": "Shaker Ivy:USCD",
+        "sku": "USCDSHI"
+      }
+    ],
+    "Partner Sizes": [
+      {
+        "value": "30\" x 30\"",
+        "sku": "3030"
+      },
+      {
+        "value": "30\" x 36\"",
+        "sku": "3036"
+      },
+      {
+        "value": "30\" x 48\"",
+        "sku": "3048"
+      },
+      {
+        "value": "36\" x 30\"",
+        "sku": "3630"
+      },
+      {
+        "value": "36\" x 36\"",
+        "sku": "3636"
+      },
+      {
+        "value": "36\" x 48\"",
+        "sku": "3648"
+      },
+      {
+        "value": "42\" x 30\"",
+        "sku": "4230"
+      },
+      {
+        "value": "42\" x 36\"",
+        "sku": "4236"
+      },
+      {
+        "value": "42\" x 48\"",
+        "sku": "4248"
+      },
+      {
+        "value": "48\" x 30\"",
+        "sku": "4830"
+      },
+      {
+        "value": "48\" x 36\"",
+        "sku": "4836"
+      },
+      {
+        "value": "48\" x 48\"",
+        "sku": "4848"
+      },
+      {
+        "value": "54\" x 30\"",
+        "sku": "5430"
+      },
+      {
+        "value": "54\" x 36\"",
+        "sku": "5436"
+      },
+      {
+        "value": "54\" x 48\"",
+        "sku": "5448"
+      },
+      {
+        "value": "60\" x 30\"",
+        "sku": "6030"
+      },
+      {
+        "value": "60\" x 36\"",
+        "sku": "6036"
+      },
+      {
+        "value": "60\" x 48\"",
+        "sku": "6048"
+      },
+      {
+        "value": "30\" Width x 36\" Height",
+        "sku": "3036"
+      },
+      {
+        "value": "30\" Width x 48\" Height",
+        "sku": "3048"
+      },
+      {
+        "value": "36\" Width x 36\" Height",
+        "sku": "3636"
+      },
+      {
+        "value": "36\" Width x 48\" Height",
+        "sku": "3648"
+      }
+    ]
+  }
+}

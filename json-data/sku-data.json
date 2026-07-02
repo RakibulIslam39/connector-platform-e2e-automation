@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "description": "SKU generation data for Connector Platform automated testing",
+    "lastUpdated": "2026-05-22",
+    "source": "Derived from live API: /wp-json/connector-platform/v1/attributes-mapping + /products"
+  },
+  "masterSkuFormula": {
+    "pattern": "{product_base_sku}-{size_sku}-{color_sku}[-modifier_skus]",
+    "rules": [
+      "product_base_sku comes from the product's own 'sku' field (e.g. VEN-ANBS)",
+      "size_sku is the 4-digit WxH code from the Size/PartnerSizes mapping (e.g. 3636 = 36\"x36\")",
+      "color_sku is the code from PartnerColors mapping (e.g. RAW, PRM, USCDSAW)",
+      "Modifiers are appended in order: IncreaseDepth, ReduceHeight, CrownMolding, ExtendChimney, SolidBottom",
+      "Floating Shelves use SelectWidth sku instead of Size (e.g. FSW30)"
+    ]
+  },
+  "shortSkuFormula": {
+    "description": "Short SKU = full Master SKU without the product base prefix. Used in HoodslyHub order validation.",
+    "pattern": "{size_sku}-{color_sku}[-modifier_skus]",
+    "examples": [
+      { "masterSku": "VEN-ANBS-3636-RAW",           "shortSku": "3636-RAW" },
+      { "masterSku": "VEN-CCX-3036-PRM",             "shortSku": "3036-PRM" },
+      { "masterSku": "VEN-MCX-3036-USCDSAW-RH2",     "shortSku": "3036-USCDSAW-RH2" },
+      { "masterSku": "VEN-ANBS-4836-HOOANT00001-SB", "shortSku": "4836-HOOANT00001-SB" },
+      { "masterSku": "VEN-FLS-FSW30-RAW",            "shortSku": "FSW30-RAW" }
+    ]
+  },
+  "masterSkuExamples": [
+    {
+      "scenario": "Simple — Raw finish, standard size",
+      "product": { "sku": "VEN-ANBS", "title": "Angled With Brass Strapping", "id": 1690 },
+      "size": { "value": "36\" x 36\"", "sku": "3636" },
+      "color": { "value": "Raw / Unfinished", "sku": "RAW" },
+      "masterSku": "VEN-ANBS-3636-RAW",
+      "modifiers": []
+    },
+    {
+      "scenario": "Primed finish",
+      "product": { "sku": "VEN-CCX", "title": "Curved", "id": 1696 },
+      "size": { "value": "30\" x 36\"", "sku": "3036" },
+      "color": { "value": "Primed / Paint Ready", "sku": "PRM" },
+      "masterSku": "VEN-CCX-3036-PRM",
+      "modifiers": []
+    },
+    {
+      "scenario": "USCD partner color",
+      "product": { "sku": "VEN-MCX", "title": "Tapered", "id": 1720 },
+      "size": { "value": "36\" x 36\"", "sku": "3636" },
+      "color": { "value": "Shaker Antique White:USCD", "sku": "USCDSAW" },
+      "masterSku": "VEN-MCX-3636-USCDSAW",
+      "modifiers": []
+    },
+    {
+      "scenario": "With Reduce Height modifier",
+      "product": { "sku": "VEN-ANBS", "title": "Angled With Brass Strapping", "id": 1690 },
+      "size": { "value": "36\" x 36\"", "sku": "3636" },
+      "color": { "value": "Raw / Unfinished", "sku": "RAW" },
+      "modifiers": [
+        { "attribute": "ReduceHeight", "value": "Remove 2\"", "sku": "RH2" }
+      ],
+      "masterSku": "VEN-ANBS-3636-RAW-RH2"
+    },
+    {
+      "scenario": "With Increase Depth modifier",
+      "product": { "sku": "VEN-ANBS", "title": "Angled With Brass Strapping", "id": 1690 },
+      "size": { "value": "36\" x 36\"", "sku": "3636" },
+      "color": { "value": "Primed / Paint Ready", "sku": "PRM" },
+      "modifiers": [
+        { "attribute": "IncreaseDepth", "value": "Increase Interior Depth To 19.3125\"", "sku": "ID19-RSH" }
+      ],
+      "masterSku": "VEN-ANBS-3636-PRM-ID19-RSH"
+    },
+    {
+      "scenario": "With Crown Molding (Steel, Installed)",
+      "product": { "sku": "VEN-CCX", "title": "Curved", "id": 1696 },
+      "size": { "value": "36\" x 36\"", "sku": "3636" },
+      "color": { "value": "Shaker White:USCD", "sku": "USCDSHW" },
+      "modifiers": [
+        { "attribute": "CrownMolding", "value": "Steel Crown Molding", "sku": "MSCI" },
+        { "attribute": "CrownMolding", "value": "Installed", "sku": "INC" }
+      ],
+      "masterSku": "VEN-CCX-3636-USCDSHW-MSCI-INC"
+    },
+    {
+      "scenario": "With Chimney Extension",
+      "product": { "sku": "VEN-BNT", "title": "Box Straight", "id": 1738 },
+      "size": { "value": "30\" x 36\"", "sku": "3036" },
+      "color": { "value": "Raw / Unfinished", "sku": "RAW" },
+      "modifiers": [
+        { "attribute": "ExtendYourChimney", "value": "6\" Extension", "sku": "CH6" }
+      ],
+      "masterSku": "VEN-BNT-3036-RAW-CH6"
+    },
+    {
+      "scenario": "With Add Solid Bottom",
+      "product": { "sku": "VEN-CCX", "title": "Curved", "id": 1696 },
+      "size": { "value": "36\" x 36\"", "sku": "3636" },
+      "color": { "value": "Antique White:Hoodsly", "sku": "HOOANT00001" },
+      "modifiers": [
+        { "attribute": "AddSolidBottom", "value": "Yes", "sku": "SB" }
+      ],
+      "masterSku": "VEN-CCX-3636-HOOANT00001-SB"
+    },
+    {
+      "scenario": "Full modifiers — Increase Depth + Reduce Height + Chimney",
+      "product": { "sku": "VEN-ANBS", "title": "Angled With Brass Strapping", "id": 1690 },
+      "size": { "value": "48\" x 36\"", "sku": "4836" },
+      "color": { "value": "Shaker Antique White:USCD", "sku": "USCDSAW" },
+      "modifiers": [
+        { "attribute": "IncreaseDepth", "value": "Increase Interior Depth To 19.3125\"", "sku": "ID19-RSH" },
+        { "attribute": "ReduceHeight", "value": "Remove 2\"", "sku": "RH2" },
+        { "attribute": "ExtendYourChimney", "value": "6\" Extension", "sku": "CH6" }
+      ],
+      "masterSku": "VEN-ANBS-4836-USCDSAW-ID19-RSH-RH2-CH6"
+    },
+    {
+      "scenario": "Floating Shelf — uses Select Width instead of Size",
+      "product": { "sku": "VEN-FLS", "title": "Floating Shelves", "id": 2330 },
+      "width": { "value": "30\"", "sku": "FSW30" },
+      "color": { "value": "Raw / Unfinished", "sku": "RAW" },
+      "masterSku": "VEN-FLS-FSW30-RAW",
+      "modifiers": [],
+      "note": "Floating Shelves use SelectWidth mapping, not Size"
+    },
+    {
+      "scenario": "Quick Ship product",
+      "product": { "sku": "VEN-QSPCCX", "title": "Curved Quick Ship", "id": 1774 },
+      "size": { "value": "30\" x 36\"", "sku": "3036" },
+      "color": { "value": "Primed / Paint Ready", "sku": "PRM" },
+      "masterSku": "VEN-QSPCCX-3036-PRM",
+      "modifiers": [],
+      "note": "Quick Ship products have one-in-one-out inventory logic"
+    }
+  ],
+  "validationRules": {
+    "minLength": 5,
+    "maxLength": 80,
+    "allowedCharacters": "A-Z, 0-9, hyphen",
+    "pattern": "^[A-Z0-9]([A-Z0-9-]*[A-Z0-9])?$",
+    "productBasePrefixes": ["VEN-"],
+    "knownSizeSegments": ["3030","3036","3048","3630","3636","3648","4230","4236","4248","4830","4836","4848","5430","5436","5448","6030","6036","6048","3136","3148","3736","3748","4336","4348","4936","4948","5536","5548","6136","6148"],
+    "knownWidthSegments": ["FSW24","FSW27","FSW30","FSW33","FSW36","FSW39","FSW42"],
+    "knownBaseColors": ["RAW","PRM"]
+  }
+}

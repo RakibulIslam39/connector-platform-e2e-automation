@@ -1,0 +1,481 @@
+- generic [ref=e2]:
+  - navigation "Main menu":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#wpbody-content"
+    - link "Skip to toolbar" [ref=e4] [cursor=pointer]:
+      - /url: "#wp-toolbar"
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: index.php
+          - generic [ref=e10]: 
+          - generic [ref=e11]: Dashboard
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - link "Home" [ref=e14] [cursor=pointer]:
+              - /url: index.php
+          - listitem [ref=e15]:
+            - link "Updates 7" [ref=e16] [cursor=pointer]:
+              - /url: update-core.php
+              - text: Updates
+              - generic [ref=e17]: "7"
+      - listitem [ref=e18]:
+        - link "Kinsta Cache" [ref=e19] [cursor=pointer]:
+          - /url: admin.php?page=kinsta-tools
+          - generic [ref=e20]: 
+          - generic [ref=e21]: Kinsta Cache
+      - listitem [ref=e22]
+      - listitem [ref=e24]:
+        - link "Posts" [ref=e25] [cursor=pointer]:
+          - /url: edit.php
+          - generic [ref=e26]: 
+          - generic [ref=e27]: Posts
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - link "All Posts" [ref=e30] [cursor=pointer]:
+              - /url: edit.php
+          - listitem [ref=e31]:
+            - link "Add Post" [ref=e32] [cursor=pointer]:
+              - /url: post-new.php
+          - listitem [ref=e33]:
+            - link "Categories" [ref=e34] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=category
+          - listitem [ref=e35]:
+            - link "Tags" [ref=e36] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=post_tag
+      - listitem [ref=e37]:
+        - link "Media" [ref=e38] [cursor=pointer]:
+          - /url: upload.php
+          - generic [ref=e39]: 
+          - generic [ref=e40]: Media
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Library" [ref=e43] [cursor=pointer]:
+              - /url: upload.php
+          - listitem [ref=e44]:
+            - link "Add Media File" [ref=e45] [cursor=pointer]:
+              - /url: media-new.php
+      - listitem [ref=e46]:
+        - link "Pages" [ref=e47] [cursor=pointer]:
+          - /url: edit.php?post_type=page
+          - generic [ref=e48]: 
+          - generic [ref=e49]: Pages
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - link "All Pages" [ref=e52] [cursor=pointer]:
+              - /url: edit.php?post_type=page
+          - listitem [ref=e53]:
+            - link "Add Page" [ref=e54] [cursor=pointer]:
+              - /url: post-new.php?post_type=page
+      - listitem [ref=e55]:
+        - link "Comments" [ref=e56] [cursor=pointer]:
+          - /url: edit-comments.php
+          - generic [ref=e57]: 
+          - generic [ref=e58]: Comments
+      - listitem [ref=e59]:
+        - link "Partners" [ref=e60] [cursor=pointer]:
+          - /url: edit.php?post_type=partner
+          - generic [ref=e61]: 
+          - generic [ref=e62]: Partners
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - link "All Partners" [ref=e65] [cursor=pointer]:
+              - /url: edit.php?post_type=partner
+          - listitem [ref=e66]:
+            - link "Add New Partner" [ref=e67] [cursor=pointer]:
+              - /url: post-new.php?post_type=partner
+      - listitem [ref=e68]:
+        - link "Products" [ref=e69] [cursor=pointer]:
+          - /url: edit.php?post_type=product
+          - generic [ref=e70]: 
+          - generic [ref=e71]: Products
+        - list [ref=e72]:
+          - listitem [ref=e73]:
+            - link "All Products" [ref=e74] [cursor=pointer]:
+              - /url: edit.php?post_type=product
+          - listitem [ref=e75]:
+            - link "Add New Product" [ref=e76] [cursor=pointer]:
+              - /url: post-new.php?post_type=product
+      - listitem [ref=e77]:
+        - link "Connector Hub" [ref=e78] [cursor=pointer]:
+          - /url: admin.php?page=connector-hub#/dashboard
+          - generic [ref=e79]: 
+          - generic [ref=e80]: Connector Hub
+        - list [ref=e81]:
+          - listitem [ref=e82]:
+            - link "Dashboard" [ref=e83] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/dashboard
+          - listitem [ref=e84]:
+            - link "Partners" [ref=e85] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/partners
+          - listitem [ref=e86]:
+            - link "Products" [ref=e87] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/products
+          - listitem [ref=e88]:
+            - link "Attributes" [ref=e89] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/attributes
+          - listitem [ref=e90]:
+            - link "Settings" [ref=e91] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/settings
+          - listitem [ref=e92]:
+            - link "Logs" [ref=e93] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/logs
+      - listitem [ref=e94]
+      - listitem [ref=e96]:
+        - link "Appearance" [ref=e97] [cursor=pointer]:
+          - /url: themes.php
+          - generic [ref=e98]: 
+          - generic [ref=e99]: Appearance
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - link "Themes 4" [ref=e102] [cursor=pointer]:
+              - /url: themes.php
+              - text: Themes
+              - generic [ref=e103]: "4"
+          - listitem [ref=e104]:
+            - link "Editor" [ref=e105] [cursor=pointer]:
+              - /url: site-editor.php
+          - listitem [ref=e106]:
+            - link "Fonts" [ref=e107] [cursor=pointer]:
+              - /url: font-library.php
+      - listitem [ref=e108]:
+        - link "Plugins 3" [ref=e109] [cursor=pointer]:
+          - /url: plugins.php
+          - generic [ref=e110]: 
+          - generic [ref=e111]:
+            - text: Plugins
+            - generic [ref=e112]: "3"
+        - list [ref=e113]:
+          - listitem [ref=e114]:
+            - link "Installed Plugins" [ref=e115] [cursor=pointer]:
+              - /url: plugins.php
+          - listitem [ref=e116]:
+            - link "Add Plugin" [ref=e117] [cursor=pointer]:
+              - /url: plugin-install.php
+      - listitem [ref=e118]:
+        - link "Users" [ref=e119] [cursor=pointer]:
+          - /url: users.php
+          - generic [ref=e120]: 
+          - generic [ref=e121]: Users
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "All Users" [ref=e124] [cursor=pointer]:
+              - /url: users.php
+          - listitem [ref=e125]:
+            - link "Add User" [ref=e126] [cursor=pointer]:
+              - /url: user-new.php
+          - listitem [ref=e127]:
+            - link "Profile" [ref=e128] [cursor=pointer]:
+              - /url: profile.php
+      - listitem [ref=e129]:
+        - link "Tools" [ref=e130] [cursor=pointer]:
+          - /url: tools.php
+          - generic [ref=e131]: 
+          - generic [ref=e132]: Tools
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - link "Available Tools" [ref=e135] [cursor=pointer]:
+              - /url: tools.php
+          - listitem [ref=e136]:
+            - link "Import" [ref=e137] [cursor=pointer]:
+              - /url: import.php
+          - listitem [ref=e138]:
+            - link "Export" [ref=e139] [cursor=pointer]:
+              - /url: export.php
+          - listitem [ref=e140]:
+            - link "Site Health" [ref=e141] [cursor=pointer]:
+              - /url: site-health.php
+          - listitem [ref=e142]:
+            - link "Export Personal Data" [ref=e143] [cursor=pointer]:
+              - /url: export-personal-data.php
+          - listitem [ref=e144]:
+            - link "Erase Personal Data" [ref=e145] [cursor=pointer]:
+              - /url: erase-personal-data.php
+          - listitem [ref=e146]:
+            - link "Theme File Editor" [ref=e147] [cursor=pointer]:
+              - /url: theme-editor.php
+          - listitem [ref=e148]:
+            - link "Plugin File Editor" [ref=e149] [cursor=pointer]:
+              - /url: plugin-editor.php
+      - listitem [ref=e150]:
+        - link "Settings" [ref=e151] [cursor=pointer]:
+          - /url: options-general.php
+          - generic [ref=e152]: 
+          - generic [ref=e153]: Settings
+        - list [ref=e154]:
+          - listitem [ref=e155]:
+            - link "General" [ref=e156] [cursor=pointer]:
+              - /url: options-general.php
+          - listitem [ref=e157]:
+            - link "Connectors" [ref=e158] [cursor=pointer]:
+              - /url: options-connectors.php
+          - listitem [ref=e159]:
+            - link "Writing" [ref=e160] [cursor=pointer]:
+              - /url: options-writing.php
+          - listitem [ref=e161]:
+            - link "Reading" [ref=e162] [cursor=pointer]:
+              - /url: options-reading.php
+          - listitem [ref=e163]:
+            - link "Discussion" [ref=e164] [cursor=pointer]:
+              - /url: options-discussion.php
+          - listitem [ref=e165]:
+            - link "Media" [ref=e166] [cursor=pointer]:
+              - /url: options-media.php
+          - listitem [ref=e167]:
+            - link "Permalinks" [ref=e168] [cursor=pointer]:
+              - /url: options-permalink.php
+          - listitem [ref=e169]:
+            - link "Privacy" [ref=e170] [cursor=pointer]:
+              - /url: options-privacy.php
+          - listitem [ref=e171]:
+            - link "FluentSMTP" [ref=e172] [cursor=pointer]:
+              - /url: options-general.php?page=fluent-mail
+      - listitem [ref=e173]:
+        - link "ACF" [ref=e174] [cursor=pointer]:
+          - /url: edit.php?post_type=acf-field-group
+          - generic [ref=e175]: 
+          - generic [ref=e176]: ACF
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - link "Field Groups" [ref=e179] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group
+          - listitem [ref=e180]:
+            - link "Post Types" [ref=e181] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-post-type
+          - listitem [ref=e182]:
+            - link "Taxonomies" [ref=e183] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-taxonomy
+          - listitem [ref=e184]:
+            - link "Options Pages" [ref=e185] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-ui-options-page
+          - listitem [ref=e186]:
+            - link "Tools" [ref=e187] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-tools
+          - listitem [ref=e188]:
+            - link "Updates" [ref=e189] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+      - listitem [ref=e190]:
+        - button "Collapse Main menu" [expanded] [ref=e191] [cursor=pointer]:
+          - generic [ref=e193]: Collapse Menu
+  - generic [ref=e194]:
+    - generic [ref=e195]:
+      - navigation "Toolbar":
+        - menu:
+          - group [ref=e196]:
+            - menuitem "About WordPress" [ref=e197] [cursor=pointer]:
+              - generic [ref=e199]: About WordPress
+          - group [ref=e200]:
+            - menuitem "Hoodsly Connector Platform" [ref=e201] [cursor=pointer]
+          - group [ref=e202]:
+            - menuitem "7 updates available" [ref=e203] [cursor=pointer]:
+              - generic [ref=e205]: "7"
+              - generic [ref=e206]: 7 updates available
+          - group [ref=e207]:
+            - menuitem "Ctrl+K Open command palette" [ref=e208] [cursor=pointer]:
+              - generic [ref=e210]:
+                - text: Ctrl+K
+                - generic [ref=e211]: Open command palette
+          - group [ref=e212]:
+            - menuitem "0 Comments in moderation" [ref=e213] [cursor=pointer]:
+              - generic [ref=e215]: "0"
+              - generic [ref=e216]: 0 Comments in moderation
+          - group [ref=e217]:
+            - menuitem "New" [ref=e218] [cursor=pointer]:
+              - generic [ref=e220]: New
+        - menu [ref=e221]:
+          - group [ref=e222]:
+            - menuitem "Clear Caches" [ref=e223]
+          - group [ref=e224]:
+            - menuitem "Howdy, Rakibul Islam" [ref=e225] [cursor=pointer]
+    - main [ref=e226]:
+      - generic [ref=e227]:
+        - generic [ref=e228]:
+          - button "Screen Options" [ref=e230] [cursor=pointer]
+          - button "Help" [ref=e232] [cursor=pointer]
+        - generic [ref=e233]:
+          - heading "Dashboard" [level=1] [ref=e234]
+          - generic [ref=e235]:
+            - paragraph [ref=e236]:
+              - text: FluentSMTP Plugin may not work properly. Looks like your Authentication unique keys and salts are changed.
+              - link "Reconfigure SMTP Settings" [ref=e237] [cursor=pointer]:
+                - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/options-general.php?page=fluent-mail#/connections
+            - button "Dismiss this notice." [ref=e238] [cursor=pointer]:
+              - generic [ref=e239]: Dismiss this notice.
+          - text: 
+          - generic [ref=e241]:
+            - generic [ref=e243]:
+              - generic [ref=e244]:
+                - generic [ref=e245]:
+                  - heading "Site Health Status" [level=2] [ref=e246]
+                  - generic [ref=e247]:
+                    - button "Move up" [disabled] [ref=e248]:
+                      - generic [ref=e249]: Move up
+                    - button "Move down" [ref=e251] [cursor=pointer]:
+                      - generic [ref=e252]: Move down
+                    - 'button "Toggle panel: Site Health Status" [expanded] [ref=e254] [cursor=pointer]':
+                      - generic [ref=e255]: "Toggle panel: Site Health Status"
+                - generic [ref=e258]:
+                  - generic [ref=e259]:
+                    - img [ref=e261]
+                    - generic [ref=e264]: Good
+                  - generic [ref=e265]:
+                    - paragraph [ref=e266]: Your site’s health is looking good, but there are still some things you can do to improve its performance and security.
+                    - paragraph [ref=e267]:
+                      - text: Take a look at the
+                      - strong [ref=e268]: 6 items
+                      - text: on the
+                      - link "Site Health screen" [ref=e269] [cursor=pointer]:
+                        - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/site-health.php
+                      - text: .
+              - generic [ref=e270]:
+                - generic [ref=e271]:
+                  - heading "At a Glance" [level=2] [ref=e272]
+                  - generic [ref=e273]:
+                    - button "Move up" [ref=e274] [cursor=pointer]:
+                      - generic [ref=e275]: Move up
+                    - button "Move down" [ref=e277] [cursor=pointer]:
+                      - generic [ref=e278]: Move down
+                    - 'button "Toggle panel: At a Glance" [expanded] [ref=e280] [cursor=pointer]':
+                      - generic [ref=e281]: "Toggle panel: At a Glance"
+                - generic [ref=e284]:
+                  - list [ref=e285]:
+                    - listitem [ref=e286]:
+                      - link "1 Published page" [ref=e287] [cursor=pointer]:
+                        - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/edit.php?post_status=publish&post_type=page
+                  - paragraph [ref=e288]:
+                    - generic [ref=e289]:
+                      - text: WordPress 7.0 running
+                      - link "Twenty Twenty-Four" [ref=e290] [cursor=pointer]:
+                        - /url: themes.php
+                      - text: theme.
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - heading "Activity" [level=2] [ref=e293]
+                  - generic [ref=e294]:
+                    - button "Move up" [ref=e295] [cursor=pointer]:
+                      - generic [ref=e296]: Move up
+                    - button "Move down" [ref=e298] [cursor=pointer]:
+                      - generic [ref=e299]: Move down
+                    - 'button "Toggle panel: Activity" [expanded] [ref=e301] [cursor=pointer]':
+                      - generic [ref=e302]: "Toggle panel: Activity"
+                - paragraph [ref=e307]: No activity yet!
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - heading "Fluent SMTP" [level=2] [ref=e310]
+                  - generic [ref=e311]:
+                    - button "Move up" [ref=e312] [cursor=pointer]:
+                      - generic [ref=e313]: Move up
+                    - button "Move down" [ref=e315] [cursor=pointer]:
+                      - generic [ref=e316]: Move down
+                    - 'button "Toggle panel: Fluent SMTP" [expanded] [ref=e318] [cursor=pointer]':
+                      - generic [ref=e319]: "Toggle panel: Fluent SMTP"
+                - heading "Loading data..." [level=3] [ref=e323]
+            - generic [ref=e325]:
+              - generic [ref=e326]:
+                - generic [ref=e327]:
+                  - heading "Quick Draft" [level=2] [ref=e328]:
+                    - generic [ref=e329]: Quick Draft
+                  - generic [ref=e330]:
+                    - button "Move up" [ref=e331] [cursor=pointer]:
+                      - generic [ref=e332]: Move up
+                    - button "Move down" [ref=e334] [cursor=pointer]:
+                      - generic [ref=e335]: Move down
+                    - 'button "Toggle panel: Quick Draft" [expanded] [ref=e337] [cursor=pointer]':
+                      - generic [ref=e338]:
+                        - text: "Toggle panel:"
+                        - generic [ref=e339]: Quick Draft
+                - generic [ref=e342]:
+                  - generic [ref=e343]:
+                    - generic [ref=e344]: Title
+                    - textbox "Title" [ref=e345]
+                  - generic [ref=e346]:
+                    - generic [ref=e347]: Content
+                    - textbox "Content" [ref=e348]:
+                      - /placeholder: What’s on your mind?
+                  - paragraph [ref=e349]:
+                    - button "Save Draft" [ref=e350] [cursor=pointer]
+              - generic [ref=e351]:
+                - generic [ref=e352]:
+                  - heading "WordPress Events and News" [level=2] [ref=e353]
+                  - generic [ref=e354]:
+                    - button "Move up" [ref=e355] [cursor=pointer]:
+                      - generic [ref=e356]: Move up
+                    - button "Move down" [ref=e358] [cursor=pointer]:
+                      - generic [ref=e359]: Move down
+                    - 'button "Toggle panel: WordPress Events and News" [expanded] [ref=e361] [cursor=pointer]':
+                      - generic [ref=e362]: "Toggle panel: WordPress Events and News"
+                - generic [ref=e364]:
+                  - generic [ref=e365]:
+                    - paragraph [ref=e367]:
+                      - text: Attend an upcoming event near you.
+                      - button "Select location" [ref=e368] [cursor=pointer]:
+                        - generic [ref=e369]: 
+                        - text: Select location
+                    - list [ref=e370]:
+                      - listitem [ref=e371]:
+                        - generic [ref=e374]:
+                          - link "WordPress Campus Connect Hajee Mohammad Danesh Science and Technology University (HSTU)" [ref=e375] [cursor=pointer]:
+                            - /url: https://events.wordpress.org/campusconnect/2026/hstu/
+                          - text: WordCamp
+                          - text: Dinajpur, Bangladesh
+                        - generic [ref=e378]: Thursday, Jun 11, 2026
+                      - listitem [ref=e379]:
+                        - generic [ref=e382]:
+                          - link "WordCamp Rajshahi 2026" [ref=e383] [cursor=pointer]:
+                            - /url: https://rajshahi.wordcamp.org/2026/
+                          - text: WordCamp
+                          - text: Rajshahi,Bangladesh
+                        - generic [ref=e386]: July 2–3, 2026
+                      - listitem [ref=e387]:
+                        - text: Want more events?
+                        - link "Help organize the next one" [ref=e388] [cursor=pointer]:
+                          - /url: https://make.wordpress.org/community/organize-event-landing-page/
+                        - text: "!"
+                  - generic [ref=e389]:
+                    - list [ref=e391]:
+                      - listitem [ref=e392]:
+                        - link "WP23" [ref=e393] [cursor=pointer]:
+                          - /url: https://wordpress.org/news/2026/05/wp23/
+                      - listitem [ref=e394]:
+                        - link "Looking Ahead to WordCamp Europe 2026" [ref=e395] [cursor=pointer]:
+                          - /url: https://wordpress.org/news/2026/05/wceu-2026-sessions/
+                    - list [ref=e397]:
+                      - listitem [ref=e398]:
+                        - 'link "Open Channels FM: How to Make Your Case Studies Stand Out: The Power of Storytelling" [ref=e399] [cursor=pointer]':
+                          - /url: https://openchannels.fm/how-to-make-your-case-studies-stand-out-the-power-of-storytelling/
+                      - listitem [ref=e400]:
+                        - 'link "Matt: Bee Champion" [ref=e401] [cursor=pointer]':
+                          - /url: https://ma.tt/2026/06/bee-champion/
+                      - listitem [ref=e402]:
+                        - 'link "Akismet: Introducing the official Akismet Drupal module" [ref=e403] [cursor=pointer]':
+                          - /url: https://akismet.com/blog/introducing-the-official-akismet-drupal-module/
+                  - paragraph [ref=e404]:
+                    - link "Meetups (opens in a new tab)" [ref=e405] [cursor=pointer]:
+                      - /url: https://make.wordpress.org/community/meetups-landing-page
+                      - text: Meetups
+                      - generic [ref=e406]: (opens in a new tab)
+                      - generic [ref=e407]: 
+                    - text: "|"
+                    - link "WordCamps (opens in a new tab)" [ref=e408] [cursor=pointer]:
+                      - /url: https://central.wordcamp.org/schedule/
+                      - text: WordCamps
+                      - generic [ref=e409]: (opens in a new tab)
+                      - generic [ref=e410]: 
+                    - text: "|"
+                    - link "News (opens in a new tab)" [ref=e411] [cursor=pointer]:
+                      - /url: https://wordpress.org/news/
+                      - text: News
+                      - generic [ref=e412]: (opens in a new tab)
+                      - generic [ref=e413]: 
+            - generic [ref=e415]: Drag boxes here
+            - generic [ref=e417]: Drag boxes here
+  - contentinfo [ref=e418]:
+    - paragraph [ref=e419]:
+      - generic [ref=e420]:
+        - text: Thanks for creating with
+        - link "WordPress" [ref=e421] [cursor=pointer]:
+          - /url: https://wordpress.org/
+        - text: and hosting with
+        - link "Kinsta" [ref=e422] [cursor=pointer]:
+          - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+    - paragraph [ref=e423]: Version 7.0

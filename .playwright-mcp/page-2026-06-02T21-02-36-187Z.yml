@@ -1,0 +1,369 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Main menu":
+      - link "Skip to main content" [ref=e74490] [cursor=pointer]:
+        - /url: "#wpbody-content"
+      - link "Skip to toolbar" [ref=e74491] [cursor=pointer]:
+        - /url: "#wp-toolbar"
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Dashboard" [ref=e74492] [cursor=pointer]:
+            - /url: index.php
+            - generic [ref=e10]: 
+            - generic [ref=e11]: Dashboard
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Home" [ref=e74493] [cursor=pointer]:
+                - /url: index.php
+            - listitem [ref=e15]:
+              - link "Updates 7" [ref=e74494] [cursor=pointer]:
+                - /url: update-core.php
+                - text: Updates
+                - generic [ref=e17]: "7"
+        - listitem [ref=e18]:
+          - link "Kinsta Cache" [ref=e74495] [cursor=pointer]:
+            - /url: admin.php?page=kinsta-tools
+            - generic [ref=e20]: 
+            - generic [ref=e21]: Kinsta Cache
+        - listitem [ref=e22]
+        - listitem [ref=e24]:
+          - link "Posts" [ref=e74496] [cursor=pointer]:
+            - /url: edit.php
+            - generic [ref=e26]: 
+            - generic [ref=e27]: Posts
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - link "All Posts" [ref=e74497] [cursor=pointer]:
+                - /url: edit.php
+            - listitem [ref=e31]:
+              - link "Add Post" [ref=e74498] [cursor=pointer]:
+                - /url: post-new.php
+            - listitem [ref=e33]:
+              - link "Categories" [ref=e74499] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=category
+            - listitem [ref=e35]:
+              - link "Tags" [ref=e74500] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=post_tag
+        - listitem [ref=e37]:
+          - link "Media" [ref=e74501] [cursor=pointer]:
+            - /url: upload.php
+            - generic [ref=e39]: 
+            - generic [ref=e40]: Media
+          - list [ref=e41]:
+            - listitem [ref=e42]:
+              - link "Library" [ref=e74502] [cursor=pointer]:
+                - /url: upload.php
+            - listitem [ref=e44]:
+              - link "Add Media File" [ref=e74503] [cursor=pointer]:
+                - /url: media-new.php
+        - listitem [ref=e46]:
+          - link "Pages" [ref=e74504] [cursor=pointer]:
+            - /url: edit.php?post_type=page
+            - generic [ref=e48]: 
+            - generic [ref=e49]: Pages
+          - list [ref=e50]:
+            - listitem [ref=e51]:
+              - link "All Pages" [ref=e74505] [cursor=pointer]:
+                - /url: edit.php?post_type=page
+            - listitem [ref=e53]:
+              - link "Add Page" [ref=e74506] [cursor=pointer]:
+                - /url: post-new.php?post_type=page
+        - listitem [ref=e55]:
+          - link "Comments" [ref=e74507] [cursor=pointer]:
+            - /url: edit-comments.php
+            - generic [ref=e57]: 
+            - generic [ref=e58]: Comments
+        - listitem [ref=e59]:
+          - link "Partners" [ref=e74508] [cursor=pointer]:
+            - /url: edit.php?post_type=partner
+            - generic [ref=e61]: 
+            - generic [ref=e62]: Partners
+          - list [ref=e63]:
+            - listitem [ref=e64]:
+              - link "All Partners" [ref=e74509] [cursor=pointer]:
+                - /url: edit.php?post_type=partner
+            - listitem [ref=e66]:
+              - link "Add New Partner" [ref=e74510] [cursor=pointer]:
+                - /url: post-new.php?post_type=partner
+        - listitem [ref=e68]:
+          - link "Products" [ref=e74511] [cursor=pointer]:
+            - /url: edit.php?post_type=product
+            - generic [ref=e70]: 
+            - generic [ref=e71]: Products
+          - list [ref=e72]:
+            - listitem [ref=e73]:
+              - link "All Products" [ref=e74512] [cursor=pointer]:
+                - /url: edit.php?post_type=product
+            - listitem [ref=e75]:
+              - link "Add New Product" [ref=e74513] [cursor=pointer]:
+                - /url: post-new.php?post_type=product
+        - listitem [ref=e77]:
+          - link "Connector Hub" [ref=e74514] [cursor=pointer]:
+            - /url: admin.php?page=connector-hub#/dashboard
+            - generic [ref=e79]: 
+            - generic [ref=e80]: Connector Hub
+          - list [ref=e81]:
+            - listitem [ref=e82]:
+              - link "Dashboard" [ref=e74515] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/dashboard
+            - listitem [ref=e84]:
+              - link "Partners" [ref=e74516] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/partners
+            - listitem [ref=e86]:
+              - link "Products" [ref=e74517] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/products
+            - listitem [ref=e88]:
+              - link "Attributes" [ref=e74518] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/attributes
+            - listitem [ref=e90]:
+              - link "Settings" [ref=e74519] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/settings
+            - listitem [ref=e92]:
+              - link "Logs" [ref=e74520] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/logs
+        - listitem [ref=e94]
+        - listitem [ref=e96]:
+          - link "Appearance" [ref=e74521] [cursor=pointer]:
+            - /url: themes.php
+            - generic [ref=e98]: 
+            - generic [ref=e99]: Appearance
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - link "Themes 4" [ref=e74522] [cursor=pointer]:
+                - /url: themes.php
+                - text: Themes
+                - generic [ref=e103]: "4"
+            - listitem [ref=e104]:
+              - link "Editor" [ref=e74523] [cursor=pointer]:
+                - /url: site-editor.php
+            - listitem [ref=e106]:
+              - link "Fonts" [ref=e74524] [cursor=pointer]:
+                - /url: font-library.php
+        - listitem [ref=e108]:
+          - link "Plugins 3" [ref=e74525] [cursor=pointer]:
+            - /url: plugins.php
+            - generic [ref=e110]: 
+            - generic [ref=e111]:
+              - text: Plugins
+              - generic [ref=e112]: "3"
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - link "Installed Plugins" [ref=e74526] [cursor=pointer]:
+                - /url: plugins.php
+            - listitem [ref=e116]:
+              - link "Add Plugin" [ref=e74527] [cursor=pointer]:
+                - /url: plugin-install.php
+        - listitem [ref=e118]:
+          - link "Users" [ref=e74528] [cursor=pointer]:
+            - /url: users.php
+            - generic [ref=e120]: 
+            - generic [ref=e121]: Users
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - link "All Users" [ref=e74529] [cursor=pointer]:
+                - /url: users.php
+            - listitem [ref=e125]:
+              - link "Add User" [ref=e74530] [cursor=pointer]:
+                - /url: user-new.php
+            - listitem [ref=e127]:
+              - link "Profile" [ref=e74531] [cursor=pointer]:
+                - /url: profile.php
+        - listitem [ref=e129]:
+          - link "Tools" [ref=e74532] [cursor=pointer]:
+            - /url: tools.php
+            - generic [ref=e131]: 
+            - generic [ref=e132]: Tools
+          - list [ref=e133]:
+            - listitem [ref=e134]:
+              - link "Available Tools" [ref=e74533] [cursor=pointer]:
+                - /url: tools.php
+            - listitem [ref=e136]:
+              - link "Import" [ref=e74534] [cursor=pointer]:
+                - /url: import.php
+            - listitem [ref=e138]:
+              - link "Export" [ref=e74535] [cursor=pointer]:
+                - /url: export.php
+            - listitem [ref=e140]:
+              - link "Site Health" [ref=e74536] [cursor=pointer]:
+                - /url: site-health.php
+            - listitem [ref=e142]:
+              - link "Export Personal Data" [ref=e74537] [cursor=pointer]:
+                - /url: export-personal-data.php
+            - listitem [ref=e144]:
+              - link "Erase Personal Data" [ref=e74538] [cursor=pointer]:
+                - /url: erase-personal-data.php
+            - listitem [ref=e146]:
+              - link "Theme File Editor" [ref=e74539] [cursor=pointer]:
+                - /url: theme-editor.php
+            - listitem [ref=e148]:
+              - link "Plugin File Editor" [ref=e74540] [cursor=pointer]:
+                - /url: plugin-editor.php
+        - listitem [ref=e150]:
+          - link "Settings" [ref=e74541] [cursor=pointer]:
+            - /url: options-general.php
+            - generic [ref=e152]: 
+            - generic [ref=e153]: Settings
+          - list [ref=e154]:
+            - listitem [ref=e155]:
+              - link "General" [ref=e74542] [cursor=pointer]:
+                - /url: options-general.php
+            - listitem [ref=e157]:
+              - link "Connectors" [ref=e74543] [cursor=pointer]:
+                - /url: options-connectors.php
+            - listitem [ref=e159]:
+              - link "Writing" [ref=e74544] [cursor=pointer]:
+                - /url: options-writing.php
+            - listitem [ref=e161]:
+              - link "Reading" [ref=e74545] [cursor=pointer]:
+                - /url: options-reading.php
+            - listitem [ref=e163]:
+              - link "Discussion" [ref=e74546] [cursor=pointer]:
+                - /url: options-discussion.php
+            - listitem [ref=e165]:
+              - link "Media" [ref=e74547] [cursor=pointer]:
+                - /url: options-media.php
+            - listitem [ref=e167]:
+              - link "Permalinks" [ref=e74548] [cursor=pointer]:
+                - /url: options-permalink.php
+            - listitem [ref=e169]:
+              - link "Privacy" [ref=e74549] [cursor=pointer]:
+                - /url: options-privacy.php
+            - listitem [ref=e171]:
+              - link "FluentSMTP" [ref=e74550] [cursor=pointer]:
+                - /url: options-general.php?page=fluent-mail
+        - listitem [ref=e173]:
+          - link "ACF" [ref=e74551] [cursor=pointer]:
+            - /url: edit.php?post_type=acf-field-group
+            - generic [ref=e175]: 
+            - generic [ref=e176]: ACF
+          - list [ref=e177]:
+            - listitem [ref=e178]:
+              - link "Field Groups" [ref=e74552] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group
+            - listitem [ref=e180]:
+              - link "Post Types" [ref=e74553] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-post-type
+            - listitem [ref=e182]:
+              - link "Taxonomies" [ref=e74554] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-taxonomy
+            - listitem [ref=e184]:
+              - link "Options Pages" [ref=e74555] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-ui-options-page
+            - listitem [ref=e186]:
+              - link "Tools" [ref=e74556] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-tools
+            - listitem [ref=e188]:
+              - link "Updates" [ref=e74557] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+        - listitem [ref=e190]:
+          - button "Collapse Main menu" [expanded] [ref=e74558] [cursor=pointer]:
+            - generic [ref=e193]: Collapse Menu
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - navigation "Toolbar":
+          - menu:
+            - group [ref=e196]:
+              - menuitem "About WordPress" [ref=e74559] [cursor=pointer]:
+                - generic [ref=e199]: About WordPress
+            - group [ref=e200]:
+              - menuitem "Hoodsly Connector Platform" [ref=e74560] [cursor=pointer]
+            - group [ref=e202]:
+              - menuitem "7 updates available" [ref=e74561] [cursor=pointer]:
+                - generic [ref=e205]: "7"
+                - generic [ref=e206]: 7 updates available
+            - group [ref=e207]:
+              - menuitem "Ctrl+K Open command palette" [ref=e74562] [cursor=pointer]:
+                - generic [ref=e210]:
+                  - text: Ctrl+K
+                  - generic [ref=e211]: Open command palette
+            - group [ref=e212]:
+              - menuitem "0 Comments in moderation" [ref=e74563] [cursor=pointer]:
+                - generic [ref=e215]: "0"
+                - generic [ref=e216]: 0 Comments in moderation
+            - group [ref=e217]:
+              - menuitem "New" [ref=e74564] [cursor=pointer]:
+                - generic [ref=e220]: New
+          - menu [ref=e221]:
+            - group [ref=e222]:
+              - menuitem "Clear Caches" [ref=e74565]
+            - group [ref=e224]:
+              - menuitem "Howdy, Rakibul Islam" [ref=e74566] [cursor=pointer]
+      - main [ref=e226]:
+        - generic [ref=e229]:
+          - generic [ref=e232]:
+            - link "Connector Hub" [ref=e74567] [cursor=pointer]:
+              - /url: "#/dashboard"
+            - generic [ref=e236]:
+              - link "Dashboard" [ref=e74568] [cursor=pointer]:
+                - /url: "#/dashboard"
+                - img [ref=e238]
+                - generic [ref=e240]: Dashboard
+              - link "Partners" [ref=e74569] [cursor=pointer]:
+                - /url: "#/partners"
+                - img [ref=e242]
+                - generic [ref=e244]: Partners
+              - link "Products" [ref=e74570] [cursor=pointer]:
+                - /url: "#/products"
+                - img [ref=e246]
+                - generic [ref=e248]: Products
+              - link "Attributes" [ref=e74571] [cursor=pointer]:
+                - /url: "#/attributes"
+                - img [ref=e250]
+                - generic [ref=e252]: Attributes
+              - link "Settings" [ref=e74572] [cursor=pointer]:
+                - /url: "#/settings"
+                - img [ref=e254]
+                - generic [ref=e257]: Settings
+              - link "Logs" [ref=e74573] [cursor=pointer]:
+                - /url: "#/logs"
+                - img [ref=e259]
+                - generic [ref=e261]: Logs
+          - generic [ref=e74801]:
+            - generic [ref=e74804]:
+              - heading "Logs" [level=1] [ref=e74805]
+              - paragraph [ref=e74806]: Monitor sync activity and debug partner order payloads
+            - generic [ref=e74807]:
+              - generic [ref=e74808]:
+                - button "Sync Logs" [ref=e74809] [cursor=pointer]
+                - button "Partner Order Log" [active] [ref=e74810] [cursor=pointer]
+              - generic [ref=e75346]:
+                - generic [ref=e75347]:
+                  - heading "Fetch & Analyse Order Payload" [level=3] [ref=e75348]
+                  - paragraph [ref=e75349]: Select a partner and enter an order ID to inspect the live payload and validate SKU mappings.
+                - generic [ref=e75351]:
+                  - generic [ref=e75352]:
+                    - generic [ref=e75353]: Partner
+                    - generic [ref=e75354]:
+                      - log [ref=e75356]
+                      - generic [ref=e75357]:
+                        - generic [ref=e75358] [cursor=pointer]:
+                          - generic [ref=e75359]: Select Partner
+                          - combobox [ref=e75361]
+                        - img [ref=e75365]
+                  - generic [ref=e75367]:
+                    - generic [ref=e75368]: Order ID
+                    - textbox "e.g. CON5047-493" [ref=e75370]
+                  - button "Fetch Order Data" [ref=e75372] [cursor=pointer]:
+                    - img [ref=e75373]
+                    - text: Fetch Order Data
+                - generic [ref=e75375]:
+                  - img [ref=e75377]
+                  - paragraph [ref=e75379]: Enter an order ID above and click Fetch Order Data.
+    - contentinfo [ref=e380]:
+      - paragraph [ref=e381]:
+        - generic [ref=e382]:
+          - text: Thanks for creating with
+          - link "WordPress" [ref=e74641] [cursor=pointer]:
+            - /url: https://wordpress.org/
+          - text: and hosting with
+          - link "Kinsta" [ref=e74642] [cursor=pointer]:
+            - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+      - paragraph [ref=e385]: Version 7.0
+  - status [ref=e12215]
+  - status [ref=e12216]
+  - status [ref=e37045]
+  - status [ref=e37106]
+  - status [ref=e38122]
+  - status [ref=e38123]
+  - status [ref=e39543]
+  - status [ref=e39544]

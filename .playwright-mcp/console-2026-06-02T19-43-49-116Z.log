@@ -1,0 +1,3 @@
+[    1218ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://hoodslypartnersconnector3.kinsta.cloud/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1:1
+[    1237ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://hoodslypartnersconnector3.kinsta.cloud/favicon.ico:0
+[   24738ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/load-scripts.php?c=1&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils&ver=7.0:4

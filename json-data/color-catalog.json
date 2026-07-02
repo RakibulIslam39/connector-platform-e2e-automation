@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "description": "Partner color catalog from Connector Platform API — used for order placement and SKU validation",
+    "source": "GET /wp-json/connector-platform/v1/attributes-mapping → PartnerColors key",
+    "lastUpdated": "2026-05-22"
+  },
+  "baseFinishes": [
+    {
+      "value": "Raw / Unfinished",
+      "sku": "RAW",
+      "type": "base",
+      "description": "Unfinished wood — customer paints or stains themselves",
+      "leadTimeDays": "25-30"
+    },
+    {
+      "value": "Primed / Paint Ready",
+      "sku": "PRM",
+      "type": "base",
+      "description": "Primed and ready for customer to paint",
+      "leadTimeDays": "25-30"
+    }
+  ],
+  "partnerColorGroups": {
+    "USCD": {
+      "partnerName": "USCD",
+      "type": "painted",
+      "colors": [
+        { "value": "Shaker Antique White:USCD",   "sku": "USCDSAW"  },
+        { "value": "Shaker White:USCD",            "sku": "USCDSHW"  },
+        { "value": "Casselberry Antique White:USCD","sku": "USCDCAW"  },
+        { "value": "Edgeline White:USCD",          "sku": "USCDELW"  },
+        { "value": "Oxford Sage:USCD",             "sku": "USCDOFS"  },
+        { "value": "Oxford White:USCD",            "sku": "USCDOFW"  },
+        { "value": "Shaker Black:USCD",            "sku": "USCDSHB"  },
+        { "value": "Shaker Dove:USCD",             "sku": "USCDSHD"  },
+        { "value": "Shaker Gray:USCD",             "sku": "USCDSHG"  },
+        { "value": "Shaker Navy:USCD",             "sku": "USCDSHN"  },
+        { "value": "Torrance Dove:USCD",           "sku": "USCDTOD"  },
+        { "value": "Torrance White:USCD",          "sku": "USCDTOW"  },
+        { "value": "York Antique White:USCD",      "sku": "USCDYAW"  },
+        { "value": "Casselberry Saddle:USCD",      "sku": "USCDCAS"  },
+        { "value": "Oxford Mist:USCD",             "sku": "USCDOFM"  },
+        { "value": "Oxford Toffee:USCD",           "sku": "USCDOFT"  },
+        { "value": "Shaker Cinder:USCD",           "sku": "USCDSHC"  },
+        { "value": "Shaker Honey:USCD",            "sku": "USCDSHH"  },
+        { "value": "Verona Midnight Navy:USCD",    "sku": "USCDVMN"  },
+        { "value": "Verona Pure Blanc:USCD",       "sku": "USCDVPB"  },
+        { "value": "Shaker Ivy:USCD",              "sku": "USCDSHI"  }
+      ]
+    },
+    "Hoodsly": {
+      "partnerName": "Hoodsly",
+      "type": "mixed",
+      "colors": [
+        { "value": "Blue:Hoodsly",              "sku": "HOOBLU00001",  "finish": "painted" },
+        { "value": "Black:Hoodsly",             "sku": "HOOBLA00001",  "finish": "painted" },
+        { "value": "Antique White:Hoodsly",     "sku": "HOOANT00001",  "finish": "painted" },
+        { "value": "Light Gray:Hoodsly",        "sku": "HOOLIG00001",  "finish": "painted" },
+        { "value": "Clover Green:Hoodsly",      "sku": "HOOCLO00001",  "finish": "painted" },
+        { "value": "Espresso Stain:Hoodsly",    "sku": "HOOESP00001",  "finish": "stained" },
+        { "value": "Chocolate Stain:Hoodsly",   "sku": "HOOCHO00001",  "finish": "stained" },
+        { "value": "Saddle Stain:Hoodsly",      "sku": "HOOSAD00001",  "finish": "stained" },
+        { "value": "American Walnut Stain:Hoodsly","sku": "HOOAME00001","finish": "stained" },
+        { "value": "Stained Gray:Hoodsly",      "sku": "HOOSGRY00001", "finish": "stained" },
+        { "value": "Natural Stain:Hoodsly",     "sku": "HOONAT00001",  "finish": "stained" },
+        { "value": "Latte Stain:Hoodsly",       "sku": "HOOLAT00001",  "finish": "stained" }
+      ]
+    },
+    "TA Cabinetry": {
+      "partnerName": "TA Cabinetry",
+      "type": "mixed",
+      "colors": [
+        { "value": "Beige Gray:TA Cabinetry",           "sku": "TABEI00001",  "finish": "painted" },
+        { "value": "Charcoal Black:TA Cabinetry",       "sku": "TACHA00001",  "finish": "painted" },
+        { "value": "Dove White:TA Cabinetry",           "sku": "TADOV00001",  "finish": "painted" },
+        { "value": "Gray:TA Cabinetry",                 "sku": "TAGRA00001",  "finish": "painted" },
+        { "value": "Tuscan Green:TA Cabinetry",         "sku": "TATUS00001",  "finish": "painted" },
+        { "value": "White:TA Cabinetry",                "sku": "TAWHIT00001", "finish": "painted" },
+        { "value": "Blue:TA Cabinetry",                 "sku": "TABLU00001",  "finish": "painted" },
+        { "value": "Doric Charcoal Black:TA Cabinetry", "sku": "TADOR00001",  "finish": "painted" },
+        { "value": "Oak:TA Cabinetry",                  "sku": "TAOAK00001",  "finish": "stained" },
+        { "value": "Slate Brown:TA Cabinetry",          "sku": "TASLA00001",  "finish": "painted" },
+        { "value": "Karamel:TA Cabinetry",              "sku": "TAKAR00001",  "finish": "stained" },
+        { "value": "White Oak:TA Cabinetry",            "sku": "TAWHI00001",  "finish": "stained" }
+      ]
+    },
+    "Jarlin": {
+      "partnerName": "Jarlin",
+      "type": "painted",
+      "colors": [
+        { "value": "Sterling Gray:Jarlin",      "sku": "JARSTE00001" },
+        { "value": "Weston Shaker:Jarlin",      "sku": "JARWES00001" },
+        { "value": "Toffee Shaker:Jarlin",      "sku": "JARTOF00001" },
+        { "value": "Soda White:Jarlin",         "sku": "JARSOD00001" },
+        { "value": "Smoky Gray:Jarlin",         "sku": "JARSMO00001" },
+        { "value": "Perla:Jarlin",              "sku": "JARPER00001" },
+        { "value": "Ebony Shaker:Jarlin",       "sku": "JAREBO00001" },
+        { "value": "Charlton:Jarlin",           "sku": "JARCHA00001" },
+        { "value": "New Port:Jarlin",           "sku": "JARNEW00001" },
+        { "value": "Aria Blue:Jarlin",          "sku": "JARARI00001" },
+        { "value": "Avalon:Jarlin",             "sku": "JARAVA00001" },
+        { "value": "Dove White Shaker:Jarlin",  "sku": "JARDOV00001" }
+      ]
+    },
+    "Jim Bishop": {
+      "partnerName": "Jim Bishop",
+      "type": "painted",
+      "colors": [
+        { "value": "Alabaster Paint:Jim Bishop", "sku": "JBALP" },
+        { "value": "Black Paint:Jim Bishop",     "sku": "JBBP" },
+        { "value": "Gale Force Paint:Jim Bishop","sku": "JBGFP" },
+        { "value": "Iron Paint:Jim Bishop",      "sku": "JBIRP" }
+      ]
+    },
+    "Homemark": {
+      "partnerName": "Homemark",
+      "type": "painted",
+      "colors": [
+        { "value": "Ash Paint:Homemark",       "sku": "HOMASP" },
+        { "value": "Charcoal Paint:Homemark",  "sku": "HOMCHP" },
+        { "value": "Cloud Paint:Homemark",     "sku": "HOMCLP" },
+        { "value": "Everglade Paint:Homemark", "sku": "HOMEVP" },
+        { "value": "Gray Paint:Homemark",      "sku": "HOMGRP" },
+        { "value": "Keystone Paint:Homemark",  "sku": "HOMKYP" },
+        { "value": "Navy Paint:Homemark",      "sku": "HOMNVP" },
+        { "value": "Shale Paint:Homemark",     "sku": "HOMSHP" },
+        { "value": "White Paint:Homemark",     "sku": "HOMWHP" }
+      ]
+    },
+    "JSI": {
+      "partnerName": "JSI",
+      "type": "mixed",
+      "colors": [
+        { "value": "Amesbury Mist Slab:JSI",    "sku": "JSIAMS", "finish": "painted" },
+        { "value": "Amesbury White Slab:JSI",   "sku": "JSIAWS", "finish": "painted" },
+        { "value": "Essex Castle:JSI",          "sku": "JSIESC", "finish": "painted" },
+        { "value": "Essex Lunar:JSI",           "sku": "JSIESL", "finish": "painted" },
+        { "value": "Essex White:JSI",           "sku": "JSIESW", "finish": "painted" },
+        { "value": "Essex Norwich:JSI",         "sku": "JSIESN", "finish": "painted" },
+        { "value": "Essex Truffle:JSI",         "sku": "JSIEST", "finish": "stained" },
+        { "value": "Trenton Recessed:JSI",      "sku": "JSITRR", "finish": "painted" },
+        { "value": "Upton Brown Recessed:JSI",  "sku": "JSIUBR", "finish": "stained" },
+        { "value": "Yarmouth Raised:JSI",       "sku": "JSIYAR", "finish": "painted" }
+      ]
+    }
+  },
+  "testColorFixtures": {
+    "simpleRaw":     { "value": "Raw / Unfinished",         "sku": "RAW",     "note": "Default — no finishing needed" },
+    "simplePrimed":  { "value": "Primed / Paint Ready",     "sku": "PRM",     "note": "Ready-to-paint base" },
+    "uscdWhite":     { "value": "Shaker White:USCD",        "sku": "USCDSHW", "note": "Most common USCD color" },
+    "hoodslyWhite":  { "value": "Antique White:Hoodsly",    "sku": "HOOANT00001","note": "Popular Hoodsly color" },
+    "taWhite":       { "value": "Dove White:TA Cabinetry",  "sku": "TADOV00001","note": "Common TA Cabinetry white" },
+    "jarlinGray":    { "value": "Sterling Gray:Jarlin",     "sku": "JARSTE00001","note": "Popular Jarlin neutral" }
+  }
+}

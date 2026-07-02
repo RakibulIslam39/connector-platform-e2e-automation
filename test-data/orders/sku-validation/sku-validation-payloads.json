@@ -1,0 +1,3392 @@
+{
+  "_meta": {
+    "purpose": "SKU & attribute validation payloads — one product per category, all attribute types covered",
+    "platform_type": "wp",
+    "format_version": "v2 — matches ManualQAPartner real payload format (is_partner string, sku/sku_gen as {key,value} objects, line_items wrapper, estimated_shipping_date)",
+    "total_payloads": 57,
+    "sku_formula": "{product_base}-{size}-{color}[-ID*-RSH][-RH*][-CLS|INC][-CH*][-SB]",
+    "sku_gen_formula": "{product_without_VEN}-{color}-{size}[-modifiers] (lowercase for key, uppercase for value)",
+    "segment_order": ["product_base_sku", "size_sku", "color_sku", "increase_depth_sku", "reduce_height_sku", "crown_molding_sku", "extend_chimney_sku", "solid_bottom_sku"],
+    "categories": {
+      "wood-hoods": "Payloads 1–39 — VEN-CCX for all modifier + color tests; VEN-MCX, VEN-ANBS, VEN-DBC, VEN-BNT for product-type coverage",
+      "quick-shipping": "Payloads 15–17 (per-product default colors) + 45–51 (VEN-QSPCCX × all 7 partner color groups)",
+      "floating-shelves": "Payloads 18–20 + 40–44 (all 7 SelectWidth sizes) + 52–57 (VEN-FLS FSW30 × all 6 missing color groups)"
+    },
+    "attribute_coverage": {
+      "ReduceHeight": "RH1–RH6 all covered (021–025 + 006)",
+      "IncreaseDepth": "ID19-RSH, ID20-RSH, ID22-RSH covered (007, 026, 027); ID18-RSH is the default/no-modifier state",
+      "CrownMolding": "MSCI, MGCI, INC, CLS all covered (028, 029, 008, 009)",
+      "ExtendChimney": "CH6, CH12, CH24 all covered (010, 030, 031)",
+      "AddSolidBottom": "SB covered (011)",
+      "Colors_base": "RAW, PRM covered (001, 002)",
+      "Colors_USCD": "USCDSHW (003, 017, 052), USCDSAW (014, 045) — Wood Hoods, Quick Ship, Floating Shelves",
+      "Colors_Hoodsly": "HOOANT00001 (004, 046), HOONAT00001 (020) — all 3 categories",
+      "Colors_TA_Cabinetry": "TADOV00001 (005, 047, 053) — all 3 categories",
+      "Colors_Jarlin": "JARSTE00001 (032, 048, 054) — all 3 categories",
+      "Colors_Jim_Bishop": "JBALP (033, 049, 055) — all 3 categories",
+      "Colors_Homemark": "HOMWHP (034, 050, 056) — all 3 categories",
+      "Colors_JSI": "JSIESW (035, 051, 057) — all 3 categories",
+      "SelectWidth": "FSW24–FSW42 all 7 values covered (018–019 + 040–044); color groups tested on FSW30 (052–057)"
+    },
+    "estimated_shipping_date_logic": {
+      "wood_hoods": "+14 days from order_date → 2026-06-29",
+      "quick_shipping": "same day (0 days) → 2026-06-15",
+      "floating_shelves": "+14 days from order_date → 2026-06-29"
+    },
+    "note": "Verify product_id values match the partner site WP IDs before running. IDs here are from the Connector Platform catalog."
+  },
+
+  "scenarios": [
+
+    {
+      "id": "SKU-VAL-001",
+      "category": "Wood Hoods",
+      "attribute_focus": "Smoke — RAW base finish, standard size (36x36)",
+      "description": "Minimal valid wood hood. Validates product_id, base RAW color segment, size segment, and product_cat slug.",
+      "expected_master_sku": "VEN-CCX-3636-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-001",
+        "order_id": "SKU-VAL-001",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636", "value": "CCX-RAW-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-002",
+      "category": "Wood Hoods",
+      "attribute_focus": "PRM (Primed / Paint Ready) base finish, size 30x36",
+      "description": "Validates the PRM color segment and a different size (3036). PRM is the second base finish alongside RAW.",
+      "expected_master_sku": "VEN-CCX-3036-PRM",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-002",
+        "order_id": "SKU-VAL-002",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-prm-3036", "value": "CCX-PRM-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-003",
+      "category": "Wood Hoods",
+      "attribute_focus": "USCD partner color — Shaker White (USCDSHW), 36x36",
+      "description": "Validates USCD partner-specific color SKU. USCD colors are prefixed USCD* and must exist in the PartnerColors attribute mapping.",
+      "expected_master_sku": "VEN-CCX-3636-USCDSHW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-003",
+        "order_id": "SKU-VAL-003",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-uscdshw-3636", "value": "CCX-USCDSHW-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-004",
+      "category": "Wood Hoods",
+      "attribute_focus": "Hoodsly branded color — Antique White (HOOANT00001), 48x36",
+      "description": "Validates a Hoodsly painted color SKU (long-form HOOANT00001 format) on a large size (4836).",
+      "expected_master_sku": "VEN-CCX-4836-HOOANT00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-004",
+        "order_id": "SKU-VAL-004",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-hooant00001-4836", "value": "CCX-HOOANT00001-4836" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-005",
+      "category": "Wood Hoods",
+      "attribute_focus": "TA Cabinetry partner color — Dove White (TADOV00001), 36x36",
+      "description": "Validates TA Cabinetry partner color SKU. Tests a third partner color group to ensure all color prefixes are registered.",
+      "expected_master_sku": "VEN-CCX-3636-TADOV00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-005",
+        "order_id": "SKU-VAL-005",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-tadov00001-3636", "value": "CCX-TADOV00001-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-006",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier — Reduce Height RH2 (Remove 2\")",
+      "description": "Validates the ReduceHeight modifier SKU (RH2) appended after color. Segment order: size → color → RH*.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-RH2",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-006",
+        "order_id": "SKU-VAL-006",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-rh2", "value": "CCX-RAW-3636-RH2" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-007",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier — Increase Depth ID19-RSH (to 19.3125\")",
+      "description": "Validates the IncreaseDepth modifier (ID19-RSH). Segment order: size → color → ID*-RSH (depth comes before reduce height).",
+      "expected_master_sku": "VEN-CCX-3636-PRM-ID19-RSH",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-007",
+        "order_id": "SKU-VAL-007",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-prm-3636-id19-rsh", "value": "CCX-PRM-3636-ID19-RSH" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-008",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier — Crown Molding Installed (INC)",
+      "description": "Validates Crown Molding Installed modifier (INC). Segment order: color → [ID] → [RH] → INC/CLS.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-INC",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-008",
+        "order_id": "SKU-VAL-008",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-inc", "value": "CCX-RAW-3636-INC" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-009",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier — Crown Molding Loose / Not Installed (CLS)",
+      "description": "Validates Crown Molding Loose modifier (CLS) as the alternative to INC. Both CLS and INC must be recognized.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-CLS",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-009",
+        "order_id": "SKU-VAL-009",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-cls", "value": "CCX-RAW-3636-CLS" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-010",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier — Extend Chimney 6\" (CH6)",
+      "description": "Validates Extend Chimney modifier (CH6). Segment order: color → [ID] → [RH] → [crown] → CH*.",
+      "expected_master_sku": "VEN-CCX-3036-RAW-CH6",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-010",
+        "order_id": "SKU-VAL-010",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3036-ch6", "value": "CCX-RAW-3036-CH6" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-011",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier — Add Solid Bottom (SB)",
+      "description": "Validates Solid Bottom modifier (SB). SB is the last segment in the SKU formula. Segment order: color → [all others] → SB.",
+      "expected_master_sku": "VEN-CCX-3636-PRM-SB",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-011",
+        "order_id": "SKU-VAL-011",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-prm-3636-sb", "value": "CCX-PRM-3636-SB" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-012",
+      "category": "Wood Hoods",
+      "attribute_focus": "ALL modifiers combined — full segment order validation",
+      "description": "Every modifier stacked in correct segment order: ID19-RSH → RH2 → INC → CH6 → SB. Tests that Hub parses each segment in order without confusion.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-ID19-RSH-RH2-INC-CH6-SB",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-012",
+        "order_id": "SKU-VAL-012",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-id19-rsh-rh2-inc-ch6-sb", "value": "CCX-RAW-3636-ID19-RSH-RH2-INC-CH6-SB" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-013",
+      "category": "Wood Hoods",
+      "attribute_focus": "Large size (48x36) — validates wider size segment",
+      "description": "Validates size segment 4836 on a wood hood. Confirms Hub maps wider sizes (48\") correctly without a SKU missing error.",
+      "expected_master_sku": "VEN-CCX-4836-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-013",
+        "order_id": "SKU-VAL-013",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-4836", "value": "CCX-RAW-4836" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-014",
+      "category": "Wood Hoods",
+      "attribute_focus": "USCD color + Increase Depth + Chimney Extension — multi-modifier with partner color",
+      "description": "USCD partner color combined with two modifiers (ID19-RSH, CH6). Tests that partner color SKUs work correctly in combination with modifiers.",
+      "expected_master_sku": "VEN-CCX-3636-USCDSAW-ID19-RSH-CH6",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-014",
+        "order_id": "SKU-VAL-014",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-uscdsaw-3636-id19-rsh-ch6", "value": "CCX-USCDSAW-3636-ID19-RSH-CH6" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-015",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — Curved Quick Ship, PRM, 30x36",
+      "description": "Validates the standard Curved Quick Ship product. Quick-ship products have fixed size/color and no modifiers. estimated_shipping_date is same day (0 day lead time).",
+      "expected_master_sku": "VEN-QSPCCX-3036-PRM",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-015",
+        "order_id": "SKU-VAL-015",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1850",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2025/05/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1850",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-prm-3036", "value": "QSPCCX-PRM-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-016",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCR — Curved With Strapping Quick Ship, RAW, 30x36",
+      "description": "Validates the Curved With Strapping Quick Ship variant (VEN-QSPCCR, id: 5070). Tests a different quick-ship product with RAW finish.",
+      "expected_master_sku": "VEN-QSPCCR-3036-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-016",
+        "order_id": "SKU-VAL-016",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1850",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "5070",
+                "sku": { "key": "ven-qspccr", "value": "VEN-QSPCCR" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2025/05/Raw-Cropped-2.jpg",
+                "product_name": "Curved With Strapping Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1850",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccr-raw-3036", "value": "QSPCCR-RAW-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-017",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCXWHT — Curved Shaker White Quick Ship (USCD), USCDSHW, 30x36",
+      "description": "Validates the USCD-specific Shaker White quick-ship product (VEN-QSPCCXWHT, id: 5072). Tests USCD color on a quick-ship product.",
+      "expected_master_sku": "VEN-QSPCCXWHT-3036-USCDSHW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-017",
+        "order_id": "SKU-VAL-017",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "1850",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "5072",
+                "sku": { "key": "ven-qspccxwht", "value": "VEN-QSPCCXWHT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2025/06/Curved-CCX-1.jpg",
+                "product_name": "Curved Shaker White Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1850",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccxwht-uscdshw-3036", "value": "QSPCCXWHT-USCDSHW-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-018",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW30, RAW",
+      "description": "Validates floating shelf with 30\" SelectWidth (FSW30) and RAW finish. Floating shelves use SelectWidth instead of Size — this is the most common shelf width.",
+      "expected_master_sku": "VEN-FLS-FSW30-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-018",
+        "order_id": "SKU-VAL-018",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "2",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "2",
+                "sku_gen": { "key": "fls-raw-fsw30", "value": "FLS-RAW-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-019",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW36, PRM",
+      "description": "Validates floating shelf with 36\" SelectWidth (FSW36) and PRM finish. Tests a different width segment to confirm FSW* variants are all registered in Hub.",
+      "expected_master_sku": "VEN-FLS-FSW36-PRM",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-019",
+        "order_id": "SKU-VAL-019",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "2",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "2",
+                "sku_gen": { "key": "fls-prm-fsw36", "value": "FLS-PRM-FSW36" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-020",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW30, Hoodsly Natural Stain (HOONAT00001)",
+      "description": "Validates floating shelf with a Hoodsly stained color (HOONAT00001). Tests that partner stain colors are valid for floating shelves, not just painted options.",
+      "expected_master_sku": "VEN-FLS-FSW30-HOONAT00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-020",
+        "order_id": "SKU-VAL-020",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": {
+          "name": "ManualQAPartner",
+          "email": "rakibul@hypemill.com",
+          "phone": "(986) 654-3310"
+        },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "(986) 654-3310"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "(986) 654-3310"
+          },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "2",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "2",
+                "sku_gen": { "key": "fls-hoonat00001-fsw30", "value": "FLS-HOONAT00001-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-021",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Reduce Height RH1 (Remove 1\")",
+      "description": "Validates the minimum ReduceHeight segment RH1. Completes single-step RH coverage.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-RH1",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-021",
+        "order_id": "SKU-VAL-021",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-rh1", "value": "CCX-RAW-3636-RH1" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-022",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Reduce Height RH3 (Remove 3\")",
+      "description": "Validates RH3 — mid-range ReduceHeight segment.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-RH3",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-022",
+        "order_id": "SKU-VAL-022",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-rh3", "value": "CCX-RAW-3636-RH3" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-023",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Reduce Height RH4 (Remove 4\")",
+      "description": "Validates RH4 ReduceHeight segment.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-RH4",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-023",
+        "order_id": "SKU-VAL-023",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-rh4", "value": "CCX-RAW-3636-RH4" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-024",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Reduce Height RH5 (Remove 5\")",
+      "description": "Validates RH5 ReduceHeight segment.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-RH5",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-024",
+        "order_id": "SKU-VAL-024",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-rh5", "value": "CCX-RAW-3636-RH5" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-025",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Reduce Height RH6 (Remove 6\") — maximum reduction",
+      "description": "Validates the maximum ReduceHeight segment RH6. Closes out all 6 RH values.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-RH6",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-025",
+        "order_id": "SKU-VAL-025",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-rh6", "value": "CCX-RAW-3636-RH6" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-026",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Increase Depth ID20-RSH (to 20.5\")",
+      "description": "Validates the ID20-RSH IncreaseDepth segment. Paired with PRM color.",
+      "expected_master_sku": "VEN-CCX-3636-PRM-ID20-RSH",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-026",
+        "order_id": "SKU-VAL-026",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-prm-3636-id20-rsh", "value": "CCX-PRM-3636-ID20-RSH" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-027",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Increase Depth ID22-RSH (to 22.5\") — maximum depth",
+      "description": "Validates the maximum IncreaseDepth segment ID22-RSH. Closes out all depth options.",
+      "expected_master_sku": "VEN-CCX-3636-PRM-ID22-RSH",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-027",
+        "order_id": "SKU-VAL-027",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-prm-3636-id22-rsh", "value": "CCX-PRM-3636-ID22-RSH" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-028",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Steel Crown Molding (MSCI)",
+      "description": "Validates the Steel Crown Molding segment MSCI. Distinct from INC/CLS which are crown install states.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-MSCI",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-028",
+        "order_id": "SKU-VAL-028",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-msci", "value": "CCX-RAW-3636-MSCI" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-029",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Brass Crown Molding (MGCI)",
+      "description": "Validates the Brass Crown Molding segment MGCI. Closes out all 4 CrownMolding values.",
+      "expected_master_sku": "VEN-CCX-3636-RAW-MGCI",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-029",
+        "order_id": "SKU-VAL-029",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636-mgci", "value": "CCX-RAW-3636-MGCI" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-030",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Extend Chimney 12\" (CH12)",
+      "description": "Validates the 12\" chimney extension segment CH12.",
+      "expected_master_sku": "VEN-CCX-3036-RAW-CH12",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-030",
+        "order_id": "SKU-VAL-030",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3036-ch12", "value": "CCX-RAW-3036-CH12" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-031",
+      "category": "Wood Hoods",
+      "attribute_focus": "Modifier - Extend Chimney 24\" (CH24) — maximum extension",
+      "description": "Validates the maximum chimney extension segment CH24. Closes out all 3 ExtendChimney values.",
+      "expected_master_sku": "VEN-CCX-3036-RAW-CH24",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-031",
+        "order_id": "SKU-VAL-031",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3036-ch24", "value": "CCX-RAW-3036-CH24" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-032",
+      "category": "Wood Hoods",
+      "attribute_focus": "Jarlin partner color — Sterling Gray (JARSTE00001), 36x36",
+      "description": "First Jarlin partner color test. Validates JARSTE00001 color SKU prefix registration in PartnerColors.",
+      "expected_master_sku": "VEN-CCX-3636-JARSTE00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-032",
+        "order_id": "SKU-VAL-032",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-jarste00001-3636", "value": "CCX-JARSTE00001-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-033",
+      "category": "Wood Hoods",
+      "attribute_focus": "Jim Bishop partner color — Alabaster Paint (JBALP), 36x36",
+      "description": "First Jim Bishop partner color test. Validates JBALP color SKU prefix registration.",
+      "expected_master_sku": "VEN-CCX-3636-JBALP",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-033",
+        "order_id": "SKU-VAL-033",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-jbalp-3636", "value": "CCX-JBALP-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-034",
+      "category": "Wood Hoods",
+      "attribute_focus": "Homemark partner color — White Paint (HOMWHP), 36x36",
+      "description": "First Homemark partner color test. Validates HOMWHP color SKU prefix registration.",
+      "expected_master_sku": "VEN-CCX-3636-HOMWHP",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-034",
+        "order_id": "SKU-VAL-034",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-homwhp-3636", "value": "CCX-HOMWHP-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-035",
+      "category": "Wood Hoods",
+      "attribute_focus": "JSI partner color — Essex White (JSIESW), 36x36",
+      "description": "First JSI partner color test. Validates JSIESW color SKU prefix registration. Closes out all 6 partner color groups.",
+      "expected_master_sku": "VEN-CCX-3636-JSIESW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-035",
+        "order_id": "SKU-VAL-035",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-jsiesw-3636", "value": "CCX-JSIESW-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-036",
+      "category": "Wood Hoods",
+      "attribute_focus": "Product coverage — VEN-MCX (Tapered), RAW, 36x36",
+      "description": "Validates the Tapered (MCX) product SKU with a different product base segment.",
+      "expected_master_sku": "VEN-MCX-3636-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-036",
+        "order_id": "SKU-VAL-036",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1720",
+                "sku": { "key": "ven-mcx", "value": "VEN-MCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mcx-raw-3636", "value": "MCX-RAW-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-037",
+      "category": "Wood Hoods",
+      "attribute_focus": "Product coverage — VEN-ANBS (Angled With Brass Strapping), RAW, 36x36",
+      "description": "Validates the ANBS product base segment. Smoke test product in the catalog.",
+      "expected_master_sku": "VEN-ANBS-3636-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-037",
+        "order_id": "SKU-VAL-037",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1690",
+                "sku": { "key": "ven-anbs", "value": "VEN-ANBS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Angled With Brass Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "anbs-raw-3636", "value": "ANBS-RAW-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-038",
+      "category": "Wood Hoods",
+      "attribute_focus": "Product coverage — VEN-DBC (Double Curved), RAW, 36x36",
+      "description": "Validates the Double Curved (DBC) product base segment. Uses the newest product id 5082.",
+      "expected_master_sku": "VEN-DBC-3636-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-038",
+        "order_id": "SKU-VAL-038",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "5082",
+                "sku": { "key": "ven-dbc", "value": "VEN-DBC" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Double Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "dbc-raw-3636", "value": "DBC-RAW-3636" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-039",
+      "category": "Wood Hoods",
+      "attribute_focus": "Product coverage — VEN-BNT (Box Straight), PRM, 30x36",
+      "description": "Validates the Box Straight (BNT) product base segment with PRM color.",
+      "expected_master_sku": "VEN-BNT-3036-PRM",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-039",
+        "order_id": "SKU-VAL-039",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1738",
+                "sku": { "key": "ven-bnt", "value": "VEN-BNT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box Straight",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bnt-prm-3036", "value": "BNT-PRM-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-040",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW24 (24\"), RAW",
+      "description": "Validates the minimum SelectWidth segment FSW24 for Floating Shelves.",
+      "expected_master_sku": "VEN-FLS-FSW24-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-040",
+        "order_id": "SKU-VAL-040",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-raw-fsw24", "value": "FLS-RAW-FSW24" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-041",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW27 (27\"), PRM",
+      "description": "Validates FSW27 with PRM color on Floating Shelves.",
+      "expected_master_sku": "VEN-FLS-FSW27-PRM",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-041",
+        "order_id": "SKU-VAL-041",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-prm-fsw27", "value": "FLS-PRM-FSW27" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-042",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW33 (33\"), RAW",
+      "description": "Validates FSW33 SelectWidth segment on Floating Shelves.",
+      "expected_master_sku": "VEN-FLS-FSW33-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-042",
+        "order_id": "SKU-VAL-042",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-raw-fsw33", "value": "FLS-RAW-FSW33" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-043",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW39 (39\"), RAW",
+      "description": "Validates FSW39 SelectWidth segment on Floating Shelves.",
+      "expected_master_sku": "VEN-FLS-FSW39-RAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-043",
+        "order_id": "SKU-VAL-043",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-raw-fsw39", "value": "FLS-RAW-FSW39" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-045",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — USCD color (Shaker Antique White, USCDSAW), 30x36",
+      "description": "Validates a USCD partner color on a Quick Ship product. Uses USCDSAW to differentiate from the USCDSHW already on QSPCCXWHT.",
+      "expected_master_sku": "VEN-QSPCCX-3036-USCDSAW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-045",
+        "order_id": "SKU-VAL-045",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-uscdsaw-3036", "value": "QSPCCX-USCDSAW-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-046",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — Hoodsly color (Antique White, HOOANT00001), 30x36",
+      "description": "Validates a Hoodsly painted color on a Quick Ship product.",
+      "expected_master_sku": "VEN-QSPCCX-3036-HOOANT00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-046",
+        "order_id": "SKU-VAL-046",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-hooant00001-3036", "value": "QSPCCX-HOOANT00001-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-047",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — TA Cabinetry color (Dove White, TADOV00001), 30x36",
+      "description": "Validates a TA Cabinetry partner color on a Quick Ship product.",
+      "expected_master_sku": "VEN-QSPCCX-3036-TADOV00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-047",
+        "order_id": "SKU-VAL-047",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-tadov00001-3036", "value": "QSPCCX-TADOV00001-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-048",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — Jarlin color (Sterling Gray, JARSTE00001), 30x36",
+      "description": "Validates a Jarlin partner color on a Quick Ship product.",
+      "expected_master_sku": "VEN-QSPCCX-3036-JARSTE00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-048",
+        "order_id": "SKU-VAL-048",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-jarste00001-3036", "value": "QSPCCX-JARSTE00001-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-049",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — Jim Bishop color (Alabaster Paint, JBALP), 30x36",
+      "description": "Validates a Jim Bishop partner color on a Quick Ship product.",
+      "expected_master_sku": "VEN-QSPCCX-3036-JBALP",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-049",
+        "order_id": "SKU-VAL-049",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-jbalp-3036", "value": "QSPCCX-JBALP-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-050",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — Homemark color (White Paint, HOMWHP), 30x36",
+      "description": "Validates a Homemark partner color on a Quick Ship product.",
+      "expected_master_sku": "VEN-QSPCCX-3036-HOMWHP",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-050",
+        "order_id": "SKU-VAL-050",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-homwhp-3036", "value": "QSPCCX-HOMWHP-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-051",
+      "category": "Quick Shipping",
+      "attribute_focus": "VEN-QSPCCX — JSI color (Essex White, JSIESW), 30x36",
+      "description": "Validates a JSI partner color on a Quick Ship product. Closes out all 7 partner color groups for Quick Shipping.",
+      "expected_master_sku": "VEN-QSPCCX-3036-JSIESW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-051",
+        "order_id": "SKU-VAL-051",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-15",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-jsiesw-3036", "value": "QSPCCX-JSIESW-3036" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-052",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — USCD color (Shaker White, USCDSHW), FSW30",
+      "description": "Validates a USCD partner color on a Floating Shelf product.",
+      "expected_master_sku": "VEN-FLS-FSW30-USCDSHW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-052",
+        "order_id": "SKU-VAL-052",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-uscdshw-fsw30", "value": "FLS-USCDSHW-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-053",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — TA Cabinetry color (Dove White, TADOV00001), FSW30",
+      "description": "Validates a TA Cabinetry partner color on a Floating Shelf product.",
+      "expected_master_sku": "VEN-FLS-FSW30-TADOV00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-053",
+        "order_id": "SKU-VAL-053",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-tadov00001-fsw30", "value": "FLS-TADOV00001-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-054",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — Jarlin color (Sterling Gray, JARSTE00001), FSW30",
+      "description": "Validates a Jarlin partner color on a Floating Shelf product.",
+      "expected_master_sku": "VEN-FLS-FSW30-JARSTE00001",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-054",
+        "order_id": "SKU-VAL-054",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-jarste00001-fsw30", "value": "FLS-JARSTE00001-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-055",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — Jim Bishop color (Alabaster Paint, JBALP), FSW30",
+      "description": "Validates a Jim Bishop partner color on a Floating Shelf product.",
+      "expected_master_sku": "VEN-FLS-FSW30-JBALP",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-055",
+        "order_id": "SKU-VAL-055",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-jbalp-fsw30", "value": "FLS-JBALP-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-056",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — Homemark color (White Paint, HOMWHP), FSW30",
+      "description": "Validates a Homemark partner color on a Floating Shelf product.",
+      "expected_master_sku": "VEN-FLS-FSW30-HOMWHP",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-056",
+        "order_id": "SKU-VAL-056",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-homwhp-fsw30", "value": "FLS-HOMWHP-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-057",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — JSI color (Essex White, JSIESW), FSW30",
+      "description": "Validates a JSI partner color on a Floating Shelf product. Closes out all 7 partner color groups for all 3 categories.",
+      "expected_master_sku": "VEN-FLS-FSW30-JSIESW",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-057",
+        "order_id": "SKU-VAL-057",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-jsiesw-fsw30", "value": "FLS-JSIESW-FSW30" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    },
+
+    {
+      "id": "SKU-VAL-044",
+      "category": "Floating Shelves",
+      "attribute_focus": "VEN-FLS — SelectWidth FSW42 (42\"), PRM — maximum width",
+      "description": "Validates the maximum SelectWidth segment FSW42 with PRM. Closes out all 7 SelectWidth values.",
+      "expected_master_sku": "VEN-FLS-FSW42-PRM",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#SKU-VAL-044",
+        "order_id": "SKU-VAL-044",
+        "order_date": "2026-06-15 00:00:00",
+        "order_status": "in_production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-29",
+        "origin": "rakbulqapart.s6-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "(986) 654-3310" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "email": "rakibul1@wppool.dev", "phone": "(986) 654-3310" },
+          "shipping": { "first_name": "Rakibul", "last_name": "Islam", "address_1": "123 Palm Street Orlando, FL 32801", "address_2": "", "city": "Orlando", "state": "FL", "postcode": "32801", "country": "US", "phone": "(986) 654-3310" },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-prm-fsw42", "value": "FLS-PRM-FSW42" }
+              }
+            ]
+          },
+          "shipping_lines": [{ "method_title": "Flat rate", "total": "0" }]
+        }
+      }
+    }
+
+  ]
+}
