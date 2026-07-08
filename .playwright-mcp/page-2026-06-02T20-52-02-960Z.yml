@@ -1,0 +1,631 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Main menu":
+      - link "Skip to main content" [ref=e3] [cursor=pointer]:
+        - /url: "#wpbody-content"
+      - link "Skip to toolbar" [ref=e4] [cursor=pointer]:
+        - /url: "#wp-toolbar"
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Dashboard" [ref=e9] [cursor=pointer]:
+            - /url: index.php
+            - generic [ref=e10]: 
+            - generic [ref=e11]: Dashboard
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Home" [ref=e14] [cursor=pointer]:
+                - /url: index.php
+            - listitem [ref=e15]:
+              - link "Updates 7" [ref=e16] [cursor=pointer]:
+                - /url: update-core.php
+                - text: Updates
+                - generic [ref=e17]: "7"
+        - listitem [ref=e18]:
+          - link "Kinsta Cache" [ref=e19] [cursor=pointer]:
+            - /url: admin.php?page=kinsta-tools
+            - generic [ref=e20]: 
+            - generic [ref=e21]: Kinsta Cache
+        - listitem [ref=e22]
+        - listitem [ref=e24]:
+          - link "Posts" [ref=e25] [cursor=pointer]:
+            - /url: edit.php
+            - generic [ref=e26]: 
+            - generic [ref=e27]: Posts
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - link "All Posts" [ref=e30] [cursor=pointer]:
+                - /url: edit.php
+            - listitem [ref=e31]:
+              - link "Add Post" [ref=e32] [cursor=pointer]:
+                - /url: post-new.php
+            - listitem [ref=e33]:
+              - link "Categories" [ref=e34] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=category
+            - listitem [ref=e35]:
+              - link "Tags" [ref=e36] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=post_tag
+        - listitem [ref=e37]:
+          - link "Media" [ref=e38] [cursor=pointer]:
+            - /url: upload.php
+            - generic [ref=e39]: 
+            - generic [ref=e40]: Media
+          - list [ref=e41]:
+            - listitem [ref=e42]:
+              - link "Library" [ref=e43] [cursor=pointer]:
+                - /url: upload.php
+            - listitem [ref=e44]:
+              - link "Add Media File" [ref=e45] [cursor=pointer]:
+                - /url: media-new.php
+        - listitem [ref=e46]:
+          - link "Pages" [ref=e47] [cursor=pointer]:
+            - /url: edit.php?post_type=page
+            - generic [ref=e48]: 
+            - generic [ref=e49]: Pages
+          - list [ref=e50]:
+            - listitem [ref=e51]:
+              - link "All Pages" [ref=e52] [cursor=pointer]:
+                - /url: edit.php?post_type=page
+            - listitem [ref=e53]:
+              - link "Add Page" [ref=e54] [cursor=pointer]:
+                - /url: post-new.php?post_type=page
+        - listitem [ref=e55]:
+          - link "Comments" [ref=e56] [cursor=pointer]:
+            - /url: edit-comments.php
+            - generic [ref=e57]: 
+            - generic [ref=e58]: Comments
+        - listitem [ref=e59]:
+          - link "Partners" [ref=e60] [cursor=pointer]:
+            - /url: edit.php?post_type=partner
+            - generic [ref=e61]: 
+            - generic [ref=e62]: Partners
+          - list [ref=e63]:
+            - listitem [ref=e64]:
+              - link "All Partners" [ref=e65] [cursor=pointer]:
+                - /url: edit.php?post_type=partner
+            - listitem [ref=e66]:
+              - link "Add New Partner" [ref=e67] [cursor=pointer]:
+                - /url: post-new.php?post_type=partner
+        - listitem [ref=e68]:
+          - link "Products" [ref=e69] [cursor=pointer]:
+            - /url: edit.php?post_type=product
+            - generic [ref=e70]: 
+            - generic [ref=e71]: Products
+          - list [ref=e72]:
+            - listitem [ref=e73]:
+              - link "All Products" [ref=e74] [cursor=pointer]:
+                - /url: edit.php?post_type=product
+            - listitem [ref=e75]:
+              - link "Add New Product" [ref=e76] [cursor=pointer]:
+                - /url: post-new.php?post_type=product
+        - listitem [ref=e77]:
+          - link "Connector Hub" [ref=e78] [cursor=pointer]:
+            - /url: admin.php?page=connector-hub#/dashboard
+            - generic [ref=e79]: 
+            - generic [ref=e80]: Connector Hub
+          - list [ref=e81]:
+            - listitem [ref=e82]:
+              - link "Dashboard" [ref=e83] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/dashboard
+            - listitem [ref=e84]:
+              - link "Partners" [ref=e85] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/partners
+            - listitem [ref=e86]:
+              - link "Products" [ref=e87] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/products
+            - listitem [ref=e88]:
+              - link "Attributes" [ref=e89] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/attributes
+            - listitem [ref=e90]:
+              - link "Settings" [ref=e91] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/settings
+            - listitem [ref=e92]:
+              - link "Logs" [ref=e93] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/logs
+        - listitem [ref=e94]
+        - listitem [ref=e96]:
+          - link "Appearance" [ref=e97] [cursor=pointer]:
+            - /url: themes.php
+            - generic [ref=e98]: 
+            - generic [ref=e99]: Appearance
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - link "Themes 4" [ref=e102] [cursor=pointer]:
+                - /url: themes.php
+                - text: Themes
+                - generic [ref=e103]: "4"
+            - listitem [ref=e104]:
+              - link "Editor" [ref=e105] [cursor=pointer]:
+                - /url: site-editor.php
+            - listitem [ref=e106]:
+              - link "Fonts" [ref=e107] [cursor=pointer]:
+                - /url: font-library.php
+        - listitem [ref=e108]:
+          - link "Plugins 3" [ref=e109] [cursor=pointer]:
+            - /url: plugins.php
+            - generic [ref=e110]: 
+            - generic [ref=e111]:
+              - text: Plugins
+              - generic [ref=e112]: "3"
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - link "Installed Plugins" [ref=e115] [cursor=pointer]:
+                - /url: plugins.php
+            - listitem [ref=e116]:
+              - link "Add Plugin" [ref=e117] [cursor=pointer]:
+                - /url: plugin-install.php
+        - listitem [ref=e118]:
+          - link "Users" [ref=e119] [cursor=pointer]:
+            - /url: users.php
+            - generic [ref=e120]: 
+            - generic [ref=e121]: Users
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - link "All Users" [ref=e124] [cursor=pointer]:
+                - /url: users.php
+            - listitem [ref=e125]:
+              - link "Add User" [ref=e126] [cursor=pointer]:
+                - /url: user-new.php
+            - listitem [ref=e127]:
+              - link "Profile" [ref=e128] [cursor=pointer]:
+                - /url: profile.php
+        - listitem [ref=e129]:
+          - link "Tools" [ref=e130] [cursor=pointer]:
+            - /url: tools.php
+            - generic [ref=e131]: 
+            - generic [ref=e132]: Tools
+          - list [ref=e133]:
+            - listitem [ref=e134]:
+              - link "Available Tools" [ref=e135] [cursor=pointer]:
+                - /url: tools.php
+            - listitem [ref=e136]:
+              - link "Import" [ref=e137] [cursor=pointer]:
+                - /url: import.php
+            - listitem [ref=e138]:
+              - link "Export" [ref=e139] [cursor=pointer]:
+                - /url: export.php
+            - listitem [ref=e140]:
+              - link "Site Health" [ref=e141] [cursor=pointer]:
+                - /url: site-health.php
+            - listitem [ref=e142]:
+              - link "Export Personal Data" [ref=e143] [cursor=pointer]:
+                - /url: export-personal-data.php
+            - listitem [ref=e144]:
+              - link "Erase Personal Data" [ref=e145] [cursor=pointer]:
+                - /url: erase-personal-data.php
+            - listitem [ref=e146]:
+              - link "Theme File Editor" [ref=e147] [cursor=pointer]:
+                - /url: theme-editor.php
+            - listitem [ref=e148]:
+              - link "Plugin File Editor" [ref=e149] [cursor=pointer]:
+                - /url: plugin-editor.php
+        - listitem [ref=e150]:
+          - link "Settings" [ref=e151] [cursor=pointer]:
+            - /url: options-general.php
+            - generic [ref=e152]: 
+            - generic [ref=e153]: Settings
+          - list [ref=e154]:
+            - listitem [ref=e155]:
+              - link "General" [ref=e156] [cursor=pointer]:
+                - /url: options-general.php
+            - listitem [ref=e157]:
+              - link "Connectors" [ref=e158] [cursor=pointer]:
+                - /url: options-connectors.php
+            - listitem [ref=e159]:
+              - link "Writing" [ref=e160] [cursor=pointer]:
+                - /url: options-writing.php
+            - listitem [ref=e161]:
+              - link "Reading" [ref=e162] [cursor=pointer]:
+                - /url: options-reading.php
+            - listitem [ref=e163]:
+              - link "Discussion" [ref=e164] [cursor=pointer]:
+                - /url: options-discussion.php
+            - listitem [ref=e165]:
+              - link "Media" [ref=e166] [cursor=pointer]:
+                - /url: options-media.php
+            - listitem [ref=e167]:
+              - link "Permalinks" [ref=e168] [cursor=pointer]:
+                - /url: options-permalink.php
+            - listitem [ref=e169]:
+              - link "Privacy" [ref=e170] [cursor=pointer]:
+                - /url: options-privacy.php
+            - listitem [ref=e171]:
+              - link "FluentSMTP" [ref=e172] [cursor=pointer]:
+                - /url: options-general.php?page=fluent-mail
+        - listitem [ref=e173]:
+          - link "ACF" [ref=e174] [cursor=pointer]:
+            - /url: edit.php?post_type=acf-field-group
+            - generic [ref=e175]: 
+            - generic [ref=e176]: ACF
+          - list [ref=e177]:
+            - listitem [ref=e178]:
+              - link "Field Groups" [ref=e179] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group
+            - listitem [ref=e180]:
+              - link "Post Types" [ref=e181] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-post-type
+            - listitem [ref=e182]:
+              - link "Taxonomies" [ref=e183] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-taxonomy
+            - listitem [ref=e184]:
+              - link "Options Pages" [ref=e185] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-ui-options-page
+            - listitem [ref=e186]:
+              - link "Tools" [ref=e187] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-tools
+            - listitem [ref=e188]:
+              - link "Updates" [ref=e189] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+        - listitem [ref=e190]:
+          - button "Collapse Main menu" [expanded] [ref=e191] [cursor=pointer]:
+            - generic [ref=e193]: Collapse Menu
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - navigation "Toolbar":
+          - menu:
+            - group [ref=e196]:
+              - menuitem "About WordPress" [ref=e197] [cursor=pointer]:
+                - generic [ref=e199]: About WordPress
+            - group [ref=e200]:
+              - menuitem "Hoodsly Connector Platform" [ref=e201] [cursor=pointer]
+            - group [ref=e202]:
+              - menuitem "7 updates available" [ref=e203] [cursor=pointer]:
+                - generic [ref=e205]: "7"
+                - generic [ref=e206]: 7 updates available
+            - group [ref=e207]:
+              - menuitem "Ctrl+K Open command palette" [ref=e208] [cursor=pointer]:
+                - generic [ref=e210]:
+                  - text: Ctrl+K
+                  - generic [ref=e211]: Open command palette
+            - group [ref=e212]:
+              - menuitem "0 Comments in moderation" [ref=e213] [cursor=pointer]:
+                - generic [ref=e215]: "0"
+                - generic [ref=e216]: 0 Comments in moderation
+            - group [ref=e217]:
+              - menuitem "New" [ref=e218] [cursor=pointer]:
+                - generic [ref=e220]: New
+          - menu [ref=e221]:
+            - group [ref=e222]:
+              - menuitem "Clear Caches" [ref=e223]
+            - group [ref=e224]:
+              - menuitem "Howdy, Rakibul Islam" [ref=e225] [cursor=pointer]
+      - main [ref=e226]:
+        - generic [ref=e229]:
+          - generic [ref=e232]:
+            - link "Connector Hub" [ref=e234] [cursor=pointer]:
+              - /url: "#/dashboard"
+            - generic [ref=e236]:
+              - link "Dashboard" [ref=e237] [cursor=pointer]:
+                - /url: "#/dashboard"
+                - img [ref=e238]
+                - generic [ref=e240]: Dashboard
+              - link "Partners" [ref=e241] [cursor=pointer]:
+                - /url: "#/partners"
+                - img [ref=e242]
+                - generic [ref=e244]: Partners
+              - link "Products" [ref=e245] [cursor=pointer]:
+                - /url: "#/products"
+                - img [ref=e246]
+                - generic [ref=e248]: Products
+              - link "Attributes" [ref=e249] [cursor=pointer]:
+                - /url: "#/attributes"
+                - img [ref=e250]
+                - generic [ref=e252]: Attributes
+              - link "Settings" [ref=e253] [cursor=pointer]:
+                - /url: "#/settings"
+                - img [ref=e254]
+                - generic [ref=e257]: Settings
+              - link "Logs" [ref=e258] [cursor=pointer]:
+                - /url: "#/logs"
+                - img [ref=e259]
+                - generic [ref=e261]: Logs
+          - generic [ref=e37496]:
+            - heading "Edit Product" [level=1] [ref=e38505]
+            - generic [ref=e37506]:
+              - link "Back to Products" [ref=e37997] [cursor=pointer]:
+                - /url: "#/products"
+                - img [ref=e37998]
+                - text: Back to Products
+              - generic [ref=e38000]:
+                - generic [ref=e38001]:
+                  - navigation [ref=e38002]:
+                    - button "Basic Info" [ref=e38003] [cursor=pointer]
+                    - button "Attributes" [active] [ref=e38004] [cursor=pointer]
+                    - button "Partners" [ref=e38005] [cursor=pointer]
+                  - generic [ref=e38006]:
+                    - link "Cancel" [ref=e38007] [cursor=pointer]:
+                      - /url: "#/products"
+                    - button "Update Product" [ref=e38506] [cursor=pointer]
+                - generic [ref=e38009]:
+                  - generic [ref=e38124]:
+                    - paragraph [ref=e38125]: Select which attributes apply to this product. These will be available for all partners.
+                    - generic [ref=e38126]:
+                      - generic [ref=e38128] [cursor=pointer]:
+                        - generic [ref=e38129]:
+                          - generic [ref=e38130]: Color Options
+                          - generic [ref=e38131]: 0 selected
+                        - img [ref=e38132]
+                      - generic [ref=e38135] [cursor=pointer]:
+                        - generic [ref=e38136]:
+                          - generic [ref=e38137]: Color
+                          - generic [ref=e38138]: 0 selected
+                        - img [ref=e38139]
+                      - generic [ref=e38142] [cursor=pointer]:
+                        - generic [ref=e38143]:
+                          - generic [ref=e38144]: Color Match Selection
+                          - generic [ref=e38145]: 0 selected
+                        - img [ref=e38146]
+                      - generic [ref=e38149] [cursor=pointer]:
+                        - generic [ref=e38150]:
+                          - generic [ref=e38151]: Size
+                          - generic [ref=e38152]: 0 selected
+                        - img [ref=e38153]
+                      - generic [ref=e38156] [cursor=pointer]:
+                        - generic [ref=e38157]:
+                          - generic [ref=e38158]: Ventilation Options 30
+                          - generic [ref=e38159]: 0 selected
+                        - img [ref=e38160]
+                      - generic [ref=e38163] [cursor=pointer]:
+                        - generic [ref=e38164]:
+                          - generic [ref=e38165]: Ventilation Options 36
+                          - generic [ref=e38166]: 0 selected
+                        - img [ref=e38167]
+                      - generic [ref=e38170] [cursor=pointer]:
+                        - generic [ref=e38171]:
+                          - generic [ref=e38172]: Ventilation Options 42
+                          - generic [ref=e38173]: 0 selected
+                        - img [ref=e38174]
+                      - generic [ref=e38177] [cursor=pointer]:
+                        - generic [ref=e38178]:
+                          - generic [ref=e38179]: Ventilation Options 48
+                          - generic [ref=e38180]: 0 selected
+                        - img [ref=e38181]
+                      - generic [ref=e38184] [cursor=pointer]:
+                        - generic [ref=e38185]:
+                          - generic [ref=e38186]: Ventilation Options 54
+                          - generic [ref=e38187]: 0 selected
+                        - img [ref=e38188]
+                      - generic [ref=e38191] [cursor=pointer]:
+                        - generic [ref=e38192]:
+                          - generic [ref=e38193]: Ventilation Options 60
+                          - generic [ref=e38194]: 0 selected
+                        - img [ref=e38195]
+                      - generic [ref=e38198] [cursor=pointer]:
+                        - generic [ref=e38199]:
+                          - generic [ref=e38200]: Broan 30 Options
+                          - generic [ref=e38201]: 0 selected
+                        - img [ref=e38202]
+                      - generic [ref=e38205] [cursor=pointer]:
+                        - generic [ref=e38206]:
+                          - generic [ref=e38207]: Hauslane 30 Options
+                          - generic [ref=e38208]: 0 selected
+                        - img [ref=e38209]
+                      - generic [ref=e38212] [cursor=pointer]:
+                        - generic [ref=e38213]:
+                          - generic [ref=e38214]: Hauslane 36 Options
+                          - generic [ref=e38215]: 0 selected
+                        - img [ref=e38216]
+                      - generic [ref=e38219] [cursor=pointer]:
+                        - generic [ref=e38220]:
+                          - generic [ref=e38221]: Tradewinds 30 Options
+                          - generic [ref=e38222]: 0 selected
+                        - img [ref=e38223]
+                      - generic [ref=e38226] [cursor=pointer]:
+                        - generic [ref=e38227]:
+                          - generic [ref=e38228]: Zline 30 Options
+                          - generic [ref=e38229]: 0 selected
+                        - img [ref=e38230]
+                      - generic [ref=e38233] [cursor=pointer]:
+                        - generic [ref=e38234]:
+                          - generic [ref=e38235]: Vent A Hood 30 Options
+                          - generic [ref=e38236]: 0 selected
+                        - img [ref=e38237]
+                      - generic [ref=e38240] [cursor=pointer]:
+                        - generic [ref=e38241]:
+                          - generic [ref=e38242]: Broan 36 Options
+                          - generic [ref=e38243]: 0 selected
+                        - img [ref=e38244]
+                      - generic [ref=e38247] [cursor=pointer]:
+                        - generic [ref=e38248]:
+                          - generic [ref=e38249]: Tradewinds 36 Options
+                          - generic [ref=e38250]: 0 selected
+                        - img [ref=e38251]
+                      - generic [ref=e38254] [cursor=pointer]:
+                        - generic [ref=e38255]:
+                          - generic [ref=e38256]: Zline 36 Options
+                          - generic [ref=e38257]: 0 selected
+                        - img [ref=e38258]
+                      - generic [ref=e38261] [cursor=pointer]:
+                        - generic [ref=e38262]:
+                          - generic [ref=e38263]: Vent A Hood 36 Options
+                          - generic [ref=e38264]: 0 selected
+                        - img [ref=e38265]
+                      - generic [ref=e38268] [cursor=pointer]:
+                        - generic [ref=e38269]:
+                          - generic [ref=e38270]: Tradewinds 42 Options
+                          - generic [ref=e38271]: 0 selected
+                        - img [ref=e38272]
+                      - generic [ref=e38275] [cursor=pointer]:
+                        - generic [ref=e38276]:
+                          - generic [ref=e38277]: Zline 42 Options
+                          - generic [ref=e38278]: 0 selected
+                        - img [ref=e38279]
+                      - generic [ref=e38282] [cursor=pointer]:
+                        - generic [ref=e38283]:
+                          - generic [ref=e38284]: Vent A Hood 42 Options
+                          - generic [ref=e38285]: 0 selected
+                        - img [ref=e38286]
+                      - generic [ref=e38289] [cursor=pointer]:
+                        - generic [ref=e38290]:
+                          - generic [ref=e38291]: Tradewinds 48 Options
+                          - generic [ref=e38292]: 0 selected
+                        - img [ref=e38293]
+                      - generic [ref=e38296] [cursor=pointer]:
+                        - generic [ref=e38297]:
+                          - generic [ref=e38298]: Zline 48 Options
+                          - generic [ref=e38299]: 0 selected
+                        - img [ref=e38300]
+                      - generic [ref=e38303] [cursor=pointer]:
+                        - generic [ref=e38304]:
+                          - generic [ref=e38305]: Vent A Hood 48 Options
+                          - generic [ref=e38306]: 0 selected
+                        - img [ref=e38307]
+                      - generic [ref=e38310] [cursor=pointer]:
+                        - generic [ref=e38311]:
+                          - generic [ref=e38312]: Tradewinds 54 Options
+                          - generic [ref=e38313]: 0 selected
+                        - img [ref=e38314]
+                      - generic [ref=e38317] [cursor=pointer]:
+                        - generic [ref=e38318]:
+                          - generic [ref=e38319]: Zline 54 Options
+                          - generic [ref=e38320]: 0 selected
+                        - img [ref=e38321]
+                      - generic [ref=e38324] [cursor=pointer]:
+                        - generic [ref=e38325]:
+                          - generic [ref=e38326]: Vent A Hood 54 Options
+                          - generic [ref=e38327]: 0 selected
+                        - img [ref=e38328]
+                      - generic [ref=e38331] [cursor=pointer]:
+                        - generic [ref=e38332]:
+                          - generic [ref=e38333]: Tradewinds 60 Options
+                          - generic [ref=e38334]: 0 selected
+                        - img [ref=e38335]
+                      - generic [ref=e38338] [cursor=pointer]:
+                        - generic [ref=e38339]:
+                          - generic [ref=e38340]: Zline 60 Options
+                          - generic [ref=e38341]: 0 selected
+                        - img [ref=e38342]
+                      - generic [ref=e38345] [cursor=pointer]:
+                        - generic [ref=e38346]:
+                          - generic [ref=e38347]: Vent A Hood 60 Options
+                          - generic [ref=e38348]: 0 selected
+                        - img [ref=e38349]
+                      - generic [ref=e38352] [cursor=pointer]:
+                        - generic [ref=e38353]:
+                          - generic [ref=e38354]: Non Duct Kit Broan
+                          - generic [ref=e38355]: 0 selected
+                        - img [ref=e38356]
+                      - generic [ref=e38359] [cursor=pointer]:
+                        - generic [ref=e38360]:
+                          - generic [ref=e38361]: Non Duct Kit Hauslane
+                          - generic [ref=e38362]: 0 selected
+                        - img [ref=e38363]
+                      - generic [ref=e38366] [cursor=pointer]:
+                        - generic [ref=e38367]:
+                          - generic [ref=e38368]: Non Duct Kit Tradewinds
+                          - generic [ref=e38369]: 0 selected
+                        - img [ref=e38370]
+                      - generic [ref=e38373] [cursor=pointer]:
+                        - generic [ref=e38374]:
+                          - generic [ref=e38375]: Non Duct Kit Zline
+                          - generic [ref=e38376]: 0 selected
+                        - img [ref=e38377]
+                      - generic [ref=e38380] [cursor=pointer]:
+                        - generic [ref=e38381]:
+                          - generic [ref=e38382]: Add Recirculating Vent
+                          - generic [ref=e38383]: 0 selected
+                        - img [ref=e38384]
+                      - generic [ref=e38387] [cursor=pointer]:
+                        - generic [ref=e38388]:
+                          - generic [ref=e38389]: Increase Depth To 193125
+                          - generic [ref=e38390]: 0 selected
+                        - img [ref=e38391]
+                      - generic [ref=e38394] [cursor=pointer]:
+                        - generic [ref=e38395]:
+                          - generic [ref=e38396]: Increase Depth To 225
+                          - generic [ref=e38397]: 0 selected
+                        - img [ref=e38398]
+                      - generic [ref=e38401] [cursor=pointer]:
+                        - generic [ref=e38402]:
+                          - generic [ref=e38403]: Increase Depth
+                          - generic [ref=e38404]: 0 selected
+                        - img [ref=e38405]
+                      - generic [ref=e38408] [cursor=pointer]:
+                        - generic [ref=e38409]:
+                          - generic [ref=e38410]: Trim Options
+                          - generic [ref=e38411]: 0 selected
+                        - img [ref=e38412]
+                      - generic [ref=e38415] [cursor=pointer]:
+                        - generic [ref=e38416]:
+                          - generic [ref=e38417]: How Would You Like Your Trim
+                          - generic [ref=e38418]: 0 selected
+                        - img [ref=e38419]
+                      - generic [ref=e38422] [cursor=pointer]:
+                        - generic [ref=e38423]:
+                          - generic [ref=e38424]: Crown Molding
+                          - generic [ref=e38425]: 0 selected
+                        - img [ref=e38426]
+                      - generic [ref=e38429] [cursor=pointer]:
+                        - generic [ref=e38430]:
+                          - generic [ref=e38431]: Reduce Height
+                          - generic [ref=e38432]: 0 selected
+                        - img [ref=e38433]
+                      - generic [ref=e38436] [cursor=pointer]:
+                        - generic [ref=e38437]:
+                          - generic [ref=e38438]: Extend Your Chimney
+                          - generic [ref=e38439]: 0 selected
+                        - img [ref=e38440]
+                      - generic [ref=e38443] [cursor=pointer]:
+                        - generic [ref=e38444]:
+                          - generic [ref=e38445]: Add Solid Bottom
+                          - generic [ref=e38446]: 0 selected
+                        - img [ref=e38447]
+                      - generic [ref=e38450] [cursor=pointer]:
+                        - generic [ref=e38451]:
+                          - generic [ref=e38452]: Non Duct Kit
+                          - generic [ref=e38453]: 0 selected
+                        - img [ref=e38454]
+                      - generic [ref=e38457] [cursor=pointer]:
+                        - generic [ref=e38458]:
+                          - generic [ref=e38459]: Remove Strapping
+                          - generic [ref=e38460]: 0 selected
+                        - img [ref=e38461]
+                      - generic [ref=e38464] [cursor=pointer]:
+                        - generic [ref=e38465]:
+                          - generic [ref=e38466]: Select Width
+                          - generic [ref=e38467]: 0 selected
+                        - img [ref=e38468]
+                      - generic [ref=e38471] [cursor=pointer]:
+                        - generic [ref=e38472]:
+                          - generic [ref=e38473]: Select Depth
+                          - generic [ref=e38474]: 0 selected
+                        - img [ref=e38475]
+                      - generic [ref=e38478] [cursor=pointer]:
+                        - generic [ref=e38479]:
+                          - generic [ref=e38480]: Select Thickness
+                          - generic [ref=e38481]: 0 selected
+                        - img [ref=e38482]
+                      - generic [ref=e38485] [cursor=pointer]:
+                        - generic [ref=e38486]:
+                          - generic [ref=e38487]: Do You Plan On Painting Or Staining This Hood
+                          - generic [ref=e38488]: 0 selected
+                        - img [ref=e38489]
+                      - generic [ref=e38492] [cursor=pointer]:
+                        - generic [ref=e38493]:
+                          - generic [ref=e38494]: Sherwin Williams Color Code
+                          - generic [ref=e38495]: 0 selected
+                        - img [ref=e38496]
+                      - generic [ref=e38499] [cursor=pointer]:
+                        - generic [ref=e38500]:
+                          - generic [ref=e38501]: Sherwin Williams Color Code
+                          - generic [ref=e38502]: 0 selected
+                        - img [ref=e38503]
+                  - generic [ref=e38119]:
+                    - link "Cancel" [ref=e38120] [cursor=pointer]:
+                      - /url: "#/products"
+                    - button "Update Product" [ref=e38507] [cursor=pointer]
+    - contentinfo [ref=e380]:
+      - paragraph [ref=e381]:
+        - generic [ref=e382]:
+          - text: Thanks for creating with
+          - link "WordPress" [ref=e383] [cursor=pointer]:
+            - /url: https://wordpress.org/
+          - text: and hosting with
+          - link "Kinsta" [ref=e384] [cursor=pointer]:
+            - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+      - paragraph [ref=e385]: Version 7.0
+  - status [ref=e12215]
+  - status [ref=e12216]
+  - status [ref=e37045]
+  - status [ref=e37106]
+  - status [ref=e38122]
+  - status [ref=e38123]

@@ -1,0 +1,836 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Main menu":
+      - link "Skip to main content" [ref=e3] [cursor=pointer]:
+        - /url: "#wpbody-content"
+      - link "Skip to toolbar" [ref=e4] [cursor=pointer]:
+        - /url: "#wp-toolbar"
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Dashboard" [ref=e9] [cursor=pointer]:
+            - /url: index.php
+            - generic [ref=e10]: 
+            - generic [ref=e11]: Dashboard
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Home" [ref=e14] [cursor=pointer]:
+                - /url: index.php
+            - listitem [ref=e15]:
+              - link "Updates 7" [ref=e16] [cursor=pointer]:
+                - /url: update-core.php
+                - text: Updates
+                - generic [ref=e17]: "7"
+        - listitem [ref=e18]:
+          - link "Kinsta Cache" [ref=e19] [cursor=pointer]:
+            - /url: admin.php?page=kinsta-tools
+            - generic [ref=e20]: 
+            - generic [ref=e21]: Kinsta Cache
+        - listitem [ref=e22]
+        - listitem [ref=e24]:
+          - link "Posts" [ref=e25] [cursor=pointer]:
+            - /url: edit.php
+            - generic [ref=e26]: 
+            - generic [ref=e27]: Posts
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - link "All Posts" [ref=e30] [cursor=pointer]:
+                - /url: edit.php
+            - listitem [ref=e31]:
+              - link "Add Post" [ref=e32] [cursor=pointer]:
+                - /url: post-new.php
+            - listitem [ref=e33]:
+              - link "Categories" [ref=e34] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=category
+            - listitem [ref=e35]:
+              - link "Tags" [ref=e36] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=post_tag
+        - listitem [ref=e37]:
+          - link "Media" [ref=e38] [cursor=pointer]:
+            - /url: upload.php
+            - generic [ref=e39]: 
+            - generic [ref=e40]: Media
+          - list [ref=e41]:
+            - listitem [ref=e42]:
+              - link "Library" [ref=e43] [cursor=pointer]:
+                - /url: upload.php
+            - listitem [ref=e44]:
+              - link "Add Media File" [ref=e45] [cursor=pointer]:
+                - /url: media-new.php
+        - listitem [ref=e46]:
+          - link "Pages" [ref=e47] [cursor=pointer]:
+            - /url: edit.php?post_type=page
+            - generic [ref=e48]: 
+            - generic [ref=e49]: Pages
+          - list [ref=e50]:
+            - listitem [ref=e51]:
+              - link "All Pages" [ref=e52] [cursor=pointer]:
+                - /url: edit.php?post_type=page
+            - listitem [ref=e53]:
+              - link "Add Page" [ref=e54] [cursor=pointer]:
+                - /url: post-new.php?post_type=page
+        - listitem [ref=e55]:
+          - link "Comments" [ref=e56] [cursor=pointer]:
+            - /url: edit-comments.php
+            - generic [ref=e57]: 
+            - generic [ref=e58]: Comments
+        - listitem [ref=e59]:
+          - link "Partners" [ref=e60] [cursor=pointer]:
+            - /url: edit.php?post_type=partner
+            - generic [ref=e61]: 
+            - generic [ref=e62]: Partners
+          - list [ref=e63]:
+            - listitem [ref=e64]:
+              - link "All Partners" [ref=e65] [cursor=pointer]:
+                - /url: edit.php?post_type=partner
+            - listitem [ref=e66]:
+              - link "Add New Partner" [ref=e67] [cursor=pointer]:
+                - /url: post-new.php?post_type=partner
+        - listitem [ref=e68]:
+          - link "Products" [ref=e69] [cursor=pointer]:
+            - /url: edit.php?post_type=product
+            - generic [ref=e70]: 
+            - generic [ref=e71]: Products
+          - list [ref=e72]:
+            - listitem [ref=e73]:
+              - link "All Products" [ref=e74] [cursor=pointer]:
+                - /url: edit.php?post_type=product
+            - listitem [ref=e75]:
+              - link "Add New Product" [ref=e76] [cursor=pointer]:
+                - /url: post-new.php?post_type=product
+        - listitem [ref=e77]:
+          - link "Connector Hub" [ref=e78] [cursor=pointer]:
+            - /url: admin.php?page=connector-hub#/dashboard
+            - generic [ref=e79]: 
+            - generic [ref=e80]: Connector Hub
+          - list [ref=e81]:
+            - listitem [ref=e82]:
+              - link "Dashboard" [ref=e83] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/dashboard
+            - listitem [ref=e84]:
+              - link "Partners" [ref=e85] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/partners
+            - listitem [ref=e86]:
+              - link "Products" [ref=e87] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/products
+            - listitem [ref=e88]:
+              - link "Attributes" [ref=e89] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/attributes
+            - listitem [ref=e90]:
+              - link "Settings" [ref=e91] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/settings
+            - listitem [ref=e92]:
+              - link "Logs" [ref=e93] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/logs
+        - listitem [ref=e94]
+        - listitem [ref=e96]:
+          - link "Appearance" [ref=e97] [cursor=pointer]:
+            - /url: themes.php
+            - generic [ref=e98]: 
+            - generic [ref=e99]: Appearance
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - link "Themes 4" [ref=e102] [cursor=pointer]:
+                - /url: themes.php
+                - text: Themes
+                - generic [ref=e103]: "4"
+            - listitem [ref=e104]:
+              - link "Editor" [ref=e105] [cursor=pointer]:
+                - /url: site-editor.php
+            - listitem [ref=e106]:
+              - link "Fonts" [ref=e107] [cursor=pointer]:
+                - /url: font-library.php
+        - listitem [ref=e108]:
+          - link "Plugins 3" [ref=e109] [cursor=pointer]:
+            - /url: plugins.php
+            - generic [ref=e110]: 
+            - generic [ref=e111]:
+              - text: Plugins
+              - generic [ref=e112]: "3"
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - link "Installed Plugins" [ref=e115] [cursor=pointer]:
+                - /url: plugins.php
+            - listitem [ref=e116]:
+              - link "Add Plugin" [ref=e117] [cursor=pointer]:
+                - /url: plugin-install.php
+        - listitem [ref=e118]:
+          - link "Users" [ref=e119] [cursor=pointer]:
+            - /url: users.php
+            - generic [ref=e120]: 
+            - generic [ref=e121]: Users
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - link "All Users" [ref=e124] [cursor=pointer]:
+                - /url: users.php
+            - listitem [ref=e125]:
+              - link "Add User" [ref=e126] [cursor=pointer]:
+                - /url: user-new.php
+            - listitem [ref=e127]:
+              - link "Profile" [ref=e128] [cursor=pointer]:
+                - /url: profile.php
+        - listitem [ref=e129]:
+          - link "Tools" [ref=e130] [cursor=pointer]:
+            - /url: tools.php
+            - generic [ref=e131]: 
+            - generic [ref=e132]: Tools
+          - list [ref=e133]:
+            - listitem [ref=e134]:
+              - link "Available Tools" [ref=e135] [cursor=pointer]:
+                - /url: tools.php
+            - listitem [ref=e136]:
+              - link "Import" [ref=e137] [cursor=pointer]:
+                - /url: import.php
+            - listitem [ref=e138]:
+              - link "Export" [ref=e139] [cursor=pointer]:
+                - /url: export.php
+            - listitem [ref=e140]:
+              - link "Site Health" [ref=e141] [cursor=pointer]:
+                - /url: site-health.php
+            - listitem [ref=e142]:
+              - link "Export Personal Data" [ref=e143] [cursor=pointer]:
+                - /url: export-personal-data.php
+            - listitem [ref=e144]:
+              - link "Erase Personal Data" [ref=e145] [cursor=pointer]:
+                - /url: erase-personal-data.php
+            - listitem [ref=e146]:
+              - link "Theme File Editor" [ref=e147] [cursor=pointer]:
+                - /url: theme-editor.php
+            - listitem [ref=e148]:
+              - link "Plugin File Editor" [ref=e149] [cursor=pointer]:
+                - /url: plugin-editor.php
+        - listitem [ref=e150]:
+          - link "Settings" [ref=e151] [cursor=pointer]:
+            - /url: options-general.php
+            - generic [ref=e152]: 
+            - generic [ref=e153]: Settings
+          - list [ref=e154]:
+            - listitem [ref=e155]:
+              - link "General" [ref=e156] [cursor=pointer]:
+                - /url: options-general.php
+            - listitem [ref=e157]:
+              - link "Connectors" [ref=e158] [cursor=pointer]:
+                - /url: options-connectors.php
+            - listitem [ref=e159]:
+              - link "Writing" [ref=e160] [cursor=pointer]:
+                - /url: options-writing.php
+            - listitem [ref=e161]:
+              - link "Reading" [ref=e162] [cursor=pointer]:
+                - /url: options-reading.php
+            - listitem [ref=e163]:
+              - link "Discussion" [ref=e164] [cursor=pointer]:
+                - /url: options-discussion.php
+            - listitem [ref=e165]:
+              - link "Media" [ref=e166] [cursor=pointer]:
+                - /url: options-media.php
+            - listitem [ref=e167]:
+              - link "Permalinks" [ref=e168] [cursor=pointer]:
+                - /url: options-permalink.php
+            - listitem [ref=e169]:
+              - link "Privacy" [ref=e170] [cursor=pointer]:
+                - /url: options-privacy.php
+            - listitem [ref=e171]:
+              - link "FluentSMTP" [ref=e172] [cursor=pointer]:
+                - /url: options-general.php?page=fluent-mail
+        - listitem [ref=e173]:
+          - link "ACF" [ref=e174] [cursor=pointer]:
+            - /url: edit.php?post_type=acf-field-group
+            - generic [ref=e175]: 
+            - generic [ref=e176]: ACF
+          - list [ref=e177]:
+            - listitem [ref=e178]:
+              - link "Field Groups" [ref=e179] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group
+            - listitem [ref=e180]:
+              - link "Post Types" [ref=e181] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-post-type
+            - listitem [ref=e182]:
+              - link "Taxonomies" [ref=e183] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-taxonomy
+            - listitem [ref=e184]:
+              - link "Options Pages" [ref=e185] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-ui-options-page
+            - listitem [ref=e186]:
+              - link "Tools" [ref=e187] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-tools
+            - listitem [ref=e188]:
+              - link "Updates" [ref=e189] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+        - listitem [ref=e190]:
+          - button "Collapse Main menu" [expanded] [ref=e191] [cursor=pointer]:
+            - generic [ref=e193]: Collapse Menu
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - navigation "Toolbar":
+          - menu:
+            - group [ref=e196]:
+              - menuitem "About WordPress" [ref=e197] [cursor=pointer]:
+                - generic [ref=e199]: About WordPress
+            - group [ref=e200]:
+              - menuitem "Hoodsly Connector Platform" [ref=e201] [cursor=pointer]
+            - group [ref=e202]:
+              - menuitem "7 updates available" [ref=e203] [cursor=pointer]:
+                - generic [ref=e205]: "7"
+                - generic [ref=e206]: 7 updates available
+            - group [ref=e207]:
+              - menuitem "Ctrl+K Open command palette" [ref=e208] [cursor=pointer]:
+                - generic [ref=e210]:
+                  - text: Ctrl+K
+                  - generic [ref=e211]: Open command palette
+            - group [ref=e212]:
+              - menuitem "0 Comments in moderation" [ref=e213] [cursor=pointer]:
+                - generic [ref=e215]: "0"
+                - generic [ref=e216]: 0 Comments in moderation
+            - group [ref=e217]:
+              - menuitem "New" [ref=e218] [cursor=pointer]:
+                - generic [ref=e220]: New
+          - menu [ref=e221]:
+            - group [ref=e222]:
+              - menuitem "Clear Caches" [ref=e223]
+            - group [ref=e224]:
+              - menuitem "Howdy, Rakibul Islam" [ref=e225] [cursor=pointer]
+      - main [ref=e226]:
+        - generic [ref=e229]:
+          - generic [ref=e232]:
+            - link "Connector Hub" [ref=e234] [cursor=pointer]:
+              - /url: "#/dashboard"
+            - generic [ref=e236]:
+              - link "Dashboard" [ref=e237] [cursor=pointer]:
+                - /url: "#/dashboard"
+                - img [ref=e238]
+                - generic [ref=e240]: Dashboard
+              - link "Partners" [ref=e241] [cursor=pointer]:
+                - /url: "#/partners"
+                - img [ref=e242]
+                - generic [ref=e244]: Partners
+              - link "Products" [ref=e245] [cursor=pointer]:
+                - /url: "#/products"
+                - img [ref=e246]
+                - generic [ref=e248]: Products
+              - link "Attributes" [ref=e249] [cursor=pointer]:
+                - /url: "#/attributes"
+                - img [ref=e250]
+                - generic [ref=e252]: Attributes
+              - link "Settings" [ref=e253] [cursor=pointer]:
+                - /url: "#/settings"
+                - img [ref=e254]
+                - generic [ref=e257]: Settings
+              - link "Logs" [ref=e258] [cursor=pointer]:
+                - /url: "#/logs"
+                - img [ref=e259]
+                - generic [ref=e261]: Logs
+          - generic [ref=e34384]:
+            - generic [ref=e34385]:
+              - generic [ref=e34387]:
+                - heading "Partners" [level=1] [ref=e34388]
+                - paragraph [ref=e34389]: Manage your partner connections
+              - link "Add Partner" [ref=e34391] [cursor=pointer]:
+                - /url: "#/partners?action=add"
+                - img [ref=e34392]
+                - text: Add Partner
+            - generic [ref=e34394]:
+              - generic [ref=e34395]:
+                - generic [ref=e34396]:
+                  - img [ref=e34397]
+                  - textbox "Search partners..." [active] [ref=e34399]
+                - generic [ref=e34400]:
+                  - combobox [ref=e34401] [cursor=pointer]:
+                    - option "All Platforms" [selected]
+                    - option "WordPress"
+                    - option "Magento"
+                    - option "Shopify"
+                  - combobox [ref=e34402] [cursor=pointer]:
+                    - option "All Status" [selected]
+                    - option "Draft"
+                    - option "Active"
+                    - option "Inactive"
+                    - option "Trash"
+              - generic [ref=e34403]:
+                - table [ref=e34404]:
+                  - rowgroup [ref=e34405]:
+                    - row "Partner Platform Products Environment Status Actions" [ref=e34406]:
+                      - columnheader [ref=e34407]:
+                        - checkbox [ref=e34408] [cursor=pointer]
+                      - columnheader "Partner" [ref=e34409]
+                      - columnheader "Platform" [ref=e34410]
+                      - columnheader "Products" [ref=e34411]
+                      - columnheader "Environment" [ref=e34412]
+                      - columnheader "Status" [ref=e34413]
+                      - columnheader "Actions" [ref=e34414]
+                  - rowgroup [ref=e34415]:
+                    - row "TE TestRakibulQA recruittooth.s3-tastewp.com WordPress 3 Staging Active" [ref=e34423]:
+                      - cell [ref=e34424]:
+                        - checkbox [ref=e34425] [cursor=pointer]
+                      - cell "TE TestRakibulQA recruittooth.s3-tastewp.com" [ref=e34426]:
+                        - generic [ref=e34427]:
+                          - generic [ref=e34428]: TE
+                          - generic [ref=e34429]:
+                            - generic [ref=e34430]: TestRakibulQA
+                            - link "recruittooth.s3-tastewp.com" [ref=e34431] [cursor=pointer]:
+                              - /url: https://recruittooth.s3-tastewp.com
+                      - cell "WordPress" [ref=e34432]:
+                        - generic [ref=e34433]: WordPress
+                      - cell "3" [ref=e34434]:
+                        - generic [ref=e34435]: "3"
+                      - cell "Staging" [ref=e34436]:
+                        - generic [ref=e34437]: Staging
+                      - cell "Active" [ref=e34439]:
+                        - generic [ref=e34440]: Active
+                      - cell [ref=e34442]:
+                        - generic [ref=e34443]:
+                          - link "Edit" [ref=e34444] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=7191"
+                            - img [ref=e34445]
+                          - button "Duplicate" [ref=e34447] [cursor=pointer]:
+                            - img [ref=e34448]
+                          - button "Move to Trash" [ref=e34450] [cursor=pointer]:
+                            - img [ref=e34451]
+                    - row "RA RakibulQAPartner partnerrakibul00.s3-tastewp.com WordPress 9 Staging Active" [ref=e34453]:
+                      - cell [ref=e34454]:
+                        - checkbox [ref=e34455] [cursor=pointer]
+                      - cell "RA RakibulQAPartner partnerrakibul00.s3-tastewp.com" [ref=e34456]:
+                        - generic [ref=e34457]:
+                          - generic [ref=e34458]: RA
+                          - generic [ref=e34459]:
+                            - generic [ref=e34460]: RakibulQAPartner
+                            - link "partnerrakibul00.s3-tastewp.com" [ref=e34461] [cursor=pointer]:
+                              - /url: https://partnerrakibul00.s3-tastewp.com
+                      - cell "WordPress" [ref=e34462]:
+                        - generic [ref=e34463]: WordPress
+                      - cell "9" [ref=e34464]:
+                        - generic [ref=e34465]: "9"
+                      - cell "Staging" [ref=e34466]:
+                        - generic [ref=e34467]: Staging
+                      - cell "Active" [ref=e34469]:
+                        - generic [ref=e34470]: Active
+                      - cell [ref=e34472]:
+                        - generic [ref=e34473]:
+                          - link "Edit" [ref=e34474] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=7189"
+                            - img [ref=e34475]
+                          - button "Duplicate" [ref=e34477] [cursor=pointer]:
+                            - img [ref=e34478]
+                          - button "Move to Trash" [ref=e34480] [cursor=pointer]:
+                            - img [ref=e34481]
+                    - row "MA ManualQAPartner partnerqa1.s3-tastewp.com WordPress 44 Staging Active" [ref=e34483]:
+                      - cell [ref=e34484]:
+                        - checkbox [ref=e34485] [cursor=pointer]
+                      - cell "MA ManualQAPartner partnerqa1.s3-tastewp.com" [ref=e34486]:
+                        - generic [ref=e34487]:
+                          - generic [ref=e34488]: MA
+                          - generic [ref=e34489]:
+                            - generic [ref=e34490]: ManualQAPartner
+                            - link "partnerqa1.s3-tastewp.com" [ref=e34491] [cursor=pointer]:
+                              - /url: https://partnerqa1.s3-tastewp.com
+                      - cell "WordPress" [ref=e34492]:
+                        - generic [ref=e34493]: WordPress
+                      - cell "44" [ref=e34494]:
+                        - generic [ref=e34495]: "44"
+                      - cell "Staging" [ref=e34496]:
+                        - generic [ref=e34497]: Staging
+                      - cell "Active" [ref=e34499]:
+                        - generic [ref=e34500]: Active
+                      - cell [ref=e34502]:
+                        - generic [ref=e34503]:
+                          - link "Edit" [ref=e34504] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=7187"
+                            - img [ref=e34505]
+                          - button "Duplicate" [ref=e34507] [cursor=pointer]:
+                            - img [ref=e34508]
+                          - button "Move to Trash" [ref=e34510] [cursor=pointer]:
+                            - img [ref=e34511]
+                    - row "PA Palash Staging Site palash-test-2.myshopify.com Shopify 44 Staging Active" [ref=e34513]:
+                      - cell [ref=e34514]:
+                        - checkbox [ref=e34515] [cursor=pointer]
+                      - cell "PA Palash Staging Site palash-test-2.myshopify.com" [ref=e34516]:
+                        - generic [ref=e34517]:
+                          - generic [ref=e34518]: PA
+                          - generic [ref=e34519]:
+                            - generic [ref=e34520]: Palash Staging Site
+                            - link "palash-test-2.myshopify.com" [ref=e34521] [cursor=pointer]:
+                              - /url: https://palash-test-2.myshopify.com
+                      - cell "Shopify" [ref=e34522]:
+                        - generic [ref=e34523]: Shopify
+                      - cell "44" [ref=e34524]:
+                        - generic [ref=e34525]: "44"
+                      - cell "Staging" [ref=e34526]:
+                        - generic [ref=e34527]: Staging
+                      - cell "Active" [ref=e34529]:
+                        - generic [ref=e34530]: Active
+                      - cell [ref=e34532]:
+                        - generic [ref=e34533]:
+                          - link "Edit" [ref=e34534] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6830"
+                            - img [ref=e34535]
+                          - button "Duplicate" [ref=e34537] [cursor=pointer]:
+                            - img [ref=e34538]
+                          - button "Move to Trash" [ref=e34540] [cursor=pointer]:
+                            - img [ref=e34541]
+                    - row "DE Delowar-Public-App-Testing public-app-demo-3.myshopify.com Shopify 44 Staging Active" [ref=e34543]:
+                      - cell [ref=e34544]:
+                        - checkbox [ref=e34545] [cursor=pointer]
+                      - cell "DE Delowar-Public-App-Testing public-app-demo-3.myshopify.com" [ref=e34546]:
+                        - generic [ref=e34547]:
+                          - generic [ref=e34548]: DE
+                          - generic [ref=e34549]:
+                            - generic [ref=e34550]: Delowar-Public-App-Testing
+                            - link "public-app-demo-3.myshopify.com" [ref=e34551] [cursor=pointer]:
+                              - /url: https://public-app-demo-3.myshopify.com
+                      - cell "Shopify" [ref=e34552]:
+                        - generic [ref=e34553]: Shopify
+                      - cell "44" [ref=e34554]:
+                        - generic [ref=e34555]: "44"
+                      - cell "Staging" [ref=e34556]:
+                        - generic [ref=e34557]: Staging
+                      - cell "Active" [ref=e34559]:
+                        - generic [ref=e34560]: Active
+                      - cell [ref=e34562]:
+                        - generic [ref=e34563]:
+                          - link "Edit" [ref=e34564] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6661"
+                            - img [ref=e34565]
+                          - button "Duplicate" [ref=e34567] [cursor=pointer]:
+                            - img [ref=e34568]
+                          - button "Move to Trash" [ref=e34570] [cursor=pointer]:
+                            - img [ref=e34571]
+                    - row "AL Ali Local Magento hoodslyconnectormagento.local Magento 5 Staging Active" [ref=e34573]:
+                      - cell [ref=e34574]:
+                        - checkbox [ref=e34575] [cursor=pointer]
+                      - cell "AL Ali Local Magento hoodslyconnectormagento.local" [ref=e34576]:
+                        - generic [ref=e34577]:
+                          - generic [ref=e34578]: AL
+                          - generic [ref=e34579]:
+                            - generic [ref=e34580]: Ali Local Magento
+                            - link "hoodslyconnectormagento.local" [ref=e34581] [cursor=pointer]:
+                              - /url: http://hoodslyconnectormagento.local
+                      - cell "Magento" [ref=e34582]:
+                        - generic [ref=e34583]: Magento
+                      - cell "5" [ref=e34584]:
+                        - generic [ref=e34585]: "5"
+                      - cell "Staging" [ref=e34586]:
+                        - generic [ref=e34587]: Staging
+                      - cell "Active" [ref=e34589]:
+                        - generic [ref=e34590]: Active
+                      - cell [ref=e34592]:
+                        - generic [ref=e34593]:
+                          - link "Edit" [ref=e34594] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6654"
+                            - img [ref=e34595]
+                          - button "Duplicate" [ref=e34597] [cursor=pointer]:
+                            - img [ref=e34598]
+                          - button "Move to Trash" [ref=e34600] [cursor=pointer]:
+                            - img [ref=e34601]
+                    - row "TI TicTacTo 007 tictacto007.myshopify.com Shopify 2 Staging Active" [ref=e34603]:
+                      - cell [ref=e34604]:
+                        - checkbox [ref=e34605] [cursor=pointer]
+                      - cell "TI TicTacTo 007 tictacto007.myshopify.com" [ref=e34606]:
+                        - generic [ref=e34607]:
+                          - generic [ref=e34608]: TI
+                          - generic [ref=e34609]:
+                            - generic [ref=e34610]: TicTacTo 007
+                            - link "tictacto007.myshopify.com" [ref=e34611] [cursor=pointer]:
+                              - /url: https://tictacto007.myshopify.com
+                      - cell "Shopify" [ref=e34612]:
+                        - generic [ref=e34613]: Shopify
+                      - cell "2" [ref=e34614]:
+                        - generic [ref=e34615]: "2"
+                      - cell "Staging" [ref=e34616]:
+                        - generic [ref=e34617]: Staging
+                      - cell "Active" [ref=e34619]:
+                        - generic [ref=e34620]: Active
+                      - cell [ref=e34622]:
+                        - generic [ref=e34623]:
+                          - link "Edit" [ref=e34624] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6650"
+                            - img [ref=e34625]
+                          - button "Duplicate" [ref=e34627] [cursor=pointer]:
+                            - img [ref=e34628]
+                          - button "Move to Trash" [ref=e34630] [cursor=pointer]:
+                            - img [ref=e34631]
+                    - row "DE delowar-staging-test main-staging-app.myshopify.com Shopify 44 Staging Active" [ref=e34633]:
+                      - cell [ref=e34634]:
+                        - checkbox [ref=e34635] [cursor=pointer]
+                      - cell "DE delowar-staging-test main-staging-app.myshopify.com" [ref=e34636]:
+                        - generic [ref=e34637]:
+                          - generic [ref=e34638]: DE
+                          - generic [ref=e34639]:
+                            - generic [ref=e34640]: delowar-staging-test
+                            - link "main-staging-app.myshopify.com" [ref=e34641] [cursor=pointer]:
+                              - /url: https://main-staging-app.myshopify.com
+                      - cell "Shopify" [ref=e34642]:
+                        - generic [ref=e34643]: Shopify
+                      - cell "44" [ref=e34644]:
+                        - generic [ref=e34645]: "44"
+                      - cell "Staging" [ref=e34646]:
+                        - generic [ref=e34647]: Staging
+                      - cell "Active" [ref=e34649]:
+                        - generic [ref=e34650]: Active
+                      - cell [ref=e34652]:
+                        - generic [ref=e34653]:
+                          - link "Edit" [ref=e34654] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6629"
+                            - img [ref=e34655]
+                          - button "Duplicate" [ref=e34657] [cursor=pointer]:
+                            - img [ref=e34658]
+                          - button "Move to Trash" [ref=e34660] [cursor=pointer]:
+                            - img [ref=e34661]
+                    - row "TH The range hoods therangehoodstore-dev.myshopify.com Shopify 44 Staging Active" [ref=e34663]:
+                      - cell [ref=e34664]:
+                        - checkbox [ref=e34665] [cursor=pointer]
+                      - cell "TH The range hoods therangehoodstore-dev.myshopify.com" [ref=e34666]:
+                        - generic [ref=e34667]:
+                          - generic [ref=e34668]: TH
+                          - generic [ref=e34669]:
+                            - generic [ref=e34670]: The range hoods
+                            - link "therangehoodstore-dev.myshopify.com" [ref=e34671] [cursor=pointer]:
+                              - /url: https://therangehoodstore-dev.myshopify.com
+                      - cell "Shopify" [ref=e34672]:
+                        - generic [ref=e34673]: Shopify
+                      - cell "44" [ref=e34674]:
+                        - generic [ref=e34675]: "44"
+                      - cell "Staging" [ref=e34676]:
+                        - generic [ref=e34677]: Staging
+                      - cell "Active" [ref=e34679]:
+                        - generic [ref=e34680]: Active
+                      - cell [ref=e34682]:
+                        - generic [ref=e34683]:
+                          - link "Edit" [ref=e34684] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6617"
+                            - img [ref=e34685]
+                          - button "Duplicate" [ref=e34687] [cursor=pointer]:
+                            - img [ref=e34688]
+                          - button "Move to Trash" [ref=e34690] [cursor=pointer]:
+                            - img [ref=e34691]
+                    - row "DE Delowar Development Store dhm-abc.myshopify.com Shopify 5 Staging Active" [ref=e34693]:
+                      - cell [ref=e34694]:
+                        - checkbox [ref=e34695] [cursor=pointer]
+                      - cell "DE Delowar Development Store dhm-abc.myshopify.com" [ref=e34696]:
+                        - generic [ref=e34697]:
+                          - generic [ref=e34698]: DE
+                          - generic [ref=e34699]:
+                            - generic [ref=e34700]: Delowar Development Store
+                            - link "dhm-abc.myshopify.com" [ref=e34701] [cursor=pointer]:
+                              - /url: https://dhm-abc.myshopify.com
+                      - cell "Shopify" [ref=e34702]:
+                        - generic [ref=e34703]: Shopify
+                      - cell "5" [ref=e34704]:
+                        - generic [ref=e34705]: "5"
+                      - cell "Staging" [ref=e34706]:
+                        - generic [ref=e34707]: Staging
+                      - cell "Active" [ref=e34709]:
+                        - generic [ref=e34710]: Active
+                      - cell [ref=e34712]:
+                        - generic [ref=e34713]:
+                          - link "Edit" [ref=e34714] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6543"
+                            - img [ref=e34715]
+                          - button "Duplicate" [ref=e34717] [cursor=pointer]:
+                            - img [ref=e34718]
+                          - button "Move to Trash" [ref=e34720] [cursor=pointer]:
+                            - img [ref=e34721]
+                    - row "AU Automation_Partner curegrain.s5-tastewp.com WordPress 43 Staging Active" [ref=e34723]:
+                      - cell [ref=e34724]:
+                        - checkbox [ref=e34725] [cursor=pointer]
+                      - cell "AU Automation_Partner curegrain.s5-tastewp.com" [ref=e34726]:
+                        - generic [ref=e34727]:
+                          - generic [ref=e34728]: AU
+                          - generic [ref=e34729]:
+                            - generic [ref=e34730]: Automation_Partner
+                            - link "curegrain.s5-tastewp.com" [ref=e34731] [cursor=pointer]:
+                              - /url: https://curegrain.s5-tastewp.com
+                      - cell "WordPress" [ref=e34732]:
+                        - generic [ref=e34733]: WordPress
+                      - cell "43" [ref=e34734]:
+                        - generic [ref=e34735]: "43"
+                      - cell "Staging" [ref=e34736]:
+                        - generic [ref=e34737]: Staging
+                      - cell "Active" [ref=e34739]:
+                        - generic [ref=e34740]: Active
+                      - cell [ref=e34742]:
+                        - generic [ref=e34743]:
+                          - link "Edit" [ref=e34744] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6428"
+                            - img [ref=e34745]
+                          - button "Duplicate" [ref=e34747] [cursor=pointer]:
+                            - img [ref=e34748]
+                          - button "Move to Trash" [ref=e34750] [cursor=pointer]:
+                            - img [ref=e34751]
+                    - row "AL Alamin demonicswim.s6-tastewp.com WordPress 44 Staging Active" [ref=e34753]:
+                      - cell [ref=e34754]:
+                        - checkbox [ref=e34755] [cursor=pointer]
+                      - cell "AL Alamin demonicswim.s6-tastewp.com" [ref=e34756]:
+                        - generic [ref=e34757]:
+                          - generic [ref=e34758]: AL
+                          - generic [ref=e34759]:
+                            - generic [ref=e34760]: Alamin
+                            - link "demonicswim.s6-tastewp.com" [ref=e34761] [cursor=pointer]:
+                              - /url: https://demonicswim.s6-tastewp.com
+                      - cell "WordPress" [ref=e34762]:
+                        - generic [ref=e34763]: WordPress
+                      - cell "44" [ref=e34764]:
+                        - generic [ref=e34765]: "44"
+                      - cell "Staging" [ref=e34766]:
+                        - generic [ref=e34767]: Staging
+                      - cell "Active" [ref=e34769]:
+                        - generic [ref=e34770]: Active
+                      - cell [ref=e34772]:
+                        - generic [ref=e34773]:
+                          - link "Edit" [ref=e34774] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6051"
+                            - img [ref=e34775]
+                          - button "Duplicate" [ref=e34777] [cursor=pointer]:
+                            - img [ref=e34778]
+                          - button "Move to Trash" [ref=e34780] [cursor=pointer]:
+                            - img [ref=e34781]
+                    - row "MA Magento Staging 4b84d59a94.nxcli.io Magento 44 Staging Active" [ref=e34783]:
+                      - cell [ref=e34784]:
+                        - checkbox [ref=e34785] [cursor=pointer]
+                      - cell "MA Magento Staging 4b84d59a94.nxcli.io" [ref=e34786]:
+                        - generic [ref=e34787]:
+                          - generic [ref=e34788]: MA
+                          - generic [ref=e34789]:
+                            - generic [ref=e34790]: Magento Staging
+                            - link "4b84d59a94.nxcli.io" [ref=e34791] [cursor=pointer]:
+                              - /url: https://4b84d59a94.nxcli.io
+                      - cell "Magento" [ref=e34792]:
+                        - generic [ref=e34793]: Magento
+                      - cell "44" [ref=e34794]:
+                        - generic [ref=e34795]: "44"
+                      - cell "Staging" [ref=e34796]:
+                        - generic [ref=e34797]: Staging
+                      - cell "Active" [ref=e34799]:
+                        - generic [ref=e34800]: Active
+                      - cell [ref=e34802]:
+                        - generic [ref=e34803]:
+                          - link "Edit" [ref=e34804] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=6050"
+                            - img [ref=e34805]
+                          - button "Duplicate" [ref=e34807] [cursor=pointer]:
+                            - img [ref=e34808]
+                          - button "Move to Trash" [ref=e34810] [cursor=pointer]:
+                            - img [ref=e34811]
+                    - row "BA badrul-local-app quickstart-d2f67acc.myshopify.com Shopify 44 Staging Active" [ref=e34813]:
+                      - cell [ref=e34814]:
+                        - checkbox [ref=e34815] [cursor=pointer]
+                      - cell "BA badrul-local-app quickstart-d2f67acc.myshopify.com" [ref=e34816]:
+                        - generic [ref=e34817]:
+                          - generic [ref=e34818]: BA
+                          - generic [ref=e34819]:
+                            - generic [ref=e34820]: badrul-local-app
+                            - link "quickstart-d2f67acc.myshopify.com" [ref=e34821] [cursor=pointer]:
+                              - /url: https://quickstart-d2f67acc.myshopify.com
+                      - cell "Shopify" [ref=e34822]:
+                        - generic [ref=e34823]: Shopify
+                      - cell "44" [ref=e34824]:
+                        - generic [ref=e34825]: "44"
+                      - cell "Staging" [ref=e34826]:
+                        - generic [ref=e34827]: Staging
+                      - cell "Active" [ref=e34829]:
+                        - generic [ref=e34830]: Active
+                      - cell [ref=e34832]:
+                        - generic [ref=e34833]:
+                          - link "Edit" [ref=e34834] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=5990"
+                            - img [ref=e34835]
+                          - button "Duplicate" [ref=e34837] [cursor=pointer]:
+                            - img [ref=e34838]
+                          - button "Move to Trash" [ref=e34840] [cursor=pointer]:
+                            - img [ref=e34841]
+                    - row "DE Demo Partner hoodslypartnersconnector.kinsta.cloud WordPress 44 Staging Active" [ref=e34843]:
+                      - cell [ref=e34844]:
+                        - checkbox [ref=e34845] [cursor=pointer]
+                      - cell "DE Demo Partner hoodslypartnersconnector.kinsta.cloud" [ref=e34846]:
+                        - generic [ref=e34847]:
+                          - generic [ref=e34848]: DE
+                          - generic [ref=e34849]:
+                            - generic [ref=e34850]: Demo Partner
+                            - link "hoodslypartnersconnector.kinsta.cloud" [ref=e34851] [cursor=pointer]:
+                              - /url: https://hoodslypartnersconnector.kinsta.cloud
+                      - cell "WordPress" [ref=e34852]:
+                        - generic [ref=e34853]: WordPress
+                      - cell "44" [ref=e34854]:
+                        - generic [ref=e34855]: "44"
+                      - cell "Staging" [ref=e34856]:
+                        - generic [ref=e34857]: Staging
+                      - cell "Active" [ref=e34859]:
+                        - generic [ref=e34860]: Active
+                      - cell [ref=e34862]:
+                        - generic [ref=e34863]:
+                          - link "Edit" [ref=e34864] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=5237"
+                            - img [ref=e34865]
+                          - button "Duplicate" [ref=e34867] [cursor=pointer]:
+                            - img [ref=e34868]
+                          - button "Move to Trash" [ref=e34870] [cursor=pointer]:
+                            - img [ref=e34871]
+                    - row "DE Demo Partner B hoodslypartnersconnector2.kinsta.cloud WordPress 44 Staging Active" [ref=e34873]:
+                      - cell [ref=e34874]:
+                        - checkbox [ref=e34875] [cursor=pointer]
+                      - cell "DE Demo Partner B hoodslypartnersconnector2.kinsta.cloud" [ref=e34876]:
+                        - generic [ref=e34877]:
+                          - generic [ref=e34878]: DE
+                          - generic [ref=e34879]:
+                            - generic [ref=e34880]: Demo Partner B
+                            - link "hoodslypartnersconnector2.kinsta.cloud" [ref=e34881] [cursor=pointer]:
+                              - /url: https://hoodslypartnersconnector2.kinsta.cloud
+                      - cell "WordPress" [ref=e34882]:
+                        - generic [ref=e34883]: WordPress
+                      - cell "44" [ref=e34884]:
+                        - generic [ref=e34885]: "44"
+                      - cell "Staging" [ref=e34886]:
+                        - generic [ref=e34887]: Staging
+                      - cell "Active" [ref=e34889]:
+                        - generic [ref=e34890]: Active
+                      - cell [ref=e34892]:
+                        - generic [ref=e34893]:
+                          - link "Edit" [ref=e34894] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=1891"
+                            - img [ref=e34895]
+                          - button "Duplicate" [ref=e34897] [cursor=pointer]:
+                            - img [ref=e34898]
+                          - button "Move to Trash" [ref=e34900] [cursor=pointer]:
+                            - img [ref=e34901]
+                    - row "DE Demo Partner C hoodslypartnersconnector3.kinsta.cloud WordPress 44 Staging Active" [ref=e34903]:
+                      - cell [ref=e34904]:
+                        - checkbox [ref=e34905] [cursor=pointer]
+                      - cell "DE Demo Partner C hoodslypartnersconnector3.kinsta.cloud" [ref=e34906]:
+                        - generic [ref=e34907]:
+                          - generic [ref=e34908]: DE
+                          - generic [ref=e34909]:
+                            - generic [ref=e34910]: Demo Partner C
+                            - link "hoodslypartnersconnector3.kinsta.cloud" [ref=e34911] [cursor=pointer]:
+                              - /url: https://hoodslypartnersconnector3.kinsta.cloud
+                      - cell "WordPress" [ref=e34912]:
+                        - generic [ref=e34913]: WordPress
+                      - cell "44" [ref=e34914]:
+                        - generic [ref=e34915]: "44"
+                      - cell "Staging" [ref=e34916]:
+                        - generic [ref=e34917]: Staging
+                      - cell "Active" [ref=e34919]:
+                        - generic [ref=e34920]: Active
+                      - cell [ref=e34922]:
+                        - generic [ref=e34923]:
+                          - link "Edit" [ref=e34924] [cursor=pointer]:
+                            - /url: "#/partners?action=edit&id=1693"
+                            - img [ref=e34925]
+                          - button "Duplicate" [ref=e34927] [cursor=pointer]:
+                            - img [ref=e34928]
+                          - button "Move to Trash" [ref=e34930] [cursor=pointer]:
+                            - img [ref=e34931]
+                - generic [ref=e34418]:
+                  - paragraph [ref=e34419]: Showing 1-17 of 17 partners
+                  - generic [ref=e34420]:
+                    - button "Previous" [disabled] [ref=e34421]
+                    - button "1" [ref=e34933] [cursor=pointer]
+                    - button "Next" [disabled] [ref=e34422]
+    - contentinfo [ref=e380]:
+      - paragraph [ref=e381]:
+        - generic [ref=e382]:
+          - text: Thanks for creating with
+          - link "WordPress" [ref=e383] [cursor=pointer]:
+            - /url: https://wordpress.org/
+          - text: and hosting with
+          - link "Kinsta" [ref=e384] [cursor=pointer]:
+            - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+      - paragraph [ref=e385]: Version 7.0
+  - status [ref=e12215]
+  - status [ref=e12216]

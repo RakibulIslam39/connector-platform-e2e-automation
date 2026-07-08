@@ -1,0 +1,701 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Main menu":
+      - link "Skip to main content" [ref=e3] [cursor=pointer]:
+        - /url: "#wpbody-content"
+      - link "Skip to toolbar" [ref=e4] [cursor=pointer]:
+        - /url: "#wp-toolbar"
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Dashboard" [ref=e9] [cursor=pointer]:
+            - /url: index.php
+            - generic [ref=e10]: 
+            - generic [ref=e11]: Dashboard
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Home" [ref=e14] [cursor=pointer]:
+                - /url: index.php
+            - listitem [ref=e15]:
+              - link "Updates 7" [ref=e16] [cursor=pointer]:
+                - /url: update-core.php
+                - text: Updates
+                - generic [ref=e17]: "7"
+        - listitem [ref=e18]:
+          - link "Kinsta Cache" [ref=e19] [cursor=pointer]:
+            - /url: admin.php?page=kinsta-tools
+            - generic [ref=e20]: 
+            - generic [ref=e21]: Kinsta Cache
+        - listitem [ref=e22]
+        - listitem [ref=e24]:
+          - link "Posts" [ref=e25] [cursor=pointer]:
+            - /url: edit.php
+            - generic [ref=e26]: 
+            - generic [ref=e27]: Posts
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - link "All Posts" [ref=e30] [cursor=pointer]:
+                - /url: edit.php
+            - listitem [ref=e31]:
+              - link "Add Post" [ref=e32] [cursor=pointer]:
+                - /url: post-new.php
+            - listitem [ref=e33]:
+              - link "Categories" [ref=e34] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=category
+            - listitem [ref=e35]:
+              - link "Tags" [ref=e36] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=post_tag
+        - listitem [ref=e37]:
+          - link "Media" [ref=e38] [cursor=pointer]:
+            - /url: upload.php
+            - generic [ref=e39]: 
+            - generic [ref=e40]: Media
+          - list [ref=e41]:
+            - listitem [ref=e42]:
+              - link "Library" [ref=e43] [cursor=pointer]:
+                - /url: upload.php
+            - listitem [ref=e44]:
+              - link "Add Media File" [ref=e45] [cursor=pointer]:
+                - /url: media-new.php
+        - listitem [ref=e46]:
+          - link "Pages" [ref=e47] [cursor=pointer]:
+            - /url: edit.php?post_type=page
+            - generic [ref=e48]: 
+            - generic [ref=e49]: Pages
+          - list [ref=e50]:
+            - listitem [ref=e51]:
+              - link "All Pages" [ref=e52] [cursor=pointer]:
+                - /url: edit.php?post_type=page
+            - listitem [ref=e53]:
+              - link "Add Page" [ref=e54] [cursor=pointer]:
+                - /url: post-new.php?post_type=page
+        - listitem [ref=e55]:
+          - link "Comments" [ref=e56] [cursor=pointer]:
+            - /url: edit-comments.php
+            - generic [ref=e57]: 
+            - generic [ref=e58]: Comments
+        - listitem [ref=e59]:
+          - link "Partners" [ref=e60] [cursor=pointer]:
+            - /url: edit.php?post_type=partner
+            - generic [ref=e61]: 
+            - generic [ref=e62]: Partners
+          - list [ref=e63]:
+            - listitem [ref=e64]:
+              - link "All Partners" [ref=e65] [cursor=pointer]:
+                - /url: edit.php?post_type=partner
+            - listitem [ref=e66]:
+              - link "Add New Partner" [ref=e67] [cursor=pointer]:
+                - /url: post-new.php?post_type=partner
+        - listitem [ref=e68]:
+          - link "Products" [ref=e69] [cursor=pointer]:
+            - /url: edit.php?post_type=product
+            - generic [ref=e70]: 
+            - generic [ref=e71]: Products
+          - list [ref=e72]:
+            - listitem [ref=e73]:
+              - link "All Products" [ref=e74] [cursor=pointer]:
+                - /url: edit.php?post_type=product
+            - listitem [ref=e75]:
+              - link "Add New Product" [ref=e76] [cursor=pointer]:
+                - /url: post-new.php?post_type=product
+        - listitem [ref=e77]:
+          - link "Connector Hub" [ref=e78] [cursor=pointer]:
+            - /url: admin.php?page=connector-hub#/dashboard
+            - generic [ref=e79]: 
+            - generic [ref=e80]: Connector Hub
+          - list [ref=e81]:
+            - listitem [ref=e82]:
+              - link "Dashboard" [ref=e83] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/dashboard
+            - listitem [ref=e84]:
+              - link "Partners" [ref=e85] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/partners
+            - listitem [ref=e86]:
+              - link "Products" [ref=e87] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/products
+            - listitem [ref=e88]:
+              - link "Attributes" [ref=e89] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/attributes
+            - listitem [ref=e90]:
+              - link "Settings" [ref=e91] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/settings
+            - listitem [ref=e92]:
+              - link "Logs" [ref=e93] [cursor=pointer]:
+                - /url: admin.php?page=connector-hub#/logs
+        - listitem [ref=e94]
+        - listitem [ref=e96]:
+          - link "Appearance" [ref=e97] [cursor=pointer]:
+            - /url: themes.php
+            - generic [ref=e98]: 
+            - generic [ref=e99]: Appearance
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - link "Themes 4" [ref=e102] [cursor=pointer]:
+                - /url: themes.php
+                - text: Themes
+                - generic [ref=e103]: "4"
+            - listitem [ref=e104]:
+              - link "Editor" [ref=e105] [cursor=pointer]:
+                - /url: site-editor.php
+            - listitem [ref=e106]:
+              - link "Fonts" [ref=e107] [cursor=pointer]:
+                - /url: font-library.php
+        - listitem [ref=e108]:
+          - link "Plugins 3" [ref=e109] [cursor=pointer]:
+            - /url: plugins.php
+            - generic [ref=e110]: 
+            - generic [ref=e111]:
+              - text: Plugins
+              - generic [ref=e112]: "3"
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - link "Installed Plugins" [ref=e115] [cursor=pointer]:
+                - /url: plugins.php
+            - listitem [ref=e116]:
+              - link "Add Plugin" [ref=e117] [cursor=pointer]:
+                - /url: plugin-install.php
+        - listitem [ref=e118]:
+          - link "Users" [ref=e119] [cursor=pointer]:
+            - /url: users.php
+            - generic [ref=e120]: 
+            - generic [ref=e121]: Users
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - link "All Users" [ref=e124] [cursor=pointer]:
+                - /url: users.php
+            - listitem [ref=e125]:
+              - link "Add User" [ref=e126] [cursor=pointer]:
+                - /url: user-new.php
+            - listitem [ref=e127]:
+              - link "Profile" [ref=e128] [cursor=pointer]:
+                - /url: profile.php
+        - listitem [ref=e129]:
+          - link "Tools" [ref=e130] [cursor=pointer]:
+            - /url: tools.php
+            - generic [ref=e131]: 
+            - generic [ref=e132]: Tools
+          - list [ref=e133]:
+            - listitem [ref=e134]:
+              - link "Available Tools" [ref=e135] [cursor=pointer]:
+                - /url: tools.php
+            - listitem [ref=e136]:
+              - link "Import" [ref=e137] [cursor=pointer]:
+                - /url: import.php
+            - listitem [ref=e138]:
+              - link "Export" [ref=e139] [cursor=pointer]:
+                - /url: export.php
+            - listitem [ref=e140]:
+              - link "Site Health" [ref=e141] [cursor=pointer]:
+                - /url: site-health.php
+            - listitem [ref=e142]:
+              - link "Export Personal Data" [ref=e143] [cursor=pointer]:
+                - /url: export-personal-data.php
+            - listitem [ref=e144]:
+              - link "Erase Personal Data" [ref=e145] [cursor=pointer]:
+                - /url: erase-personal-data.php
+            - listitem [ref=e146]:
+              - link "Theme File Editor" [ref=e147] [cursor=pointer]:
+                - /url: theme-editor.php
+            - listitem [ref=e148]:
+              - link "Plugin File Editor" [ref=e149] [cursor=pointer]:
+                - /url: plugin-editor.php
+        - listitem [ref=e150]:
+          - link "Settings" [ref=e151] [cursor=pointer]:
+            - /url: options-general.php
+            - generic [ref=e152]: 
+            - generic [ref=e153]: Settings
+          - list [ref=e154]:
+            - listitem [ref=e155]:
+              - link "General" [ref=e156] [cursor=pointer]:
+                - /url: options-general.php
+            - listitem [ref=e157]:
+              - link "Connectors" [ref=e158] [cursor=pointer]:
+                - /url: options-connectors.php
+            - listitem [ref=e159]:
+              - link "Writing" [ref=e160] [cursor=pointer]:
+                - /url: options-writing.php
+            - listitem [ref=e161]:
+              - link "Reading" [ref=e162] [cursor=pointer]:
+                - /url: options-reading.php
+            - listitem [ref=e163]:
+              - link "Discussion" [ref=e164] [cursor=pointer]:
+                - /url: options-discussion.php
+            - listitem [ref=e165]:
+              - link "Media" [ref=e166] [cursor=pointer]:
+                - /url: options-media.php
+            - listitem [ref=e167]:
+              - link "Permalinks" [ref=e168] [cursor=pointer]:
+                - /url: options-permalink.php
+            - listitem [ref=e169]:
+              - link "Privacy" [ref=e170] [cursor=pointer]:
+                - /url: options-privacy.php
+            - listitem [ref=e171]:
+              - link "FluentSMTP" [ref=e172] [cursor=pointer]:
+                - /url: options-general.php?page=fluent-mail
+        - listitem [ref=e173]:
+          - link "ACF" [ref=e174] [cursor=pointer]:
+            - /url: edit.php?post_type=acf-field-group
+            - generic [ref=e175]: 
+            - generic [ref=e176]: ACF
+          - list [ref=e177]:
+            - listitem [ref=e178]:
+              - link "Field Groups" [ref=e179] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group
+            - listitem [ref=e180]:
+              - link "Post Types" [ref=e181] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-post-type
+            - listitem [ref=e182]:
+              - link "Taxonomies" [ref=e183] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-taxonomy
+            - listitem [ref=e184]:
+              - link "Options Pages" [ref=e185] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-ui-options-page
+            - listitem [ref=e186]:
+              - link "Tools" [ref=e187] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-tools
+            - listitem [ref=e188]:
+              - link "Updates" [ref=e189] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+        - listitem [ref=e190]:
+          - button "Collapse Main menu" [expanded] [ref=e191] [cursor=pointer]:
+            - generic [ref=e193]: Collapse Menu
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - navigation "Toolbar":
+          - menu:
+            - group [ref=e196]:
+              - menuitem "About WordPress" [ref=e197] [cursor=pointer]:
+                - generic [ref=e199]: About WordPress
+            - group [ref=e200]:
+              - menuitem "Hoodsly Connector Platform" [ref=e201] [cursor=pointer]
+            - group [ref=e202]:
+              - menuitem "7 updates available" [ref=e203] [cursor=pointer]:
+                - generic [ref=e205]: "7"
+                - generic [ref=e206]: 7 updates available
+            - group [ref=e207]:
+              - menuitem "Ctrl+K Open command palette" [ref=e208] [cursor=pointer]:
+                - generic [ref=e210]:
+                  - text: Ctrl+K
+                  - generic [ref=e211]: Open command palette
+            - group [ref=e212]:
+              - menuitem "0 Comments in moderation" [ref=e213] [cursor=pointer]:
+                - generic [ref=e215]: "0"
+                - generic [ref=e216]: 0 Comments in moderation
+            - group [ref=e217]:
+              - menuitem "New" [ref=e218] [cursor=pointer]:
+                - generic [ref=e220]: New
+            - group [ref=e221]:
+              - menuitem "View Product" [ref=e222] [cursor=pointer]
+          - menu [ref=e223]:
+            - group [ref=e224]:
+              - menuitem "Clear Caches" [ref=e225]
+            - group [ref=e226]:
+              - menuitem "Howdy, Rakibul Islam" [ref=e227] [cursor=pointer]
+      - main [ref=e228]:
+        - generic [ref=e229]:
+          - button "Screen Options" [ref=e232] [cursor=pointer]
+          - generic [ref=e233]:
+            - heading "Edit Product" [level=1] [ref=e234]
+            - link "Add New Product" [ref=e235] [cursor=pointer]:
+              - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/post-new.php?post_type=product
+            - generic [ref=e236]:
+              - paragraph [ref=e237]:
+                - text: FluentSMTP Plugin may not work properly. Looks like your Authentication unique keys and salts are changed.
+                - link "Reconfigure SMTP Settings" [ref=e238] [cursor=pointer]:
+                  - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/options-general.php?page=fluent-mail#/connections
+              - button "Dismiss this notice." [ref=e239] [cursor=pointer]:
+                - generic [ref=e240]: Dismiss this notice.
+            - generic [ref=e242]:
+              - generic:
+                - generic [ref=e244]:
+                  - generic [ref=e245]:
+                    - generic: Add title
+                    - textbox "Add title" [ref=e246]: VEN-DBC
+                  - generic [ref=e248]:
+                    - strong [ref=e249]: "Permalink:"
+                    - link "https://hoodslypartnersconnector3.kinsta.cloud/product/ven-dbc/" [ref=e251] [cursor=pointer]:
+                      - /url: https://hoodslypartnersconnector3.kinsta.cloud/product/ven-dbc/
+                    - text: ‎
+                    - button "Edit permalink" [ref=e253] [cursor=pointer]: Edit
+                - generic [ref=e256]:
+                  - generic [ref=e257]:
+                    - heading "Publish" [level=2] [ref=e258]
+                    - generic [ref=e259]:
+                      - button "Move up" [ref=e260] [cursor=pointer]:
+                        - generic [ref=e261]: Move up
+                      - button "Move down" [ref=e263] [cursor=pointer]:
+                        - generic [ref=e264]: Move down
+                      - 'button "Toggle panel: Publish" [expanded] [ref=e266] [cursor=pointer]':
+                        - generic [ref=e267]: "Toggle panel: Publish"
+                  - generic [ref=e270]:
+                    - generic [ref=e271]:
+                      - link "Preview Changes (opens in a new tab)" [ref=e273] [cursor=pointer]:
+                        - /url: https://hoodslypartnersconnector3.kinsta.cloud/product/ven-dbc/?preview=true
+                        - text: Preview Changes
+                        - generic [ref=e274]: (opens in a new tab)
+                      - generic [ref=e275]:
+                        - generic [ref=e276]:
+                          - text: "Status: Published"
+                          - button "Edit status" [ref=e277] [cursor=pointer]:
+                            - text: Edit
+                            - generic [ref=e278]: Edit status
+                        - generic [ref=e279]:
+                          - text: "Visibility: Public"
+                          - button "Edit visibility" [ref=e280] [cursor=pointer]:
+                            - text: Edit
+                            - generic [ref=e281]: Edit visibility
+                        - generic [ref=e282]:
+                          - text: "Revisions: 5"
+                          - link "Browse revisions" [ref=e283] [cursor=pointer]:
+                            - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/revision.php?revision=6845
+                            - text: Browse
+                            - generic [ref=e284]: Browse revisions
+                        - generic [ref=e285]:
+                          - generic [ref=e286]: "Published on: Jul 23, 2025 at 16:24"
+                          - button "Edit date and time" [ref=e287] [cursor=pointer]:
+                            - text: Edit
+                            - generic [ref=e288]: Edit date and time
+                    - generic [ref=e289]:
+                      - link "Move to Trash" [ref=e291] [cursor=pointer]:
+                        - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/post.php?post=5082&action=trash&_wpnonce=6de61594f4
+                      - button "Update" [ref=e293] [cursor=pointer]
+                - generic [ref=e295]:
+                  - generic [ref=e296]:
+                    - generic [ref=e297]:
+                      - heading "Product Fields" [level=2] [ref=e298]
+                      - generic [ref=e299]:
+                        - text: 
+                        - button "Move up" [ref=e300] [cursor=pointer]:
+                          - generic [ref=e301]: Move up
+                        - button "Move down" [ref=e303] [cursor=pointer]:
+                          - generic [ref=e304]: Move down
+                        - 'button "Toggle panel: Product Fields" [expanded] [ref=e306] [cursor=pointer]':
+                          - generic [ref=e307]: "Toggle panel: Product Fields"
+                    - generic [ref=e309]:
+                      - generic [ref=e310]:
+                        - generic [ref=e312]: Partners
+                        - generic [ref=e313]:
+                          - listbox [ref=e314] [cursor=pointer]
+                          - combobox [ref=e317]:
+                            - list [ref=e318]:
+                              - listitem "Demo Partner" [ref=e319]: × Demo Partner
+                              - listitem "Demo Partner B" [ref=e320]: × Demo Partner B
+                              - listitem "Automation_Partner" [ref=e321]: × Automation_Partner
+                              - listitem "The range hoods" [ref=e322]: × The range hoods
+                              - listitem "Palash Staging Site" [ref=e323]: × Palash Staging Site
+                              - listitem "Demo Partner C" [ref=e324]: × Demo Partner C
+                              - listitem "delowar-staging-test" [ref=e325]: × delowar-staging-test
+                              - listitem "Delowar-Public-App-Testing" [ref=e326]: × Delowar-Public-App-Testing
+                              - listitem "badrul-local-app" [ref=e327]: × badrul-local-app
+                              - listitem "Alamin" [ref=e328]: × Alamin
+                              - listitem "Ali Local Magento" [ref=e329]: × Ali Local Magento
+                              - listitem "Magento Staging" [ref=e330]: × Magento Staging
+                              - listitem "ManualQAPartner" [ref=e331]: × ManualQAPartner
+                              - listitem [ref=e332]:
+                                - searchbox [ref=e333]
+                      - generic [ref=e334]:
+                        - generic [ref=e336]: Title *
+                        - textbox "Title *" [ref=e339]: Double Curved
+                      - generic [ref=e340]:
+                        - generic [ref=e342]: Images
+                        - generic [ref=e344]:
+                          - generic [ref=e345]:
+                            - generic [ref=e346]:
+                              - generic [ref=e347] [cursor=pointer]: 
+                              - generic [ref=e350] [cursor=pointer]: 
+                              - generic [ref=e353] [cursor=pointer]: 
+                              - generic [ref=e356] [cursor=pointer]: 
+                              - generic [ref=e359] [cursor=pointer]: 
+                            - list [ref=e363]:
+                              - listitem [ref=e364]:
+                                - link "Add to gallery" [ref=e365] [cursor=pointer]:
+                                  - /url: "#"
+                              - listitem [ref=e366]:
+                                - combobox [ref=e367] [cursor=pointer]:
+                                  - option "Bulk actions" [selected]
+                                  - option "Sort by date uploaded"
+                                  - option "Sort by date modified"
+                                  - option "Sort by title"
+                                  - option "Reverse current order"
+                          - list [ref=e372]:
+                            - listitem [ref=e373]:
+                              - link "Close" [ref=e374] [cursor=pointer]:
+                                - /url: "#"
+                            - listitem [ref=e375]:
+                              - link "Update" [ref=e376] [cursor=pointer]:
+                                - /url: "#"
+                      - generic [ref=e377]:
+                        - generic [ref=e379]: Description
+                        - generic [ref=e381]:
+                          - generic [ref=e382]:
+                            - button "Add Media" [ref=e384] [cursor=pointer]: Add Media
+                            - generic [ref=e386]:
+                              - button "Visual" [ref=e387] [cursor=pointer]
+                              - button "Text" [ref=e388] [cursor=pointer]
+                          - application [ref=e390]:
+                            - generic [ref=e391]:
+                              - group [ref=e394]:
+                                - toolbar [ref=e396]:
+                                  - group [ref=e398]:
+                                    - generic [ref=e399]:
+                                      - button "Paragraph" [ref=e400] [cursor=pointer]:
+                                        - button "Paragraph" [ref=e401]:
+                                          - generic [ref=e402]: Paragraph
+                                      - button "Bold (Ctrl+B)" [ref=e404] [cursor=pointer]:
+                                        - button [ref=e405]
+                                      - button "Italic (Ctrl+I)" [ref=e407] [cursor=pointer]:
+                                        - button [ref=e408]
+                                      - button "Bulleted list (Shift+Alt+U)" [ref=e410] [cursor=pointer]:
+                                        - button [ref=e411]
+                                      - button "Numbered list (Shift+Alt+O)" [ref=e413] [cursor=pointer]:
+                                        - button [ref=e414]
+                                      - button "Blockquote (Shift+Alt+Q)" [ref=e416] [cursor=pointer]:
+                                        - button [ref=e417]
+                                      - button "Align left (Shift+Alt+L)" [ref=e419] [cursor=pointer]:
+                                        - button [ref=e420]
+                                      - button "Align center (Shift+Alt+C)" [ref=e422] [cursor=pointer]:
+                                        - button [ref=e423]
+                                      - button "Align right (Shift+Alt+R)" [ref=e425] [cursor=pointer]:
+                                        - button [ref=e426]
+                                      - button "Insert/edit link (Ctrl+K)" [ref=e428] [cursor=pointer]:
+                                        - button [ref=e429]
+                                      - button "Insert Read More tag (Shift+Alt+T)" [ref=e431] [cursor=pointer]:
+                                        - button [ref=e432]
+                                      - button "Fullscreen" [ref=e434] [cursor=pointer]:
+                                        - button [ref=e435]
+                                      - button "Toolbar Toggle (Shift+Alt+Z)" [ref=e437] [cursor=pointer]:
+                                        - button [ref=e438]
+                              - group [ref=e440]:
+                                - iframe [ref=e441]:
+                                  - generic [active] [ref=f3e1]:
+                                    - paragraph [ref=f3e2]: Our hoods are made from cabinet-grade plywood with a white maple veneer. Brass and Steel Accents are created using a cabinet-grade laminate adhered to a white maple veneer.
+                                    - paragraph [ref=f3e3]: Hoodsly’s wood range hoods come in an array of designs and colors to match your kitchen perfectly. Get your wood range hood in raw, primed/paint ready, or stained/painted. Choose one of our trending colors or match your kitchen with a custom color choice. Designed to be both elegant and effective, each wood range hood was built with our proprietary two-piece construction for easy installation, allowing for simple cleaning and easy access to fan and ducting.
+                                    - paragraph [ref=f3e4]: Our Trimless Style hoods are only compatible with our TradeWinds ventilation units
+                                    - paragraph [ref=f3e5]: We only recommend cleaning your range hood with CLEAR, FRAGRANCE-FREE Dawn dish soap. View full cleaning instructions.
+                                    - paragraph [ref=f3e6]: "IMPORTANT WOODWORKING INFORMATION: You should choose a licensed electrician, and/or HVAC Contractor, and a cabinet installation professional to assist with the install. Above all, ensure you are meeting all building codes in your area. While this installation is not difficult, you must have electrical, ventilation, and finish carpentry skills. You may need to cut, sand, chisel, remove “ribs”, install supports and other basic woodworking functions to complete the install."
+                                    - paragraph [ref=f3e7]: "PLEASE NOTE: The product images displayed are computer generated renderings, and actual colors & wood grain may vary depending on the device you're viewing them on. For a clearer understanding of our products and their colors, we recommend exploring our gallery, contacting us directly, or requesting color samples. We're here to ensure you have the most accurate information possible!"
+                              - group [ref=e442]:
+                                - generic [ref=e447]: 
+                      - generic [ref=e448]:
+                        - generic [ref=e450]: Dimensions
+                        - generic [ref=e452]:
+                          - generic [ref=e453]:
+                            - button "Add Media" [ref=e455] [cursor=pointer]: Add Media
+                            - generic [ref=e457]:
+                              - button "Visual" [ref=e458] [cursor=pointer]
+                              - button "Text" [ref=e459] [cursor=pointer]
+                          - application [ref=e461]:
+                            - generic [ref=e462]:
+                              - group [ref=e465]:
+                                - toolbar [ref=e467]:
+                                  - group [ref=e469]:
+                                    - generic [ref=e470]:
+                                      - button "Paragraph" [ref=e471] [cursor=pointer]:
+                                        - button "Paragraph" [ref=e472]:
+                                          - generic [ref=e473]: Paragraph
+                                      - button "Bold (Ctrl+B)" [ref=e475] [cursor=pointer]:
+                                        - button [ref=e476]
+                                      - button "Italic (Ctrl+I)" [ref=e478] [cursor=pointer]:
+                                        - button [ref=e479]
+                                      - button "Bulleted list (Shift+Alt+U)" [ref=e481] [cursor=pointer]:
+                                        - button [ref=e482]
+                                      - button "Numbered list (Shift+Alt+O)" [ref=e484] [cursor=pointer]:
+                                        - button [ref=e485]
+                                      - button "Blockquote (Shift+Alt+Q)" [ref=e487] [cursor=pointer]:
+                                        - button [ref=e488]
+                                      - button "Align left (Shift+Alt+L)" [ref=e490] [cursor=pointer]:
+                                        - button [ref=e491]
+                                      - button "Align center (Shift+Alt+C)" [ref=e493] [cursor=pointer]:
+                                        - button [ref=e494]
+                                      - button "Align right (Shift+Alt+R)" [ref=e496] [cursor=pointer]:
+                                        - button [ref=e497]
+                                      - button "Insert/edit link (Ctrl+K)" [ref=e499] [cursor=pointer]:
+                                        - button [ref=e500]
+                                      - button "Insert Read More tag (Shift+Alt+T)" [ref=e502] [cursor=pointer]:
+                                        - button [ref=e503]
+                                      - button "Fullscreen" [ref=e505] [cursor=pointer]:
+                                        - button [ref=e506]
+                                      - button "Toolbar Toggle (Shift+Alt+Z)" [ref=e508] [cursor=pointer]:
+                                        - button [ref=e509]
+                              - group [ref=e511]:
+                                - iframe [ref=e512]:
+                                  - paragraph [ref=f4e2]
+                              - group [ref=e513]:
+                                - generic [ref=e518]: 
+                      - generic [ref=e519]:
+                        - generic [ref=e521]: Title By Partners
+                        - generic [ref=e523]:
+                          - table [ref=e524]:
+                            - rowgroup [ref=e525]:
+                              - row "Partners Name Product Title" [ref=e526]:
+                                - columnheader [ref=e527]
+                                - columnheader "Partners Name" [ref=e528]
+                                - columnheader "Product Title" [ref=e529]
+                                - columnheader [ref=e530]
+                            - rowgroup:  
+                          - link "Add Row" [ref=e532] [cursor=pointer]:
+                            - /url: "#"
+                      - generic [ref=e533]:
+                        - generic [ref=e535]: Physical Sample Instructions
+                        - paragraph [ref=e537]:
+                          - text: Please download and send this form along with your physical sample
+                          - link "Download Form" [ref=e538] [cursor=pointer]:
+                            - /url: https://hoodslyhub.com/wp-content/uploads/2023/10/Hoodsly_Color_Match_Sample_Transmittal.pdf
+                  - generic [ref=e539]:
+                    - generic [ref=e540]:
+                      - heading "VEN-DBC" [level=2] [ref=e541]
+                      - generic [ref=e542]:
+                        - text: 
+                        - button "Move up" [ref=e543] [cursor=pointer]:
+                          - generic [ref=e544]: Move up
+                        - button "Move down" [ref=e546] [cursor=pointer]:
+                          - generic [ref=e547]: Move down
+                        - 'button "Toggle panel: VEN-DBC" [expanded] [ref=e549] [cursor=pointer]':
+                          - generic [ref=e550]: "Toggle panel: VEN-DBC"
+                    - generic [ref=e552]:
+                      - generic [ref=e553]:
+                        - generic [ref=e555]: Color Options *
+                        - radiogroup "Color Options *" [ref=e557]:
+                          - listitem [ref=e558]:
+                            - generic [ref=e559]:
+                              - radio "Our Color Options" [checked] [ref=e560] [cursor=pointer]
+                              - text: Our Color Options
+                          - listitem [ref=e561]:
+                            - generic [ref=e562]:
+                              - radio "Custom Color Match Options" [ref=e563] [cursor=pointer]
+                              - text: Custom Color Match Options
+                      - generic [ref=e564]:
+                        - generic [ref=e566]: Color *
+                        - combobox "Color *" [ref=e568] [cursor=pointer]
+                      - generic [ref=e569]:
+                        - generic [ref=e571]: Size *
+                        - combobox "Size *" [ref=e573] [cursor=pointer]:
+                          - option "36\" x 30\" ($2645)" [selected]
+                          - option "36\" x 36\" ($2645)"
+                          - option "36\" x 48\" ($2700)"
+                          - option "42\" x 30\" ($2745)"
+                          - option "42\" x 36\" ($2745)"
+                          - option "42\" x 48\" ($2900)"
+                          - option "48\" x 30\" ($2900)"
+                          - option "48\" x 36\" ($2900)"
+                          - option "48\" x 48\" ($3155)"
+                          - option "54\" x 30\" ($3155)"
+                          - option "54\" x 36\" ($3155)"
+                          - option "54\" x 48\" ($3350)"
+                          - option "60\" x 30\" ($3460)"
+                          - option "60\" x 36\" ($3460)"
+                          - option "60\" x 48\" ($3560)"
+                      - generic [ref=e574]:
+                        - generic [ref=e576]: Ventilation Options *
+                        - combobox "Ventilation Options *" [ref=e578] [cursor=pointer]:
+                          - option "None" [selected]
+                          - option "Broan"
+                          - option "Hauslane"
+                          - option "ZLINE"
+                          - option "TradeWinds"
+                          - option "Vent-A-Hood"
+                      - generic [ref=e579]:
+                        - generic [ref=e581]: Non-Duct Kit *
+                        - combobox "Non-Duct Kit *" [ref=e583] [cursor=pointer]:
+                          - option "No Non-Duct Kit" [selected]
+                          - option "Add Non-Duct Kit (5BL-39-400-DCK) ($80)"
+                      - generic [ref=e584]:
+                        - generic [ref=e586]: Increase Depth *
+                        - combobox "Increase Depth *" [ref=e588] [cursor=pointer]:
+                          - option "18\" Interior Depth (Standard)" [selected]
+                          - option "Increase Interior Depth To 19.3125\" ($260)"
+                          - option "Increase Interior Depth To 20.5\" ($260)"
+                          - option "Increase Interior Depth To 22.5\" ($390)"
+                      - generic [ref=e589]:
+                        - generic [ref=e591]: Trim Options *
+                        - combobox "Trim Options *" [ref=e593] [cursor=pointer]:
+                          - option "Classic Trim (Adds 1.5\" To Overall Width)" [selected]
+                          - option "Block Trim (Adds 1.5\" To Overall Width)"
+                          - option "Flat Trim (Adds .5\" To Overall Width)"
+                      - generic [ref=e594]:
+                        - generic [ref=e596]: How would you like your trim? *
+                        - combobox "How would you like your trim? *" [ref=e598] [cursor=pointer]:
+                          - option "Installed" [selected]
+                          - option "Remove Side Trim"
+                          - option "Removed"
+                      - generic [ref=e599]:
+                        - generic [ref=e601]: Crown Molding *
+                        - combobox "Crown Molding *" [ref=e603] [cursor=pointer]:
+                          - option "No Crown Molding" [selected]
+                          - option "Installed ($260)"
+                          - option "Loose (Not Installed) ($195)"
+                      - generic [ref=e604]:
+                        - generic [ref=e606]: Reduce Height *
+                        - combobox "Reduce Height *" [ref=e608] [cursor=pointer]:
+                          - option "None" [selected]
+                          - option "Remove 1\" ($165)"
+                          - option "Remove 2\" ($165)"
+                          - option "Remove 3\" ($165)"
+                          - option "Remove 4\" ($165)"
+                          - option "Remove 5\" ($165)"
+                          - option "Remove 6\" ($165)"
+                      - generic [ref=e609]:
+                        - generic [ref=e611]: Extend Your Chimney *
+                        - combobox "Extend Your Chimney *" [ref=e613] [cursor=pointer]:
+                          - option "None" [selected]
+                          - option "6\" Extension ($230)"
+                          - option "12\" Extension ($285)"
+                          - option "24\" Extension ($325)"
+                      - generic [ref=e614]:
+                        - generic [ref=e616]: Add Solid Bottom *
+                        - combobox "Add Solid Bottom *" [ref=e618] [cursor=pointer]:
+                          - option "No" [selected]
+                          - option "Yes ($260)"
+                  - generic [ref=e619]:
+                    - generic [ref=e620]:
+                      - heading "Revisions" [level=2] [ref=e621]
+                      - generic [ref=e622]:
+                        - button "Move up" [ref=e623] [cursor=pointer]:
+                          - generic [ref=e624]: Move up
+                        - button "Move down" [ref=e626] [cursor=pointer]:
+                          - generic [ref=e627]: Move down
+                        - 'button "Toggle panel: Revisions" [expanded] [ref=e629] [cursor=pointer]':
+                          - generic [ref=e630]: "Toggle panel: Revisions"
+                    - list [ref=e633]:
+                      - listitem [ref=e634]:
+                        - text: Palash Chandra, 2 months ago (
+                        - link "April 9, 2026 @ 10:06:16" [ref=e635] [cursor=pointer]:
+                          - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/revision.php?revision=6845
+                        - text: )
+                      - listitem [ref=e636]:
+                        - text: Hymayun Ahmed, 4 months ago (
+                        - link "January 22, 2026 @ 08:00:28" [ref=e637] [cursor=pointer]:
+                          - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/revision.php?revision=5942
+                        - text: )
+                      - listitem [ref=e638]:
+                        - text: Hymayun Ahmed, 4 months ago (
+                        - link "January 22, 2026 @ 07:58:40" [ref=e639] [cursor=pointer]:
+                          - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/revision.php?revision=5940
+                        - text: ) [Autosave]
+                      - listitem [ref=e640]:
+                        - text: Hymayun Ahmed, 5 months ago (
+                        - link "January 8, 2026 @ 08:10:09" [ref=e641] [cursor=pointer]:
+                          - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/revision.php?revision=5869
+                        - text: )
+                      - listitem [ref=e642]:
+                        - text: Hymayun Ahmed, 9 months ago (
+                        - link "September 18, 2025 @ 11:52:19" [ref=e643] [cursor=pointer]:
+                          - /url: https://hoodslypartnersconnector3.kinsta.cloud/wp-admin/revision.php?revision=5440
+                        - text: )
+    - contentinfo [ref=e645]:
+      - paragraph [ref=e646]:
+        - generic [ref=e647]:
+          - text: Thanks for creating with
+          - link "WordPress" [ref=e648] [cursor=pointer]:
+            - /url: https://wordpress.org/
+          - text: and hosting with
+          - link "Kinsta" [ref=e649] [cursor=pointer]:
+            - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+      - paragraph [ref=e650]: Version 7.0
+  - text: 
+  - text:          
+  - status [ref=e653]
+  - text:            
+  - status [ref=e654]
+  - text:            
+  - status [ref=e655]
+  - text:  

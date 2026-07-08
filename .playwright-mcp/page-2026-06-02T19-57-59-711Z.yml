@@ -1,0 +1,797 @@
+- generic [ref=e2]:
+  - navigation "Main menu":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#wpbody-content"
+    - link "Skip to toolbar" [ref=e4] [cursor=pointer]:
+      - /url: "#wp-toolbar"
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: index.php
+          - generic [ref=e10]: 
+          - generic [ref=e11]: Dashboard
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - link "Home" [ref=e14] [cursor=pointer]:
+              - /url: index.php
+          - listitem [ref=e15]:
+            - link "Updates 7" [ref=e16] [cursor=pointer]:
+              - /url: update-core.php
+              - text: Updates
+              - generic [ref=e17]: "7"
+      - listitem [ref=e18]:
+        - link "Kinsta Cache" [ref=e19] [cursor=pointer]:
+          - /url: admin.php?page=kinsta-tools
+          - generic [ref=e20]: 
+          - generic [ref=e21]: Kinsta Cache
+      - listitem [ref=e22]
+      - listitem [ref=e24]:
+        - link "Posts" [ref=e25] [cursor=pointer]:
+          - /url: edit.php
+          - generic [ref=e26]: 
+          - generic [ref=e27]: Posts
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - link "All Posts" [ref=e30] [cursor=pointer]:
+              - /url: edit.php
+          - listitem [ref=e31]:
+            - link "Add Post" [ref=e32] [cursor=pointer]:
+              - /url: post-new.php
+          - listitem [ref=e33]:
+            - link "Categories" [ref=e34] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=category
+          - listitem [ref=e35]:
+            - link "Tags" [ref=e36] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=post_tag
+      - listitem [ref=e37]:
+        - link "Media" [ref=e38] [cursor=pointer]:
+          - /url: upload.php
+          - generic [ref=e39]: 
+          - generic [ref=e40]: Media
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Library" [ref=e43] [cursor=pointer]:
+              - /url: upload.php
+          - listitem [ref=e44]:
+            - link "Add Media File" [ref=e45] [cursor=pointer]:
+              - /url: media-new.php
+      - listitem [ref=e46]:
+        - link "Pages" [ref=e47] [cursor=pointer]:
+          - /url: edit.php?post_type=page
+          - generic [ref=e48]: 
+          - generic [ref=e49]: Pages
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - link "All Pages" [ref=e52] [cursor=pointer]:
+              - /url: edit.php?post_type=page
+          - listitem [ref=e53]:
+            - link "Add Page" [ref=e54] [cursor=pointer]:
+              - /url: post-new.php?post_type=page
+      - listitem [ref=e55]:
+        - link "Comments" [ref=e56] [cursor=pointer]:
+          - /url: edit-comments.php
+          - generic [ref=e57]: 
+          - generic [ref=e58]: Comments
+      - listitem [ref=e59]:
+        - link "Partners" [ref=e60] [cursor=pointer]:
+          - /url: edit.php?post_type=partner
+          - generic [ref=e61]: 
+          - generic [ref=e62]: Partners
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - link "All Partners" [ref=e65] [cursor=pointer]:
+              - /url: edit.php?post_type=partner
+          - listitem [ref=e66]:
+            - link "Add New Partner" [ref=e67] [cursor=pointer]:
+              - /url: post-new.php?post_type=partner
+      - listitem [ref=e68]:
+        - link "Products" [ref=e69] [cursor=pointer]:
+          - /url: edit.php?post_type=product
+          - generic [ref=e70]: 
+          - generic [ref=e71]: Products
+        - list [ref=e72]:
+          - listitem [ref=e73]:
+            - link "All Products" [ref=e74] [cursor=pointer]:
+              - /url: edit.php?post_type=product
+          - listitem [ref=e75]:
+            - link "Add New Product" [ref=e76] [cursor=pointer]:
+              - /url: post-new.php?post_type=product
+      - listitem [ref=e77]:
+        - link "Connector Hub" [ref=e78] [cursor=pointer]:
+          - /url: admin.php?page=connector-hub#/dashboard
+          - generic [ref=e79]: 
+          - generic [ref=e80]: Connector Hub
+        - list [ref=e81]:
+          - listitem [ref=e82]:
+            - link "Dashboard" [ref=e83] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/dashboard
+          - listitem [ref=e84]:
+            - link "Partners" [ref=e85] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/partners
+          - listitem [ref=e86]:
+            - link "Products" [ref=e87] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/products
+          - listitem [ref=e88]:
+            - link "Attributes" [ref=e89] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/attributes
+          - listitem [ref=e90]:
+            - link "Settings" [ref=e91] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/settings
+          - listitem [ref=e92]:
+            - link "Logs" [ref=e93] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/logs
+      - listitem [ref=e94]
+      - listitem [ref=e96]:
+        - link "Appearance" [ref=e97] [cursor=pointer]:
+          - /url: themes.php
+          - generic [ref=e98]: 
+          - generic [ref=e99]: Appearance
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - link "Themes 4" [ref=e102] [cursor=pointer]:
+              - /url: themes.php
+              - text: Themes
+              - generic [ref=e103]: "4"
+          - listitem [ref=e104]:
+            - link "Editor" [ref=e105] [cursor=pointer]:
+              - /url: site-editor.php
+          - listitem [ref=e106]:
+            - link "Fonts" [ref=e107] [cursor=pointer]:
+              - /url: font-library.php
+      - listitem [ref=e108]:
+        - link "Plugins 3" [ref=e109] [cursor=pointer]:
+          - /url: plugins.php
+          - generic [ref=e110]: 
+          - generic [ref=e111]:
+            - text: Plugins
+            - generic [ref=e112]: "3"
+        - list [ref=e113]:
+          - listitem [ref=e114]:
+            - link "Installed Plugins" [ref=e115] [cursor=pointer]:
+              - /url: plugins.php
+          - listitem [ref=e116]:
+            - link "Add Plugin" [ref=e117] [cursor=pointer]:
+              - /url: plugin-install.php
+      - listitem [ref=e118]:
+        - link "Users" [ref=e119] [cursor=pointer]:
+          - /url: users.php
+          - generic [ref=e120]: 
+          - generic [ref=e121]: Users
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "All Users" [ref=e124] [cursor=pointer]:
+              - /url: users.php
+          - listitem [ref=e125]:
+            - link "Add User" [ref=e126] [cursor=pointer]:
+              - /url: user-new.php
+          - listitem [ref=e127]:
+            - link "Profile" [ref=e128] [cursor=pointer]:
+              - /url: profile.php
+      - listitem [ref=e129]:
+        - link "Tools" [ref=e130] [cursor=pointer]:
+          - /url: tools.php
+          - generic [ref=e131]: 
+          - generic [ref=e132]: Tools
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - link "Available Tools" [ref=e135] [cursor=pointer]:
+              - /url: tools.php
+          - listitem [ref=e136]:
+            - link "Import" [ref=e137] [cursor=pointer]:
+              - /url: import.php
+          - listitem [ref=e138]:
+            - link "Export" [ref=e139] [cursor=pointer]:
+              - /url: export.php
+          - listitem [ref=e140]:
+            - link "Site Health" [ref=e141] [cursor=pointer]:
+              - /url: site-health.php
+          - listitem [ref=e142]:
+            - link "Export Personal Data" [ref=e143] [cursor=pointer]:
+              - /url: export-personal-data.php
+          - listitem [ref=e144]:
+            - link "Erase Personal Data" [ref=e145] [cursor=pointer]:
+              - /url: erase-personal-data.php
+          - listitem [ref=e146]:
+            - link "Theme File Editor" [ref=e147] [cursor=pointer]:
+              - /url: theme-editor.php
+          - listitem [ref=e148]:
+            - link "Plugin File Editor" [ref=e149] [cursor=pointer]:
+              - /url: plugin-editor.php
+      - listitem [ref=e150]:
+        - link "Settings" [ref=e151] [cursor=pointer]:
+          - /url: options-general.php
+          - generic [ref=e152]: 
+          - generic [ref=e153]: Settings
+        - list [ref=e154]:
+          - listitem [ref=e155]:
+            - link "General" [ref=e156] [cursor=pointer]:
+              - /url: options-general.php
+          - listitem [ref=e157]:
+            - link "Connectors" [ref=e158] [cursor=pointer]:
+              - /url: options-connectors.php
+          - listitem [ref=e159]:
+            - link "Writing" [ref=e160] [cursor=pointer]:
+              - /url: options-writing.php
+          - listitem [ref=e161]:
+            - link "Reading" [ref=e162] [cursor=pointer]:
+              - /url: options-reading.php
+          - listitem [ref=e163]:
+            - link "Discussion" [ref=e164] [cursor=pointer]:
+              - /url: options-discussion.php
+          - listitem [ref=e165]:
+            - link "Media" [ref=e166] [cursor=pointer]:
+              - /url: options-media.php
+          - listitem [ref=e167]:
+            - link "Permalinks" [ref=e168] [cursor=pointer]:
+              - /url: options-permalink.php
+          - listitem [ref=e169]:
+            - link "Privacy" [ref=e170] [cursor=pointer]:
+              - /url: options-privacy.php
+          - listitem [ref=e171]:
+            - link "FluentSMTP" [ref=e172] [cursor=pointer]:
+              - /url: options-general.php?page=fluent-mail
+      - listitem [ref=e173]:
+        - link "ACF" [ref=e174] [cursor=pointer]:
+          - /url: edit.php?post_type=acf-field-group
+          - generic [ref=e175]: 
+          - generic [ref=e176]: ACF
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - link "Field Groups" [ref=e179] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group
+          - listitem [ref=e180]:
+            - link "Post Types" [ref=e181] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-post-type
+          - listitem [ref=e182]:
+            - link "Taxonomies" [ref=e183] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-taxonomy
+          - listitem [ref=e184]:
+            - link "Options Pages" [ref=e185] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-ui-options-page
+          - listitem [ref=e186]:
+            - link "Tools" [ref=e187] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-tools
+          - listitem [ref=e188]:
+            - link "Updates" [ref=e189] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+      - listitem [ref=e190]:
+        - button "Collapse Main menu" [expanded] [ref=e191] [cursor=pointer]:
+          - generic [ref=e193]: Collapse Menu
+  - generic [ref=e194]:
+    - generic [ref=e195]:
+      - navigation "Toolbar":
+        - menu:
+          - group [ref=e196]:
+            - menuitem "About WordPress" [ref=e197] [cursor=pointer]:
+              - generic [ref=e199]: About WordPress
+          - group [ref=e200]:
+            - menuitem "Hoodsly Connector Platform" [ref=e201] [cursor=pointer]
+          - group [ref=e202]:
+            - menuitem "7 updates available" [ref=e203] [cursor=pointer]:
+              - generic [ref=e205]: "7"
+              - generic [ref=e206]: 7 updates available
+          - group [ref=e207]:
+            - menuitem "Ctrl+K Open command palette" [ref=e208] [cursor=pointer]:
+              - generic [ref=e210]:
+                - text: Ctrl+K
+                - generic [ref=e211]: Open command palette
+          - group [ref=e212]:
+            - menuitem "0 Comments in moderation" [ref=e213] [cursor=pointer]:
+              - generic [ref=e215]: "0"
+              - generic [ref=e216]: 0 Comments in moderation
+          - group [ref=e217]:
+            - menuitem "New" [ref=e218] [cursor=pointer]:
+              - generic [ref=e220]: New
+        - menu [ref=e221]:
+          - group [ref=e222]:
+            - menuitem "Clear Caches" [ref=e223]
+          - group [ref=e224]:
+            - menuitem "Howdy, Rakibul Islam" [ref=e225] [cursor=pointer]
+    - main [ref=e226]:
+      - generic [ref=e229]:
+        - generic [ref=e232]:
+          - link "Connector Hub" [ref=e234] [cursor=pointer]:
+            - /url: "#/dashboard"
+          - generic [ref=e236]:
+            - link "Dashboard" [ref=e237] [cursor=pointer]:
+              - /url: "#/dashboard"
+              - img [ref=e238]
+              - generic [ref=e240]: Dashboard
+            - link "Partners" [ref=e241] [cursor=pointer]:
+              - /url: "#/partners"
+              - img [ref=e242]
+              - generic [ref=e244]: Partners
+            - link "Products" [ref=e245] [cursor=pointer]:
+              - /url: "#/products"
+              - img [ref=e246]
+              - generic [ref=e248]: Products
+            - link "Attributes" [ref=e249] [cursor=pointer]:
+              - /url: "#/attributes"
+              - img [ref=e250]
+              - generic [ref=e252]: Attributes
+            - link "Settings" [ref=e253] [cursor=pointer]:
+              - /url: "#/settings"
+              - img [ref=e254]
+              - generic [ref=e257]: Settings
+            - link "Logs" [ref=e258] [cursor=pointer]:
+              - /url: "#/logs"
+              - img [ref=e259]
+              - generic [ref=e261]: Logs
+        - generic [ref=e262]:
+          - heading "Edit Partner" [level=1] [ref=e820]
+          - generic [ref=e272]:
+            - link "Back to Partners" [ref=e821] [cursor=pointer]:
+              - /url: "#/partners"
+              - img [ref=e822]
+              - text: Back to Partners
+            - generic [ref=e824]:
+              - generic [ref=e825]:
+                - navigation [ref=e826]:
+                  - button "Basic Info" [ref=e827] [cursor=pointer]
+                  - button "Products" [active] [ref=e828] [cursor=pointer]
+                  - button "Attributes" [ref=e829] [cursor=pointer]
+                  - button "FAQs & Shipping" [ref=e830] [cursor=pointer]
+                - generic [ref=e831]:
+                  - link "Cancel" [ref=e832] [cursor=pointer]:
+                    - /url: "#/partners"
+                  - button "Update Partner" [ref=e833] [cursor=pointer]
+              - generic [ref=e834]:
+                - generic [ref=e890]:
+                  - generic [ref=e891]:
+                    - heading "Products" [level=3] [ref=e892]
+                    - generic [ref=e893]: 43 selected
+                  - generic [ref=e894]:
+                    - button "Add Products" [ref=e895] [cursor=pointer]:
+                      - img [ref=e896]
+                      - text: Add Products
+                    - table [ref=e899]:
+                      - rowgroup [ref=e900]:
+                        - row "Product Custom Title" [ref=e901]:
+                          - columnheader "Product" [ref=e902]
+                          - columnheader "Custom Title" [ref=e903]
+                          - columnheader [ref=e904]
+                      - rowgroup [ref=e905]:
+                        - row "Angled With Brass Strapping Angled With Brass StrappingVEN-ANBS" [ref=e906]:
+                          - cell "Angled With Brass Strapping Angled With Brass StrappingVEN-ANBS" [ref=e907]:
+                            - generic [ref=e908]:
+                              - img "Angled With Brass Strapping" [ref=e909]
+                              - generic [ref=e910]: Angled With Brass StrappingVEN-ANBS
+                          - cell [ref=e911]:
+                            - textbox "Same as original title" [ref=e912]
+                          - cell [ref=e913]:
+                            - button [ref=e914] [cursor=pointer]:
+                              - img [ref=e915]
+                        - row "Angled With Steel Strapping Angled With Steel StrappingVEN-ANSS" [ref=e917]:
+                          - cell "Angled With Steel Strapping Angled With Steel StrappingVEN-ANSS" [ref=e918]:
+                            - generic [ref=e919]:
+                              - img "Angled With Steel Strapping" [ref=e920]
+                              - generic [ref=e921]: Angled With Steel StrappingVEN-ANSS
+                          - cell [ref=e922]:
+                            - textbox "Same as original title" [ref=e923]
+                          - cell [ref=e924]:
+                            - button [ref=e925] [cursor=pointer]:
+                              - img [ref=e926]
+                        - row "Curved CurvedVEN-CCX" [ref=e928]:
+                          - cell "Curved CurvedVEN-CCX" [ref=e929]:
+                            - generic [ref=e930]:
+                              - img "Curved" [ref=e931]
+                              - generic [ref=e932]: CurvedVEN-CCX
+                          - cell [ref=e933]:
+                            - textbox "Same as original title" [ref=e934]
+                          - cell [ref=e935]:
+                            - button [ref=e936] [cursor=pointer]:
+                              - img [ref=e937]
+                        - row "Sloped SlopedVEN-VCX" [ref=e939]:
+                          - cell "Sloped SlopedVEN-VCX" [ref=e940]:
+                            - generic [ref=e941]:
+                              - img "Sloped" [ref=e942]
+                              - generic [ref=e943]: SlopedVEN-VCX
+                          - cell [ref=e944]:
+                            - textbox "Same as original title" [ref=e945]
+                          - cell [ref=e946]:
+                            - button [ref=e947] [cursor=pointer]:
+                              - img [ref=e948]
+                        - row "Curved With Strapping Curved With StrappingVEN-CCR" [ref=e950]:
+                          - cell "Curved With Strapping Curved With StrappingVEN-CCR" [ref=e951]:
+                            - generic [ref=e952]:
+                              - img "Curved With Strapping" [ref=e953]
+                              - generic [ref=e954]: Curved With StrappingVEN-CCR
+                          - cell [ref=e955]:
+                            - textbox "Same as original title" [ref=e956]
+                          - cell [ref=e957]:
+                            - button [ref=e958] [cursor=pointer]:
+                              - img [ref=e959]
+                        - row "Curved With Brass Strapping Curved With Brass StrappingVEN-CMGMG" [ref=e961]:
+                          - cell "Curved With Brass Strapping Curved With Brass StrappingVEN-CMGMG" [ref=e962]:
+                            - generic [ref=e963]:
+                              - img "Curved With Brass Strapping" [ref=e964]
+                              - generic [ref=e965]: Curved With Brass StrappingVEN-CMGMG
+                          - cell [ref=e966]:
+                            - textbox "Same as original title" [ref=e967]
+                          - cell [ref=e968]:
+                            - button [ref=e969] [cursor=pointer]:
+                              - img [ref=e970]
+                        - row "Curved With Steel Strapping Curved With Steel StrappingVEN-CMSMS" [ref=e972]:
+                          - cell "Curved With Steel Strapping Curved With Steel StrappingVEN-CMSMS" [ref=e973]:
+                            - generic [ref=e974]:
+                              - img "Curved With Steel Strapping" [ref=e975]
+                              - generic [ref=e976]: Curved With Steel StrappingVEN-CMSMS
+                          - cell [ref=e977]:
+                            - textbox "Same as original title" [ref=e978]
+                          - cell [ref=e979]:
+                            - button [ref=e980] [cursor=pointer]:
+                              - img [ref=e981]
+                        - row "Curved Without Trim Curved Without TrimVEN-CNT" [ref=e983]:
+                          - cell "Curved Without Trim Curved Without TrimVEN-CNT" [ref=e984]:
+                            - generic [ref=e985]:
+                              - img "Curved Without Trim" [ref=e986]
+                              - generic [ref=e987]: Curved Without TrimVEN-CNT
+                          - cell [ref=e988]:
+                            - textbox "Same as original title" [ref=e989]
+                          - cell [ref=e990]:
+                            - button [ref=e991] [cursor=pointer]:
+                              - img [ref=e992]
+                        - row "Curved With Brass Strapping & Buttons Curved With Brass Strapping & ButtonsVEN-CGSB" [ref=e994]:
+                          - cell "Curved With Brass Strapping & Buttons Curved With Brass Strapping & ButtonsVEN-CGSB" [ref=e995]:
+                            - generic [ref=e996]:
+                              - img "Curved With Brass Strapping & Buttons" [ref=e997]
+                              - generic [ref=e998]: Curved With Brass Strapping & ButtonsVEN-CGSB
+                          - cell [ref=e999]:
+                            - textbox "Same as original title" [ref=e1000]
+                          - cell [ref=e1001]:
+                            - button [ref=e1002] [cursor=pointer]:
+                              - img [ref=e1003]
+                        - row "Curved With Brass Apron Curved With Brass ApronVEN-CBA" [ref=e1005]:
+                          - cell "Curved With Brass Apron Curved With Brass ApronVEN-CBA" [ref=e1006]:
+                            - generic [ref=e1007]:
+                              - img "Curved With Brass Apron" [ref=e1008]
+                              - generic [ref=e1009]: Curved With Brass ApronVEN-CBA
+                          - cell [ref=e1010]:
+                            - textbox "Same as original title" [ref=e1011]
+                          - cell [ref=e1012]:
+                            - button [ref=e1013] [cursor=pointer]:
+                              - img [ref=e1014]
+                        - row "Curved With Arched Apron Curved With Arched ApronVEN-CAA" [ref=e1016]:
+                          - cell "Curved With Arched Apron Curved With Arched ApronVEN-CAA" [ref=e1017]:
+                            - generic [ref=e1018]:
+                              - img "Curved With Arched Apron" [ref=e1019]
+                              - generic [ref=e1020]: Curved With Arched ApronVEN-CAA
+                          - cell [ref=e1021]:
+                            - textbox "Same as original title" [ref=e1022]
+                          - cell [ref=e1023]:
+                            - button [ref=e1024] [cursor=pointer]:
+                              - img [ref=e1025]
+                        - row "Curved Hood With Corbels Curved Hood With CorbelsVEN-CWC" [ref=e1027]:
+                          - cell "Curved Hood With Corbels Curved Hood With CorbelsVEN-CWC" [ref=e1028]:
+                            - generic [ref=e1029]:
+                              - img "Curved Hood With Corbels" [ref=e1030]
+                              - generic [ref=e1031]: Curved Hood With CorbelsVEN-CWC
+                          - cell [ref=e1032]:
+                            - textbox "Same as original title" [ref=e1033]
+                          - cell [ref=e1034]:
+                            - button [ref=e1035] [cursor=pointer]:
+                              - img [ref=e1036]
+                        - row "Bell Style Straight Bell Style StraightVEN-BST" [ref=e1038]:
+                          - cell "Bell Style Straight Bell Style StraightVEN-BST" [ref=e1039]:
+                            - generic [ref=e1040]:
+                              - img "Bell Style Straight" [ref=e1041]
+                              - generic [ref=e1042]: Bell Style StraightVEN-BST
+                          - cell [ref=e1043]:
+                            - textbox "Same as original title" [ref=e1044]
+                          - cell [ref=e1045]:
+                            - button [ref=e1046] [cursor=pointer]:
+                              - img [ref=e1047]
+                        - row "Bell Style With Strapping Bell Style With StrappingVEN-BSH" [ref=e1049]:
+                          - cell "Bell Style With Strapping Bell Style With StrappingVEN-BSH" [ref=e1050]:
+                            - generic [ref=e1051]:
+                              - img "Bell Style With Strapping" [ref=e1052]
+                              - generic [ref=e1053]: Bell Style With StrappingVEN-BSH
+                          - cell [ref=e1054]:
+                            - textbox "Same as original title" [ref=e1055]
+                          - cell [ref=e1056]:
+                            - button [ref=e1057] [cursor=pointer]:
+                              - img [ref=e1058]
+                        - row "Tapered TaperedVEN-MCX" [ref=e1060]:
+                          - cell "Tapered TaperedVEN-MCX" [ref=e1061]:
+                            - generic [ref=e1062]:
+                              - img "Tapered" [ref=e1063]
+                              - generic [ref=e1064]: TaperedVEN-MCX
+                          - cell [ref=e1065]:
+                            - textbox "Same as original title" [ref=e1066]
+                          - cell [ref=e1067]:
+                            - button [ref=e1068] [cursor=pointer]:
+                              - img [ref=e1069]
+                        - row "Tapered With Shiplap Tapered With ShiplapVEN-MLS" [ref=e1071]:
+                          - cell "Tapered With Shiplap Tapered With ShiplapVEN-MLS" [ref=e1072]:
+                            - generic [ref=e1073]:
+                              - img "Tapered With Shiplap" [ref=e1074]
+                              - generic [ref=e1075]: Tapered With ShiplapVEN-MLS
+                          - cell [ref=e1076]:
+                            - textbox "Same as original title" [ref=e1077]
+                          - cell [ref=e1078]:
+                            - button [ref=e1079] [cursor=pointer]:
+                              - img [ref=e1080]
+                        - row "Tapered With Steel Strapping Tapered With Steel Strapping VEN-MMSMS" [ref=e1082]:
+                          - cell "Tapered With Steel Strapping Tapered With Steel Strapping VEN-MMSMS" [ref=e1083]:
+                            - generic [ref=e1084]:
+                              - img "Tapered With Steel Strapping" [ref=e1085]
+                              - generic [ref=e1086]: Tapered With Steel Strapping VEN-MMSMS
+                          - cell [ref=e1087]:
+                            - textbox "Same as original title" [ref=e1088]
+                          - cell [ref=e1089]:
+                            - button [ref=e1090] [cursor=pointer]:
+                              - img [ref=e1091]
+                        - row "Tapered With Brass Strapping Tapered With Brass StrappingVEN-MMGMG" [ref=e1093]:
+                          - cell "Tapered With Brass Strapping Tapered With Brass StrappingVEN-MMGMG" [ref=e1094]:
+                            - generic [ref=e1095]:
+                              - img "Tapered With Brass Strapping" [ref=e1096]
+                              - generic [ref=e1097]: Tapered With Brass StrappingVEN-MMGMG
+                          - cell [ref=e1098]:
+                            - textbox "Same as original title" [ref=e1099]
+                          - cell [ref=e1100]:
+                            - button [ref=e1101] [cursor=pointer]:
+                              - img [ref=e1102]
+                        - row "Tapered With Reclaimed Wood Band Tapered With Reclaimed Wood BandVEN-MCR" [ref=e1104]:
+                          - cell "Tapered With Reclaimed Wood Band Tapered With Reclaimed Wood BandVEN-MCR" [ref=e1105]:
+                            - generic [ref=e1106]:
+                              - img "Tapered With Reclaimed Wood Band" [ref=e1107]
+                              - generic [ref=e1108]: Tapered With Reclaimed Wood BandVEN-MCR
+                          - cell [ref=e1109]:
+                            - textbox "Same as original title" [ref=e1110]
+                          - cell [ref=e1111]:
+                            - button [ref=e1112] [cursor=pointer]:
+                              - img [ref=e1113]
+                        - row "Tapered With Strapping Tapered With StrappingVEN-TWS" [ref=e1115]:
+                          - cell "Tapered With Strapping Tapered With StrappingVEN-TWS" [ref=e1116]:
+                            - generic [ref=e1117]:
+                              - img "Tapered With Strapping" [ref=e1118]
+                              - generic [ref=e1119]: Tapered With StrappingVEN-TWS
+                          - cell [ref=e1120]:
+                            - textbox "Same as original title" [ref=e1121]
+                          - cell [ref=e1122]:
+                            - button [ref=e1123] [cursor=pointer]:
+                              - img [ref=e1124]
+                        - row "Shaker Tapered Shaker TaperedVEN-FRM" [ref=e1126]:
+                          - cell "Shaker Tapered Shaker TaperedVEN-FRM" [ref=e1127]:
+                            - generic [ref=e1128]:
+                              - img "Shaker Tapered" [ref=e1129]
+                              - generic [ref=e1130]: Shaker TaperedVEN-FRM
+                          - cell [ref=e1131]:
+                            - textbox "Same as original title" [ref=e1132]
+                          - cell [ref=e1133]:
+                            - button [ref=e1134] [cursor=pointer]:
+                              - img [ref=e1135]
+                        - row "Shaker Tapered X Shaker Tapered XVEN-FRX" [ref=e1137]:
+                          - cell "Shaker Tapered X Shaker Tapered XVEN-FRX" [ref=e1138]:
+                            - generic [ref=e1139]:
+                              - img "Shaker Tapered X" [ref=e1140]
+                              - generic [ref=e1141]: Shaker Tapered XVEN-FRX
+                          - cell [ref=e1142]:
+                            - textbox "Same as original title" [ref=e1143]
+                          - cell [ref=e1144]:
+                            - button [ref=e1145] [cursor=pointer]:
+                              - img [ref=e1146]
+                        - row "Tapered Without Trim Tapered Without TrimVEN-TNT" [ref=e1148]:
+                          - cell "Tapered Without Trim Tapered Without TrimVEN-TNT" [ref=e1149]:
+                            - generic [ref=e1150]:
+                              - img "Tapered Without Trim" [ref=e1151]
+                              - generic [ref=e1152]: Tapered Without TrimVEN-TNT
+                          - cell [ref=e1153]:
+                            - textbox "Same as original title" [ref=e1154]
+                          - cell [ref=e1155]:
+                            - button [ref=e1156] [cursor=pointer]:
+                              - img [ref=e1157]
+                        - row "Box Straight Box StraightVEN-BNT" [ref=e1159]:
+                          - cell "Box Straight Box StraightVEN-BNT" [ref=e1160]:
+                            - generic [ref=e1161]:
+                              - img "Box Straight" [ref=e1162]
+                              - generic [ref=e1163]: Box StraightVEN-BNT
+                          - cell [ref=e1164]:
+                            - textbox "Same as original title" [ref=e1165]
+                          - cell [ref=e1166]:
+                            - button [ref=e1167] [cursor=pointer]:
+                              - img [ref=e1168]
+                        - row "Box Straight With Shiplap Box Straight With ShiplapVEN-BSNT" [ref=e1170]:
+                          - cell "Box Straight With Shiplap Box Straight With ShiplapVEN-BSNT" [ref=e1171]:
+                            - generic [ref=e1172]:
+                              - img "Box Straight With Shiplap" [ref=e1173]
+                              - generic [ref=e1174]: Box Straight With ShiplapVEN-BSNT
+                          - cell [ref=e1175]:
+                            - textbox "Same as original title" [ref=e1176]
+                          - cell [ref=e1177]:
+                            - button [ref=e1178] [cursor=pointer]:
+                              - img [ref=e1179]
+                        - row "Box With Trim Box With TrimVEN-BCS" [ref=e1181]:
+                          - cell "Box With Trim Box With TrimVEN-BCS" [ref=e1182]:
+                            - generic [ref=e1183]:
+                              - img "Box With Trim" [ref=e1184]
+                              - generic [ref=e1185]: Box With TrimVEN-BCS
+                          - cell [ref=e1186]:
+                            - textbox "Same as original title" [ref=e1187]
+                          - cell [ref=e1188]:
+                            - button [ref=e1189] [cursor=pointer]:
+                              - img [ref=e1190]
+                        - row "Box With Shiplap & Walnut Band Box With Shiplap & Walnut BandVEN-BWS" [ref=e1192]:
+                          - cell "Box With Shiplap & Walnut Band Box With Shiplap & Walnut BandVEN-BWS" [ref=e1193]:
+                            - generic [ref=e1194]:
+                              - img "Box With Shiplap & Walnut Band" [ref=e1195]
+                              - generic [ref=e1196]: Box With Shiplap & Walnut BandVEN-BWS
+                          - cell [ref=e1197]:
+                            - textbox "Same as original title" [ref=e1198]
+                          - cell [ref=e1199]:
+                            - button [ref=e1200] [cursor=pointer]:
+                              - img [ref=e1201]
+                        - row "Box Without Trim Box Without TrimVEN-BWT" [ref=e1203]:
+                          - cell "Box Without Trim Box Without TrimVEN-BWT" [ref=e1204]:
+                            - generic [ref=e1205]:
+                              - img "Box Without Trim" [ref=e1206]
+                              - generic [ref=e1207]: Box Without TrimVEN-BWT
+                          - cell [ref=e1208]:
+                            - textbox "Same as original title" [ref=e1209]
+                          - cell [ref=e1210]:
+                            - button [ref=e1211] [cursor=pointer]:
+                              - img [ref=e1212]
+                        - row "Sloped With Strapping Sloped With StrappingVEN-VCR" [ref=e1214]:
+                          - cell "Sloped With Strapping Sloped With StrappingVEN-VCR" [ref=e1215]:
+                            - generic [ref=e1216]:
+                              - img "Sloped With Strapping" [ref=e1217]
+                              - generic [ref=e1218]: Sloped With StrappingVEN-VCR
+                          - cell [ref=e1219]:
+                            - textbox "Same as original title" [ref=e1220]
+                          - cell [ref=e1221]:
+                            - button [ref=e1222] [cursor=pointer]:
+                              - img [ref=e1223]
+                        - row "Sloped With Steel Strapping Sloped With Steel StrappingVEN-VMSMS" [ref=e1225]:
+                          - cell "Sloped With Steel Strapping Sloped With Steel StrappingVEN-VMSMS" [ref=e1226]:
+                            - generic [ref=e1227]:
+                              - img "Sloped With Steel Strapping" [ref=e1228]
+                              - generic [ref=e1229]: Sloped With Steel StrappingVEN-VMSMS
+                          - cell [ref=e1230]:
+                            - textbox "Same as original title" [ref=e1231]
+                          - cell [ref=e1232]:
+                            - button [ref=e1233] [cursor=pointer]:
+                              - img [ref=e1234]
+                        - row "Sloped With Brass Strapping Sloped With Brass StrappingVEN-VMGMG" [ref=e1236]:
+                          - cell "Sloped With Brass Strapping Sloped With Brass StrappingVEN-VMGMG" [ref=e1237]:
+                            - generic [ref=e1238]:
+                              - img "Sloped With Brass Strapping" [ref=e1239]
+                              - generic [ref=e1240]: Sloped With Brass StrappingVEN-VMGMG
+                          - cell [ref=e1241]:
+                            - textbox "Same as original title" [ref=e1242]
+                          - cell [ref=e1243]:
+                            - button [ref=e1244] [cursor=pointer]:
+                              - img [ref=e1245]
+                        - row "Sloped Without Trim Sloped Without TrimVEN-SNT" [ref=e1247]:
+                          - cell "Sloped Without Trim Sloped Without TrimVEN-SNT" [ref=e1248]:
+                            - generic [ref=e1249]:
+                              - img "Sloped Without Trim" [ref=e1250]
+                              - generic [ref=e1251]: Sloped Without TrimVEN-SNT
+                          - cell [ref=e1252]:
+                            - textbox "Same as original title" [ref=e1253]
+                          - cell [ref=e1254]:
+                            - button [ref=e1255] [cursor=pointer]:
+                              - img [ref=e1256]
+                        - row "Angled AngledVEN-LCX" [ref=e1258]:
+                          - cell "Angled AngledVEN-LCX" [ref=e1259]:
+                            - generic [ref=e1260]:
+                              - img "Angled" [ref=e1261]
+                              - generic [ref=e1262]: AngledVEN-LCX
+                          - cell [ref=e1263]:
+                            - textbox "Same as original title" [ref=e1264]
+                          - cell [ref=e1265]:
+                            - button [ref=e1266] [cursor=pointer]:
+                              - img [ref=e1267]
+                        - row "Angled With Strapping Angled With StrappingVEN-AWS" [ref=e1269]:
+                          - cell "Angled With Strapping Angled With StrappingVEN-AWS" [ref=e1270]:
+                            - generic [ref=e1271]:
+                              - img "Angled With Strapping" [ref=e1272]
+                              - generic [ref=e1273]: Angled With StrappingVEN-AWS
+                          - cell [ref=e1274]:
+                            - textbox "Same as original title" [ref=e1275]
+                          - cell [ref=e1276]:
+                            - button [ref=e1277] [cursor=pointer]:
+                              - img [ref=e1278]
+                        - row "Angled With Walnut Band Angled With Walnut BandVEN-LWX" [ref=e1280]:
+                          - cell "Angled With Walnut Band Angled With Walnut BandVEN-LWX" [ref=e1281]:
+                            - generic [ref=e1282]:
+                              - img "Angled With Walnut Band" [ref=e1283]
+                              - generic [ref=e1284]: Angled With Walnut BandVEN-LWX
+                          - cell [ref=e1285]:
+                            - textbox "Same as original title" [ref=e1286]
+                          - cell [ref=e1287]:
+                            - button [ref=e1288] [cursor=pointer]:
+                              - img [ref=e1289]
+                        - row "Angled Without Trim Angled Without TrimVEN-ANT" [ref=e1291]:
+                          - cell "Angled Without Trim Angled Without TrimVEN-ANT" [ref=e1292]:
+                            - generic [ref=e1293]:
+                              - img "Angled Without Trim" [ref=e1294]
+                              - generic [ref=e1295]: Angled Without TrimVEN-ANT
+                          - cell [ref=e1296]:
+                            - textbox "Same as original title" [ref=e1297]
+                          - cell [ref=e1298]:
+                            - button [ref=e1299] [cursor=pointer]:
+                              - img [ref=e1300]
+                        - row "Scoop With Brass Strapping And Buttons Scoop With Brass Strapping And ButtonsVEN-SCB" [ref=e1302]:
+                          - cell "Scoop With Brass Strapping And Buttons Scoop With Brass Strapping And ButtonsVEN-SCB" [ref=e1303]:
+                            - generic [ref=e1304]:
+                              - img "Scoop With Brass Strapping And Buttons" [ref=e1305]
+                              - generic [ref=e1306]: Scoop With Brass Strapping And ButtonsVEN-SCB
+                          - cell [ref=e1307]:
+                            - textbox "Same as original title" [ref=e1308]
+                          - cell [ref=e1309]:
+                            - button [ref=e1310] [cursor=pointer]:
+                              - img [ref=e1311]
+                        - row "Scoop With Steel Strapping And Buttons Scoop With Steel Strapping And ButtonsVEN-SCS" [ref=e1313]:
+                          - cell "Scoop With Steel Strapping And Buttons Scoop With Steel Strapping And ButtonsVEN-SCS" [ref=e1314]:
+                            - generic [ref=e1315]:
+                              - img "Scoop With Steel Strapping And Buttons" [ref=e1316]
+                              - generic [ref=e1317]: Scoop With Steel Strapping And ButtonsVEN-SCS
+                          - cell [ref=e1318]:
+                            - textbox "Same as original title" [ref=e1319]
+                          - cell [ref=e1320]:
+                            - button [ref=e1321] [cursor=pointer]:
+                              - img [ref=e1322]
+                        - row "Curved Quick Ship Curved Quick ShipVEN-QSPCCX" [ref=e1324]:
+                          - cell "Curved Quick Ship Curved Quick ShipVEN-QSPCCX" [ref=e1325]:
+                            - generic [ref=e1326]:
+                              - img "Curved Quick Ship" [ref=e1327]
+                              - generic [ref=e1328]: Curved Quick ShipVEN-QSPCCX
+                          - cell [ref=e1329]:
+                            - textbox "Same as original title" [ref=e1330]
+                          - cell [ref=e1331]:
+                            - button [ref=e1332] [cursor=pointer]:
+                              - img [ref=e1333]
+                        - row "Floating Shelves Floating ShelvesVEN-FLS" [ref=e1335]:
+                          - cell "Floating Shelves Floating ShelvesVEN-FLS" [ref=e1336]:
+                            - generic [ref=e1337]:
+                              - img "Floating Shelves" [ref=e1338]
+                              - generic [ref=e1339]: Floating ShelvesVEN-FLS
+                          - cell [ref=e1340]:
+                            - textbox "Same as original title" [ref=e1341]
+                          - cell [ref=e1342]:
+                            - button [ref=e1343] [cursor=pointer]:
+                              - img [ref=e1344]
+                        - row "Curved Slim Curved SlimVEN-CSL" [ref=e1346]:
+                          - cell "Curved Slim Curved SlimVEN-CSL" [ref=e1347]:
+                            - generic [ref=e1348]:
+                              - img "Curved Slim" [ref=e1349]
+                              - generic [ref=e1350]: Curved SlimVEN-CSL
+                          - cell [ref=e1351]:
+                            - textbox "Same as original title" [ref=e1352]
+                          - cell [ref=e1353]:
+                            - button [ref=e1354] [cursor=pointer]:
+                              - img [ref=e1355]
+                        - row "Curved Shaker White Quick Ship Curved Shaker White Quick ShipVEN-QSPCCXWHT" [ref=e1357]:
+                          - cell "Curved Shaker White Quick Ship Curved Shaker White Quick ShipVEN-QSPCCXWHT" [ref=e1358]:
+                            - generic [ref=e1359]:
+                              - img "Curved Shaker White Quick Ship" [ref=e1360]
+                              - generic [ref=e1361]: Curved Shaker White Quick ShipVEN-QSPCCXWHT
+                          - cell [ref=e1362]:
+                            - textbox "Same as original title" [ref=e1363]
+                          - cell [ref=e1364]:
+                            - button [ref=e1365] [cursor=pointer]:
+                              - img [ref=e1366]
+                        - row "Double Curved Double CurvedVEN-DBC" [ref=e1368]:
+                          - cell "Double Curved Double CurvedVEN-DBC" [ref=e1369]:
+                            - generic [ref=e1370]:
+                              - img "Double Curved" [ref=e1371]
+                              - generic [ref=e1372]: Double CurvedVEN-DBC
+                          - cell [ref=e1373]:
+                            - textbox "Same as original title" [ref=e1374]
+                          - cell [ref=e1375]:
+                            - button [ref=e1376] [cursor=pointer]:
+                              - img [ref=e1377]
+                - generic [ref=e887]:
+                  - link "Cancel" [ref=e888] [cursor=pointer]:
+                    - /url: "#/partners"
+                  - button "Update Partner" [ref=e889] [cursor=pointer]
+  - contentinfo [ref=e301]:
+    - paragraph [ref=e302]:
+      - generic [ref=e303]:
+        - text: Thanks for creating with
+        - link "WordPress" [ref=e304] [cursor=pointer]:
+          - /url: https://wordpress.org/
+        - text: and hosting with
+        - link "Kinsta" [ref=e305] [cursor=pointer]:
+          - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+    - paragraph [ref=e306]: Version 7.0

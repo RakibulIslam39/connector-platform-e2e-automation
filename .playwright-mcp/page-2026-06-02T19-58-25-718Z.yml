@@ -1,0 +1,1605 @@
+- generic [ref=e2]:
+  - navigation "Main menu":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#wpbody-content"
+    - link "Skip to toolbar" [ref=e4] [cursor=pointer]:
+      - /url: "#wp-toolbar"
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: index.php
+          - generic [ref=e10]: 
+          - generic [ref=e11]: Dashboard
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - link "Home" [ref=e14] [cursor=pointer]:
+              - /url: index.php
+          - listitem [ref=e15]:
+            - link "Updates 7" [ref=e16] [cursor=pointer]:
+              - /url: update-core.php
+              - text: Updates
+              - generic [ref=e17]: "7"
+      - listitem [ref=e18]:
+        - link "Kinsta Cache" [ref=e19] [cursor=pointer]:
+          - /url: admin.php?page=kinsta-tools
+          - generic [ref=e20]: 
+          - generic [ref=e21]: Kinsta Cache
+      - listitem [ref=e22]
+      - listitem [ref=e24]:
+        - link "Posts" [ref=e25] [cursor=pointer]:
+          - /url: edit.php
+          - generic [ref=e26]: 
+          - generic [ref=e27]: Posts
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - link "All Posts" [ref=e30] [cursor=pointer]:
+              - /url: edit.php
+          - listitem [ref=e31]:
+            - link "Add Post" [ref=e32] [cursor=pointer]:
+              - /url: post-new.php
+          - listitem [ref=e33]:
+            - link "Categories" [ref=e34] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=category
+          - listitem [ref=e35]:
+            - link "Tags" [ref=e36] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=post_tag
+      - listitem [ref=e37]:
+        - link "Media" [ref=e38] [cursor=pointer]:
+          - /url: upload.php
+          - generic [ref=e39]: 
+          - generic [ref=e40]: Media
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Library" [ref=e43] [cursor=pointer]:
+              - /url: upload.php
+          - listitem [ref=e44]:
+            - link "Add Media File" [ref=e45] [cursor=pointer]:
+              - /url: media-new.php
+      - listitem [ref=e46]:
+        - link "Pages" [ref=e47] [cursor=pointer]:
+          - /url: edit.php?post_type=page
+          - generic [ref=e48]: 
+          - generic [ref=e49]: Pages
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - link "All Pages" [ref=e52] [cursor=pointer]:
+              - /url: edit.php?post_type=page
+          - listitem [ref=e53]:
+            - link "Add Page" [ref=e54] [cursor=pointer]:
+              - /url: post-new.php?post_type=page
+      - listitem [ref=e55]:
+        - link "Comments" [ref=e56] [cursor=pointer]:
+          - /url: edit-comments.php
+          - generic [ref=e57]: 
+          - generic [ref=e58]: Comments
+      - listitem [ref=e59]:
+        - link "Partners" [ref=e60] [cursor=pointer]:
+          - /url: edit.php?post_type=partner
+          - generic [ref=e61]: 
+          - generic [ref=e62]: Partners
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - link "All Partners" [ref=e65] [cursor=pointer]:
+              - /url: edit.php?post_type=partner
+          - listitem [ref=e66]:
+            - link "Add New Partner" [ref=e67] [cursor=pointer]:
+              - /url: post-new.php?post_type=partner
+      - listitem [ref=e68]:
+        - link "Products" [ref=e69] [cursor=pointer]:
+          - /url: edit.php?post_type=product
+          - generic [ref=e70]: 
+          - generic [ref=e71]: Products
+        - list [ref=e72]:
+          - listitem [ref=e73]:
+            - link "All Products" [ref=e74] [cursor=pointer]:
+              - /url: edit.php?post_type=product
+          - listitem [ref=e75]:
+            - link "Add New Product" [ref=e76] [cursor=pointer]:
+              - /url: post-new.php?post_type=product
+      - listitem [ref=e77]:
+        - link "Connector Hub" [ref=e78] [cursor=pointer]:
+          - /url: admin.php?page=connector-hub#/dashboard
+          - generic [ref=e79]: 
+          - generic [ref=e80]: Connector Hub
+        - list [ref=e81]:
+          - listitem [ref=e82]:
+            - link "Dashboard" [ref=e83] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/dashboard
+          - listitem [ref=e84]:
+            - link "Partners" [ref=e85] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/partners
+          - listitem [ref=e86]:
+            - link "Products" [ref=e87] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/products
+          - listitem [ref=e88]:
+            - link "Attributes" [ref=e89] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/attributes
+          - listitem [ref=e90]:
+            - link "Settings" [ref=e91] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/settings
+          - listitem [ref=e92]:
+            - link "Logs" [ref=e93] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/logs
+      - listitem [ref=e94]
+      - listitem [ref=e96]:
+        - link "Appearance" [ref=e97] [cursor=pointer]:
+          - /url: themes.php
+          - generic [ref=e98]: 
+          - generic [ref=e99]: Appearance
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - link "Themes 4" [ref=e102] [cursor=pointer]:
+              - /url: themes.php
+              - text: Themes
+              - generic [ref=e103]: "4"
+          - listitem [ref=e104]:
+            - link "Editor" [ref=e105] [cursor=pointer]:
+              - /url: site-editor.php
+          - listitem [ref=e106]:
+            - link "Fonts" [ref=e107] [cursor=pointer]:
+              - /url: font-library.php
+      - listitem [ref=e108]:
+        - link "Plugins 3" [ref=e109] [cursor=pointer]:
+          - /url: plugins.php
+          - generic [ref=e110]: 
+          - generic [ref=e111]:
+            - text: Plugins
+            - generic [ref=e112]: "3"
+        - list [ref=e113]:
+          - listitem [ref=e114]:
+            - link "Installed Plugins" [ref=e115] [cursor=pointer]:
+              - /url: plugins.php
+          - listitem [ref=e116]:
+            - link "Add Plugin" [ref=e117] [cursor=pointer]:
+              - /url: plugin-install.php
+      - listitem [ref=e118]:
+        - link "Users" [ref=e119] [cursor=pointer]:
+          - /url: users.php
+          - generic [ref=e120]: 
+          - generic [ref=e121]: Users
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "All Users" [ref=e124] [cursor=pointer]:
+              - /url: users.php
+          - listitem [ref=e125]:
+            - link "Add User" [ref=e126] [cursor=pointer]:
+              - /url: user-new.php
+          - listitem [ref=e127]:
+            - link "Profile" [ref=e128] [cursor=pointer]:
+              - /url: profile.php
+      - listitem [ref=e129]:
+        - link "Tools" [ref=e130] [cursor=pointer]:
+          - /url: tools.php
+          - generic [ref=e131]: 
+          - generic [ref=e132]: Tools
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - link "Available Tools" [ref=e135] [cursor=pointer]:
+              - /url: tools.php
+          - listitem [ref=e136]:
+            - link "Import" [ref=e137] [cursor=pointer]:
+              - /url: import.php
+          - listitem [ref=e138]:
+            - link "Export" [ref=e139] [cursor=pointer]:
+              - /url: export.php
+          - listitem [ref=e140]:
+            - link "Site Health" [ref=e141] [cursor=pointer]:
+              - /url: site-health.php
+          - listitem [ref=e142]:
+            - link "Export Personal Data" [ref=e143] [cursor=pointer]:
+              - /url: export-personal-data.php
+          - listitem [ref=e144]:
+            - link "Erase Personal Data" [ref=e145] [cursor=pointer]:
+              - /url: erase-personal-data.php
+          - listitem [ref=e146]:
+            - link "Theme File Editor" [ref=e147] [cursor=pointer]:
+              - /url: theme-editor.php
+          - listitem [ref=e148]:
+            - link "Plugin File Editor" [ref=e149] [cursor=pointer]:
+              - /url: plugin-editor.php
+      - listitem [ref=e150]:
+        - link "Settings" [ref=e151] [cursor=pointer]:
+          - /url: options-general.php
+          - generic [ref=e152]: 
+          - generic [ref=e153]: Settings
+        - list [ref=e154]:
+          - listitem [ref=e155]:
+            - link "General" [ref=e156] [cursor=pointer]:
+              - /url: options-general.php
+          - listitem [ref=e157]:
+            - link "Connectors" [ref=e158] [cursor=pointer]:
+              - /url: options-connectors.php
+          - listitem [ref=e159]:
+            - link "Writing" [ref=e160] [cursor=pointer]:
+              - /url: options-writing.php
+          - listitem [ref=e161]:
+            - link "Reading" [ref=e162] [cursor=pointer]:
+              - /url: options-reading.php
+          - listitem [ref=e163]:
+            - link "Discussion" [ref=e164] [cursor=pointer]:
+              - /url: options-discussion.php
+          - listitem [ref=e165]:
+            - link "Media" [ref=e166] [cursor=pointer]:
+              - /url: options-media.php
+          - listitem [ref=e167]:
+            - link "Permalinks" [ref=e168] [cursor=pointer]:
+              - /url: options-permalink.php
+          - listitem [ref=e169]:
+            - link "Privacy" [ref=e170] [cursor=pointer]:
+              - /url: options-privacy.php
+          - listitem [ref=e171]:
+            - link "FluentSMTP" [ref=e172] [cursor=pointer]:
+              - /url: options-general.php?page=fluent-mail
+      - listitem [ref=e173]:
+        - link "ACF" [ref=e174] [cursor=pointer]:
+          - /url: edit.php?post_type=acf-field-group
+          - generic [ref=e175]: 
+          - generic [ref=e176]: ACF
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - link "Field Groups" [ref=e179] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group
+          - listitem [ref=e180]:
+            - link "Post Types" [ref=e181] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-post-type
+          - listitem [ref=e182]:
+            - link "Taxonomies" [ref=e183] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-taxonomy
+          - listitem [ref=e184]:
+            - link "Options Pages" [ref=e185] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-ui-options-page
+          - listitem [ref=e186]:
+            - link "Tools" [ref=e187] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-tools
+          - listitem [ref=e188]:
+            - link "Updates" [ref=e189] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+      - listitem [ref=e190]:
+        - button "Collapse Main menu" [expanded] [ref=e191] [cursor=pointer]:
+          - generic [ref=e193]: Collapse Menu
+  - generic [ref=e194]:
+    - generic [ref=e195]:
+      - navigation "Toolbar":
+        - menu:
+          - group [ref=e196]:
+            - menuitem "About WordPress" [ref=e197] [cursor=pointer]:
+              - generic [ref=e199]: About WordPress
+          - group [ref=e200]:
+            - menuitem "Hoodsly Connector Platform" [ref=e201] [cursor=pointer]
+          - group [ref=e202]:
+            - menuitem "7 updates available" [ref=e203] [cursor=pointer]:
+              - generic [ref=e205]: "7"
+              - generic [ref=e206]: 7 updates available
+          - group [ref=e207]:
+            - menuitem "Ctrl+K Open command palette" [ref=e208] [cursor=pointer]:
+              - generic [ref=e210]:
+                - text: Ctrl+K
+                - generic [ref=e211]: Open command palette
+          - group [ref=e212]:
+            - menuitem "0 Comments in moderation" [ref=e213] [cursor=pointer]:
+              - generic [ref=e215]: "0"
+              - generic [ref=e216]: 0 Comments in moderation
+          - group [ref=e217]:
+            - menuitem "New" [ref=e218] [cursor=pointer]:
+              - generic [ref=e220]: New
+        - menu [ref=e221]:
+          - group [ref=e222]:
+            - menuitem "Clear Caches" [ref=e223]
+          - group [ref=e224]:
+            - menuitem "Howdy, Rakibul Islam" [ref=e225] [cursor=pointer]
+    - main [ref=e226]:
+      - generic [ref=e229]:
+        - generic [ref=e232]:
+          - link "Connector Hub" [ref=e234] [cursor=pointer]:
+            - /url: "#/dashboard"
+          - generic [ref=e236]:
+            - link "Dashboard" [ref=e237] [cursor=pointer]:
+              - /url: "#/dashboard"
+              - img [ref=e238]
+              - generic [ref=e240]: Dashboard
+            - link "Partners" [ref=e241] [cursor=pointer]:
+              - /url: "#/partners"
+              - img [ref=e242]
+              - generic [ref=e244]: Partners
+            - link "Products" [ref=e245] [cursor=pointer]:
+              - /url: "#/products"
+              - img [ref=e246]
+              - generic [ref=e248]: Products
+            - link "Attributes" [ref=e249] [cursor=pointer]:
+              - /url: "#/attributes"
+              - img [ref=e250]
+              - generic [ref=e252]: Attributes
+            - link "Settings" [ref=e253] [cursor=pointer]:
+              - /url: "#/settings"
+              - img [ref=e254]
+              - generic [ref=e257]: Settings
+            - link "Logs" [ref=e258] [cursor=pointer]:
+              - /url: "#/logs"
+              - img [ref=e259]
+              - generic [ref=e261]: Logs
+        - generic [ref=e262]:
+          - heading "Edit Partner" [level=1] [ref=e820]
+          - generic [ref=e272]:
+            - link "Back to Partners" [ref=e821] [cursor=pointer]:
+              - /url: "#/partners"
+              - img [ref=e822]
+              - text: Back to Partners
+            - generic [ref=e824]:
+              - generic [ref=e825]:
+                - navigation [ref=e826]:
+                  - button "Basic Info" [ref=e827] [cursor=pointer]
+                  - button "Products" [ref=e828] [cursor=pointer]
+                  - button "Attributes" [ref=e829] [cursor=pointer]
+                  - button "FAQs & Shipping" [ref=e830] [cursor=pointer]
+                - generic [ref=e831]:
+                  - link "Cancel" [ref=e832] [cursor=pointer]:
+                    - /url: "#/partners"
+                  - button "Update Partner" [ref=e833] [cursor=pointer]
+              - generic [ref=e834]:
+                - generic [ref=e1379]:
+                  - heading "Available Attributes" [level=3] [ref=e1380]
+                  - paragraph [ref=e1381]: Select which attributes this partner can access. You can also set custom names and prices.
+                  - generic [ref=e1382]:
+                    - generic [ref=e1383]:
+                      - generic [ref=e1384] [cursor=pointer]:
+                        - generic [ref=e1385]:
+                          - generic [ref=e1386]: Partner Colors
+                          - generic [ref=e1387]: 16 selected
+                        - img [ref=e1388]
+                      - generic [ref=e1411]:
+                        - generic [ref=e1413] [cursor=pointer]:
+                          - checkbox "Select All" [ref=e1414]
+                          - generic [ref=e1415]: Select All
+                        - generic [ref=e1416]:
+                          - generic [ref=e1417]: "Filter by Catalog:"
+                          - combobox [ref=e1418] [cursor=pointer]:
+                            - option "All Catalogs" [selected]
+                            - option "USCD"
+                            - option "TA Cabinetry"
+                            - option "Hoodsly"
+                            - option "Jarlin"
+                            - option "Everly"
+                            - option "Jim Bishop"
+                            - option "Homemark"
+                            - option "JSI"
+                        - table [ref=e1420]:
+                          - rowgroup [ref=e1421]:
+                            - row "Color Catalog Custom Name Current Price Custom Price" [ref=e1422]:
+                              - columnheader [ref=e1423]:
+                                - checkbox [ref=e1424] [cursor=pointer]
+                              - columnheader "Color" [ref=e1425]
+                              - columnheader "Catalog" [ref=e1426]
+                              - columnheader "Custom Name" [ref=e1427]
+                              - columnheader "Current Price" [ref=e1428]
+                              - columnheader "Custom Price" [ref=e1429]
+                          - rowgroup [ref=e1430]:
+                            - row "Raw / Unfinished — $0.00" [ref=e1431]:
+                              - cell [ref=e1432]:
+                                - checkbox [checked] [ref=e1433] [cursor=pointer]
+                              - cell "Raw / Unfinished" [ref=e1434]:
+                                - generic [ref=e1437]: Raw / Unfinished
+                              - cell "—" [ref=e1438]
+                              - cell [ref=e1439]:
+                                - textbox "Same as original" [ref=e1440]
+                              - cell "$0.00" [ref=e1441]:
+                                - generic [ref=e1442]: $0.00
+                              - cell [ref=e1443]:
+                                - spinbutton [ref=e1444]
+                            - row "Our Color Options — $0.00" [ref=e1445]:
+                              - cell [ref=e1446]:
+                                - checkbox [ref=e1447] [cursor=pointer]
+                              - cell "Our Color Options" [ref=e1448]:
+                                - generic [ref=e1451]: Our Color Options
+                              - cell "—" [ref=e1452]
+                              - cell [ref=e1453]:
+                                - textbox "Same as original" [disabled] [ref=e1454]
+                              - cell "$0.00" [ref=e1455]:
+                                - generic [ref=e1456]: $0.00
+                              - cell [ref=e1457]:
+                                - spinbutton [disabled] [ref=e1458]
+                            - row "Primed / Paint Ready — $0.00" [ref=e1459]:
+                              - cell [ref=e1460]:
+                                - checkbox [checked] [ref=e1461] [cursor=pointer]
+                              - cell "Primed / Paint Ready" [ref=e1462]:
+                                - generic [ref=e1465]: Primed / Paint Ready
+                              - cell "—" [ref=e1466]
+                              - cell [ref=e1467]:
+                                - textbox "Same as original" [ref=e1468]
+                              - cell "$0.00" [ref=e1469]:
+                                - generic [ref=e1470]: $0.00
+                              - cell [ref=e1471]:
+                                - spinbutton [ref=e1472]
+                            - row "Custom Color Match Options — $0.00" [ref=e1473]:
+                              - cell [ref=e1474]:
+                                - checkbox [ref=e1475] [cursor=pointer]
+                              - cell "Custom Color Match Options" [ref=e1476]:
+                                - generic [ref=e1479]: Custom Color Match Options
+                              - cell "—" [ref=e1480]
+                              - cell [ref=e1481]:
+                                - textbox "Same as original" [disabled] [ref=e1482]
+                              - cell "$0.00" [ref=e1483]:
+                                - generic [ref=e1484]: $0.00
+                              - cell [ref=e1485]:
+                                - spinbutton [disabled] [ref=e1486]
+                            - row "Shaker Antique White USCD $0.00" [ref=e1487]:
+                              - cell [ref=e1488]:
+                                - checkbox [ref=e1489] [cursor=pointer]
+                              - cell "Shaker Antique White" [ref=e1490]:
+                                - generic [ref=e1492]: Shaker Antique White
+                              - cell "USCD" [ref=e1493]:
+                                - generic [ref=e1494]: USCD
+                              - cell [ref=e1495]:
+                                - textbox "Same as original" [disabled] [ref=e1496]
+                              - cell "$0.00" [ref=e1497]:
+                                - generic [ref=e1498]: $0.00
+                              - cell [ref=e1499]:
+                                - spinbutton [disabled] [ref=e1500]
+                            - row "Yes — $450.00" [ref=e1501]:
+                              - cell [ref=e1502]:
+                                - checkbox [ref=e1503] [cursor=pointer]
+                              - cell "Yes" [ref=e1504]:
+                                - generic [ref=e1507]: "Yes"
+                              - cell "—" [ref=e1508]
+                              - cell [ref=e1509]:
+                                - textbox "Same as original" [disabled] [ref=e1510]
+                              - cell "$450.00" [ref=e1511]:
+                                - generic [ref=e1512]: $450.00
+                              - cell [ref=e1513]:
+                                - spinbutton [disabled] [ref=e1514]
+                            - row "Shaker White USCD $0.00" [ref=e1515]:
+                              - cell [ref=e1516]:
+                                - checkbox [checked] [ref=e1517] [cursor=pointer]
+                              - cell "Shaker White" [ref=e1518]:
+                                - generic [ref=e1520]: Shaker White
+                              - cell "USCD" [ref=e1521]:
+                                - generic [ref=e1522]: USCD
+                              - cell [ref=e1523]:
+                                - textbox "Same as original" [ref=e1524]
+                              - cell "$0.00" [ref=e1525]:
+                                - generic [ref=e1526]: $0.00
+                              - cell [ref=e1527]:
+                                - spinbutton [ref=e1528]
+                            - row "No I Am Matching A Physical Sample — $850.00" [ref=e1529]:
+                              - cell [ref=e1530]:
+                                - checkbox [ref=e1531] [cursor=pointer]
+                              - cell "No I Am Matching A Physical Sample" [ref=e1532]:
+                                - generic [ref=e1535]: No I Am Matching A Physical Sample
+                              - cell "—" [ref=e1536]
+                              - cell [ref=e1537]:
+                                - textbox "Same as original" [disabled] [ref=e1538]
+                              - cell "$850.00" [ref=e1539]:
+                                - generic [ref=e1540]: $850.00
+                              - cell [ref=e1541]:
+                                - spinbutton [disabled] [ref=e1542]
+                            - row "Casselberry Antique White USCD $0.00" [ref=e1543]:
+                              - cell [ref=e1544]:
+                                - checkbox [ref=e1545] [cursor=pointer]
+                              - cell "Casselberry Antique White" [ref=e1546]:
+                                - generic [ref=e1548]: Casselberry Antique White
+                              - cell "USCD" [ref=e1549]:
+                                - generic [ref=e1550]: USCD
+                              - cell [ref=e1551]:
+                                - textbox "Same as original" [disabled] [ref=e1552]
+                              - cell "$0.00" [ref=e1553]:
+                                - generic [ref=e1554]: $0.00
+                              - cell [ref=e1555]:
+                                - spinbutton [disabled] [ref=e1556]
+                            - row "Our Colour Options — $0.00" [ref=e1557]:
+                              - cell [ref=e1558]:
+                                - checkbox [ref=e1559] [cursor=pointer]
+                              - cell "Our Colour Options" [ref=e1560]:
+                                - generic [ref=e1563]: Our Colour Options
+                              - cell "—" [ref=e1564]
+                              - cell [ref=e1565]:
+                                - textbox "Same as original" [disabled] [ref=e1566]
+                              - cell "$0.00" [ref=e1567]:
+                                - generic [ref=e1568]: $0.00
+                              - cell [ref=e1569]:
+                                - spinbutton [disabled] [ref=e1570]
+                            - row "Edgeline White USCD $0.00" [ref=e1571]:
+                              - cell [ref=e1572]:
+                                - checkbox [ref=e1573] [cursor=pointer]
+                              - cell "Edgeline White" [ref=e1574]:
+                                - generic [ref=e1576]: Edgeline White
+                              - cell "USCD" [ref=e1577]:
+                                - generic [ref=e1578]: USCD
+                              - cell [ref=e1579]:
+                                - textbox "Same as original" [disabled] [ref=e1580]
+                              - cell "$0.00" [ref=e1581]:
+                                - generic [ref=e1582]: $0.00
+                              - cell [ref=e1583]:
+                                - spinbutton [disabled] [ref=e1584]
+                            - row "Custom Colour Match Options — $0.00" [ref=e1585]:
+                              - cell [ref=e1586]:
+                                - checkbox [ref=e1587] [cursor=pointer]
+                              - cell "Custom Colour Match Options" [ref=e1588]:
+                                - generic [ref=e1591]: Custom Colour Match Options
+                              - cell "—" [ref=e1592]
+                              - cell [ref=e1593]:
+                                - textbox "Same as original" [disabled] [ref=e1594]
+                              - cell "$0.00" [ref=e1595]:
+                                - generic [ref=e1596]: $0.00
+                              - cell [ref=e1597]:
+                                - spinbutton [disabled] [ref=e1598]
+                            - row "Oxford Sage USCD $0.00" [ref=e1599]:
+                              - cell [ref=e1600]:
+                                - checkbox [ref=e1601] [cursor=pointer]
+                              - cell "Oxford Sage" [ref=e1602]:
+                                - generic [ref=e1604]: Oxford Sage
+                              - cell "USCD" [ref=e1605]:
+                                - generic [ref=e1606]: USCD
+                              - cell [ref=e1607]:
+                                - textbox "Same as original" [disabled] [ref=e1608]
+                              - cell "$0.00" [ref=e1609]:
+                                - generic [ref=e1610]: $0.00
+                              - cell [ref=e1611]:
+                                - spinbutton [disabled] [ref=e1612]
+                            - row "Oxford White USCD $0.00" [ref=e1613]:
+                              - cell [ref=e1614]:
+                                - checkbox [ref=e1615] [cursor=pointer]
+                              - cell "Oxford White" [ref=e1616]:
+                                - generic [ref=e1618]: Oxford White
+                              - cell "USCD" [ref=e1619]:
+                                - generic [ref=e1620]: USCD
+                              - cell [ref=e1621]:
+                                - textbox "Same as original" [disabled] [ref=e1622]
+                              - cell "$0.00" [ref=e1623]:
+                                - generic [ref=e1624]: $0.00
+                              - cell [ref=e1625]:
+                                - spinbutton [disabled] [ref=e1626]
+                            - row "Shaker Black USCD $0.00" [ref=e1627]:
+                              - cell [ref=e1628]:
+                                - checkbox [checked] [ref=e1629] [cursor=pointer]
+                              - cell "Shaker Black" [ref=e1630]:
+                                - generic [ref=e1632]: Shaker Black
+                              - cell "USCD" [ref=e1633]:
+                                - generic [ref=e1634]: USCD
+                              - cell [ref=e1635]:
+                                - textbox "Same as original" [ref=e1636]
+                              - cell "$0.00" [ref=e1637]:
+                                - generic [ref=e1638]: $0.00
+                              - cell [ref=e1639]:
+                                - spinbutton [ref=e1640]
+                            - row "Shaker Dove USCD $0.00" [ref=e1641]:
+                              - cell [ref=e1642]:
+                                - checkbox [ref=e1643] [cursor=pointer]
+                              - cell "Shaker Dove" [ref=e1644]:
+                                - generic [ref=e1646]: Shaker Dove
+                              - cell "USCD" [ref=e1647]:
+                                - generic [ref=e1648]: USCD
+                              - cell [ref=e1649]:
+                                - textbox "Same as original" [disabled] [ref=e1650]
+                              - cell "$0.00" [ref=e1651]:
+                                - generic [ref=e1652]: $0.00
+                              - cell [ref=e1653]:
+                                - spinbutton [disabled] [ref=e1654]
+                            - row "Shaker Gray USCD $0.00" [ref=e1655]:
+                              - cell [ref=e1656]:
+                                - checkbox [checked] [ref=e1657] [cursor=pointer]
+                              - cell "Shaker Gray" [ref=e1658]:
+                                - generic [ref=e1660]: Shaker Gray
+                              - cell "USCD" [ref=e1661]:
+                                - generic [ref=e1662]: USCD
+                              - cell [ref=e1663]:
+                                - textbox "Same as original" [ref=e1664]
+                              - cell "$0.00" [ref=e1665]:
+                                - generic [ref=e1666]: $0.00
+                              - cell [ref=e1667]:
+                                - spinbutton [ref=e1668]
+                            - row "Shaker Navy USCD $0.00" [ref=e1669]:
+                              - cell [ref=e1670]:
+                                - checkbox [ref=e1671] [cursor=pointer]
+                              - cell "Shaker Navy" [ref=e1672]:
+                                - generic [ref=e1674]: Shaker Navy
+                              - cell "USCD" [ref=e1675]:
+                                - generic [ref=e1676]: USCD
+                              - cell [ref=e1677]:
+                                - textbox "Same as original" [disabled] [ref=e1678]
+                              - cell "$0.00" [ref=e1679]:
+                                - generic [ref=e1680]: $0.00
+                              - cell [ref=e1681]:
+                                - spinbutton [disabled] [ref=e1682]
+                            - row "Torrance Dove USCD $0.00" [ref=e1683]:
+                              - cell [ref=e1684]:
+                                - checkbox [ref=e1685] [cursor=pointer]
+                              - cell "Torrance Dove" [ref=e1686]:
+                                - generic [ref=e1688]: Torrance Dove
+                              - cell "USCD" [ref=e1689]:
+                                - generic [ref=e1690]: USCD
+                              - cell [ref=e1691]:
+                                - textbox "Same as original" [disabled] [ref=e1692]
+                              - cell "$0.00" [ref=e1693]:
+                                - generic [ref=e1694]: $0.00
+                              - cell [ref=e1695]:
+                                - spinbutton [disabled] [ref=e1696]
+                            - row "Torrance White USCD $0.00" [ref=e1697]:
+                              - cell [ref=e1698]:
+                                - checkbox [ref=e1699] [cursor=pointer]
+                              - cell "Torrance White" [ref=e1700]:
+                                - generic [ref=e1702]: Torrance White
+                              - cell "USCD" [ref=e1703]:
+                                - generic [ref=e1704]: USCD
+                              - cell [ref=e1705]:
+                                - textbox "Same as original" [disabled] [ref=e1706]
+                              - cell "$0.00" [ref=e1707]:
+                                - generic [ref=e1708]: $0.00
+                              - cell [ref=e1709]:
+                                - spinbutton [disabled] [ref=e1710]
+                            - row "York Antique White USCD $0.00" [ref=e1711]:
+                              - cell [ref=e1712]:
+                                - checkbox [ref=e1713] [cursor=pointer]
+                              - cell "York Antique White" [ref=e1714]:
+                                - generic [ref=e1716]: York Antique White
+                              - cell "USCD" [ref=e1717]:
+                                - generic [ref=e1718]: USCD
+                              - cell [ref=e1719]:
+                                - textbox "Same as original" [disabled] [ref=e1720]
+                              - cell "$0.00" [ref=e1721]:
+                                - generic [ref=e1722]: $0.00
+                              - cell [ref=e1723]:
+                                - spinbutton [disabled] [ref=e1724]
+                            - row "Casselberry Saddle USCD $0.00" [ref=e1725]:
+                              - cell [ref=e1726]:
+                                - checkbox [ref=e1727] [cursor=pointer]
+                              - cell "Casselberry Saddle" [ref=e1728]:
+                                - generic [ref=e1730]: Casselberry Saddle
+                              - cell "USCD" [ref=e1731]:
+                                - generic [ref=e1732]: USCD
+                              - cell [ref=e1733]:
+                                - textbox "Same as original" [disabled] [ref=e1734]
+                              - cell "$0.00" [ref=e1735]:
+                                - generic [ref=e1736]: $0.00
+                              - cell [ref=e1737]:
+                                - spinbutton [disabled] [ref=e1738]
+                            - row "Oxford Mist USCD $0.00" [ref=e1739]:
+                              - cell [ref=e1740]:
+                                - checkbox [ref=e1741] [cursor=pointer]
+                              - cell "Oxford Mist" [ref=e1742]:
+                                - generic [ref=e1744]: Oxford Mist
+                              - cell "USCD" [ref=e1745]:
+                                - generic [ref=e1746]: USCD
+                              - cell [ref=e1747]:
+                                - textbox "Same as original" [disabled] [ref=e1748]
+                              - cell "$0.00" [ref=e1749]:
+                                - generic [ref=e1750]: $0.00
+                              - cell [ref=e1751]:
+                                - spinbutton [disabled] [ref=e1752]
+                            - row "Oxford Toffee USCD $0.00" [ref=e1753]:
+                              - cell [ref=e1754]:
+                                - checkbox [ref=e1755] [cursor=pointer]
+                              - cell "Oxford Toffee" [ref=e1756]:
+                                - generic [ref=e1758]: Oxford Toffee
+                              - cell "USCD" [ref=e1759]:
+                                - generic [ref=e1760]: USCD
+                              - cell [ref=e1761]:
+                                - textbox "Same as original" [disabled] [ref=e1762]
+                              - cell "$0.00" [ref=e1763]:
+                                - generic [ref=e1764]: $0.00
+                              - cell [ref=e1765]:
+                                - spinbutton [disabled] [ref=e1766]
+                            - row "Shaker Cinder USCD $0.00" [ref=e1767]:
+                              - cell [ref=e1768]:
+                                - checkbox [ref=e1769] [cursor=pointer]
+                              - cell "Shaker Cinder" [ref=e1770]:
+                                - generic [ref=e1772]: Shaker Cinder
+                              - cell "USCD" [ref=e1773]:
+                                - generic [ref=e1774]: USCD
+                              - cell [ref=e1775]:
+                                - textbox "Same as original" [disabled] [ref=e1776]
+                              - cell "$0.00" [ref=e1777]:
+                                - generic [ref=e1778]: $0.00
+                              - cell [ref=e1779]:
+                                - spinbutton [disabled] [ref=e1780]
+                            - row "Shaker Honey USCD $0.00" [ref=e1781]:
+                              - cell [ref=e1782]:
+                                - checkbox [ref=e1783] [cursor=pointer]
+                              - cell "Shaker Honey" [ref=e1784]:
+                                - generic [ref=e1786]: Shaker Honey
+                              - cell "USCD" [ref=e1787]:
+                                - generic [ref=e1788]: USCD
+                              - cell [ref=e1789]:
+                                - textbox "Same as original" [disabled] [ref=e1790]
+                              - cell "$0.00" [ref=e1791]:
+                                - generic [ref=e1792]: $0.00
+                              - cell [ref=e1793]:
+                                - spinbutton [disabled] [ref=e1794]
+                            - row "Verona Midnight Navy USCD $0.00" [ref=e1795]:
+                              - cell [ref=e1796]:
+                                - checkbox [ref=e1797] [cursor=pointer]
+                              - cell "Verona Midnight Navy" [ref=e1798]:
+                                - generic [ref=e1800]: Verona Midnight Navy
+                              - cell "USCD" [ref=e1801]:
+                                - generic [ref=e1802]: USCD
+                              - cell [ref=e1803]:
+                                - textbox "Same as original" [disabled] [ref=e1804]
+                              - cell "$0.00" [ref=e1805]:
+                                - generic [ref=e1806]: $0.00
+                              - cell [ref=e1807]:
+                                - spinbutton [disabled] [ref=e1808]
+                            - row "Verona Pure Blanc USCD $0.00" [ref=e1809]:
+                              - cell [ref=e1810]:
+                                - checkbox [ref=e1811] [cursor=pointer]
+                              - cell "Verona Pure Blanc" [ref=e1812]:
+                                - generic [ref=e1814]: Verona Pure Blanc
+                              - cell "USCD" [ref=e1815]:
+                                - generic [ref=e1816]: USCD
+                              - cell [ref=e1817]:
+                                - textbox "Same as original" [disabled] [ref=e1818]
+                              - cell "$0.00" [ref=e1819]:
+                                - generic [ref=e1820]: $0.00
+                              - cell [ref=e1821]:
+                                - spinbutton [disabled] [ref=e1822]
+                            - row "Beige Gray TA Cabinetry $0.00" [ref=e1823]:
+                              - cell [ref=e1824]:
+                                - checkbox [ref=e1825] [cursor=pointer]
+                              - cell "Beige Gray" [ref=e1826]:
+                                - generic [ref=e1829]: Beige Gray
+                              - cell "TA Cabinetry" [ref=e1830]:
+                                - generic [ref=e1831]: TA Cabinetry
+                              - cell [ref=e1832]:
+                                - textbox "Same as original" [disabled] [ref=e1833]
+                              - cell "$0.00" [ref=e1834]:
+                                - generic [ref=e1835]: $0.00
+                              - cell [ref=e1836]:
+                                - spinbutton [disabled] [ref=e1837]
+                            - row "Blue Hoodsly $0.00" [ref=e1838]:
+                              - cell [ref=e1839]:
+                                - checkbox [ref=e1840] [cursor=pointer]
+                              - cell "Blue" [ref=e1841]:
+                                - generic [ref=e1844]: Blue
+                              - cell "Hoodsly" [ref=e1845]:
+                                - generic [ref=e1846]: Hoodsly
+                              - cell [ref=e1847]:
+                                - textbox "Same as original" [disabled] [ref=e1848]
+                              - cell "$0.00" [ref=e1849]:
+                                - generic [ref=e1850]: $0.00
+                              - cell [ref=e1851]:
+                                - spinbutton [disabled] [ref=e1852]
+                            - row "Charcoal Black TA Cabinetry $0.00" [ref=e1853]:
+                              - cell [ref=e1854]:
+                                - checkbox [ref=e1855] [cursor=pointer]
+                              - cell "Charcoal Black" [ref=e1856]:
+                                - generic [ref=e1858]: Charcoal Black
+                              - cell "TA Cabinetry" [ref=e1859]:
+                                - generic [ref=e1860]: TA Cabinetry
+                              - cell [ref=e1861]:
+                                - textbox "Same as original" [disabled] [ref=e1862]
+                              - cell "$0.00" [ref=e1863]:
+                                - generic [ref=e1864]: $0.00
+                              - cell [ref=e1865]:
+                                - spinbutton [disabled] [ref=e1866]
+                            - row "Dove White TA Cabinetry $0.00" [ref=e1867]:
+                              - cell [ref=e1868]:
+                                - checkbox [ref=e1869] [cursor=pointer]
+                              - cell "Dove White" [ref=e1870]:
+                                - generic [ref=e1872]: Dove White
+                              - cell "TA Cabinetry" [ref=e1873]:
+                                - generic [ref=e1874]: TA Cabinetry
+                              - cell [ref=e1875]:
+                                - textbox "Same as original" [disabled] [ref=e1876]
+                              - cell "$0.00" [ref=e1877]:
+                                - generic [ref=e1878]: $0.00
+                              - cell [ref=e1879]:
+                                - spinbutton [disabled] [ref=e1880]
+                            - row "Gray TA Cabinetry $0.00" [ref=e1881]:
+                              - cell [ref=e1882]:
+                                - checkbox [ref=e1883] [cursor=pointer]
+                              - cell "Gray" [ref=e1884]:
+                                - generic [ref=e1887]: Gray
+                              - cell "TA Cabinetry" [ref=e1888]:
+                                - generic [ref=e1889]: TA Cabinetry
+                              - cell [ref=e1890]:
+                                - textbox "Same as original" [disabled] [ref=e1891]
+                              - cell "$0.00" [ref=e1892]:
+                                - generic [ref=e1893]: $0.00
+                              - cell [ref=e1894]:
+                                - spinbutton [disabled] [ref=e1895]
+                            - row "Tuscan Green TA Cabinetry $0.00" [ref=e1896]:
+                              - cell [ref=e1897]:
+                                - checkbox [ref=e1898] [cursor=pointer]
+                              - cell "Tuscan Green" [ref=e1899]:
+                                - generic [ref=e1901]: Tuscan Green
+                              - cell "TA Cabinetry" [ref=e1902]:
+                                - generic [ref=e1903]: TA Cabinetry
+                              - cell [ref=e1904]:
+                                - textbox "Same as original" [disabled] [ref=e1905]
+                              - cell "$0.00" [ref=e1906]:
+                                - generic [ref=e1907]: $0.00
+                              - cell [ref=e1908]:
+                                - spinbutton [disabled] [ref=e1909]
+                            - row "White TA Cabinetry $0.00" [ref=e1910]:
+                              - cell [ref=e1911]:
+                                - checkbox [ref=e1912] [cursor=pointer]
+                              - cell "White" [ref=e1913]:
+                                - generic [ref=e1916]: White
+                              - cell "TA Cabinetry" [ref=e1917]:
+                                - generic [ref=e1918]: TA Cabinetry
+                              - cell [ref=e1919]:
+                                - textbox "Same as original" [disabled] [ref=e1920]
+                              - cell "$0.00" [ref=e1921]:
+                                - generic [ref=e1922]: $0.00
+                              - cell [ref=e1923]:
+                                - spinbutton [disabled] [ref=e1924]
+                            - row "Oak TA Cabinetry $0.00" [ref=e1925]:
+                              - cell [ref=e1926]:
+                                - checkbox [ref=e1927] [cursor=pointer]
+                              - cell "Oak" [ref=e1928]:
+                                - generic [ref=e1930]: Oak
+                              - cell "TA Cabinetry" [ref=e1931]:
+                                - generic [ref=e1932]: TA Cabinetry
+                              - cell [ref=e1933]:
+                                - textbox "Same as original" [disabled] [ref=e1934]
+                              - cell "$0.00" [ref=e1935]:
+                                - generic [ref=e1936]: $0.00
+                              - cell [ref=e1937]:
+                                - spinbutton [disabled] [ref=e1938]
+                            - row "Slate Brown TA Cabinetry $0.00" [ref=e1939]:
+                              - cell [ref=e1940]:
+                                - checkbox [ref=e1941] [cursor=pointer]
+                              - cell "Slate Brown" [ref=e1942]:
+                                - generic [ref=e1944]: Slate Brown
+                              - cell "TA Cabinetry" [ref=e1945]:
+                                - generic [ref=e1946]: TA Cabinetry
+                              - cell [ref=e1947]:
+                                - textbox "Same as original" [disabled] [ref=e1948]
+                              - cell "$0.00" [ref=e1949]:
+                                - generic [ref=e1950]: $0.00
+                              - cell [ref=e1951]:
+                                - spinbutton [disabled] [ref=e1952]
+                            - row "Black Hoodsly $0.00" [ref=e1953]:
+                              - cell [ref=e1954]:
+                                - checkbox [ref=e1955] [cursor=pointer]
+                              - cell "Black" [ref=e1956]:
+                                - generic [ref=e1959]: Black
+                              - cell "Hoodsly" [ref=e1960]:
+                                - generic [ref=e1961]: Hoodsly
+                              - cell [ref=e1962]:
+                                - textbox "Same as original" [disabled] [ref=e1963]
+                              - cell "$0.00" [ref=e1964]:
+                                - generic [ref=e1965]: $0.00
+                              - cell [ref=e1966]:
+                                - spinbutton [disabled] [ref=e1967]
+                            - row "Antique White Hoodsly $0.00" [ref=e1968]:
+                              - cell [ref=e1969]:
+                                - checkbox [ref=e1970] [cursor=pointer]
+                              - cell "Antique White" [ref=e1971]:
+                                - generic [ref=e1974]: Antique White
+                              - cell "Hoodsly" [ref=e1975]:
+                                - generic [ref=e1976]: Hoodsly
+                              - cell [ref=e1977]:
+                                - textbox "Same as original" [disabled] [ref=e1978]
+                              - cell "$0.00" [ref=e1979]:
+                                - generic [ref=e1980]: $0.00
+                              - cell [ref=e1981]:
+                                - spinbutton [disabled] [ref=e1982]
+                            - row "Light Gray Hoodsly $0.00" [ref=e1983]:
+                              - cell [ref=e1984]:
+                                - checkbox [ref=e1985] [cursor=pointer]
+                              - cell "Light Gray" [ref=e1986]:
+                                - generic [ref=e1989]: Light Gray
+                              - cell "Hoodsly" [ref=e1990]:
+                                - generic [ref=e1991]: Hoodsly
+                              - cell [ref=e1992]:
+                                - textbox "Same as original" [disabled] [ref=e1993]
+                              - cell "$0.00" [ref=e1994]:
+                                - generic [ref=e1995]: $0.00
+                              - cell [ref=e1996]:
+                                - spinbutton [disabled] [ref=e1997]
+                            - row "Espresso Stain Hoodsly $0.00" [ref=e1998]:
+                              - cell [ref=e1999]:
+                                - checkbox [ref=e2000] [cursor=pointer]
+                              - cell "Espresso Stain" [ref=e2001]:
+                                - generic [ref=e2004]: Espresso Stain
+                              - cell "Hoodsly" [ref=e2005]:
+                                - generic [ref=e2006]: Hoodsly
+                              - cell [ref=e2007]:
+                                - textbox "Same as original" [disabled] [ref=e2008]
+                              - cell "$0.00" [ref=e2009]:
+                                - generic [ref=e2010]: $0.00
+                              - cell [ref=e2011]:
+                                - spinbutton [disabled] [ref=e2012]
+                            - row "Chocolate Stain Hoodsly $0.00" [ref=e2013]:
+                              - cell [ref=e2014]:
+                                - checkbox [ref=e2015] [cursor=pointer]
+                              - cell "Chocolate Stain" [ref=e2016]:
+                                - generic [ref=e2019]: Chocolate Stain
+                              - cell "Hoodsly" [ref=e2020]:
+                                - generic [ref=e2021]: Hoodsly
+                              - cell [ref=e2022]:
+                                - textbox "Same as original" [disabled] [ref=e2023]
+                              - cell "$0.00" [ref=e2024]:
+                                - generic [ref=e2025]: $0.00
+                              - cell [ref=e2026]:
+                                - spinbutton [disabled] [ref=e2027]
+                            - row "Saddle Stain Hoodsly $0.00" [ref=e2028]:
+                              - cell [ref=e2029]:
+                                - checkbox [ref=e2030] [cursor=pointer]
+                              - cell "Saddle Stain" [ref=e2031]:
+                                - generic [ref=e2034]: Saddle Stain
+                              - cell "Hoodsly" [ref=e2035]:
+                                - generic [ref=e2036]: Hoodsly
+                              - cell [ref=e2037]:
+                                - textbox "Same as original" [disabled] [ref=e2038]
+                              - cell "$0.00" [ref=e2039]:
+                                - generic [ref=e2040]: $0.00
+                              - cell [ref=e2041]:
+                                - spinbutton [disabled] [ref=e2042]
+                            - row "American Walnut Stain Hoodsly $0.00" [ref=e2043]:
+                              - cell [ref=e2044]:
+                                - checkbox [ref=e2045] [cursor=pointer]
+                              - cell "American Walnut Stain" [ref=e2046]:
+                                - generic [ref=e2049]: American Walnut Stain
+                              - cell "Hoodsly" [ref=e2050]:
+                                - generic [ref=e2051]: Hoodsly
+                              - cell [ref=e2052]:
+                                - textbox "Same as original" [disabled] [ref=e2053]
+                              - cell "$0.00" [ref=e2054]:
+                                - generic [ref=e2055]: $0.00
+                              - cell [ref=e2056]:
+                                - spinbutton [disabled] [ref=e2057]
+                            - row "Stained Gray Hoodsly $0.00" [ref=e2058]:
+                              - cell [ref=e2059]:
+                                - checkbox [ref=e2060] [cursor=pointer]
+                              - cell "Stained Gray" [ref=e2061]:
+                                - generic [ref=e2064]: Stained Gray
+                              - cell "Hoodsly" [ref=e2065]:
+                                - generic [ref=e2066]: Hoodsly
+                              - cell [ref=e2067]:
+                                - textbox "Same as original" [disabled] [ref=e2068]
+                              - cell "$0.00" [ref=e2069]:
+                                - generic [ref=e2070]: $0.00
+                              - cell [ref=e2071]:
+                                - spinbutton [disabled] [ref=e2072]
+                            - row "Natural Stain Hoodsly $0.00" [ref=e2073]:
+                              - cell [ref=e2074]:
+                                - checkbox [ref=e2075] [cursor=pointer]
+                              - cell "Natural Stain" [ref=e2076]:
+                                - generic [ref=e2079]: Natural Stain
+                              - cell "Hoodsly" [ref=e2080]:
+                                - generic [ref=e2081]: Hoodsly
+                              - cell [ref=e2082]:
+                                - textbox "Same as original" [disabled] [ref=e2083]
+                              - cell "$0.00" [ref=e2084]:
+                                - generic [ref=e2085]: $0.00
+                              - cell [ref=e2086]:
+                                - spinbutton [disabled] [ref=e2087]
+                            - row "Latte Stain Hoodsly $0.00" [ref=e2088]:
+                              - cell [ref=e2089]:
+                                - checkbox [checked] [ref=e2090] [cursor=pointer]
+                              - cell "Latte Stain" [ref=e2091]:
+                                - generic [ref=e2093]: Latte Stain
+                              - cell "Hoodsly" [ref=e2094]:
+                                - generic [ref=e2095]: Hoodsly
+                              - cell [ref=e2096]:
+                                - textbox "Same as original" [ref=e2097]
+                              - cell "$0.00" [ref=e2098]:
+                                - generic [ref=e2099]: $0.00
+                              - cell [ref=e2100]:
+                                - spinbutton [ref=e2101]
+                            - row "Clover Green Hoodsly $0.00" [ref=e2102]:
+                              - cell [ref=e2103]:
+                                - checkbox [checked] [ref=e2104] [cursor=pointer]
+                              - cell "Clover Green" [ref=e2105]:
+                                - generic [ref=e2107]: Clover Green
+                              - cell "Hoodsly" [ref=e2108]:
+                                - generic [ref=e2109]: Hoodsly
+                              - cell [ref=e2110]:
+                                - textbox "Same as original" [ref=e2111]
+                              - cell "$0.00" [ref=e2112]:
+                                - generic [ref=e2113]: $0.00
+                              - cell [ref=e2114]:
+                                - spinbutton [ref=e2115]
+                            - row "Sterling Gray Jarlin $0.00" [ref=e2116]:
+                              - cell [ref=e2117]:
+                                - checkbox [ref=e2118] [cursor=pointer]
+                              - cell "Sterling Gray" [ref=e2119]:
+                                - generic [ref=e2122]: Sterling Gray
+                              - cell "Jarlin" [ref=e2123]:
+                                - generic [ref=e2124]: Jarlin
+                              - cell [ref=e2125]:
+                                - textbox "Same as original" [disabled] [ref=e2126]
+                              - cell "$0.00" [ref=e2127]:
+                                - generic [ref=e2128]: $0.00
+                              - cell [ref=e2129]:
+                                - spinbutton [disabled] [ref=e2130]
+                            - row "Weston Shaker Jarlin $0.00" [ref=e2131]:
+                              - cell [ref=e2132]:
+                                - checkbox [ref=e2133] [cursor=pointer]
+                              - cell "Weston Shaker" [ref=e2134]:
+                                - generic [ref=e2137]: Weston Shaker
+                              - cell "Jarlin" [ref=e2138]:
+                                - generic [ref=e2139]: Jarlin
+                              - cell [ref=e2140]:
+                                - textbox "Same as original" [disabled] [ref=e2141]
+                              - cell "$0.00" [ref=e2142]:
+                                - generic [ref=e2143]: $0.00
+                              - cell [ref=e2144]:
+                                - spinbutton [disabled] [ref=e2145]
+                            - row "Toffee Shaker Jarlin $0.00" [ref=e2146]:
+                              - cell [ref=e2147]:
+                                - checkbox [ref=e2148] [cursor=pointer]
+                              - cell "Toffee Shaker" [ref=e2149]:
+                                - generic [ref=e2152]: Toffee Shaker
+                              - cell "Jarlin" [ref=e2153]:
+                                - generic [ref=e2154]: Jarlin
+                              - cell [ref=e2155]:
+                                - textbox "Same as original" [disabled] [ref=e2156]
+                              - cell "$0.00" [ref=e2157]:
+                                - generic [ref=e2158]: $0.00
+                              - cell [ref=e2159]:
+                                - spinbutton [disabled] [ref=e2160]
+                            - row "Soda White Jarlin $0.00" [ref=e2161]:
+                              - cell [ref=e2162]:
+                                - checkbox [ref=e2163] [cursor=pointer]
+                              - cell "Soda White" [ref=e2164]:
+                                - generic [ref=e2167]: Soda White
+                              - cell "Jarlin" [ref=e2168]:
+                                - generic [ref=e2169]: Jarlin
+                              - cell [ref=e2170]:
+                                - textbox "Same as original" [disabled] [ref=e2171]
+                              - cell "$0.00" [ref=e2172]:
+                                - generic [ref=e2173]: $0.00
+                              - cell [ref=e2174]:
+                                - spinbutton [disabled] [ref=e2175]
+                            - row "Smoky Gray Jarlin $0.00" [ref=e2176]:
+                              - cell [ref=e2177]:
+                                - checkbox [ref=e2178] [cursor=pointer]
+                              - cell "Smoky Gray" [ref=e2179]:
+                                - generic [ref=e2182]: Smoky Gray
+                              - cell "Jarlin" [ref=e2183]:
+                                - generic [ref=e2184]: Jarlin
+                              - cell [ref=e2185]:
+                                - textbox "Same as original" [disabled] [ref=e2186]
+                              - cell "$0.00" [ref=e2187]:
+                                - generic [ref=e2188]: $0.00
+                              - cell [ref=e2189]:
+                                - spinbutton [disabled] [ref=e2190]
+                            - row "Perla Jarlin $0.00" [ref=e2191]:
+                              - cell [ref=e2192]:
+                                - checkbox [ref=e2193] [cursor=pointer]
+                              - cell "Perla" [ref=e2194]:
+                                - generic [ref=e2197]: Perla
+                              - cell "Jarlin" [ref=e2198]:
+                                - generic [ref=e2199]: Jarlin
+                              - cell [ref=e2200]:
+                                - textbox "Same as original" [disabled] [ref=e2201]
+                              - cell "$0.00" [ref=e2202]:
+                                - generic [ref=e2203]: $0.00
+                              - cell [ref=e2204]:
+                                - spinbutton [disabled] [ref=e2205]
+                            - row "Ebony Shaker Jarlin $0.00" [ref=e2206]:
+                              - cell [ref=e2207]:
+                                - checkbox [ref=e2208] [cursor=pointer]
+                              - cell "Ebony Shaker" [ref=e2209]:
+                                - generic [ref=e2212]: Ebony Shaker
+                              - cell "Jarlin" [ref=e2213]:
+                                - generic [ref=e2214]: Jarlin
+                              - cell [ref=e2215]:
+                                - textbox "Same as original" [disabled] [ref=e2216]
+                              - cell "$0.00" [ref=e2217]:
+                                - generic [ref=e2218]: $0.00
+                              - cell [ref=e2219]:
+                                - spinbutton [disabled] [ref=e2220]
+                            - row "Charlton Jarlin $0.00" [ref=e2221]:
+                              - cell [ref=e2222]:
+                                - checkbox [ref=e2223] [cursor=pointer]
+                              - cell "Charlton" [ref=e2224]:
+                                - generic [ref=e2227]: Charlton
+                              - cell "Jarlin" [ref=e2228]:
+                                - generic [ref=e2229]: Jarlin
+                              - cell [ref=e2230]:
+                                - textbox "Same as original" [disabled] [ref=e2231]
+                              - cell "$0.00" [ref=e2232]:
+                                - generic [ref=e2233]: $0.00
+                              - cell [ref=e2234]:
+                                - spinbutton [disabled] [ref=e2235]
+                            - row "New Port Jarlin $0.00" [ref=e2236]:
+                              - cell [ref=e2237]:
+                                - checkbox [ref=e2238] [cursor=pointer]
+                              - cell "New Port" [ref=e2239]:
+                                - generic [ref=e2242]: New Port
+                              - cell "Jarlin" [ref=e2243]:
+                                - generic [ref=e2244]: Jarlin
+                              - cell [ref=e2245]:
+                                - textbox "Same as original" [disabled] [ref=e2246]
+                              - cell "$0.00" [ref=e2247]:
+                                - generic [ref=e2248]: $0.00
+                              - cell [ref=e2249]:
+                                - spinbutton [disabled] [ref=e2250]
+                            - row "Aria Blue Jarlin $0.00" [ref=e2251]:
+                              - cell [ref=e2252]:
+                                - checkbox [ref=e2253] [cursor=pointer]
+                              - cell "Aria Blue" [ref=e2254]:
+                                - generic [ref=e2257]: Aria Blue
+                              - cell "Jarlin" [ref=e2258]:
+                                - generic [ref=e2259]: Jarlin
+                              - cell [ref=e2260]:
+                                - textbox "Same as original" [disabled] [ref=e2261]
+                              - cell "$0.00" [ref=e2262]:
+                                - generic [ref=e2263]: $0.00
+                              - cell [ref=e2264]:
+                                - spinbutton [disabled] [ref=e2265]
+                            - row "Avalon Jarlin $0.00" [ref=e2266]:
+                              - cell [ref=e2267]:
+                                - checkbox [ref=e2268] [cursor=pointer]
+                              - cell "Avalon" [ref=e2269]:
+                                - generic [ref=e2272]: Avalon
+                              - cell "Jarlin" [ref=e2273]:
+                                - generic [ref=e2274]: Jarlin
+                              - cell [ref=e2275]:
+                                - textbox "Same as original" [disabled] [ref=e2276]
+                              - cell "$0.00" [ref=e2277]:
+                                - generic [ref=e2278]: $0.00
+                              - cell [ref=e2279]:
+                                - spinbutton [disabled] [ref=e2280]
+                            - row "Karamel TA Cabinetry $0.00" [ref=e2281]:
+                              - cell [ref=e2282]:
+                                - checkbox [ref=e2283] [cursor=pointer]
+                              - cell "Karamel" [ref=e2284]:
+                                - generic [ref=e2286]: Karamel
+                              - cell "TA Cabinetry" [ref=e2287]:
+                                - generic [ref=e2288]: TA Cabinetry
+                              - cell [ref=e2289]:
+                                - textbox "Same as original" [disabled] [ref=e2290]
+                              - cell "$0.00" [ref=e2291]:
+                                - generic [ref=e2292]: $0.00
+                              - cell [ref=e2293]:
+                                - spinbutton [disabled] [ref=e2294]
+                            - row "Dove White Shaker Jarlin $0.00" [ref=e2295]:
+                              - cell [ref=e2296]:
+                                - checkbox [ref=e2297] [cursor=pointer]
+                              - cell "Dove White Shaker" [ref=e2298]:
+                                - generic [ref=e2301]: Dove White Shaker
+                              - cell "Jarlin" [ref=e2302]:
+                                - generic [ref=e2303]: Jarlin
+                              - cell [ref=e2304]:
+                                - textbox "Same as original" [disabled] [ref=e2305]
+                              - cell "$0.00" [ref=e2306]:
+                                - generic [ref=e2307]: $0.00
+                              - cell [ref=e2308]:
+                                - spinbutton [disabled] [ref=e2309]
+                            - row "Admiral Blue Shaker Everly $0.00" [ref=e2310]:
+                              - cell [ref=e2311]:
+                                - checkbox [ref=e2312] [cursor=pointer]
+                              - cell "Admiral Blue Shaker" [ref=e2313]:
+                                - generic [ref=e2316]: Admiral Blue Shaker
+                              - cell "Everly" [ref=e2317]:
+                                - generic [ref=e2318]: Everly
+                              - cell [ref=e2319]:
+                                - textbox "Same as original" [disabled] [ref=e2320]
+                              - cell "$0.00" [ref=e2321]:
+                                - generic [ref=e2322]: $0.00
+                              - cell [ref=e2323]:
+                                - spinbutton [disabled] [ref=e2324]
+                            - row "Shaker Espresso Everly $0.00" [ref=e2325]:
+                              - cell [ref=e2326]:
+                                - checkbox [ref=e2327] [cursor=pointer]
+                              - cell "Shaker Espresso" [ref=e2328]:
+                                - generic [ref=e2330]: Shaker Espresso
+                              - cell "Everly" [ref=e2331]:
+                                - generic [ref=e2332]: Everly
+                              - cell [ref=e2333]:
+                                - textbox "Same as original" [disabled] [ref=e2334]
+                              - cell "$0.00" [ref=e2335]:
+                                - generic [ref=e2336]: $0.00
+                              - cell [ref=e2337]:
+                                - spinbutton [disabled] [ref=e2338]
+                            - row "Shaker Gray Everly $0.00" [ref=e2339]:
+                              - cell [ref=e2340]:
+                                - checkbox [ref=e2341] [cursor=pointer]
+                              - cell "Shaker Gray" [ref=e2342]:
+                                - generic [ref=e2344]: Shaker Gray
+                              - cell "Everly" [ref=e2345]:
+                                - generic [ref=e2346]: Everly
+                              - cell [ref=e2347]:
+                                - textbox "Same as original" [disabled] [ref=e2348]
+                              - cell "$0.00" [ref=e2349]:
+                                - generic [ref=e2350]: $0.00
+                              - cell [ref=e2351]:
+                                - spinbutton [disabled] [ref=e2352]
+                            - row "White Oak TA Cabinetry $0.00" [ref=e2353]:
+                              - cell [ref=e2354]:
+                                - checkbox [ref=e2355] [cursor=pointer]
+                              - cell "White Oak" [ref=e2356]:
+                                - generic [ref=e2358]: White Oak
+                              - cell "TA Cabinetry" [ref=e2359]:
+                                - generic [ref=e2360]: TA Cabinetry
+                              - cell [ref=e2361]:
+                                - textbox "Same as original" [disabled] [ref=e2362]
+                              - cell "$0.00" [ref=e2363]:
+                                - generic [ref=e2364]: $0.00
+                              - cell [ref=e2365]:
+                                - spinbutton [disabled] [ref=e2366]
+                            - row "Destin White Shaker Everly $0.00" [ref=e2367]:
+                              - cell [ref=e2368]:
+                                - checkbox [ref=e2369] [cursor=pointer]
+                              - cell "Destin White Shaker" [ref=e2370]:
+                                - generic [ref=e2372]: Destin White Shaker
+                              - cell "Everly" [ref=e2373]:
+                                - generic [ref=e2374]: Everly
+                              - cell [ref=e2375]:
+                                - textbox "Same as original" [disabled] [ref=e2376]
+                              - cell "$0.00" [ref=e2377]:
+                                - generic [ref=e2378]: $0.00
+                              - cell [ref=e2379]:
+                                - spinbutton [disabled] [ref=e2380]
+                            - row "Blue TA Cabinetry $0.00" [ref=e2381]:
+                              - cell [ref=e2382]:
+                                - checkbox [ref=e2383] [cursor=pointer]
+                              - cell "Blue" [ref=e2384]:
+                                - generic [ref=e2387]: Blue
+                              - cell "TA Cabinetry" [ref=e2388]:
+                                - generic [ref=e2389]: TA Cabinetry
+                              - cell [ref=e2390]:
+                                - textbox "Same as original" [disabled] [ref=e2391]
+                              - cell "$0.00" [ref=e2392]:
+                                - generic [ref=e2393]: $0.00
+                              - cell [ref=e2394]:
+                                - spinbutton [disabled] [ref=e2395]
+                            - row "Doric Charcoal Black TA Cabinetry $0.00" [ref=e2396]:
+                              - cell [ref=e2397]:
+                                - checkbox [ref=e2398] [cursor=pointer]
+                              - cell "Doric Charcoal Black" [ref=e2399]:
+                                - generic [ref=e2401]: Doric Charcoal Black
+                              - cell "TA Cabinetry" [ref=e2402]:
+                                - generic [ref=e2403]: TA Cabinetry
+                              - cell [ref=e2404]:
+                                - textbox "Same as original" [disabled] [ref=e2405]
+                              - cell "$0.00" [ref=e2406]:
+                                - generic [ref=e2407]: $0.00
+                              - cell [ref=e2408]:
+                                - spinbutton [disabled] [ref=e2409]
+                            - row "Alabaster Paint Jim Bishop $0.00" [ref=e2410]:
+                              - cell [ref=e2411]:
+                                - checkbox [ref=e2412] [cursor=pointer]
+                              - cell "Alabaster Paint" [ref=e2413]:
+                                - generic [ref=e2415]: Alabaster Paint
+                              - cell "Jim Bishop" [ref=e2416]:
+                                - generic [ref=e2417]: Jim Bishop
+                              - cell [ref=e2418]:
+                                - textbox "Same as original" [disabled] [ref=e2419]
+                              - cell "$0.00" [ref=e2420]:
+                                - generic [ref=e2421]: $0.00
+                              - cell [ref=e2422]:
+                                - spinbutton [disabled] [ref=e2423]
+                            - row "Black Paint Jim Bishop $0.00" [ref=e2424]:
+                              - cell [ref=e2425]:
+                                - checkbox [ref=e2426] [cursor=pointer]
+                              - cell "Black Paint" [ref=e2427]:
+                                - generic [ref=e2429]: Black Paint
+                              - cell "Jim Bishop" [ref=e2430]:
+                                - generic [ref=e2431]: Jim Bishop
+                              - cell [ref=e2432]:
+                                - textbox "Same as original" [disabled] [ref=e2433]
+                              - cell "$0.00" [ref=e2434]:
+                                - generic [ref=e2435]: $0.00
+                              - cell [ref=e2436]:
+                                - spinbutton [disabled] [ref=e2437]
+                            - row "Brillant White Paint Jim Bishop $0.00" [ref=e2438]:
+                              - cell [ref=e2439]:
+                                - checkbox [ref=e2440] [cursor=pointer]
+                              - cell "Brillant White Paint" [ref=e2441]:
+                                - generic [ref=e2443]: Brillant White Paint
+                              - cell "Jim Bishop" [ref=e2444]:
+                                - generic [ref=e2445]: Jim Bishop
+                              - cell [ref=e2446]:
+                                - textbox "Same as original" [disabled] [ref=e2447]
+                              - cell "$0.00" [ref=e2448]:
+                                - generic [ref=e2449]: $0.00
+                              - cell [ref=e2450]:
+                                - spinbutton [disabled] [ref=e2451]
+                            - row "Gale Force Paint Jim Bishop $0.00" [ref=e2452]:
+                              - cell [ref=e2453]:
+                                - checkbox [ref=e2454] [cursor=pointer]
+                              - cell "Gale Force Paint" [ref=e2455]:
+                                - generic [ref=e2457]: Gale Force Paint
+                              - cell "Jim Bishop" [ref=e2458]:
+                                - generic [ref=e2459]: Jim Bishop
+                              - cell [ref=e2460]:
+                                - textbox "Same as original" [disabled] [ref=e2461]
+                              - cell "$0.00" [ref=e2462]:
+                                - generic [ref=e2463]: $0.00
+                              - cell [ref=e2464]:
+                                - spinbutton [disabled] [ref=e2465]
+                            - row "Iron Paint Jim Bishop $0.00" [ref=e2466]:
+                              - cell [ref=e2467]:
+                                - checkbox [ref=e2468] [cursor=pointer]
+                              - cell "Iron Paint" [ref=e2469]:
+                                - generic [ref=e2471]: Iron Paint
+                              - cell "Jim Bishop" [ref=e2472]:
+                                - generic [ref=e2473]: Jim Bishop
+                              - cell [ref=e2474]:
+                                - textbox "Same as original" [disabled] [ref=e2475]
+                              - cell "$0.00" [ref=e2476]:
+                                - generic [ref=e2477]: $0.00
+                              - cell [ref=e2478]:
+                                - spinbutton [disabled] [ref=e2479]
+                            - row "Ash Paint Homemark $0.00" [ref=e2480]:
+                              - cell [ref=e2481]:
+                                - checkbox [ref=e2482] [cursor=pointer]
+                              - cell "Ash Paint" [ref=e2483]:
+                                - generic [ref=e2485]: Ash Paint
+                              - cell "Homemark" [ref=e2486]:
+                                - generic [ref=e2487]: Homemark
+                              - cell [ref=e2488]:
+                                - textbox "Same as original" [disabled] [ref=e2489]
+                              - cell "$0.00" [ref=e2490]:
+                                - generic [ref=e2491]: $0.00
+                              - cell [ref=e2492]:
+                                - spinbutton [disabled] [ref=e2493]
+                            - row "Charcoal Paint Homemark $0.00" [ref=e2494]:
+                              - cell [ref=e2495]:
+                                - checkbox [ref=e2496] [cursor=pointer]
+                              - cell "Charcoal Paint" [ref=e2497]:
+                                - generic [ref=e2499]: Charcoal Paint
+                              - cell "Homemark" [ref=e2500]:
+                                - generic [ref=e2501]: Homemark
+                              - cell [ref=e2502]:
+                                - textbox "Same as original" [disabled] [ref=e2503]
+                              - cell "$0.00" [ref=e2504]:
+                                - generic [ref=e2505]: $0.00
+                              - cell [ref=e2506]:
+                                - spinbutton [disabled] [ref=e2507]
+                            - row "Cloud Paint Homemark $0.00" [ref=e2508]:
+                              - cell [ref=e2509]:
+                                - checkbox [ref=e2510] [cursor=pointer]
+                              - cell "Cloud Paint" [ref=e2511]:
+                                - generic [ref=e2513]: Cloud Paint
+                              - cell "Homemark" [ref=e2514]:
+                                - generic [ref=e2515]: Homemark
+                              - cell [ref=e2516]:
+                                - textbox "Same as original" [disabled] [ref=e2517]
+                              - cell "$0.00" [ref=e2518]:
+                                - generic [ref=e2519]: $0.00
+                              - cell [ref=e2520]:
+                                - spinbutton [disabled] [ref=e2521]
+                            - row "Everglade Paint Homemark $0.00" [ref=e2522]:
+                              - cell [ref=e2523]:
+                                - checkbox [ref=e2524] [cursor=pointer]
+                              - cell "Everglade Paint" [ref=e2525]:
+                                - generic [ref=e2527]: Everglade Paint
+                              - cell "Homemark" [ref=e2528]:
+                                - generic [ref=e2529]: Homemark
+                              - cell [ref=e2530]:
+                                - textbox "Same as original" [disabled] [ref=e2531]
+                              - cell "$0.00" [ref=e2532]:
+                                - generic [ref=e2533]: $0.00
+                              - cell [ref=e2534]:
+                                - spinbutton [disabled] [ref=e2535]
+                            - row "Gray Paint Homemark $0.00" [ref=e2536]:
+                              - cell [ref=e2537]:
+                                - checkbox [ref=e2538] [cursor=pointer]
+                              - cell "Gray Paint" [ref=e2539]:
+                                - generic [ref=e2541]: Gray Paint
+                              - cell "Homemark" [ref=e2542]:
+                                - generic [ref=e2543]: Homemark
+                              - cell [ref=e2544]:
+                                - textbox "Same as original" [disabled] [ref=e2545]
+                              - cell "$0.00" [ref=e2546]:
+                                - generic [ref=e2547]: $0.00
+                              - cell [ref=e2548]:
+                                - spinbutton [disabled] [ref=e2549]
+                            - row "Keystone Paint Homemark $0.00" [ref=e2550]:
+                              - cell [ref=e2551]:
+                                - checkbox [ref=e2552] [cursor=pointer]
+                              - cell "Keystone Paint" [ref=e2553]:
+                                - generic [ref=e2555]: Keystone Paint
+                              - cell "Homemark" [ref=e2556]:
+                                - generic [ref=e2557]: Homemark
+                              - cell [ref=e2558]:
+                                - textbox "Same as original" [disabled] [ref=e2559]
+                              - cell "$0.00" [ref=e2560]:
+                                - generic [ref=e2561]: $0.00
+                              - cell [ref=e2562]:
+                                - spinbutton [disabled] [ref=e2563]
+                            - row "Navy Paint Homemark $0.00" [ref=e2564]:
+                              - cell [ref=e2565]:
+                                - checkbox [ref=e2566] [cursor=pointer]
+                              - cell "Navy Paint" [ref=e2567]:
+                                - generic [ref=e2569]: Navy Paint
+                              - cell "Homemark" [ref=e2570]:
+                                - generic [ref=e2571]: Homemark
+                              - cell [ref=e2572]:
+                                - textbox "Same as original" [disabled] [ref=e2573]
+                              - cell "$0.00" [ref=e2574]:
+                                - generic [ref=e2575]: $0.00
+                              - cell [ref=e2576]:
+                                - spinbutton [disabled] [ref=e2577]
+                            - row "Shale Paint Homemark $0.00" [ref=e2578]:
+                              - cell [ref=e2579]:
+                                - checkbox [ref=e2580] [cursor=pointer]
+                              - cell "Shale Paint" [ref=e2581]:
+                                - generic [ref=e2583]: Shale Paint
+                              - cell "Homemark" [ref=e2584]:
+                                - generic [ref=e2585]: Homemark
+                              - cell [ref=e2586]:
+                                - textbox "Same as original" [disabled] [ref=e2587]
+                              - cell "$0.00" [ref=e2588]:
+                                - generic [ref=e2589]: $0.00
+                              - cell [ref=e2590]:
+                                - spinbutton [disabled] [ref=e2591]
+                            - row "White Paint Homemark $0.00" [ref=e2592]:
+                              - cell [ref=e2593]:
+                                - checkbox [ref=e2594] [cursor=pointer]
+                              - cell "White Paint" [ref=e2595]:
+                                - generic [ref=e2597]: White Paint
+                              - cell "Homemark" [ref=e2598]:
+                                - generic [ref=e2599]: Homemark
+                              - cell [ref=e2600]:
+                                - textbox "Same as original" [disabled] [ref=e2601]
+                              - cell "$0.00" [ref=e2602]:
+                                - generic [ref=e2603]: $0.00
+                              - cell [ref=e2604]:
+                                - spinbutton [disabled] [ref=e2605]
+                            - row "Amesbury Mist Slab JSI $0.00" [ref=e2606]:
+                              - cell [ref=e2607]:
+                                - checkbox [ref=e2608] [cursor=pointer]
+                              - cell "Amesbury Mist Slab" [ref=e2609]:
+                                - generic [ref=e2611]: Amesbury Mist Slab
+                              - cell "JSI" [ref=e2612]:
+                                - generic [ref=e2613]: JSI
+                              - cell [ref=e2614]:
+                                - textbox "Same as original" [disabled] [ref=e2615]
+                              - cell "$0.00" [ref=e2616]:
+                                - generic [ref=e2617]: $0.00
+                              - cell [ref=e2618]:
+                                - spinbutton [disabled] [ref=e2619]
+                            - row "Amesbury White Slab JSI $0.00" [ref=e2620]:
+                              - cell [ref=e2621]:
+                                - checkbox [ref=e2622] [cursor=pointer]
+                              - cell "Amesbury White Slab" [ref=e2623]:
+                                - generic [ref=e2625]: Amesbury White Slab
+                              - cell "JSI" [ref=e2626]:
+                                - generic [ref=e2627]: JSI
+                              - cell [ref=e2628]:
+                                - textbox "Same as original" [disabled] [ref=e2629]
+                              - cell "$0.00" [ref=e2630]:
+                                - generic [ref=e2631]: $0.00
+                              - cell [ref=e2632]:
+                                - spinbutton [disabled] [ref=e2633]
+                            - row "Essex Castle JSI $0.00" [ref=e2634]:
+                              - cell [ref=e2635]:
+                                - checkbox [checked] [ref=e2636] [cursor=pointer]
+                              - cell "Essex Castle" [ref=e2637]:
+                                - generic [ref=e2639]: Essex Castle
+                              - cell "JSI" [ref=e2640]:
+                                - generic [ref=e2641]: JSI
+                              - cell [ref=e2642]:
+                                - textbox "Same as original" [ref=e2643]
+                              - cell "$0.00" [ref=e2644]:
+                                - generic [ref=e2645]: $0.00
+                              - cell [ref=e2646]:
+                                - spinbutton [ref=e2647]
+                            - row "Essex Lunar JSI $0.00" [ref=e2648]:
+                              - cell [ref=e2649]:
+                                - checkbox [checked] [ref=e2650] [cursor=pointer]
+                              - cell "Essex Lunar" [ref=e2651]:
+                                - generic [ref=e2653]: Essex Lunar
+                              - cell "JSI" [ref=e2654]:
+                                - generic [ref=e2655]: JSI
+                              - cell [ref=e2656]:
+                                - textbox "Same as original" [ref=e2657]
+                              - cell "$0.00" [ref=e2658]:
+                                - generic [ref=e2659]: $0.00
+                              - cell [ref=e2660]:
+                                - spinbutton [ref=e2661]
+                            - row "Essex White JSI $0.00" [ref=e2662]:
+                              - cell [ref=e2663]:
+                                - checkbox [checked] [ref=e2664] [cursor=pointer]
+                              - cell "Essex White" [ref=e2665]:
+                                - generic [ref=e2667]: Essex White
+                              - cell "JSI" [ref=e2668]:
+                                - generic [ref=e2669]: JSI
+                              - cell [ref=e2670]:
+                                - textbox "Same as original" [ref=e2671]
+                              - cell "$0.00" [ref=e2672]:
+                                - generic [ref=e2673]: $0.00
+                              - cell [ref=e2674]:
+                                - spinbutton [ref=e2675]
+                            - row "Essex Norwich JSI $0.00" [ref=e2676]:
+                              - cell [ref=e2677]:
+                                - checkbox [checked] [ref=e2678] [cursor=pointer]
+                              - cell "Essex Norwich" [ref=e2679]:
+                                - generic [ref=e2681]: Essex Norwich
+                              - cell "JSI" [ref=e2682]:
+                                - generic [ref=e2683]: JSI
+                              - cell [ref=e2684]:
+                                - textbox "Same as original" [ref=e2685]
+                              - cell "$0.00" [ref=e2686]:
+                                - generic [ref=e2687]: $0.00
+                              - cell [ref=e2688]:
+                                - spinbutton [ref=e2689]
+                            - row "Essex Truffle JSI $0.00" [ref=e2690]:
+                              - cell [ref=e2691]:
+                                - checkbox [checked] [ref=e2692] [cursor=pointer]
+                              - cell "Essex Truffle" [ref=e2693]:
+                                - generic [ref=e2695]: Essex Truffle
+                              - cell "JSI" [ref=e2696]:
+                                - generic [ref=e2697]: JSI
+                              - cell [ref=e2698]:
+                                - textbox "Same as original" [ref=e2699]
+                              - cell "$0.00" [ref=e2700]:
+                                - generic [ref=e2701]: $0.00
+                              - cell [ref=e2702]:
+                                - spinbutton [ref=e2703]
+                            - row "Trenton Recessed JSI $0.00" [ref=e2704]:
+                              - cell [ref=e2705]:
+                                - checkbox [checked] [ref=e2706] [cursor=pointer]
+                              - cell "Trenton Recessed" [ref=e2707]:
+                                - generic [ref=e2709]: Trenton Recessed
+                              - cell "JSI" [ref=e2710]:
+                                - generic [ref=e2711]: JSI
+                              - cell [ref=e2712]:
+                                - textbox "Same as original" [ref=e2713]
+                              - cell "$0.00" [ref=e2714]:
+                                - generic [ref=e2715]: $0.00
+                              - cell [ref=e2716]:
+                                - spinbutton [ref=e2717]
+                            - row "Upton Brown Recessed JSI $0.00" [ref=e2718]:
+                              - cell [ref=e2719]:
+                                - checkbox [checked] [ref=e2720] [cursor=pointer]
+                              - cell "Upton Brown Recessed" [ref=e2721]:
+                                - generic [ref=e2723]: Upton Brown Recessed
+                              - cell "JSI" [ref=e2724]:
+                                - generic [ref=e2725]: JSI
+                              - cell [ref=e2726]:
+                                - textbox "Same as original" [ref=e2727]
+                              - cell "$0.00" [ref=e2728]:
+                                - generic [ref=e2729]: $0.00
+                              - cell [ref=e2730]:
+                                - spinbutton [ref=e2731]
+                            - row "Yarmouth Raised JSI $0.00" [ref=e2732]:
+                              - cell [ref=e2733]:
+                                - checkbox [checked] [ref=e2734] [cursor=pointer]
+                              - cell "Yarmouth Raised" [ref=e2735]:
+                                - generic [ref=e2737]: Yarmouth Raised
+                              - cell "JSI" [ref=e2738]:
+                                - generic [ref=e2739]: JSI
+                              - cell [ref=e2740]:
+                                - textbox "Same as original" [ref=e2741]
+                              - cell "$0.00" [ref=e2742]:
+                                - generic [ref=e2743]: $0.00
+                              - cell [ref=e2744]:
+                                - spinbutton [ref=e2745]
+                            - row "Shaker Ivy USCD $0.00" [ref=e2746]:
+                              - cell [ref=e2747]:
+                                - checkbox [checked] [ref=e2748] [cursor=pointer]
+                              - cell "Shaker Ivy" [ref=e2749]:
+                                - generic [ref=e2751]: Shaker Ivy
+                              - cell "USCD" [ref=e2752]:
+                                - generic [ref=e2753]: USCD
+                              - cell [ref=e2754]:
+                                - textbox "Same as original" [ref=e2755]
+                              - cell "$0.00" [ref=e2756]:
+                                - generic [ref=e2757]: $0.00
+                              - cell [ref=e2758]:
+                                - spinbutton [ref=e2759]
+                    - generic [ref=e1391] [cursor=pointer]:
+                      - generic [ref=e1392]:
+                        - generic [ref=e1393]: Partner Ventilations
+                        - generic [ref=e1394]: 5 selected
+                      - img [ref=e1395]
+                    - generic [ref=e1398] [cursor=pointer]:
+                      - generic [ref=e1399]:
+                        - generic [ref=e1400]: Partner Trims
+                        - generic [ref=e1401]: 3 selected
+                      - img [ref=e1402]
+                    - generic [ref=e1405] [cursor=pointer]:
+                      - generic [ref=e1406]:
+                        - generic [ref=e1407]: Partner Sizes
+                        - generic [ref=e1408]: 0 selected
+                      - img [ref=e1409]
+                - generic [ref=e887]:
+                  - link "Cancel" [ref=e888] [cursor=pointer]:
+                    - /url: "#/partners"
+                  - button "Update Partner" [ref=e889] [cursor=pointer]
+  - contentinfo [ref=e301]:
+    - paragraph [ref=e302]:
+      - generic [ref=e303]:
+        - text: Thanks for creating with
+        - link "WordPress" [ref=e304] [cursor=pointer]:
+          - /url: https://wordpress.org/
+        - text: and hosting with
+        - link "Kinsta" [ref=e305] [cursor=pointer]:
+          - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+    - paragraph [ref=e306]: Version 7.0

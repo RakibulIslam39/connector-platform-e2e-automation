@@ -1,0 +1,768 @@
+- generic [ref=e2]:
+  - navigation "Main menu":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#wpbody-content"
+    - link "Skip to toolbar" [ref=e4] [cursor=pointer]:
+      - /url: "#wp-toolbar"
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: index.php
+          - generic [ref=e10]: 
+          - generic [ref=e11]: Dashboard
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - link "Home" [ref=e14] [cursor=pointer]:
+              - /url: index.php
+          - listitem [ref=e15]:
+            - link "Updates 7" [ref=e16] [cursor=pointer]:
+              - /url: update-core.php
+              - text: Updates
+              - generic [ref=e17]: "7"
+      - listitem [ref=e18]:
+        - link "Kinsta Cache" [ref=e19] [cursor=pointer]:
+          - /url: admin.php?page=kinsta-tools
+          - generic [ref=e20]: 
+          - generic [ref=e21]: Kinsta Cache
+      - listitem [ref=e22]
+      - listitem [ref=e24]:
+        - link "Posts" [ref=e25] [cursor=pointer]:
+          - /url: edit.php
+          - generic [ref=e26]: 
+          - generic [ref=e27]: Posts
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - link "All Posts" [ref=e30] [cursor=pointer]:
+              - /url: edit.php
+          - listitem [ref=e31]:
+            - link "Add Post" [ref=e32] [cursor=pointer]:
+              - /url: post-new.php
+          - listitem [ref=e33]:
+            - link "Categories" [ref=e34] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=category
+          - listitem [ref=e35]:
+            - link "Tags" [ref=e36] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=post_tag
+      - listitem [ref=e37]:
+        - link "Media" [ref=e38] [cursor=pointer]:
+          - /url: upload.php
+          - generic [ref=e39]: 
+          - generic [ref=e40]: Media
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Library" [ref=e43] [cursor=pointer]:
+              - /url: upload.php
+          - listitem [ref=e44]:
+            - link "Add Media File" [ref=e45] [cursor=pointer]:
+              - /url: media-new.php
+      - listitem [ref=e46]:
+        - link "Pages" [ref=e47] [cursor=pointer]:
+          - /url: edit.php?post_type=page
+          - generic [ref=e48]: 
+          - generic [ref=e49]: Pages
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - link "All Pages" [ref=e52] [cursor=pointer]:
+              - /url: edit.php?post_type=page
+          - listitem [ref=e53]:
+            - link "Add Page" [ref=e54] [cursor=pointer]:
+              - /url: post-new.php?post_type=page
+      - listitem [ref=e55]:
+        - link "Comments" [ref=e56] [cursor=pointer]:
+          - /url: edit-comments.php
+          - generic [ref=e57]: 
+          - generic [ref=e58]: Comments
+      - listitem [ref=e59]:
+        - link "Partners" [ref=e60] [cursor=pointer]:
+          - /url: edit.php?post_type=partner
+          - generic [ref=e61]: 
+          - generic [ref=e62]: Partners
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - link "All Partners" [ref=e65] [cursor=pointer]:
+              - /url: edit.php?post_type=partner
+          - listitem [ref=e66]:
+            - link "Add New Partner" [ref=e67] [cursor=pointer]:
+              - /url: post-new.php?post_type=partner
+      - listitem [ref=e68]:
+        - link "Products" [ref=e69] [cursor=pointer]:
+          - /url: edit.php?post_type=product
+          - generic [ref=e70]: 
+          - generic [ref=e71]: Products
+        - list [ref=e72]:
+          - listitem [ref=e73]:
+            - link "All Products" [ref=e74] [cursor=pointer]:
+              - /url: edit.php?post_type=product
+          - listitem [ref=e75]:
+            - link "Add New Product" [ref=e76] [cursor=pointer]:
+              - /url: post-new.php?post_type=product
+      - listitem [ref=e77]:
+        - link "Connector Hub" [ref=e78] [cursor=pointer]:
+          - /url: admin.php?page=connector-hub#/dashboard
+          - generic [ref=e79]: 
+          - generic [ref=e80]: Connector Hub
+        - list [ref=e81]:
+          - listitem [ref=e82]:
+            - link "Dashboard" [ref=e83] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/dashboard
+          - listitem [ref=e84]:
+            - link "Partners" [ref=e85] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/partners
+          - listitem [ref=e86]:
+            - link "Products" [ref=e87] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/products
+          - listitem [ref=e88]:
+            - link "Attributes" [ref=e89] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/attributes
+          - listitem [ref=e90]:
+            - link "Settings" [ref=e91] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/settings
+          - listitem [ref=e92]:
+            - link "Logs" [ref=e93] [cursor=pointer]:
+              - /url: admin.php?page=connector-hub#/logs
+      - listitem [ref=e94]
+      - listitem [ref=e96]:
+        - link "Appearance" [ref=e97] [cursor=pointer]:
+          - /url: themes.php
+          - generic [ref=e98]: 
+          - generic [ref=e99]: Appearance
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - link "Themes 4" [ref=e102] [cursor=pointer]:
+              - /url: themes.php
+              - text: Themes
+              - generic [ref=e103]: "4"
+          - listitem [ref=e104]:
+            - link "Editor" [ref=e105] [cursor=pointer]:
+              - /url: site-editor.php
+          - listitem [ref=e106]:
+            - link "Fonts" [ref=e107] [cursor=pointer]:
+              - /url: font-library.php
+      - listitem [ref=e108]:
+        - link "Plugins 3" [ref=e109] [cursor=pointer]:
+          - /url: plugins.php
+          - generic [ref=e110]: 
+          - generic [ref=e111]:
+            - text: Plugins
+            - generic [ref=e112]: "3"
+        - list [ref=e113]:
+          - listitem [ref=e114]:
+            - link "Installed Plugins" [ref=e115] [cursor=pointer]:
+              - /url: plugins.php
+          - listitem [ref=e116]:
+            - link "Add Plugin" [ref=e117] [cursor=pointer]:
+              - /url: plugin-install.php
+      - listitem [ref=e118]:
+        - link "Users" [ref=e119] [cursor=pointer]:
+          - /url: users.php
+          - generic [ref=e120]: 
+          - generic [ref=e121]: Users
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "All Users" [ref=e124] [cursor=pointer]:
+              - /url: users.php
+          - listitem [ref=e125]:
+            - link "Add User" [ref=e126] [cursor=pointer]:
+              - /url: user-new.php
+          - listitem [ref=e127]:
+            - link "Profile" [ref=e128] [cursor=pointer]:
+              - /url: profile.php
+      - listitem [ref=e129]:
+        - link "Tools" [ref=e130] [cursor=pointer]:
+          - /url: tools.php
+          - generic [ref=e131]: 
+          - generic [ref=e132]: Tools
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - link "Available Tools" [ref=e135] [cursor=pointer]:
+              - /url: tools.php
+          - listitem [ref=e136]:
+            - link "Import" [ref=e137] [cursor=pointer]:
+              - /url: import.php
+          - listitem [ref=e138]:
+            - link "Export" [ref=e139] [cursor=pointer]:
+              - /url: export.php
+          - listitem [ref=e140]:
+            - link "Site Health" [ref=e141] [cursor=pointer]:
+              - /url: site-health.php
+          - listitem [ref=e142]:
+            - link "Export Personal Data" [ref=e143] [cursor=pointer]:
+              - /url: export-personal-data.php
+          - listitem [ref=e144]:
+            - link "Erase Personal Data" [ref=e145] [cursor=pointer]:
+              - /url: erase-personal-data.php
+          - listitem [ref=e146]:
+            - link "Theme File Editor" [ref=e147] [cursor=pointer]:
+              - /url: theme-editor.php
+          - listitem [ref=e148]:
+            - link "Plugin File Editor" [ref=e149] [cursor=pointer]:
+              - /url: plugin-editor.php
+      - listitem [ref=e150]:
+        - link "Settings" [ref=e151] [cursor=pointer]:
+          - /url: options-general.php
+          - generic [ref=e152]: 
+          - generic [ref=e153]: Settings
+        - list [ref=e154]:
+          - listitem [ref=e155]:
+            - link "General" [ref=e156] [cursor=pointer]:
+              - /url: options-general.php
+          - listitem [ref=e157]:
+            - link "Connectors" [ref=e158] [cursor=pointer]:
+              - /url: options-connectors.php
+          - listitem [ref=e159]:
+            - link "Writing" [ref=e160] [cursor=pointer]:
+              - /url: options-writing.php
+          - listitem [ref=e161]:
+            - link "Reading" [ref=e162] [cursor=pointer]:
+              - /url: options-reading.php
+          - listitem [ref=e163]:
+            - link "Discussion" [ref=e164] [cursor=pointer]:
+              - /url: options-discussion.php
+          - listitem [ref=e165]:
+            - link "Media" [ref=e166] [cursor=pointer]:
+              - /url: options-media.php
+          - listitem [ref=e167]:
+            - link "Permalinks" [ref=e168] [cursor=pointer]:
+              - /url: options-permalink.php
+          - listitem [ref=e169]:
+            - link "Privacy" [ref=e170] [cursor=pointer]:
+              - /url: options-privacy.php
+          - listitem [ref=e171]:
+            - link "FluentSMTP" [ref=e172] [cursor=pointer]:
+              - /url: options-general.php?page=fluent-mail
+      - listitem [ref=e173]:
+        - link "ACF" [ref=e174] [cursor=pointer]:
+          - /url: edit.php?post_type=acf-field-group
+          - generic [ref=e175]: 
+          - generic [ref=e176]: ACF
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - link "Field Groups" [ref=e179] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group
+          - listitem [ref=e180]:
+            - link "Post Types" [ref=e181] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-post-type
+          - listitem [ref=e182]:
+            - link "Taxonomies" [ref=e183] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-taxonomy
+          - listitem [ref=e184]:
+            - link "Options Pages" [ref=e185] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-ui-options-page
+          - listitem [ref=e186]:
+            - link "Tools" [ref=e187] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-tools
+          - listitem [ref=e188]:
+            - link "Updates" [ref=e189] [cursor=pointer]:
+              - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+      - listitem [ref=e190]:
+        - button "Collapse Main menu" [expanded] [ref=e191] [cursor=pointer]:
+          - generic [ref=e193]: Collapse Menu
+  - generic [ref=e194]:
+    - generic [ref=e195]:
+      - navigation "Toolbar":
+        - menu:
+          - group [ref=e196]:
+            - menuitem "About WordPress" [ref=e197] [cursor=pointer]:
+              - generic [ref=e199]: About WordPress
+          - group [ref=e200]:
+            - menuitem "Hoodsly Connector Platform" [ref=e201] [cursor=pointer]
+          - group [ref=e202]:
+            - menuitem "7 updates available" [ref=e203] [cursor=pointer]:
+              - generic [ref=e205]: "7"
+              - generic [ref=e206]: 7 updates available
+          - group [ref=e207]:
+            - menuitem "Ctrl+K Open command palette" [ref=e208] [cursor=pointer]:
+              - generic [ref=e210]:
+                - text: Ctrl+K
+                - generic [ref=e211]: Open command palette
+          - group [ref=e212]:
+            - menuitem "0 Comments in moderation" [ref=e213] [cursor=pointer]:
+              - generic [ref=e215]: "0"
+              - generic [ref=e216]: 0 Comments in moderation
+          - group [ref=e217]:
+            - menuitem "New" [ref=e218] [cursor=pointer]:
+              - generic [ref=e220]: New
+        - menu [ref=e221]:
+          - group [ref=e222]:
+            - menuitem "Clear Caches" [ref=e223]
+          - group [ref=e224]:
+            - menuitem "Howdy, Rakibul Islam" [ref=e225] [cursor=pointer]
+    - main [ref=e226]:
+      - generic [ref=e229]:
+        - generic [ref=e232]:
+          - link "Connector Hub" [ref=e234] [cursor=pointer]:
+            - /url: "#/dashboard"
+          - generic [ref=e236]:
+            - link "Dashboard" [ref=e237] [cursor=pointer]:
+              - /url: "#/dashboard"
+              - img [ref=e238]
+              - generic [ref=e240]: Dashboard
+            - link "Partners" [ref=e241] [cursor=pointer]:
+              - /url: "#/partners"
+              - img [ref=e242]
+              - generic [ref=e244]: Partners
+            - link "Products" [ref=e245] [cursor=pointer]:
+              - /url: "#/products"
+              - img [ref=e246]
+              - generic [ref=e248]: Products
+            - link "Attributes" [ref=e249] [cursor=pointer]:
+              - /url: "#/attributes"
+              - img [ref=e250]
+              - generic [ref=e252]: Attributes
+            - link "Settings" [ref=e253] [cursor=pointer]:
+              - /url: "#/settings"
+              - img [ref=e254]
+              - generic [ref=e257]: Settings
+            - link "Logs" [ref=e258] [cursor=pointer]:
+              - /url: "#/logs"
+              - img [ref=e259]
+              - generic [ref=e261]: Logs
+        - generic [ref=e2764]:
+          - generic [ref=e2765]:
+            - generic [ref=e2767]:
+              - heading "Products" [level=1] [ref=e2768]
+              - paragraph [ref=e2769]: Manage your products and their attributes
+            - link "Add Product" [ref=e2771] [cursor=pointer]:
+              - /url: "#/products?action=add"
+              - img [ref=e2772]
+              - text: Add Product
+          - generic [ref=e2774]:
+            - generic [ref=e2775]:
+              - generic [ref=e2776]:
+                - img [ref=e2777]
+                - textbox "Search products..." [ref=e2779]
+              - generic [ref=e2780]:
+                - combobox [ref=e2781] [cursor=pointer]:
+                  - option "All Partners" [selected]
+                  - option "TestRakibulQA"
+                  - option "RakibulQAPartner"
+                  - option "ManualQAPartner"
+                  - option "Palash Staging Site"
+                  - option "Delowar-Public-App-Testing"
+                  - option "Ali Local Magento"
+                  - option "TicTacTo 007"
+                  - option "delowar-staging-test"
+                  - option "The range hoods"
+                  - option "Delowar Development Store"
+                  - option "Automation_Partner"
+                  - option "Alamin"
+                  - option "Magento Staging"
+                  - option "badrul-local-app"
+                  - option "Demo Partner"
+                  - option "Demo Partner B"
+                  - option "Demo Partner C"
+                - combobox [ref=e2782] [cursor=pointer]:
+                  - option "All Status" [selected]
+                  - option "Active"
+                  - option "Draft"
+                  - option "Inactive"
+                  - option "Trash"
+            - generic [ref=e2783]:
+              - table [ref=e2784]:
+                - rowgroup [ref=e2785]:
+                  - row "Product Category Status Actions" [ref=e2786]:
+                    - columnheader [ref=e2787]:
+                      - checkbox [ref=e2788] [cursor=pointer]
+                    - columnheader "Product" [ref=e2789]
+                    - columnheader "Category" [ref=e2790]
+                    - columnheader "Status" [ref=e2791]
+                    - columnheader "Actions" [ref=e2792]
+                - rowgroup [ref=e2793]:
+                  - row "Double Curved VEN-DBC Wood Hoods Active" [ref=e2794]:
+                    - cell [ref=e2795]:
+                      - checkbox [ref=e2796] [cursor=pointer]
+                    - cell "Double Curved VEN-DBC" [ref=e2797]:
+                      - generic [ref=e2799]:
+                        - generic [ref=e2800]: Double Curved
+                        - generic [ref=e2801]: VEN-DBC
+                    - cell "Wood Hoods" [ref=e2802]
+                    - cell "Active" [ref=e2803]:
+                      - generic [ref=e2804]: Active
+                    - cell [ref=e2806]:
+                      - generic [ref=e2807]:
+                        - link "Edit" [ref=e2808] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=5082"
+                          - img [ref=e2809]
+                        - button "Duplicate" [ref=e2811] [cursor=pointer]:
+                          - img [ref=e2812]
+                        - button "Move to Trash" [ref=e2814] [cursor=pointer]:
+                          - img [ref=e2815]
+                  - row "Curved Shaker White Quick Ship VEN-QSPCCXWHT Quick Shipping Active" [ref=e2817]:
+                    - cell [ref=e2818]:
+                      - checkbox [ref=e2819] [cursor=pointer]
+                    - cell "Curved Shaker White Quick Ship VEN-QSPCCXWHT" [ref=e2820]:
+                      - generic [ref=e2822]:
+                        - generic [ref=e2823]: Curved Shaker White Quick Ship
+                        - generic [ref=e2824]: VEN-QSPCCXWHT
+                    - cell "Quick Shipping" [ref=e2825]
+                    - cell "Active" [ref=e2826]:
+                      - generic [ref=e2827]: Active
+                    - cell [ref=e2829]:
+                      - generic [ref=e2830]:
+                        - link "Edit" [ref=e2831] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=5072"
+                          - img [ref=e2832]
+                        - button "Duplicate" [ref=e2834] [cursor=pointer]:
+                          - img [ref=e2835]
+                        - button "Move to Trash" [ref=e2837] [cursor=pointer]:
+                          - img [ref=e2838]
+                  - row "Curved With Strapping Quick Ship VEN-QSPCCR Quick Shipping Active" [ref=e2840]:
+                    - cell [ref=e2841]:
+                      - checkbox [ref=e2842] [cursor=pointer]
+                    - cell "Curved With Strapping Quick Ship VEN-QSPCCR" [ref=e2843]:
+                      - generic [ref=e2845]:
+                        - generic [ref=e2846]: Curved With Strapping Quick Ship
+                        - generic [ref=e2847]: VEN-QSPCCR
+                    - cell "Quick Shipping" [ref=e2848]
+                    - cell "Active" [ref=e2849]:
+                      - generic [ref=e2850]: Active
+                    - cell [ref=e2852]:
+                      - generic [ref=e2853]:
+                        - link "Edit" [ref=e2854] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=5070"
+                          - img [ref=e2855]
+                        - button "Duplicate" [ref=e2857] [cursor=pointer]:
+                          - img [ref=e2858]
+                        - button "Move to Trash" [ref=e2860] [cursor=pointer]:
+                          - img [ref=e2861]
+                  - row "Curved Slim VEN-CSL Wood Hoods Active" [ref=e2863]:
+                    - cell [ref=e2864]:
+                      - checkbox [ref=e2865] [cursor=pointer]
+                    - cell "Curved Slim VEN-CSL" [ref=e2866]:
+                      - generic [ref=e2868]:
+                        - generic [ref=e2869]: Curved Slim
+                        - generic [ref=e2870]: VEN-CSL
+                    - cell "Wood Hoods" [ref=e2871]
+                    - cell "Active" [ref=e2872]:
+                      - generic [ref=e2873]: Active
+                    - cell [ref=e2875]:
+                      - generic [ref=e2876]:
+                        - link "Edit" [ref=e2877] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=2471"
+                          - img [ref=e2878]
+                        - button "Duplicate" [ref=e2880] [cursor=pointer]:
+                          - img [ref=e2881]
+                        - button "Move to Trash" [ref=e2883] [cursor=pointer]:
+                          - img [ref=e2884]
+                  - row "Floating Shelves VEN-FLS Floating Shelves Active" [ref=e2886]:
+                    - cell [ref=e2887]:
+                      - checkbox [ref=e2888] [cursor=pointer]
+                    - cell "Floating Shelves VEN-FLS" [ref=e2889]:
+                      - generic [ref=e2891]:
+                        - generic [ref=e2892]: Floating Shelves
+                        - generic [ref=e2893]: VEN-FLS
+                    - cell "Floating Shelves" [ref=e2894]
+                    - cell "Active" [ref=e2895]:
+                      - generic [ref=e2896]: Active
+                    - cell [ref=e2898]:
+                      - generic [ref=e2899]:
+                        - link "Edit" [ref=e2900] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=2330"
+                          - img [ref=e2901]
+                        - button "Duplicate" [ref=e2903] [cursor=pointer]:
+                          - img [ref=e2904]
+                        - button "Move to Trash" [ref=e2906] [cursor=pointer]:
+                          - img [ref=e2907]
+                  - row "Curved Quick Ship VEN-QSPCCX Quick Shipping Active" [ref=e2909]:
+                    - cell [ref=e2910]:
+                      - checkbox [ref=e2911] [cursor=pointer]
+                    - cell "Curved Quick Ship VEN-QSPCCX" [ref=e2912]:
+                      - generic [ref=e2914]:
+                        - generic [ref=e2915]: Curved Quick Ship
+                        - generic [ref=e2916]: VEN-QSPCCX
+                    - cell "Quick Shipping" [ref=e2917]
+                    - cell "Active" [ref=e2918]:
+                      - generic [ref=e2919]: Active
+                    - cell [ref=e2921]:
+                      - generic [ref=e2922]:
+                        - link "Edit" [ref=e2923] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1774"
+                          - img [ref=e2924]
+                        - button "Duplicate" [ref=e2926] [cursor=pointer]:
+                          - img [ref=e2927]
+                        - button "Move to Trash" [ref=e2929] [cursor=pointer]:
+                          - img [ref=e2930]
+                  - row "Scoop With Steel Strapping And Buttons VEN-SCS Wood Hoods Active" [ref=e2932]:
+                    - cell [ref=e2933]:
+                      - checkbox [ref=e2934] [cursor=pointer]
+                    - cell "Scoop With Steel Strapping And Buttons VEN-SCS" [ref=e2935]:
+                      - generic [ref=e2937]:
+                        - generic [ref=e2938]: Scoop With Steel Strapping And Buttons
+                        - generic [ref=e2939]: VEN-SCS
+                    - cell "Wood Hoods" [ref=e2940]
+                    - cell "Active" [ref=e2941]:
+                      - generic [ref=e2942]: Active
+                    - cell [ref=e2944]:
+                      - generic [ref=e2945]:
+                        - link "Edit" [ref=e2946] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1766"
+                          - img [ref=e2947]
+                        - button "Duplicate" [ref=e2949] [cursor=pointer]:
+                          - img [ref=e2950]
+                        - button "Move to Trash" [ref=e2952] [cursor=pointer]:
+                          - img [ref=e2953]
+                  - row "Scoop With Brass Strapping And Buttons VEN-SCB Wood Hoods Active" [ref=e2955]:
+                    - cell [ref=e2956]:
+                      - checkbox [ref=e2957] [cursor=pointer]
+                    - cell "Scoop With Brass Strapping And Buttons VEN-SCB" [ref=e2958]:
+                      - generic [ref=e2960]:
+                        - generic [ref=e2961]: Scoop With Brass Strapping And Buttons
+                        - generic [ref=e2962]: VEN-SCB
+                    - cell "Wood Hoods" [ref=e2963]
+                    - cell "Active" [ref=e2964]:
+                      - generic [ref=e2965]: Active
+                    - cell [ref=e2967]:
+                      - generic [ref=e2968]:
+                        - link "Edit" [ref=e2969] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1764"
+                          - img [ref=e2970]
+                        - button "Duplicate" [ref=e2972] [cursor=pointer]:
+                          - img [ref=e2973]
+                        - button "Move to Trash" [ref=e2975] [cursor=pointer]:
+                          - img [ref=e2976]
+                  - row "Angled Without Trim VEN-ANT Wood Hoods Active" [ref=e2978]:
+                    - cell [ref=e2979]:
+                      - checkbox [ref=e2980] [cursor=pointer]
+                    - cell "Angled Without Trim VEN-ANT" [ref=e2981]:
+                      - generic [ref=e2983]:
+                        - generic [ref=e2984]: Angled Without Trim
+                        - generic [ref=e2985]: VEN-ANT
+                    - cell "Wood Hoods" [ref=e2986]
+                    - cell "Active" [ref=e2987]:
+                      - generic [ref=e2988]: Active
+                    - cell [ref=e2990]:
+                      - generic [ref=e2991]:
+                        - link "Edit" [ref=e2992] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1762"
+                          - img [ref=e2993]
+                        - button "Duplicate" [ref=e2995] [cursor=pointer]:
+                          - img [ref=e2996]
+                        - button "Move to Trash" [ref=e2998] [cursor=pointer]:
+                          - img [ref=e2999]
+                  - row "Angled With Walnut Band VEN-LWX Wood Hoods Active" [ref=e3001]:
+                    - cell [ref=e3002]:
+                      - checkbox [ref=e3003] [cursor=pointer]
+                    - cell "Angled With Walnut Band VEN-LWX" [ref=e3004]:
+                      - generic [ref=e3006]:
+                        - generic [ref=e3007]: Angled With Walnut Band
+                        - generic [ref=e3008]: VEN-LWX
+                    - cell "Wood Hoods" [ref=e3009]
+                    - cell "Active" [ref=e3010]:
+                      - generic [ref=e3011]: Active
+                    - cell [ref=e3013]:
+                      - generic [ref=e3014]:
+                        - link "Edit" [ref=e3015] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1760"
+                          - img [ref=e3016]
+                        - button "Duplicate" [ref=e3018] [cursor=pointer]:
+                          - img [ref=e3019]
+                        - button "Move to Trash" [ref=e3021] [cursor=pointer]:
+                          - img [ref=e3022]
+                  - row "Angled With Strapping VEN-AWS Wood Hoods Active" [ref=e3024]:
+                    - cell [ref=e3025]:
+                      - checkbox [ref=e3026] [cursor=pointer]
+                    - cell "Angled With Strapping VEN-AWS" [ref=e3027]:
+                      - generic [ref=e3029]:
+                        - generic [ref=e3030]: Angled With Strapping
+                        - generic [ref=e3031]: VEN-AWS
+                    - cell "Wood Hoods" [ref=e3032]
+                    - cell "Active" [ref=e3033]:
+                      - generic [ref=e3034]: Active
+                    - cell [ref=e3036]:
+                      - generic [ref=e3037]:
+                        - link "Edit" [ref=e3038] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1758"
+                          - img [ref=e3039]
+                        - button "Duplicate" [ref=e3041] [cursor=pointer]:
+                          - img [ref=e3042]
+                        - button "Move to Trash" [ref=e3044] [cursor=pointer]:
+                          - img [ref=e3045]
+                  - row "Angled VEN-LCX Wood Hoods Active" [ref=e3047]:
+                    - cell [ref=e3048]:
+                      - checkbox [ref=e3049] [cursor=pointer]
+                    - cell "Angled VEN-LCX" [ref=e3050]:
+                      - generic [ref=e3052]:
+                        - generic [ref=e3053]: Angled
+                        - generic [ref=e3054]: VEN-LCX
+                    - cell "Wood Hoods" [ref=e3055]
+                    - cell "Active" [ref=e3056]:
+                      - generic [ref=e3057]: Active
+                    - cell [ref=e3059]:
+                      - generic [ref=e3060]:
+                        - link "Edit" [ref=e3061] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1756"
+                          - img [ref=e3062]
+                        - button "Duplicate" [ref=e3064] [cursor=pointer]:
+                          - img [ref=e3065]
+                        - button "Move to Trash" [ref=e3067] [cursor=pointer]:
+                          - img [ref=e3068]
+                  - row "Sloped Without Trim VEN-SNT Wood Hoods Active" [ref=e3070]:
+                    - cell [ref=e3071]:
+                      - checkbox [ref=e3072] [cursor=pointer]
+                    - cell "Sloped Without Trim VEN-SNT" [ref=e3073]:
+                      - generic [ref=e3075]:
+                        - generic [ref=e3076]: Sloped Without Trim
+                        - generic [ref=e3077]: VEN-SNT
+                    - cell "Wood Hoods" [ref=e3078]
+                    - cell "Active" [ref=e3079]:
+                      - generic [ref=e3080]: Active
+                    - cell [ref=e3082]:
+                      - generic [ref=e3083]:
+                        - link "Edit" [ref=e3084] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1754"
+                          - img [ref=e3085]
+                        - button "Duplicate" [ref=e3087] [cursor=pointer]:
+                          - img [ref=e3088]
+                        - button "Move to Trash" [ref=e3090] [cursor=pointer]:
+                          - img [ref=e3091]
+                  - row "Sloped With Brass Strapping VEN-VMGMG Wood Hoods Active" [ref=e3093]:
+                    - cell [ref=e3094]:
+                      - checkbox [ref=e3095] [cursor=pointer]
+                    - cell "Sloped With Brass Strapping VEN-VMGMG" [ref=e3096]:
+                      - generic [ref=e3098]:
+                        - generic [ref=e3099]: Sloped With Brass Strapping
+                        - generic [ref=e3100]: VEN-VMGMG
+                    - cell "Wood Hoods" [ref=e3101]
+                    - cell "Active" [ref=e3102]:
+                      - generic [ref=e3103]: Active
+                    - cell [ref=e3105]:
+                      - generic [ref=e3106]:
+                        - link "Edit" [ref=e3107] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1752"
+                          - img [ref=e3108]
+                        - button "Duplicate" [ref=e3110] [cursor=pointer]:
+                          - img [ref=e3111]
+                        - button "Move to Trash" [ref=e3113] [cursor=pointer]:
+                          - img [ref=e3114]
+                  - row "Sloped With Steel Strapping VEN-VMSMS Wood Hoods Active" [ref=e3116]:
+                    - cell [ref=e3117]:
+                      - checkbox [ref=e3118] [cursor=pointer]
+                    - cell "Sloped With Steel Strapping VEN-VMSMS" [ref=e3119]:
+                      - generic [ref=e3121]:
+                        - generic [ref=e3122]: Sloped With Steel Strapping
+                        - generic [ref=e3123]: VEN-VMSMS
+                    - cell "Wood Hoods" [ref=e3124]
+                    - cell "Active" [ref=e3125]:
+                      - generic [ref=e3126]: Active
+                    - cell [ref=e3128]:
+                      - generic [ref=e3129]:
+                        - link "Edit" [ref=e3130] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1750"
+                          - img [ref=e3131]
+                        - button "Duplicate" [ref=e3133] [cursor=pointer]:
+                          - img [ref=e3134]
+                        - button "Move to Trash" [ref=e3136] [cursor=pointer]:
+                          - img [ref=e3137]
+                  - row "Sloped With Strapping VEN-VCR Wood Hoods Active" [ref=e3139]:
+                    - cell [ref=e3140]:
+                      - checkbox [ref=e3141] [cursor=pointer]
+                    - cell "Sloped With Strapping VEN-VCR" [ref=e3142]:
+                      - generic [ref=e3144]:
+                        - generic [ref=e3145]: Sloped With Strapping
+                        - generic [ref=e3146]: VEN-VCR
+                    - cell "Wood Hoods" [ref=e3147]
+                    - cell "Active" [ref=e3148]:
+                      - generic [ref=e3149]: Active
+                    - cell [ref=e3151]:
+                      - generic [ref=e3152]:
+                        - link "Edit" [ref=e3153] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1748"
+                          - img [ref=e3154]
+                        - button "Duplicate" [ref=e3156] [cursor=pointer]:
+                          - img [ref=e3157]
+                        - button "Move to Trash" [ref=e3159] [cursor=pointer]:
+                          - img [ref=e3160]
+                  - row "Box Without Trim VEN-BWT Wood Hoods Active" [ref=e3162]:
+                    - cell [ref=e3163]:
+                      - checkbox [ref=e3164] [cursor=pointer]
+                    - cell "Box Without Trim VEN-BWT" [ref=e3165]:
+                      - generic [ref=e3167]:
+                        - generic [ref=e3168]: Box Without Trim
+                        - generic [ref=e3169]: VEN-BWT
+                    - cell "Wood Hoods" [ref=e3170]
+                    - cell "Active" [ref=e3171]:
+                      - generic [ref=e3172]: Active
+                    - cell [ref=e3174]:
+                      - generic [ref=e3175]:
+                        - link "Edit" [ref=e3176] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1746"
+                          - img [ref=e3177]
+                        - button "Duplicate" [ref=e3179] [cursor=pointer]:
+                          - img [ref=e3180]
+                        - button "Move to Trash" [ref=e3182] [cursor=pointer]:
+                          - img [ref=e3183]
+                  - row "Box With Shiplap & Walnut Band VEN-BWS Wood Hoods Active" [ref=e3185]:
+                    - cell [ref=e3186]:
+                      - checkbox [ref=e3187] [cursor=pointer]
+                    - cell "Box With Shiplap & Walnut Band VEN-BWS" [ref=e3188]:
+                      - generic [ref=e3190]:
+                        - generic [ref=e3191]: Box With Shiplap & Walnut Band
+                        - generic [ref=e3192]: VEN-BWS
+                    - cell "Wood Hoods" [ref=e3193]
+                    - cell "Active" [ref=e3194]:
+                      - generic [ref=e3195]: Active
+                    - cell [ref=e3197]:
+                      - generic [ref=e3198]:
+                        - link "Edit" [ref=e3199] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1744"
+                          - img [ref=e3200]
+                        - button "Duplicate" [ref=e3202] [cursor=pointer]:
+                          - img [ref=e3203]
+                        - button "Move to Trash" [ref=e3205] [cursor=pointer]:
+                          - img [ref=e3206]
+                  - row "Box With Trim VEN-BCS Wood Hoods Active" [ref=e3208]:
+                    - cell [ref=e3209]:
+                      - checkbox [ref=e3210] [cursor=pointer]
+                    - cell "Box With Trim VEN-BCS" [ref=e3211]:
+                      - generic [ref=e3213]:
+                        - generic [ref=e3214]: Box With Trim
+                        - generic [ref=e3215]: VEN-BCS
+                    - cell "Wood Hoods" [ref=e3216]
+                    - cell "Active" [ref=e3217]:
+                      - generic [ref=e3218]: Active
+                    - cell [ref=e3220]:
+                      - generic [ref=e3221]:
+                        - link "Edit" [ref=e3222] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1742"
+                          - img [ref=e3223]
+                        - button "Duplicate" [ref=e3225] [cursor=pointer]:
+                          - img [ref=e3226]
+                        - button "Move to Trash" [ref=e3228] [cursor=pointer]:
+                          - img [ref=e3229]
+                  - row "Box Straight With Shiplap VEN-BSNT Wood Hoods Active" [ref=e3231]:
+                    - cell [ref=e3232]:
+                      - checkbox [ref=e3233] [cursor=pointer]
+                    - cell "Box Straight With Shiplap VEN-BSNT" [ref=e3234]:
+                      - generic [ref=e3236]:
+                        - generic [ref=e3237]: Box Straight With Shiplap
+                        - generic [ref=e3238]: VEN-BSNT
+                    - cell "Wood Hoods" [ref=e3239]
+                    - cell "Active" [ref=e3240]:
+                      - generic [ref=e3241]: Active
+                    - cell [ref=e3243]:
+                      - generic [ref=e3244]:
+                        - link "Edit" [ref=e3245] [cursor=pointer]:
+                          - /url: "#/products?action=edit&id=1740"
+                          - img [ref=e3246]
+                        - button "Duplicate" [ref=e3248] [cursor=pointer]:
+                          - img [ref=e3249]
+                        - button "Move to Trash" [ref=e3251] [cursor=pointer]:
+                          - img [ref=e3252]
+              - generic [ref=e3254]:
+                - paragraph [ref=e3255]: Showing 1–20 of 44 products
+                - generic [ref=e3256]:
+                  - button "Previous" [disabled] [ref=e3257]
+                  - button "1" [ref=e3258] [cursor=pointer]
+                  - button "2" [ref=e3259] [cursor=pointer]
+                  - button "3" [ref=e3260] [cursor=pointer]
+                  - button "Next" [ref=e3261] [cursor=pointer]
+  - contentinfo [ref=e301]:
+    - paragraph [ref=e302]:
+      - generic [ref=e303]:
+        - text: Thanks for creating with
+        - link "WordPress" [ref=e304] [cursor=pointer]:
+          - /url: https://wordpress.org/
+        - text: and hosting with
+        - link "Kinsta" [ref=e305] [cursor=pointer]:
+          - /url: https://kinsta.com/?utm_source=client-wp-admin&utm_medium=bottom-cta
+    - paragraph [ref=e306]: Version 7.0
