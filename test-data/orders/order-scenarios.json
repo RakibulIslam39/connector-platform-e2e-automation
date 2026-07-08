@@ -1,0 +1,382 @@
+{
+  "_meta": {
+    "description": "Real order scenarios using live products, sizes, and colors from the Connector Platform API",
+    "lastUpdated": "2026-05-22",
+    "masterSkuFormula": "{product_base_sku}-{size_sku}-{color_sku}[-modifier_skus]",
+    "hubValidationNote": "When validating an order in HoodslyHub, use the expectedMasterSku to confirm the order was received with the correct SKU"
+  },
+  "customerFixtures": {
+    "standard": {
+      "firstName": "John",
+      "lastName": "AutoTest",
+      "email": "john.autotest@qa-automation.com",
+      "phone": "+12125551234",
+      "address": "123 Test Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "country": "US"
+    },
+    "westCoast": {
+      "firstName": "Jane",
+      "lastName": "AutoTest",
+      "email": "jane.autotest@qa-automation.com",
+      "phone": "+13105551234",
+      "address": "456 Test Ave",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90001",
+      "country": "US"
+    },
+    "invalidPhone": {
+      "firstName": "Bob",
+      "lastName": "InvalidPhone",
+      "email": "bob.invalid@qa-automation.com",
+      "phone": "1234",
+      "address": "789 Error Blvd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60601",
+      "country": "US"
+    },
+    "withNote": {
+      "firstName": "Alice",
+      "lastName": "WithNote",
+      "email": "alice.note@qa-automation.com",
+      "phone": "+12025551234",
+      "address": "101 Note Street",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20001",
+      "country": "US"
+    }
+  },
+  "orderScenarios": [
+    {
+      "id": "order-wood-hood-raw-001",
+      "scenario": "Wood Hood — Raw/Unfinished, 36x36, standard smoke test",
+      "customer": "standard",
+      "product": {
+        "id": 1696,
+        "sku": "VEN-CCX",
+        "title": "Curved",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Raw / Unfinished",
+        "size": "36\" x 36\""
+      },
+      "expectedMasterSku": "VEN-CCX-3636-RAW",
+      "expectedShortSku": "3636-RAW",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-primed-001",
+      "scenario": "Wood Hood — Primed/Paint Ready, 30x36",
+      "customer": "standard",
+      "product": {
+        "id": 1720,
+        "sku": "VEN-MCX",
+        "title": "Tapered",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Primed / Paint Ready",
+        "size": "30\" x 36\""
+      },
+      "expectedMasterSku": "VEN-MCX-3036-PRM",
+      "expectedShortSku": "3036-PRM",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-uscd-001",
+      "scenario": "Wood Hood — USCD partner color (Shaker Antique White), 36x36",
+      "customer": "westCoast",
+      "product": {
+        "id": 1690,
+        "sku": "VEN-ANBS",
+        "title": "Angled With Brass Strapping",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Shaker Antique White:USCD",
+        "size": "36\" x 36\""
+      },
+      "expectedMasterSku": "VEN-ANBS-3636-USCDSAW",
+      "expectedShortSku": "3636-USCDSAW",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-hoodsly-color-001",
+      "scenario": "Wood Hood — Hoodsly branded color (Antique White), 48x36",
+      "customer": "standard",
+      "product": {
+        "id": 1696,
+        "sku": "VEN-CCX",
+        "title": "Curved",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Antique White:Hoodsly",
+        "size": "48\" x 36\""
+      },
+      "expectedMasterSku": "VEN-CCX-4836-HOOANT00001",
+      "expectedShortSku": "4836-HOOANT00001",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-reduce-height-001",
+      "scenario": "Wood Hood — with Reduce Height modifier (Remove 2\"), Raw, 36x36",
+      "customer": "standard",
+      "product": {
+        "id": 1690,
+        "sku": "VEN-ANBS",
+        "title": "Angled With Brass Strapping",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Raw / Unfinished",
+        "size": "36\" x 36\"",
+        "reduce_height": "Remove 2\""
+      },
+      "expectedMasterSku": "VEN-ANBS-3636-RAW-RH2",
+      "expectedShortSku": "3636-RAW-RH2",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-increase-depth-001",
+      "scenario": "Wood Hood — with Increase Depth modifier, Primed, 36x36",
+      "customer": "westCoast",
+      "product": {
+        "id": 1690,
+        "sku": "VEN-ANBS",
+        "title": "Angled With Brass Strapping",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Primed / Paint Ready",
+        "size": "36\" x 36\"",
+        "increase_depth": "Increase Interior Depth To 19.3125\""
+      },
+      "expectedMasterSku": "VEN-ANBS-3636-PRM-ID19-RSH",
+      "expectedShortSku": "3636-PRM-ID19-RSH",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-crown-molding-001",
+      "scenario": "Wood Hood — with Steel Crown Molding (Installed), USCD Shaker White, 36x36",
+      "customer": "standard",
+      "product": {
+        "id": 1696,
+        "sku": "VEN-CCX",
+        "title": "Curved",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Shaker White:USCD",
+        "size": "36\" x 36\"",
+        "crown_molding": "Steel Crown Molding",
+        "crown_molding_fit": "Installed"
+      },
+      "expectedMasterSku": "VEN-CCX-3636-USCDSHW-MSCI-INC",
+      "expectedShortSku": "3636-USCDSHW-MSCI-INC",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-chimney-ext-001",
+      "scenario": "Wood Hood — with 6\" Chimney Extension, Raw, 30x36",
+      "customer": "standard",
+      "product": {
+        "id": 1738,
+        "sku": "VEN-BNT",
+        "title": "Box Straight",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Raw / Unfinished",
+        "size": "30\" x 36\"",
+        "extend_your_chimney": "6\" Extension"
+      },
+      "expectedMasterSku": "VEN-BNT-3036-RAW-CH6",
+      "expectedShortSku": "3036-RAW-CH6",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-solid-bottom-001",
+      "scenario": "Wood Hood — with Solid Bottom add-on, Hoodsly Antique White, 36x36",
+      "customer": "westCoast",
+      "product": {
+        "id": 1696,
+        "sku": "VEN-CCX",
+        "title": "Curved",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Antique White:Hoodsly",
+        "size": "36\" x 36\"",
+        "add_solid_bottom": true
+      },
+      "expectedMasterSku": "VEN-CCX-3636-HOOANT00001-SB",
+      "expectedShortSku": "3636-HOOANT00001-SB",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-wood-hood-full-modifiers-001",
+      "scenario": "Wood Hood — full modifier stack (Increase Depth + Reduce Height + Chimney Extension)",
+      "customer": "standard",
+      "product": {
+        "id": 1690,
+        "sku": "VEN-ANBS",
+        "title": "Angled With Brass Strapping",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Shaker Antique White:USCD",
+        "size": "48\" x 36\"",
+        "increase_depth": "Increase Interior Depth To 19.3125\"",
+        "reduce_height": "Remove 2\"",
+        "extend_your_chimney": "6\" Extension"
+      },
+      "expectedMasterSku": "VEN-ANBS-4836-USCDSAW-ID19-RSH-RH2-CH6",
+      "expectedShortSku": "4836-USCDSAW-ID19-RSH-RH2-CH6",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    },
+    {
+      "id": "order-quick-ship-001",
+      "scenario": "Quick Ship product — Curved Quick Ship, Primed, 30x36",
+      "customer": "standard",
+      "product": {
+        "id": 1774,
+        "sku": "VEN-QSPCCX",
+        "title": "Curved Quick Ship",
+        "category": "Quick Shipping",
+        "inventoryLogic": "one-in-one-out"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Primed / Paint Ready",
+        "size": "30\" x 36\""
+      },
+      "expectedMasterSku": "VEN-QSPCCX-3036-PRM",
+      "expectedShortSku": "3036-PRM",
+      "holdPeriodHours": 0,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["shipped"],
+      "note": "Quick Ship orders skip the production queue and ship immediately (one-in-one-out inventory)"
+    },
+    {
+      "id": "order-floating-shelf-001",
+      "scenario": "Floating Shelf — 30\" width, Raw finish — routed via UPS to WIKS",
+      "customer": "westCoast",
+      "product": {
+        "id": 2330,
+        "sku": "VEN-FLS",
+        "title": "Floating Shelves",
+        "category": "Floating Shelves",
+        "courierType": "ups"
+      },
+      "selections": {
+        "color": "Raw / Unfinished",
+        "select_width": "30\""
+      },
+      "expectedMasterSku": "VEN-FLS-FSW30-RAW",
+      "expectedShortSku": "FSW30-RAW",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wiks",
+      "courierExpected": "ups",
+      "expectedStatuses": ["production", "shipped"],
+      "note": "Floating Shelves use Select Width (not Size) and are shipped via UPS to WIKS hub"
+    },
+    {
+      "id": "order-invalid-phone-001",
+      "scenario": "Order with invalid phone number — BOL generation should fail",
+      "customer": "invalidPhone",
+      "product": {
+        "id": 1696,
+        "sku": "VEN-CCX",
+        "title": "Curved",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Raw / Unfinished",
+        "size": "36\" x 36\""
+      },
+      "expectedMasterSku": "VEN-CCX-3636-RAW",
+      "expectedBolFailure": true,
+      "expectedBolFailureReason": "Invalid US phone number — must be 10 digits"
+    },
+    {
+      "id": "order-with-customer-note-001",
+      "scenario": "Order with customer note — should route to Manual Placement queue",
+      "customer": "withNote",
+      "product": {
+        "id": 1720,
+        "sku": "VEN-MCX",
+        "title": "Tapered",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Raw / Unfinished",
+        "size": "42\" x 36\""
+      },
+      "orderNote": "Please deliver after 5PM on weekdays",
+      "expectedMasterSku": "VEN-MCX-4236-RAW",
+      "expectedShortSku": "4236-RAW",
+      "expectedRouting": "manual-placement",
+      "note": "Orders with customer notes are automatically routed to Manual Placement workflow in HoodslyHub"
+    },
+    {
+      "id": "order-large-size-001",
+      "scenario": "Wood Hood — Large 60x36 size, Raw finish",
+      "customer": "standard",
+      "product": {
+        "id": 1738,
+        "sku": "VEN-BNT",
+        "title": "Box Straight",
+        "category": "Wood Hoods"
+      },
+      "selections": {
+        "color_options": "Our Color Options",
+        "color": "Raw / Unfinished",
+        "size": "60\" x 36\""
+      },
+      "expectedMasterSku": "VEN-BNT-6036-RAW",
+      "expectedShortSku": "6036-RAW",
+      "holdPeriodHours": 24,
+      "expectedTargetShop": "wrh",
+      "expectedStatuses": ["production", "finishing", "shipped"]
+    }
+  ]
+}

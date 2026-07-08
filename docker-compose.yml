@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  e2e:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: connector-platform-e2e:latest
+    container_name: connector-platform-e2e
+
+    # Mount env file — choose the appropriate one
+    env_file:
+      - environments/.env.staging
+
+    environment:
+      - ENV=staging
+      - CI=true
+      - HEADLESS=true
+
+    # Mount reports to the host for artifact access
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+      - ./test-results:/app/test-results
+
+    # Override default CMD for different run modes:
+    # docker-compose run e2e npm run test:smoke
+    # docker-compose run e2e npm run test:regression
+    # docker-compose run e2e npm run test:api
+    command: npm run test:smoke
+
+  # Optional: Run specific test suite
+  e2e-regression:
+    extends: e2e
+    container_name: connector-platform-e2e-regression
+    command: npm run test:regression
+
+  e2e-api:
+    extends: e2e
+    container_name: connector-platform-e2e-api
+    command: npm run test:api

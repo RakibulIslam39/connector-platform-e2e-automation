@@ -1,0 +1,5415 @@
+{
+  "_meta": {
+    "purpose": "HoodslyHub v3 Create Order API — full incoming SKU coverage (all 78 SKUs)",
+    "source": "json-data/all-incoming-sku.json",
+    "format_version": "HoodslyHub v3 (order_status: 'In Production', no shipping_lines)",
+    "total_scenarios": 78,
+    "order_date": "2026-06-22 10:01:14",
+    "estimated_shipping_date_logic": {
+      "wood_hoods": "+14 days → 2026-07-06",
+      "quick_shipping": "same day → 2026-06-22",
+      "floating_shelves": "+14 days → 2026-07-06"
+    },
+    "product_id_note": "product_id values for unknown products (PAU, WKP, LOG, QSP, CIH, BIH, BSIH, TIH, TSIH, HMT, STOK) use all-incoming-sku.json id as placeholder — replace with actual HoodslyHub product IDs before running.",
+    "categories": {
+      "Wood Hoods": "ids 1–40, 42–50, 52, 57–78  (63 scenarios)",
+      "Quick Shipping": "ids 41, 53–55             (4 scenarios)",
+      "Floating Shelves": "ids 51, 56               (2 scenarios)"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "HUB-CCX",
+      "incoming_sku": "CCX",
+      "hub_master_sku": "MA-CUR-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCX",
+        "order_id": "HUB-CCX",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx", "value": "VEN-CCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx-raw-3636", "value": "CCX-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VCX",
+      "incoming_sku": "VCX",
+      "hub_master_sku": "MA-SLP-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VCX",
+        "order_id": "HUB-VCX",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1698",
+                "sku": { "key": "ven-vcx", "value": "VEN-VCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vcx-raw-3636", "value": "VCX-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCR",
+      "incoming_sku": "CCR",
+      "hub_master_sku": "MA-CUR-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCR",
+        "order_id": "HUB-CCR",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1700",
+                "sku": { "key": "ven-ccr", "value": "VEN-CCR" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccr-raw-3636", "value": "CCR-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CMGMG",
+      "incoming_sku": "CMGMG",
+      "hub_master_sku": "MA-CUR-MGA-MGC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CMGMG",
+        "order_id": "HUB-CMGMG",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1702",
+                "sku": { "key": "ven-cmgmg", "value": "VEN-CMGMG" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Brass Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cmgmg-raw-3636", "value": "CMGMG-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CMSMS",
+      "incoming_sku": "CMSMS",
+      "hub_master_sku": "MA-CUR-MSA-MSC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CMSMS",
+        "order_id": "HUB-CMSMS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1704",
+                "sku": { "key": "ven-cmsms", "value": "VEN-CMSMS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Steel Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cmsms-raw-3636", "value": "CMSMS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CNT",
+      "incoming_sku": "CNT",
+      "hub_master_sku": "MA-CUR-TRM-NS-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CNT",
+        "order_id": "HUB-CNT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1706",
+                "sku": { "key": "ven-cnt", "value": "VEN-CNT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Without Trim",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cnt-raw-3636", "value": "CNT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CGSB",
+      "incoming_sku": "CGSB",
+      "hub_master_sku": "MA-CUR-MGA-MGC-BMG-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CGSB",
+        "order_id": "HUB-CGSB",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1708",
+                "sku": { "key": "ven-cgsb", "value": "VEN-CGSB" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Brass Strapping & Buttons",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cgsb-raw-3636", "value": "CGSB-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CBA",
+      "incoming_sku": "CBA",
+      "hub_master_sku": "MA-CUR-NS-ABMG-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CBA",
+        "order_id": "HUB-CBA",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1710",
+                "sku": { "key": "ven-cba", "value": "VEN-CBA" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Brass Apron",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cba-raw-3636", "value": "CBA-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CAA",
+      "incoming_sku": "CAA",
+      "hub_master_sku": "MA-CUR-NS-ARC-CLT-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CAA",
+        "order_id": "HUB-CAA",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1712",
+                "sku": { "key": "ven-caa", "value": "VEN-CAA" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Arched Apron",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "caa-raw-3636", "value": "CAA-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CWC",
+      "incoming_sku": "CWC",
+      "hub_master_sku": "MA-CUR-NS-SCB-CLT-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CWC",
+        "order_id": "HUB-CWC",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1714",
+                "sku": { "key": "ven-cwc", "value": "VEN-CWC" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Hood With Corbels",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cwc-raw-3636", "value": "CWC-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BST",
+      "incoming_sku": "BST",
+      "hub_master_sku": "MA-BEL-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BST",
+        "order_id": "HUB-BST",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1716",
+                "sku": { "key": "ven-bst", "value": "VEN-BST" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Bell Style Straight",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bst-raw-3636", "value": "BST-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BSH",
+      "incoming_sku": "BSH",
+      "hub_master_sku": "MA-BEL-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BSH",
+        "order_id": "HUB-BSH",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1718",
+                "sku": { "key": "ven-bsh", "value": "VEN-BSH" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Bell Style With Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bsh-raw-3636", "value": "BSH-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-MCX",
+      "incoming_sku": "MCX",
+      "hub_master_sku": "MA-TAP-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-MCX",
+        "order_id": "HUB-MCX",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1720",
+                "sku": { "key": "ven-mcx", "value": "VEN-MCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mcx-raw-3636", "value": "MCX-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-MLS",
+      "incoming_sku": "MLS",
+      "hub_master_sku": "MA-TAP-SHP-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-MLS",
+        "order_id": "HUB-MLS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1722",
+                "sku": { "key": "ven-mls", "value": "VEN-MLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered With Shiplap",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mls-raw-3636", "value": "MLS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-MMSMS",
+      "incoming_sku": "MMSMS",
+      "hub_master_sku": "MA-TAP-MSA-MSC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-MMSMS",
+        "order_id": "HUB-MMSMS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1724",
+                "sku": { "key": "ven-mmsms", "value": "VEN-MMSMS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered With Steel Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mmsms-raw-3636", "value": "MMSMS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-MMGMG",
+      "incoming_sku": "MMGMG",
+      "hub_master_sku": "MA-TAP-MGA-MGC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-MMGMG",
+        "order_id": "HUB-MMGMG",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1726",
+                "sku": { "key": "ven-mmgmg", "value": "VEN-MMGMG" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered With Brass Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mmgmg-raw-3636", "value": "MMGMG-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-MCR",
+      "incoming_sku": "MCR",
+      "hub_master_sku": "MA-TAP-WS-RCW-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-MCR",
+        "order_id": "HUB-MCR",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1728",
+                "sku": { "key": "ven-mcr", "value": "VEN-MCR" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered With Reclaimed Wood Band",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mcr-raw-3636", "value": "MCR-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-TWS",
+      "incoming_sku": "TWS",
+      "hub_master_sku": "MA-TAP-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-TWS",
+        "order_id": "HUB-TWS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1730",
+                "sku": { "key": "ven-tws", "value": "VEN-TWS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered With Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "tws-raw-3636", "value": "TWS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-TNT",
+      "incoming_sku": "TNT",
+      "hub_master_sku": "MA-TAP-TRM-NS-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-TNT",
+        "order_id": "HUB-TNT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1736",
+                "sku": { "key": "ven-tnt", "value": "VEN-TNT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered Without Trim",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "tnt-raw-3636", "value": "TNT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BNT",
+      "incoming_sku": "BNT",
+      "hub_master_sku": "MA-BOX-NS-SIG-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BNT",
+        "order_id": "HUB-BNT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1738",
+                "sku": { "key": "ven-bnt", "value": "VEN-BNT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box Straight",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bnt-raw-3636", "value": "BNT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BSNT",
+      "incoming_sku": "BSNT",
+      "hub_master_sku": "MA-BOX-SHP-SIG-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BSNT",
+        "order_id": "HUB-BSNT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1740",
+                "sku": { "key": "ven-bsnt", "value": "VEN-BSNT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box Straight With Shiplap",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bsnt-raw-3636", "value": "BSNT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BCS",
+      "incoming_sku": "BCS",
+      "hub_master_sku": "MA-BOX-SHP-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BCS",
+        "order_id": "HUB-BCS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1742",
+                "sku": { "key": "ven-bcs", "value": "VEN-BCS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box With Trim",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bcs-raw-3636", "value": "BCS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BWS",
+      "incoming_sku": "BWS",
+      "hub_master_sku": "MA-BOX-SHP-WLB-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BWS",
+        "order_id": "HUB-BWS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1744",
+                "sku": { "key": "ven-bws", "value": "VEN-BWS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box With Shiplap & Walnut Band",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bws-raw-3636", "value": "BWS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BWT",
+      "incoming_sku": "BWT",
+      "hub_master_sku": "MA-BOX-NS-TRM-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BWT",
+        "order_id": "HUB-BWT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1746",
+                "sku": { "key": "ven-bwt", "value": "VEN-BWT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box Without Trim",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bwt-raw-3636", "value": "BWT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VCR",
+      "incoming_sku": "VCR",
+      "hub_master_sku": "MA-SLP-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VCR",
+        "order_id": "HUB-VCR",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1748",
+                "sku": { "key": "ven-vcr", "value": "VEN-VCR" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped With Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vcr-raw-3636", "value": "VCR-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VMSMS",
+      "incoming_sku": "VMSMS",
+      "hub_master_sku": "MA-SLP-MSA-MSC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VMSMS",
+        "order_id": "HUB-VMSMS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1750",
+                "sku": { "key": "ven-vmsms", "value": "VEN-VMSMS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped With Steel Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vmsms-raw-3636", "value": "VMSMS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VMGMG",
+      "incoming_sku": "VMGMG",
+      "hub_master_sku": "MA-SLP-MGA-MGC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VMGMG",
+        "order_id": "HUB-VMGMG",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1752",
+                "sku": { "key": "ven-vmgmg", "value": "VEN-VMGMG" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped With Brass Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vmgmg-raw-3636", "value": "VMGMG-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-SNT",
+      "incoming_sku": "SNT",
+      "hub_master_sku": "MA-SLP-NS-TRM-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-SNT",
+        "order_id": "HUB-SNT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1754",
+                "sku": { "key": "ven-snt", "value": "VEN-SNT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped Without Trim",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "snt-raw-3636", "value": "SNT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-LCX",
+      "incoming_sku": "LCX",
+      "hub_master_sku": "MA-ANG-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-LCX",
+        "order_id": "HUB-LCX",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1756",
+                "sku": { "key": "ven-lcx", "value": "VEN-LCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Angled",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "lcx-raw-3636", "value": "LCX-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-AWS",
+      "incoming_sku": "AWS",
+      "hub_master_sku": "MA-ANG-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-AWS",
+        "order_id": "HUB-AWS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1758",
+                "sku": { "key": "ven-aws", "value": "VEN-AWS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Angled With Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "aws-raw-3636", "value": "AWS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-LWX",
+      "incoming_sku": "LWX",
+      "hub_master_sku": "MA-ANG-NS-WLB-AHOOSCLR00001-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-LWX",
+        "order_id": "HUB-LWX",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1760",
+                "sku": { "key": "ven-lwx", "value": "VEN-LWX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Angled With Walnut Band",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "lwx-raw-3636", "value": "LWX-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-ANT",
+      "incoming_sku": "ANT",
+      "hub_master_sku": "MA-ANG-NS-TRM-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-ANT",
+        "order_id": "HUB-ANT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1762",
+                "sku": { "key": "ven-ant", "value": "VEN-ANT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Angled Without Trim",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ant-raw-3636", "value": "ANT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-ANSS",
+      "incoming_sku": "ANSS",
+      "hub_master_sku": "MA-ANG-MSA-MSC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-ANSS",
+        "order_id": "HUB-ANSS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1695",
+                "sku": { "key": "ven-anss", "value": "VEN-ANSS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Angled With Steel Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "anss-raw-3636", "value": "ANSS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-ANBS",
+      "incoming_sku": "ANBS",
+      "hub_master_sku": "MA-ANG-MGA-MGC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-ANBS",
+        "order_id": "HUB-ANBS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1690",
+                "sku": { "key": "ven-anbs", "value": "VEN-ANBS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Angled With Brass Strapping",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "anbs-raw-3636", "value": "ANBS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CSL",
+      "incoming_sku": "CSL",
+      "hub_master_sku": "MA-CUR-SLMC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CSL",
+        "order_id": "HUB-CSL",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2471",
+                "sku": { "key": "ven-csl", "value": "VEN-CSL" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Slim",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "csl-raw-3636", "value": "CSL-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-FRM",
+      "incoming_sku": "FRM",
+      "hub_master_sku": "MA-NS-STA-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-FRM",
+        "order_id": "HUB-FRM",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1732",
+                "sku": { "key": "ven-frm", "value": "VEN-FRM" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Shaker Tapered",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "frm-raw-3636", "value": "FRM-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-FRX",
+      "incoming_sku": "FRX",
+      "hub_master_sku": "MA-SHX-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-FRX",
+        "order_id": "HUB-FRX",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1734",
+                "sku": { "key": "ven-frx", "value": "VEN-FRX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Shaker Tapered X",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "frx-raw-3636", "value": "FRX-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-PAU",
+      "incoming_sku": "PAU",
+      "hub_master_sku": "MA-PAU-NS-FLT-INST",
+      "category": "Wood Hoods",
+      "_note": "product_id is placeholder — verify against HoodslyHub product catalog",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-PAU",
+        "order_id": "HUB-PAU",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "38",
+                "sku": { "key": "ven-pau", "value": "VEN-PAU" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Pauline",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "pau-raw-3636", "value": "PAU-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-WKP",
+      "incoming_sku": "WKP",
+      "hub_master_sku": "MA-WKP-NS-TRM-INST",
+      "category": "Wood Hoods",
+      "_note": "product_id is placeholder — verify against HoodslyHub product catalog",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-WKP",
+        "order_id": "HUB-WKP",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "39",
+                "sku": { "key": "ven-wkp", "value": "VEN-WKP" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Wok Pan",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "wkp-raw-3636", "value": "WKP-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-LOG",
+      "incoming_sku": "LOG",
+      "hub_master_sku": "MA-LOG-TRM-SHP-INST",
+      "category": "Wood Hoods",
+      "_note": "product_id is placeholder — verify against HoodslyHub product catalog",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-LOG",
+        "order_id": "HUB-LOG",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "40",
+                "sku": { "key": "ven-log", "value": "VEN-LOG" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Log",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "log-raw-3636", "value": "LOG-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-QSP",
+      "incoming_sku": "QSP",
+      "hub_master_sku": "MA-CUR-ID18-CLT-INST",
+      "category": "Quick Shipping",
+      "_note": "product_id is placeholder — verify against HoodslyHub product catalog",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-QSP",
+        "order_id": "HUB-QSP",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-22",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "41",
+                "sku": { "key": "ven-qsp", "value": "VEN-QSP" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qsp-prm-3036", "value": "QSP-PRM-3036" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-SCB",
+      "incoming_sku": "SCB",
+      "hub_master_sku": "MA-SCP-MGA-MGC-BMG-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-SCB",
+        "order_id": "HUB-SCB",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1764",
+                "sku": { "key": "ven-scb", "value": "VEN-SCB" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Scoop With Brass Strapping And Buttons",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "scb-raw-3636", "value": "SCB-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-SCS",
+      "incoming_sku": "SCS",
+      "hub_master_sku": "MA-SCP-MSA-MSC-BMS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-SCS",
+        "order_id": "HUB-SCS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1766",
+                "sku": { "key": "ven-scs", "value": "VEN-SCS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Scoop With Steel Strapping And Buttons",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "scs-raw-3636", "value": "SCS-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-DBC",
+      "incoming_sku": "DBC",
+      "hub_master_sku": "MA-DBC-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-DBC",
+        "order_id": "HUB-DBC",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "5082",
+                "sku": { "key": "ven-dbc", "value": "VEN-DBC" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Double Curved",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "dbc-raw-3636", "value": "DBC-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CIH",
+      "incoming_sku": "CIH",
+      "hub_master_sku": "MA-CIH-NS-SB-CLT-INST",
+      "category": "Wood Hoods",
+      "_note": "Curved Island Hood — product_id is placeholder",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CIH",
+        "order_id": "HUB-CIH",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "45",
+                "sku": { "key": "ven-cih", "value": "VEN-CIH" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Island Hood",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cih-raw-3636", "value": "CIH-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BIH",
+      "incoming_sku": "BIH",
+      "hub_master_sku": "MA-BIH-SHP-SB-CLT-INST",
+      "category": "Wood Hoods",
+      "_note": "Box Island Hood — product_id is placeholder",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BIH",
+        "order_id": "HUB-BIH",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "46",
+                "sku": { "key": "ven-bih", "value": "VEN-BIH" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box Island Hood",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bih-raw-3636", "value": "BIH-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BSIH",
+      "incoming_sku": "BSIH",
+      "hub_master_sku": "MA-BSIH-SIG-NS-SB-CLT-INST",
+      "category": "Wood Hoods",
+      "_note": "Box Straight Island Hood — product_id is placeholder",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BSIH",
+        "order_id": "HUB-BSIH",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "47",
+                "sku": { "key": "ven-bsih", "value": "VEN-BSIH" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box Straight Island Hood",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bsih-raw-3636", "value": "BSIH-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-TIH",
+      "incoming_sku": "TIH",
+      "hub_master_sku": "MA-TIH-SHP-SB-CLT-INST",
+      "category": "Wood Hoods",
+      "_note": "Tapered Island Hood — product_id is placeholder",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-TIH",
+        "order_id": "HUB-TIH",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "48",
+                "sku": { "key": "ven-tih", "value": "VEN-TIH" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered Island Hood",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "tih-raw-3636", "value": "TIH-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-TSIH",
+      "incoming_sku": "TSIH",
+      "hub_master_sku": "MA-TSIH-NS-SB-CLT-INST",
+      "category": "Wood Hoods",
+      "_note": "Tapered Slim Island Hood — product_id is placeholder",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-TSIH",
+        "order_id": "HUB-TSIH",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "49",
+                "sku": { "key": "ven-tsih", "value": "VEN-TSIH" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered Slim Island Hood",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "tsih-raw-3636", "value": "TSIH-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-HMT",
+      "incoming_sku": "HMT",
+      "hub_master_sku": "MA-HMT",
+      "category": "Wood Hoods",
+      "_note": "Hammered — product_id is placeholder",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-HMT",
+        "order_id": "HUB-HMT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "50",
+                "sku": { "key": "ven-hmt", "value": "VEN-HMT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Hammered",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "hmt-raw-3636", "value": "HMT-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-FLS",
+      "incoming_sku": "FLS",
+      "hub_master_sku": "MA-FLS",
+      "category": "Floating Shelves",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-FLS",
+        "order_id": "HUB-FLS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "fls-raw-fsw30", "value": "FLS-RAW-FSW30" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-STOK",
+      "incoming_sku": "STOK",
+      "hub_master_sku": "MA",
+      "category": "Wood Hoods",
+      "_note": "Stock — minimal master_sku; product_id is placeholder",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-STOK",
+        "order_id": "HUB-STOK",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "52",
+                "sku": { "key": "ven-stok", "value": "VEN-STOK" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Stock",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "stok-raw-3636", "value": "STOK-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-QSPCCX",
+      "incoming_sku": "QSPCCX",
+      "hub_master_sku": "MA-CUR-NS-ID18-CLT-TRMI-RAW",
+      "category": "Quick Shipping",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-QSPCCX",
+        "order_id": "HUB-QSPCCX",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-22",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1774",
+                "sku": { "key": "ven-qspccx", "value": "VEN-QSPCCX" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccx-prm-3036", "value": "QSPCCX-PRM-3036" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-QSPCCXWHT",
+      "incoming_sku": "QSPCCXWHT",
+      "hub_master_sku": "MA-CUR-NS-HOOWHI00001-ID18-CLT-TRMI",
+      "category": "Quick Shipping",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-QSPCCXWHT",
+        "order_id": "HUB-QSPCCXWHT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-22",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "5072",
+                "sku": { "key": "ven-qspccxwht", "value": "VEN-QSPCCXWHT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Shaker White Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccxwht-uscdshw-3036", "value": "QSPCCXWHT-USCDSHW-3036" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-QSPCCR",
+      "incoming_sku": "QSPCCR",
+      "hub_master_sku": "MA-CUR-WS-ID18-CLT-TRMI-RAW",
+      "category": "Quick Shipping",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-QSPCCR",
+        "order_id": "HUB-QSPCCR",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-06-22",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "5070",
+                "sku": { "key": "ven-qspccr", "value": "VEN-QSPCCR" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Strapping Quick Ship",
+                "product_catName": "Quick Shipping",
+                "product_cat": "quick-shipping",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "qspccr-raw-3036", "value": "QSPCCR-RAW-3036" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VENFLS",
+      "incoming_sku": "VENFLS",
+      "hub_master_sku": "MA-FLS",
+      "category": "Floating Shelves",
+      "_note": "Same product as FLS — incoming SKU 'VENFLS' is an alternate registration",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VENFLS",
+        "order_id": "HUB-VENFLS",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "0",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2330",
+                "sku": { "key": "ven-fls", "value": "VEN-FLS" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-9-min.jpg",
+                "product_name": "Floating Shelves",
+                "product_catName": "Floating Shelves",
+                "product_cat": "floating-shelves",
+                "item_total": "0",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "venfls-raw-fsw30", "value": "VENFLS-RAW-FSW30" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCXPRM",
+      "incoming_sku": "CCXPRM",
+      "hub_master_sku": "MA-CUR-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCXPRM",
+        "order_id": "HUB-CCXPRM",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccxprm", "value": "VEN-CCXPRM" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved (Primed)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccxprm-prm-3636", "value": "CCXPRM-PRM-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCX36",
+      "incoming_sku": "CCX36",
+      "hub_master_sku": "MA-CUR-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCX36",
+        "order_id": "HUB-CCX36",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx36", "value": "VEN-CCX36" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved 36\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx36-raw-3636", "value": "CCX36-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VCX36",
+      "incoming_sku": "VCX36",
+      "hub_master_sku": "MA-SLP-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VCX36",
+        "order_id": "HUB-VCX36",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1698",
+                "sku": { "key": "ven-vcx36", "value": "VEN-VCX36" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped 36\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vcx36-raw-3636", "value": "VCX36-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCX30",
+      "incoming_sku": "CCX30",
+      "hub_master_sku": "MA-CUR-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCX30",
+        "order_id": "HUB-CCX30",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx30", "value": "VEN-CCX30" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved 30\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx30-raw-3036", "value": "CCX30-RAW-3036" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CMGMGWHT",
+      "incoming_sku": "CMGMGWHT",
+      "hub_master_sku": "MA-CUR-MGA-MGC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CMGMGWHT",
+        "order_id": "HUB-CMGMGWHT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1702",
+                "sku": { "key": "ven-cmgmgwht", "value": "VEN-CMGMGWHT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Brass Strapping (Antique White)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cmgmgwht-hooant00001-3636", "value": "CMGMGWHT-HOOANT00001-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CMGMGBLK",
+      "incoming_sku": "CMGMGBLK",
+      "hub_master_sku": "MA-CUR-MGA-MGC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CMGMGBLK",
+        "order_id": "HUB-CMGMGBLK",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1702",
+                "sku": { "key": "ven-cmgmgblk", "value": "VEN-CMGMGBLK" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Brass Strapping (Black)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cmgmgblk-hoobla00001-3636", "value": "CMGMGBLK-HOOBLA00001-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCR30",
+      "incoming_sku": "CCR30",
+      "hub_master_sku": "MA-CUR-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCR30",
+        "order_id": "HUB-CCR30",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1700",
+                "sku": { "key": "ven-ccr30", "value": "VEN-CCR30" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Strapping 30\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccr30-raw-3036", "value": "CCR30-RAW-3036" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VCX48",
+      "incoming_sku": "VCX48",
+      "hub_master_sku": "MA-SLP-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VCX48",
+        "order_id": "HUB-VCX48",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1698",
+                "sku": { "key": "ven-vcx48", "value": "VEN-VCX48" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped 48\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vcx48-raw-4836", "value": "VCX48-RAW-4836" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCXWHT",
+      "incoming_sku": "CCXWHT",
+      "hub_master_sku": "MA-CUR-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCXWHT",
+        "order_id": "HUB-CCXWHT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccxwht", "value": "VEN-CCXWHT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved (Antique White)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccxwht-hooant00001-3636", "value": "CCXWHT-HOOANT00001-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CSLRAW",
+      "incoming_sku": "CSLRAW",
+      "hub_master_sku": "MA-CUR-SLMC-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CSLRAW",
+        "order_id": "HUB-CSLRAW",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "2471",
+                "sku": { "key": "ven-cslraw", "value": "VEN-CSLRAW" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Slim (Raw)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cslraw-raw-3636", "value": "CSLRAW-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-MCXAMW",
+      "incoming_sku": "MCXAMW",
+      "hub_master_sku": "MA-TAP-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-MCXAMW",
+        "order_id": "HUB-MCXAMW",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1720",
+                "sku": { "key": "ven-mcxamw", "value": "VEN-MCXAMW" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered (American Walnut)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mcxamw-hooame00001-3636", "value": "MCXAMW-HOOAME00001-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CAAAWHT",
+      "incoming_sku": "CAAAWHT",
+      "hub_master_sku": "MA-CUR-NS-ARC-CLT-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CAAAWHT",
+        "order_id": "HUB-CAAAWHT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1712",
+                "sku": { "key": "ven-caaawht", "value": "VEN-CAAAWHT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Arched Apron (Antique White)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "caaawht-hooant00001-3636", "value": "CAAAWHT-HOOANT00001-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VCR36",
+      "incoming_sku": "VCR36",
+      "hub_master_sku": "MA-SLP-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VCR36",
+        "order_id": "HUB-VCR36",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1748",
+                "sku": { "key": "ven-vcr36", "value": "VEN-VCR36" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped With Strapping 36\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vcr36-raw-3636", "value": "VCR36-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BST48",
+      "incoming_sku": "BST48",
+      "hub_master_sku": "MA-BEL-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BST48",
+        "order_id": "HUB-BST48",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1716",
+                "sku": { "key": "ven-bst48", "value": "VEN-BST48" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Bell Style Straight 48\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bst48-raw-4836", "value": "BST48-RAW-4836" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-VCXWHT",
+      "incoming_sku": "VCXWHT",
+      "hub_master_sku": "MA-SLP-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-VCXWHT",
+        "order_id": "HUB-VCXWHT",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1698",
+                "sku": { "key": "ven-vcxwht", "value": "VEN-VCXWHT" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped (Antique White)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "vcxwht-hooant00001-3636", "value": "VCXWHT-HOOANT00001-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BST36",
+      "incoming_sku": "BST36",
+      "hub_master_sku": "MA-BEL-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BST36",
+        "order_id": "HUB-BST36",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1716",
+                "sku": { "key": "ven-bst36", "value": "VEN-BST36" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Bell Style Straight 36\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bst36-raw-3636", "value": "BST36-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CNTRAW",
+      "incoming_sku": "CNTRAW",
+      "hub_master_sku": "MA-CUR-TRM-NS-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CNTRAW",
+        "order_id": "HUB-CNTRAW",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1706",
+                "sku": { "key": "ven-cntraw", "value": "VEN-CNTRAW" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved Without Trim (Raw)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "cntraw-raw-3636", "value": "CNTRAW-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-MCR30",
+      "incoming_sku": "MCR30",
+      "hub_master_sku": "MA-TAP-WS-RCW-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-MCR30",
+        "order_id": "HUB-MCR30",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1728",
+                "sku": { "key": "ven-mcr30", "value": "VEN-MCR30" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Tapered With Reclaimed Wood Band 30\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "mcr30-raw-3036", "value": "MCR30-RAW-3036" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-SNTRAW",
+      "incoming_sku": "SNTRAW",
+      "hub_master_sku": "MA-SLP-NS-TRM-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-SNTRAW",
+        "order_id": "HUB-SNTRAW",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1754",
+                "sku": { "key": "ven-sntraw", "value": "VEN-SNTRAW" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Sloped Without Trim (Raw)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "sntraw-raw-3636", "value": "SNTRAW-RAW-3636" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCR48",
+      "incoming_sku": "CCR48",
+      "hub_master_sku": "MA-CUR-WS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCR48",
+        "order_id": "HUB-CCR48",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1700",
+                "sku": { "key": "ven-ccr48", "value": "VEN-CCR48" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved With Strapping 48\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccr48-raw-4836", "value": "CCR48-RAW-4836" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-CCX54",
+      "incoming_sku": "CCX54",
+      "hub_master_sku": "MA-CUR-NS-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-CCX54",
+        "order_id": "HUB-CCX54",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1696",
+                "sku": { "key": "ven-ccx54", "value": "VEN-CCX54" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Curved 54\"",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "ccx54-raw-5436", "value": "CCX54-RAW-5436" }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "HUB-BWTBLK",
+      "incoming_sku": "BWTBLK",
+      "hub_master_sku": "MA-BOX-NS-TRM-ID18-INST",
+      "category": "Wood Hoods",
+      "payload": {
+        "is_partner": "1",
+        "platform_type": "wp",
+        "partner_name": "ManualQAPartner",
+        "is_enable_bol_creation": "1",
+        "is_enable_tracking_info": "1",
+        "title": "#HUB-BWTBLK",
+        "order_id": "HUB-BWTBLK",
+        "order_date": "2026-06-22 10:01:14",
+        "order_status": "In Production",
+        "custom_color_match": "0",
+        "estimated_shipping_date": "2026-07-06",
+        "origin": "tensesalt.s2-tastewp.com",
+        "partner_rl_info": { "name": "ManualQAPartner", "email": "rakibul@hypemill.com", "phone": "4327891234" },
+        "data": {
+          "payment_method": "cashondelivery",
+          "payment_method_title": "Cash on delivery",
+          "customer_note": "",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "email": "rakibul1@wppool.dev",
+            "phone": "+14327891234"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "123 Palm Street Orlando, FL 32801",
+            "address_2": "",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "US",
+            "phone": "+14327891234"
+          },
+          "line_items": {
+            "order_total": "1430",
+            "total_quantity": "1",
+            "line_items": [
+              {
+                "product_id": "1746",
+                "sku": { "key": "ven-bwtblk", "value": "VEN-BWTBLK" },
+                "product_img_url": "https://hoodslypartnersconnector3.kinsta.cloud/wp-content/uploads/2024/10/Raw-Cropped.jpg",
+                "product_name": "Box Without Trim (Black)",
+                "product_catName": "Wood Hoods",
+                "product_cat": "wood-hoods-product-category",
+                "item_total": "1430",
+                "item_total_tax": "0",
+                "quantity": "1",
+                "sku_gen": { "key": "bwtblk-hoobla00001-3636", "value": "BWTBLK-HOOBLA00001-3636" }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "plugin": {
+    "searchTerm": "Hoodsly Partners Connector",
+    "wppoolMarker": "WPPOOL"
+  },
+  "settings": {
+    "connectedPartnerName": "Automation_Partner",
+    "bolCompanyName": "HoodslyHub Inc.",
+    "bolCompanyEmail": "support@hoodslyhub.com",
+    "bolCompanyPhone": "9866543310"
+  },
+  "products": {
+    "sampleProductName": "Box With Trim",
+    "expectedColors": ["Primed / Paint Ready ($50)", "Shaker Black", "Black Paint ($300)", "Gale Force Paint ($300)"],
+    "expectedVentilationOptions": ["None", "Broan", "Hauslane", "ZLine", "TradeWinds", "Vent-A-Hood"],
+    "expectedTrimOptions": [
+      "Classic Trim (Adds 1.5\" To Overall Width)",
+      "Block Trim (Adds 1.5\" To Overall Width)",
+      "Flat Trim (Adds .5\" To Overall Width)"
+    ]
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "_meta": {
+    "vendor": "CLIQ Studios",
+    "format": "CLIQ Studios native payload — verbatim as sent to Hub",
+    "endpoint": "POST https://api-v3.hoodslyhub.com/v1/order/create",
+    "endpoint_legacy_shim": "POST /wp-json/cliqstudio/v1/order",
+    "auth_header": "X-API-Key: {{CLIQ_API_KEY}}",
+    "notes": [
+      "order_id prefix convention: CLIQ-{number} (e.g. CLIQ-27006985)",
+      "origin: 'CLIQ' (uppercase)",
+      "vent: comma-separated ventilation SKUs — TW* prefix or 698-* prefix, merged onto hood item",
+      "mod_sku: comma-separated HUMAN-READABLE modifier descriptions (e.g. 'Extend Chimney 6\",Reduce Height by 1\"')",
+      "note: optional per-line-item note for Hub operators",
+      "instruction: top-level field for BOL/special handling instructions",
+      "No billing address — Hub copies billing from shipping",
+      "Hub order id: CLIQ-{order_id}-hood"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "CLIQ-001",
+      "title": "Smoke — single hood, no vent, no modifiers",
+      "description": "Minimal valid CLIQ order. One hood SKU, empty vent and mod_sku. Verifies baseline CLIQ order creation with billing copied from shipping.",
+      "payload": {
+        "order_id": "CLIQ-QA-001",
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "TEST Rakibul's Test Company",
+            "last_name": "",
+            "address_1": "3707 Cypress Creek Pkwy Ste 300",
+            "address_2": "",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77067",
+            "country": "US",
+            "phone": "8332290009"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-3030-WH",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "note": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "CLIQ",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "CLIQ-002",
+      "title": "Hood with vent SKUs (TW* + 698-* prefix) — merged onto hood item",
+      "description": "Hood with both vent SKU patterns: TW* (TradeWinds) and 698-* (Broan/generic). Verifies both vent prefix patterns are detected and merged onto the hood item.",
+      "payload": {
+        "order_id": "CLIQ-QA-002",
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "TEST Rakibul's Test Company",
+            "last_name": "",
+            "address_1": "3707 Cypress Creek Pkwy Ste 300",
+            "address_2": "",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77067",
+            "country": "US",
+            "phone": "8332290009"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-3030-WH",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "TW39030, 698-28",
+                "mod_sku": "",
+                "note": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "CLIQ",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "CLIQ-003",
+      "title": "Hood with mod_sku — human-readable modifier descriptions",
+      "description": "Hood with CLIQ's human-readable mod_sku string format. Verifies Hub parses the comma-separated modifier descriptions and maps them to SKU modifiers.",
+      "payload": {
+        "order_id": "CLIQ-QA-003",
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "TEST Rakibul's Test Company",
+            "last_name": "",
+            "address_1": "3707 Cypress Creek Pkwy Ste 300",
+            "address_2": "",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77067",
+            "country": "US",
+            "phone": "8332290009"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-3636-WH",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "Extend Chimney 6\",Reduce Height by 1\"",
+                "note": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "CLIQ",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "CLIQ-004",
+      "title": "Hood with all modifier types in mod_sku — chimney + height + depth",
+      "description": "Hood with three modifier descriptions in mod_sku (identical to the real payload example). Verifies full modifier parsing: chimney extension, reduce height, increase depth.",
+      "payload": {
+        "order_id": "CLIQ-QA-004",
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "TEST Rakibul's Test Company",
+            "last_name": "",
+            "address_1": "3707 Cypress Creek Pkwy Ste 300",
+            "address_2": "",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77067",
+            "country": "US",
+            "phone": "8332290009"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-3030-WH",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "TW39030, 698-28",
+                "mod_sku": "Extend Chimney 6\",Reduce Height by 1\",Increase Interior Depth to 19.3125\"",
+                "note": "This is test note"
+              }
+            ]
+          }
+        },
+        "instruction": "Special instruction for bol",
+        "origin": "CLIQ",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "CLIQ-005",
+      "title": "Multiple hood SKUs — different sizes",
+      "description": "Two different hood SKUs in the same order (CSX-3030-WH and CSX-3636-WH). Verifies multi-item CLIQ hood orders group correctly into a single CLIQ-{id}-hood order.",
+      "payload": {
+        "order_id": "CLIQ-QA-005",
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "TEST Rakibul's Test Company",
+            "last_name": "",
+            "address_1": "3707 Cypress Creek Pkwy Ste 300",
+            "address_2": "",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77067",
+            "country": "US",
+            "phone": "8332290009"
+          },
+          "line_items": {
+            "total_quantity": 2,
+            "line_items": [
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-3030-WH",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "note": ""
+              },
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-3636-WH",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "TW39030",
+                "mod_sku": "",
+                "note": "Second hood with vent"
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "CLIQ",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "CLIQ-006",
+      "title": "With instruction for BOL — special handling note",
+      "description": "Order includes an instruction string for BOL/special handling. Verifies the instruction is stored and visible to operators on the Hub order.",
+      "payload": {
+        "order_id": "CLIQ-QA-006",
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "TEST Rakibul's Test Company",
+            "last_name": "",
+            "address_1": "3707 Cypress Creek Pkwy Ste 300",
+            "address_2": "",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77067",
+            "country": "US",
+            "phone": "8332290009"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-3036-WH",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "note": ""
+              }
+            ]
+          }
+        },
+        "instruction": "Call Rakibul Islam @ +15129619328 before scheduling delivery",
+        "origin": "CLIQ",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "CLIQ-007",
+      "title": "Unmapped SKU — Hub drops item, expects 422 if only item",
+      "description": "Hood SKU is not in Hub's CLIQ SKU mapping sheet. Unmapped CLIQ SKUs are DROPPED (not queued). With no mappable items remaining, Hub returns 422.",
+      "expected_status": 422,
+      "expected_response": {
+        "success": false,
+        "message": "No mappable line items in payload"
+      },
+      "payload": {
+        "order_id": "CLIQ-QA-007",
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "TEST Rakibul's Test Company",
+            "last_name": "",
+            "address_1": "3707 Cypress Creek Pkwy Ste 300",
+            "address_2": "",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77067",
+            "country": "US",
+            "phone": "8332290009"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "62351",
+                "sku_code": "CSX-UNMAPPED-9999",
+                "product_name": "CLIQ order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "note": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "CLIQ",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    }
+  ]
+}

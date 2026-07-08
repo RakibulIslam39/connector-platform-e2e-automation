@@ -1,0 +1,458 @@
+{
+  "_meta": {
+    "vendor": "KCD",
+    "format": "KCD native payload — verbatim as sent to Hub",
+    "endpoint": "POST https://api-v3.hoodslyhub.com/v1/order/create",
+    "endpoint_legacy_shim": "POST /wp-json/kcd/v1/order",
+    "auth_header": "X-API-Key: {{KCD_API_KEY}}",
+    "order_id_convention": "KCD-{number}-test-{sequence} for test orders (e.g. KCD-27015747-test-001)",
+    "confirmed_working_reference": "KCD-27015747-test-002 (hood BF-HACT3030 + shelf SW-FS30, vent LB30430+BL23423)",
+    "notes": [
+      "blindShipping: true → company_info.blindShippingAddress is used as the outbound ship-from; customer only sees their shipping address",
+      "blindShipping: false → company_info.blindShippingAddress is ignored; company_info.company_name only is sent",
+      "vent: comma-separated ventilation SKUs — merged onto hood line item, never standalone items",
+      "mod_sku: comma-separated modifier SKUs — merged onto hood line item",
+      "reduce (OPTIONAL on each line_item): integer — reduce height value, omit field entirely if not needed",
+      "ship_date (OPTIONAL top-level): ISO date string — becomes estimated shipping date in Hub; omit if unknown",
+      "Hood and shelf SKUs split into separate Hub orders: {order_id}-hood and {order_id}-shelves",
+      "order_date format: ISO 8601 with milliseconds — '2025-09-16T14:06:48.898Z'"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "KCD-001",
+      "title": "Smoke — single hood, no vent, no modifiers, blind shipping OFF",
+      "description": "Minimal valid KCD order. One hood SKU, no vent, no mod_sku, blindShipping false. Verifies baseline order creation.",
+      "payload": {
+        "order_id": "KCD-001-test",
+        "special_po": "SPO-001",
+        "sales_order_number": "SO-9001",
+        "blindShipping": false,
+        "template_id": "KCD17408",
+        "company_info": {
+          "company_name": "Kitchen Cabinet Distributors"
+        },
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "5630 Roaring Branch Road",
+            "address_2": "",
+            "city": "Columbus",
+            "state": "GA",
+            "postcode": "31904",
+            "country": "US",
+            "phone": "+15129619328"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "60170",
+                "sku_code": "BF-HACT3036",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "item_description": "Hood 30x36 Raw",
+                "operationNotes": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "KCD",
+        "order_date": "2026-06-10T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "KCD-002",
+      "title": "Hood with vent + shelf — confirmed working reference payload",
+      "description": "Mirrors the confirmed working payload (KCD-27015747-test-002): hood BF-HACT3030 with vent SKUs LB30430+BL23423, plus shelf SW-FS30. Verifies vent merges onto hood item and order splits into -hood and -shelves.",
+      "confirmed_reference": "KCD-27015747-test-002",
+      "payload": {
+        "order_id": "KCD-27015747-test-002",
+        "special_po": "277665",
+        "sales_order_number": "SO503288",
+        "blindShipping": true,
+        "template_id": "KCD17408",
+        "company_info": {
+          "company_name": "RTA Cabinet Store",
+          "blindShippingAddress": {
+            "address_1": "217 N Seminary St",
+            "address_2": "",
+            "city": "Florence",
+            "state": "AL",
+            "postcode": "35660",
+            "country": "US"
+          }
+        },
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "5630 Roaring Branch Road",
+            "address_2": "",
+            "city": "Columbus",
+            "state": "GA",
+            "postcode": "31904",
+            "country": "US",
+            "phone": "+15129619328"
+          },
+          "line_items": {
+            "total_quantity": 2,
+            "line_items": [
+              {
+                "product_id": "60170",
+                "sku_code": "BF-HACT3030",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "LB30430, BL23423",
+                "mod_sku": "",
+                "item_description": "",
+                "operationNotes": ""
+              },
+              {
+                "product_id": "60170",
+                "sku_code": "SW-FS30",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "item_description": "",
+                "operationNotes": ""
+              }
+            ]
+          }
+        },
+        "instruction": "Call Rakibul Islam @ +15129619328",
+        "origin": "KCD",
+        "order_date": "2025-09-16T14:06:48.898Z"
+      }
+    },
+    {
+      "id": "KCD-003",
+      "title": "Hood with mod_sku modifier — merged onto hood item",
+      "description": "Single hood with a modifier SKU. Verifies mod_sku is merged onto the hood line item and not created as a separate order item.",
+      "payload": {
+        "order_id": "KCD-003-test",
+        "special_po": "SPO-003",
+        "sales_order_number": "SO-9003",
+        "blindShipping": false,
+        "template_id": "KCD17408",
+        "company_info": {
+          "company_name": "Kitchen Cabinet Distributors"
+        },
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "5630 Roaring Branch Road",
+            "address_2": "",
+            "city": "Columbus",
+            "state": "GA",
+            "postcode": "31904",
+            "country": "US",
+            "phone": "+15129619328"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "60170",
+                "sku_code": "BF-HACT3636",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "MODHCE24",
+                "item_description": "Hood 36x36 with chimney extension modifier",
+                "operationNotes": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "KCD",
+        "order_date": "2026-06-10T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "KCD-004",
+      "title": "Hood + vent + mod_sku combined — all merged onto hood item",
+      "description": "Hood with both vent SKUs and a modifier SKU. Verifies all three are merged — prices summed, attributes combined.",
+      "payload": {
+        "order_id": "KCD-004-test",
+        "special_po": "SPO-004",
+        "sales_order_number": "SO-9004",
+        "blindShipping": false,
+        "template_id": "KCD17408",
+        "company_info": {
+          "company_name": "Kitchen Cabinet Distributors"
+        },
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "5630 Roaring Branch Road",
+            "address_2": "",
+            "city": "Columbus",
+            "state": "GA",
+            "postcode": "31904",
+            "country": "US",
+            "phone": "+15129619328"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "60170",
+                "sku_code": "BF-HACT3630",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "LB30430, BL23423",
+                "mod_sku": "MODHCE24",
+                "item_description": "Hood 36x30 with vent + modifier",
+                "operationNotes": "Expedite if possible"
+              }
+            ]
+          }
+        },
+        "instruction": "Call Rakibul Islam @ +15129619328",
+        "origin": "KCD",
+        "order_date": "2026-06-10T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "KCD-005",
+      "title": "Hood with reduce field (optional) — reduce height",
+      "description": "Hood line item includes the optional 'reduce' integer field. Verifies Hub applies the reduce height value when the field is present. Omit the field entirely (do not send null) when not needed.",
+      "payload": {
+        "order_id": "KCD-005-test",
+        "special_po": "SPO-005",
+        "sales_order_number": "SO-9005",
+        "blindShipping": false,
+        "template_id": "KCD17408",
+        "company_info": {
+          "company_name": "Kitchen Cabinet Distributors"
+        },
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "5630 Roaring Branch Road",
+            "address_2": "",
+            "city": "Columbus",
+            "state": "GA",
+            "postcode": "31904",
+            "country": "US",
+            "phone": "+15129619328"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "60170",
+                "sku_code": "BF-HACT3030",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "reduce": 6,
+                "item_description": "Hood with reduce height 6\"",
+                "operationNotes": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "KCD",
+        "order_date": "2026-06-10T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "KCD-006",
+      "title": "Blind shipping ON — blindShippingAddress used as outbound ship-from",
+      "description": "blindShipping: true with a company blindShippingAddress. Verifies Hub uses the blind shipping address as the outbound origin and does not expose it to the end customer.",
+      "payload": {
+        "order_id": "KCD-006-test",
+        "special_po": "SPO-006",
+        "sales_order_number": "SO-9006",
+        "blindShipping": true,
+        "template_id": "KCD17408",
+        "company_info": {
+          "company_name": "RTA Cabinet Store",
+          "blindShippingAddress": {
+            "address_1": "217 N Seminary St",
+            "address_2": "",
+            "city": "Florence",
+            "state": "AL",
+            "postcode": "35660",
+            "country": "US"
+          }
+        },
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "5630 Roaring Branch Road",
+            "address_2": "",
+            "city": "Columbus",
+            "state": "GA",
+            "postcode": "31904",
+            "country": "US",
+            "phone": "+15129619328"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "60170",
+                "sku_code": "BF-HACT3036",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "",
+                "mod_sku": "",
+                "item_description": "Hood 30x36 Blind Ship",
+                "operationNotes": ""
+              }
+            ]
+          }
+        },
+        "instruction": "",
+        "origin": "KCD",
+        "order_date": "2026-06-10T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "KCD-007",
+      "title": "With ship_date + instruction — scheduled delivery",
+      "description": "Includes optional ship_date (becomes estimated shipping date) and instruction. Verifies ship_date is stored on the Hub order and instruction is visible to operators.",
+      "payload": {
+        "order_id": "KCD-007-test",
+        "special_po": "SPO-007",
+        "sales_order_number": "SO-9007",
+        "blindShipping": false,
+        "template_id": "KCD17408",
+        "company_info": {
+          "company_name": "Kitchen Cabinet Distributors"
+        },
+        "data": {
+          "billing": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "431 Milburnie Lake Drive",
+            "address_2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "postcode": "27610",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "8332290009"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "5630 Roaring Branch Road",
+            "address_2": "",
+            "city": "Columbus",
+            "state": "GA",
+            "postcode": "31904",
+            "country": "US",
+            "phone": "+15129619328"
+          },
+          "line_items": {
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "60170",
+                "sku_code": "BF-HACT3636",
+                "product_name": "KCD order",
+                "quantity": 1,
+                "vent": "LB30430",
+                "mod_sku": "",
+                "item_description": "Hood 36x36 scheduled",
+                "operationNotes": "Do not ship before scheduled date"
+              }
+            ]
+          }
+        },
+        "instruction": "Call Rakibul Islam @ +15129619328 before dispatch",
+        "origin": "KCD",
+        "order_date": "2026-06-10T00:00:00.000Z",
+        "ship_date": "2026-06-24"
+      }
+    }
+  ]
+}

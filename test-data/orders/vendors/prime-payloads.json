@@ -1,0 +1,530 @@
+{
+  "_meta": {
+    "vendor": "Prime",
+    "format": "Prime native payload — verbatim as sent to Hub",
+    "endpoint": "POST https://api-v3.hoodslyhub.com/v1/order/create",
+    "endpoint_legacy_shim": "POST /wp-json/prime/v1/order",
+    "auth_header": "X-API-Key: {{PRIME_API_KEY}}",
+    "notes": [
+      "line_items wrapper contains order_total and total_quantity alongside the line_items array",
+      "product_cat and product_catName are ARRAYS (not strings)",
+      "item_total_tax is a string decimal on each line item",
+      "color_options is null when not applicable",
+      "shipping_lines is an OBJECT (not array) — contains limited_access and appt_required booleans",
+      "set_paid: 'false' or 'true' string — controls payment state in Hub",
+      "rl_tracking_number, bill_of_landing_id, bol_pdf, shipping_label are top-level fields (empty on creation)",
+      "origin: 'prime' (lowercase)"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "PRIME-001",
+      "title": "Smoke — single wood hood, set_paid false",
+      "description": "Minimal valid Prime order. One wood hood SKU, set_paid false, standard LTL shipping. Verifies baseline Prime order ingestion.",
+      "payload": {
+        "order_id": "PC-QA-001-test",
+        "data": {
+          "payment_method": "paypal_express",
+          "payment_method_title": "PayPal Express Checkout",
+          "customer_note": null,
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Prime",
+            "last_name": "Cabinetry",
+            "address_1": "1955 Vaughn Rd NW, Suite 106",
+            "address_2": null,
+            "city": "Kennesaw",
+            "state": "GA",
+            "postcode": "30144",
+            "country": "US",
+            "email": "info@primecabintry.com",
+            "phone": "844-540-1885"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "3717 Bloxham Ct",
+            "address_2": "",
+            "city": "Chamblee",
+            "state": "GA",
+            "postcode": "30341",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "4802066820"
+          },
+          "line_items": {
+            "order_total": 1430.0,
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "134917",
+                "sku_code": "WIL-3V3636",
+                "product_name": "Prime Order",
+                "product_cat": ["wood-hood"],
+                "product_catName": ["Wood Hood"],
+                "item_total": 1430.0,
+                "item_total_tax": "114.4000",
+                "quantity": 1,
+                "color_options": null
+              }
+            ]
+          },
+          "shipping_lines": {
+            "method_id": "liftgate_liftgate",
+            "limited_access": false,
+            "appt_required": false,
+            "method_title": "Hoods-LTL FREIGHT:$150.00",
+            "total": "150.0000"
+          }
+        },
+        "rl_tracking_number": "",
+        "bill_of_landing_id": "",
+        "bol_pdf": "",
+        "shipping_label": "",
+        "origin": "prime",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "PRIME-002",
+      "title": "Wood hood, quantity 2",
+      "description": "Single hood SKU with quantity 2. Verifies Hub correctly handles quantity > 1 on Prime orders.",
+      "payload": {
+        "order_id": "PC-QA-002-test",
+        "data": {
+          "payment_method": "paypal_express",
+          "payment_method_title": "PayPal Express Checkout",
+          "customer_note": null,
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Prime",
+            "last_name": "Cabinetry",
+            "address_1": "1955 Vaughn Rd NW, Suite 106",
+            "address_2": null,
+            "city": "Kennesaw",
+            "state": "GA",
+            "postcode": "30144",
+            "country": "US",
+            "email": "info@primecabintry.com",
+            "phone": "844-540-1885"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "3717 Bloxham Ct",
+            "address_2": "",
+            "city": "Chamblee",
+            "state": "GA",
+            "postcode": "30341",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "4802066820"
+          },
+          "line_items": {
+            "order_total": 1581.38,
+            "total_quantity": 2,
+            "line_items": [
+              {
+                "product_id": "134917",
+                "sku_code": "WIL-3V3636",
+                "product_name": "Prime Order",
+                "product_cat": ["wood-hood"],
+                "product_catName": ["Wood Hood"],
+                "item_total": 115.0,
+                "item_total_tax": "9.2000",
+                "quantity": 2,
+                "color_options": null
+              }
+            ]
+          },
+          "shipping_lines": {
+            "method_id": "liftgate_liftgate",
+            "limited_access": true,
+            "appt_required": true,
+            "method_title": "Hoods-LTL FREIGHT:$171.67",
+            "total": "171.6700"
+          }
+        },
+        "rl_tracking_number": "",
+        "bill_of_landing_id": "",
+        "bol_pdf": "",
+        "shipping_label": "",
+        "origin": "prime",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "PRIME-003",
+      "title": "Hood + floating shelf — mixed categories, order split",
+      "description": "One wood hood SKU and one floating shelf SKU. Verifies Hub splits mixed-category Prime orders into separate -hood and -shelves orders.",
+      "payload": {
+        "order_id": "PC-QA-003-test",
+        "data": {
+          "payment_method": "paypal_express",
+          "payment_method_title": "PayPal Express Checkout",
+          "customer_note": null,
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Prime",
+            "last_name": "Cabinetry",
+            "address_1": "1955 Vaughn Rd NW, Suite 106",
+            "address_2": null,
+            "city": "Kennesaw",
+            "state": "GA",
+            "postcode": "30144",
+            "country": "US",
+            "email": "info@primecabintry.com",
+            "phone": "844-540-1885"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "3717 Bloxham Ct",
+            "address_2": "",
+            "city": "Chamblee",
+            "state": "GA",
+            "postcode": "30341",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "4802066820"
+          },
+          "line_items": {
+            "order_total": 1689.38,
+            "total_quantity": 5,
+            "line_items": [
+              {
+                "product_id": "134917",
+                "sku_code": "WIL-3V3636",
+                "product_name": "Prime Order",
+                "product_cat": ["wood-hood"],
+                "product_catName": ["Wood Hood"],
+                "item_total": 1430.0,
+                "item_total_tax": "114.4000",
+                "quantity": 1,
+                "color_options": null
+              },
+              {
+                "product_id": "134923",
+                "sku_code": "FSP-3012DWS",
+                "product_name": "Prime Floating Shelf",
+                "product_cat": ["floating-shelves"],
+                "product_catName": ["Floating Shelves"],
+                "item_total": 108.0,
+                "item_total_tax": "8.6400",
+                "quantity": 4,
+                "color_options": null
+              }
+            ]
+          },
+          "shipping_lines": {
+            "method_id": "liftgate_liftgate",
+            "limited_access": true,
+            "appt_required": true,
+            "method_title": "Hoods/Shelves-LTL FREIGHT:$171.67",
+            "total": "171.6700"
+          }
+        },
+        "rl_tracking_number": "",
+        "bill_of_landing_id": "",
+        "bol_pdf": "",
+        "shipping_label": "",
+        "origin": "prime",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "PRIME-004",
+      "title": "Multiple floating shelf SKUs only",
+      "description": "Order with two different floating shelf SKUs (no hood). Verifies Hub creates only a -shelves order when no hood items are present.",
+      "payload": {
+        "order_id": "PC-QA-004-test",
+        "data": {
+          "payment_method": "paypal_express",
+          "payment_method_title": "PayPal Express Checkout",
+          "customer_note": null,
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Prime",
+            "last_name": "Cabinetry",
+            "address_1": "1955 Vaughn Rd NW, Suite 106",
+            "address_2": null,
+            "city": "Kennesaw",
+            "state": "GA",
+            "postcode": "30144",
+            "country": "US",
+            "email": "info@primecabintry.com",
+            "phone": "844-540-1885"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "3717 Bloxham Ct",
+            "address_2": "",
+            "city": "Chamblee",
+            "state": "GA",
+            "postcode": "30341",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "4802066820"
+          },
+          "line_items": {
+            "order_total": 432.0,
+            "total_quantity": 8,
+            "line_items": [
+              {
+                "product_id": "134923",
+                "sku_code": "FSP-2412ABS",
+                "product_name": "Prime Shelf 24x12",
+                "product_cat": ["floating-shelves"],
+                "product_catName": ["Floating Shelves"],
+                "item_total": 108.0,
+                "item_total_tax": "8.6400",
+                "quantity": 4,
+                "color_options": null
+              },
+              {
+                "product_id": "134923",
+                "sku_code": "FSP-2712AP",
+                "product_name": "Prime Shelf 27x12",
+                "product_cat": ["floating-shelves"],
+                "product_catName": ["Floating Shelves"],
+                "item_total": 108.0,
+                "item_total_tax": "8.6400",
+                "quantity": 4,
+                "color_options": null
+              }
+            ]
+          },
+          "shipping_lines": {
+            "method_id": "liftgate_liftgate",
+            "limited_access": false,
+            "appt_required": false,
+            "method_title": "Shelves-LTL FREIGHT:$85.00",
+            "total": "85.0000"
+          }
+        },
+        "rl_tracking_number": "",
+        "bill_of_landing_id": "",
+        "bol_pdf": "",
+        "shipping_label": "",
+        "origin": "prime",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "PRIME-005",
+      "title": "set_paid: 'true' — payment pre-collected",
+      "description": "Same as PRIME-001 but with set_paid: 'true'. Verifies Hub marks the order as paid on creation rather than pending payment.",
+      "payload": {
+        "order_id": "PC-QA-005-test",
+        "data": {
+          "payment_method": "paypal_express",
+          "payment_method_title": "PayPal Express Checkout",
+          "customer_note": null,
+          "set_paid": "true",
+          "billing": {
+            "first_name": "Prime",
+            "last_name": "Cabinetry",
+            "address_1": "1955 Vaughn Rd NW, Suite 106",
+            "address_2": null,
+            "city": "Kennesaw",
+            "state": "GA",
+            "postcode": "30144",
+            "country": "US",
+            "email": "info@primecabintry.com",
+            "phone": "844-540-1885"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "3717 Bloxham Ct",
+            "address_2": "",
+            "city": "Chamblee",
+            "state": "GA",
+            "postcode": "30341",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "4802066820"
+          },
+          "line_items": {
+            "order_total": 1430.0,
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "134917",
+                "sku_code": "WIL-3V3636",
+                "product_name": "Prime Order",
+                "product_cat": ["wood-hood"],
+                "product_catName": ["Wood Hood"],
+                "item_total": 1430.0,
+                "item_total_tax": "114.4000",
+                "quantity": 1,
+                "color_options": null
+              }
+            ]
+          },
+          "shipping_lines": {
+            "method_id": "liftgate_liftgate",
+            "limited_access": false,
+            "appt_required": false,
+            "method_title": "Hoods-LTL FREIGHT:$150.00",
+            "total": "150.0000"
+          }
+        },
+        "rl_tracking_number": "",
+        "bill_of_landing_id": "",
+        "bol_pdf": "",
+        "shipping_label": "",
+        "origin": "prime",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "PRIME-006",
+      "title": "With customer_note",
+      "description": "Order includes a customer_note string (non-null). Verifies Hub stores the note and it is visible to operators on the order detail.",
+      "payload": {
+        "order_id": "PC-QA-006-test",
+        "data": {
+          "payment_method": "paypal_express",
+          "payment_method_title": "PayPal Express Checkout",
+          "customer_note": "Please call before delivery. Gate code: #1234.",
+          "set_paid": "false",
+          "billing": {
+            "first_name": "Prime",
+            "last_name": "Cabinetry",
+            "address_1": "1955 Vaughn Rd NW, Suite 106",
+            "address_2": null,
+            "city": "Kennesaw",
+            "state": "GA",
+            "postcode": "30144",
+            "country": "US",
+            "email": "info@primecabintry.com",
+            "phone": "844-540-1885"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "3717 Bloxham Ct",
+            "address_2": "",
+            "city": "Chamblee",
+            "state": "GA",
+            "postcode": "30341",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "4802066820"
+          },
+          "line_items": {
+            "order_total": 1430.0,
+            "total_quantity": 1,
+            "line_items": [
+              {
+                "product_id": "134917",
+                "sku_code": "WIL-3V3636",
+                "product_name": "Prime Order",
+                "product_cat": ["wood-hood"],
+                "product_catName": ["Wood Hood"],
+                "item_total": 1430.0,
+                "item_total_tax": "114.4000",
+                "quantity": 1,
+                "color_options": null
+              }
+            ]
+          },
+          "shipping_lines": {
+            "method_id": "liftgate_liftgate",
+            "limited_access": true,
+            "appt_required": true,
+            "method_title": "Hoods-LTL FREIGHT:$171.67",
+            "total": "171.6700"
+          }
+        },
+        "rl_tracking_number": "",
+        "bill_of_landing_id": "",
+        "bol_pdf": "",
+        "shipping_label": "",
+        "origin": "prime",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    },
+    {
+      "id": "PRIME-007",
+      "title": "Hood + shelf + limited access + appointment required",
+      "description": "Full-featured order: mixed categories, limited_access delivery, appointment required, and set_paid true. Tests the most complex Prime shipping scenario.",
+      "payload": {
+        "order_id": "PC-QA-007-test",
+        "data": {
+          "payment_method": "paypal_express",
+          "payment_method_title": "PayPal Express Checkout",
+          "customer_note": null,
+          "set_paid": "true",
+          "billing": {
+            "first_name": "Prime",
+            "last_name": "Cabinetry",
+            "address_1": "1955 Vaughn Rd NW, Suite 106",
+            "address_2": null,
+            "city": "Kennesaw",
+            "state": "GA",
+            "postcode": "30144",
+            "country": "US",
+            "email": "info@primecabintry.com",
+            "phone": "844-540-1885"
+          },
+          "shipping": {
+            "first_name": "Rakibul",
+            "last_name": "Islam",
+            "address_1": "3717 Bloxham Ct",
+            "address_2": "",
+            "city": "Chamblee",
+            "state": "GA",
+            "postcode": "30341",
+            "country": "US",
+            "email": "rakibul@hypemill.com",
+            "phone": "4802066820"
+          },
+          "line_items": {
+            "order_total": 1689.38,
+            "total_quantity": 5,
+            "line_items": [
+              {
+                "product_id": "134917",
+                "sku_code": "WIL-3V3636",
+                "product_name": "Prime Order",
+                "product_cat": ["wood-hood"],
+                "product_catName": ["Wood Hood"],
+                "item_total": 1430.0,
+                "item_total_tax": "114.4000",
+                "quantity": 1,
+                "color_options": null
+              },
+              {
+                "product_id": "134923",
+                "sku_code": "FSP-3012DWS",
+                "product_name": "Prime Floating Shelf",
+                "product_cat": ["floating-shelves"],
+                "product_catName": ["Floating Shelves"],
+                "item_total": 108.0,
+                "item_total_tax": "8.6400",
+                "quantity": 4,
+                "color_options": null
+              }
+            ]
+          },
+          "shipping_lines": {
+            "method_id": "liftgate_liftgate",
+            "limited_access": true,
+            "appt_required": true,
+            "method_title": "Hoods/Shelves-LTL FREIGHT:$171.67",
+            "total": "171.6700"
+          }
+        },
+        "rl_tracking_number": "",
+        "bill_of_landing_id": "",
+        "bol_pdf": "",
+        "shipping_label": "",
+        "origin": "prime",
+        "order_date": "2026-06-10 00:00:00"
+      }
+    }
+  ]
+}

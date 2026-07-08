@@ -1,0 +1,12 @@
+{
+  "faqManagement": {
+    "partnerName": "Automation_Partner",
+    "productName": "QSPCCR",
+    "titleText": "Automation FAQ Title",
+    "descriptionText": "Updated FAQ content for automated verification."
+  },
+  "partnerOrderLog": {
+    "partnerName": "Automation_Partner",
+    "orderId": "ORD-0001"
+  }
+}

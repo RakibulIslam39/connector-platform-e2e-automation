@@ -1,0 +1,353 @@
+{
+  "_meta": {
+    "vendor": "USCD",
+    "format": "USCD native webhook event payload — verbatim as sent to Hub",
+    "endpoint": "POST https://api-v3.hoodslyhub.com/v1/order/create",
+    "endpoint_legacy_shim": "POST /wp-json/uscd/v1/order",
+    "auth_header": "X-API-Key: {{USCD_API_KEY}}",
+    "notes": [
+      "USCD pushes webhook events — payload is wrapped in an event envelope: event, event_id, sent_at",
+      "Address is in data.shipto using street1/street2/zip (not address_1/postcode)",
+      "data.shipto.biz is the business/company name, data.shipto.attn is the recipient",
+      "Line items are in data.order_lines[] using sku (not sku_code)",
+      "accessorials control delivery options: residential, appointment, notification, liftgate",
+      "purchase_order and sales_order are the USCD reference numbers",
+      "ship_on becomes the estimated shipping date in Hub"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "USCD-001",
+      "title": "Smoke — single hood, standard residential delivery",
+      "description": "Minimal valid USCD webhook event. One hood SKU, all accessorials true (typical residential delivery). Verifies baseline event ingestion.",
+      "payload": {
+        "event": "order.created",
+        "event_id": "a1b2c3d4-0001-4000-a000-000000000001",
+        "sent_at": "2026-06-10T00:00:00Z",
+        "data": {
+          "purchase_order": "PO-QA-001",
+          "sales_order": "SO-QA-001",
+          "order_date": "2026-06-10",
+          "ship_on": "2026-06-24",
+          "status": "open",
+          "qty_ordered": 1,
+          "qty_shipped": 0,
+          "qty_remaining": 1,
+          "shipto": {
+            "biz": "Rakibul QA Test",
+            "attn": "Rakibul Islam",
+            "phone": "(833) 229-0009",
+            "street1": "5630 Roaring Branch Road",
+            "street2": null,
+            "city": "Columbus",
+            "state": "GA",
+            "zip": "31904",
+            "country": "US"
+          },
+          "accessorials": {
+            "deliver_residential": true,
+            "deliver_appointment": true,
+            "deliver_notification": true,
+            "deliver_liftgate": true
+          },
+          "order_lines": [
+            {
+              "line_id": "QA-001_1",
+              "line_number": 1,
+              "sku": "WIL-3V3036",
+              "description": "Hood 30x36",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "USCD-002",
+      "title": "Hood + floating shelf — two order_lines, order split",
+      "description": "Two line items: one hood SKU and one floating shelf SKU. Verifies Hub splits them into separate hood and shelves orders.",
+      "payload": {
+        "event": "order.created",
+        "event_id": "a1b2c3d4-0002-4000-a000-000000000002",
+        "sent_at": "2026-06-10T00:00:00Z",
+        "data": {
+          "purchase_order": "PO-QA-002",
+          "sales_order": "SO-QA-002",
+          "order_date": "2026-06-10",
+          "ship_on": "2026-06-24",
+          "status": "open",
+          "qty_ordered": 2,
+          "qty_shipped": 0,
+          "qty_remaining": 2,
+          "shipto": {
+            "biz": "Rakibul QA Test",
+            "attn": "Rakibul Islam",
+            "phone": "(833) 229-0009",
+            "street1": "5630 Roaring Branch Road",
+            "street2": null,
+            "city": "Columbus",
+            "state": "GA",
+            "zip": "31904",
+            "country": "US"
+          },
+          "accessorials": {
+            "deliver_residential": true,
+            "deliver_appointment": true,
+            "deliver_notification": true,
+            "deliver_liftgate": true
+          },
+          "order_lines": [
+            {
+              "line_id": "QA-002_1",
+              "line_number": 1,
+              "sku": "WIL-3V3636",
+              "description": "Hood 36x36",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            },
+            {
+              "line_id": "QA-002_2",
+              "line_number": 2,
+              "sku": "FSR-2712UN",
+              "description": "Floating shelf 27x12 Unfinished",
+              "qty_ordered": 2,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "USCD-003",
+      "title": "Multiple hood line items — different SKUs",
+      "description": "Two different hood SKUs in the same order (different sizes). Verifies multi-item hood orders are grouped into a single -hood Hub order.",
+      "payload": {
+        "event": "order.created",
+        "event_id": "a1b2c3d4-0003-4000-a000-000000000003",
+        "sent_at": "2026-06-10T00:00:00Z",
+        "data": {
+          "purchase_order": "PO-QA-003",
+          "sales_order": "SO-QA-003",
+          "order_date": "2026-06-10",
+          "ship_on": "2026-06-24",
+          "status": "open",
+          "qty_ordered": 2,
+          "qty_shipped": 0,
+          "qty_remaining": 2,
+          "shipto": {
+            "biz": "Rakibul QA Test",
+            "attn": "Rakibul Islam",
+            "phone": "(833) 229-0009",
+            "street1": "431 Milburnie Lake Drive",
+            "street2": "Suite 100",
+            "city": "Raleigh",
+            "state": "NC",
+            "zip": "27610",
+            "country": "US"
+          },
+          "accessorials": {
+            "deliver_residential": false,
+            "deliver_appointment": false,
+            "deliver_notification": true,
+            "deliver_liftgate": false
+          },
+          "order_lines": [
+            {
+              "line_id": "QA-003_1",
+              "line_number": 1,
+              "sku": "WIL-3V3036",
+              "description": "Hood 30x36",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            },
+            {
+              "line_id": "QA-003_2",
+              "line_number": 2,
+              "sku": "WIL-3V4848SA",
+              "description": "Hood 48x48 SA",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "USCD-004",
+      "title": "All accessorials true — liftgate + appointment + residential + notification",
+      "description": "All four delivery accessorial flags set to true. Verifies Hub stores all accessorial flags correctly on the Hub order for the carrier.",
+      "payload": {
+        "event": "order.created",
+        "event_id": "a1b2c3d4-0004-4000-a000-000000000004",
+        "sent_at": "2026-06-10T00:00:00Z",
+        "data": {
+          "purchase_order": "PO-QA-004",
+          "sales_order": "SO-QA-004",
+          "order_date": "2026-06-10",
+          "ship_on": "2026-06-24",
+          "status": "open",
+          "qty_ordered": 1,
+          "qty_shipped": 0,
+          "qty_remaining": 1,
+          "shipto": {
+            "biz": "Example Business",
+            "attn": "Example Recipient",
+            "phone": "(555) 010-0100",
+            "street1": "123 Example St",
+            "street2": null,
+            "city": "Carmel",
+            "state": "IN",
+            "zip": "46032",
+            "country": "US"
+          },
+          "accessorials": {
+            "deliver_residential": true,
+            "deliver_appointment": true,
+            "deliver_notification": true,
+            "deliver_liftgate": true
+          },
+          "order_lines": [
+            {
+              "line_id": "QA-004_1",
+              "line_number": 1,
+              "sku": "WIL-3V3636",
+              "description": "Hood 36x36",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "USCD-005",
+      "title": "All accessorials false — commercial/freight delivery",
+      "description": "All four accessorial flags set to false (commercial dock delivery). Verifies Hub handles commercial delivery without add-on services.",
+      "payload": {
+        "event": "order.created",
+        "event_id": "a1b2c3d4-0005-4000-a000-000000000005",
+        "sent_at": "2026-06-10T00:00:00Z",
+        "data": {
+          "purchase_order": "PO-QA-005",
+          "sales_order": "SO-QA-005",
+          "order_date": "2026-06-10",
+          "ship_on": "2026-06-24",
+          "status": "open",
+          "qty_ordered": 1,
+          "qty_shipped": 0,
+          "qty_remaining": 1,
+          "shipto": {
+            "biz": "Commercial Warehouse Co",
+            "attn": "Receiving Dept",
+            "phone": "(555) 222-3333",
+            "street1": "7890 Industrial Pkwy",
+            "street2": "Dock B",
+            "city": "Dallas",
+            "state": "TX",
+            "zip": "75201",
+            "country": "US"
+          },
+          "accessorials": {
+            "deliver_residential": false,
+            "deliver_appointment": false,
+            "deliver_notification": false,
+            "deliver_liftgate": false
+          },
+          "order_lines": [
+            {
+              "line_id": "QA-005_1",
+              "line_number": 1,
+              "sku": "WIL-3V3036",
+              "description": "Hood 30x36",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "USCD-006",
+      "title": "Multi-item — 4 qty ordered, partial: 1 remaining",
+      "description": "qty_ordered: 4 but qty_remaining: 1. Verifies Hub handles partial shipment scenarios correctly — only remaining qty creates new Hub order lines.",
+      "payload": {
+        "event": "order.created",
+        "event_id": "a1b2c3d4-0006-4000-a000-000000000006",
+        "sent_at": "2026-06-10T00:00:00Z",
+        "data": {
+          "purchase_order": "PO39201820392",
+          "sales_order": "9202224480",
+          "order_date": "2026-06-10",
+          "ship_on": "2026-06-12",
+          "status": "open",
+          "qty_ordered": 4,
+          "qty_shipped": 0,
+          "qty_remaining": 1,
+          "shipto": {
+            "biz": "Rakibul QA Test",
+            "attn": "Rakibul Islam",
+            "phone": "(833) 229-0009",
+            "street1": "5630 Roaring Branch Road",
+            "street2": null,
+            "city": "Columbus",
+            "state": "GA",
+            "zip": "31904",
+            "country": "US"
+          },
+          "accessorials": {
+            "deliver_residential": true,
+            "deliver_appointment": true,
+            "deliver_notification": true,
+            "deliver_liftgate": true
+          },
+          "order_lines": [
+            {
+              "line_id": "QA-006_1",
+              "line_number": 1,
+              "sku": "WIL-3V3636",
+              "description": "Hood 36x36",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            },
+            {
+              "line_id": "QA-006_2",
+              "line_number": 2,
+              "sku": "FSR-2712UN",
+              "description": "Floating Shelf 27x12",
+              "qty_ordered": 1,
+              "status": "open",
+              "shipments": [],
+              "created_at": "2026-06-10T00:00:00Z",
+              "updated_at": "2026-06-10T00:00:00Z"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+# name: E2E Tests — Nightly Regression
+
+# on:
+#   schedule:
+#     # Runs at 01:00 UTC every day (7:00 AM Bangladesh Time)
+#     - cron: '0 1 * * *'
+#   workflow_dispatch:
+#     inputs:
+#       project:
+#         description: 'Browser project to run (chromium, firefox, webkit)'
+#         required: false
+#         default: 'chromium'
+
+# env:
+#   ENV: staging
+#   NODE_VERSION: '20'
+
+# jobs:
+#   nightly-regression:
+#     name: Nightly Full Regression
+#     runs-on: ubuntu-latest
+#     env:
+#       BASE_URL: ${{ secrets.BASE_URL }}
+#       CONNECTOR_API_BASE_URL: ${{ secrets.CONNECTOR_API_BASE_URL }}
+#       CONNECTOR_API_SIGNATURE: ${{ secrets.CONNECTOR_API_SIGNATURE }}
+#       HUB_BASE_URL: ${{ secrets.HUB_BASE_URL }}
+#       WRH_HUB_BASE_URL: ${{ secrets.WRH_HUB_BASE_URL }}
+#       WIKS_HUB_BASE_URL: ${{ secrets.WIKS_HUB_BASE_URL }}
+#       WP_ADMIN_USER: ${{ secrets.WP_ADMIN_USER }}
+#       WP_ADMIN_PASS: ${{ secrets.WP_ADMIN_PASS }}
+#       WP_PARTNER_USER: ${{ secrets.WP_PARTNER_USER }}
+#       WP_PARTNER_PASS: ${{ secrets.WP_PARTNER_PASS }}
+#       HUB_ADMIN_USER: ${{ secrets.HUB_ADMIN_USER }}
+#       HUB_ADMIN_PASS: ${{ secrets.HUB_ADMIN_PASS }}
+
+#     steps:
+#       - uses: actions/checkout@v4
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ env.NODE_VERSION }}
+#           cache: 'npm'
+
+#       - name: Install dependencies
+#         run: npm ci
+
+#       - name: Install Playwright browsers
+#         run: npx playwright install --with-deps
+
+#       - name: Run full regression suite
+#         run: npm run test:regression
+
+#       - name: Upload HTML report
+#         if: always()
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: nightly-regression-report-${{ github.run_id }}
+#           path: reports/
+#           retention-days: 30
+
+#       - name: Upload traces on failure
+#         if: failure()
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: nightly-failure-traces-${{ github.run_id }}
+#           path: test-results/
+#           retention-days: 14
