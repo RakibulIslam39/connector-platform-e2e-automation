@@ -1,7 +1,33 @@
 # Project Memory — Connector Platform 2.0 E2E Automation
 
-> Last updated: 2026-07-03 | Framework version: 1.2.0 Reference this file at the
+> Last updated: 2026-07-19 | Framework version: 1.2.0 Reference this file at the
 > start of every new chat to restore full project context.
+
+> **Suite scope (2026-07-19 audit cleanup):** the active suite is **20 tests in
+> 5 spec files** — `auth/user-login-validation`,
+> `connector/attribute-product-validation` (TC-AT-007),
+> `connector/attribute-types` (TC-AT-001..006), `connector/partner-creation-v2`
+> (TC-CP-000..003), `connector/product-creation` (TC-PC-001..008). Deleted: the
+> duplicate v1 `partner-creation.spec.js`, 17 fully-commented backlog specs,
+> dead `helpers/`, `common/index.js` barrel,
+> `common/utils/{order-helper,sku-helper}.js`, `connector-dashboard.page.js`,
+> and 15 orphaned page objects. `page.fixture.js` now registers only the 5
+> in-use fixtures (partnerFormPage, partnerCleanupPage, productCreationPage,
+> attributeTypesPage, connectorSettingsPage); PartnerProduct Edit/View pages are
+> constructed directly in specs/services. Remaining 9 page objects are all in
+> use. Known debt: ~52 `waitForTimeout` sleeps in the SPA POMs (legitimate
+> debounce/settle — replace incrementally with live-run verification, not
+> blind).
+
+> **Attribute display rule (2026-07-21):** an imported product shows only the
+> **intersection** of the options the product carries AND the options enabled at
+> partner creation (Partner Colors / Ventilations / Trims / Sizes). An option
+> not enabled for the partner is hidden on every product even if the product
+> selected it. Therefore attribute validation is **subset / no-extras**, never
+> strict equality: every option shown must be within the selected set, but a
+> product may show fewer — or zero — of them. Empty intersection (0 imported) is
+> valid, not a failure. Applies to both `ImportValidationService` (partner flow)
+> and the product-flow TC-PC-003 exact-group check.
 
 ---
 
@@ -298,25 +324,25 @@ connector-platform2.0-e2e-automation/
 
 ## 9. Project Decisions & Standards
 
-| Decision                                            | Rationale                                                                                                               |
-| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| JavaScript (not TypeScript)                         | Faster iteration, lower entry barrier for team                                                                          |
-| CommonJS (require/module.exports)                   | Consistent with WordPress plugin ecosystem                                                                              |
-| Page Object Model                                   | Industry standard, maintainability, DRY                                                                                 |
-| Single fixture entry point (fixtures/index.js)      | One import for all fixtures in specs                                                                                    |
-| Auth state persisted to disk                        | Avoid re-logging in for every test, speeds up suite                                                                     |
-| Environment-based .env files                        | Clear separation of local/staging/CI config                                                                             |
-| Tags with @ prefix                                  | Consistent with Playwright grep pattern matching                                                                        |
-| loadTestData() / loadJsonConfig()                   | Centralized JSON data access, consistent path resolution                                                                |
-| retryApiCall() wrapping                             | API flakiness handled transparently                                                                                     |
-| winston logger                                      | Structured logging, log levels, file output                                                                             |
-| test.describe.serial() for multi-scenario flows     | Enforces sequential execution and allows module-level runtimeState sharing without file I/O                             |
-| Module-level runtimeState singleton                 | Cross-scenario data (API key, partner name, selected attributes) shared in-memory across all three onboarding scenarios |
-| connectorSettingsPage uses separate browser context | Partner site context isolated from Connector Hub admin session (different origin, different credentials)                |
-| WpCliService SSH + REST fallback                    | WP-CLI preferred for Scenario 3 attribute validation; REST API used when SSH is unavailable (SaaS/cloud envs)           |
-| expect.soft() in Scenario 3                         | All attribute validations run to completion even if individual checks fail; failures aggregated in report               |
-| generateCustomPrice(minPrice) for B2C rule          | Guarantees custom price >= current price at data-generation time, preventing form submission failures                   |
-| Custom prices are whole numbers                     | The Primed/Paint Ready custom-price field only accepts integers; generator rounds UP (Math.ceil) to stay >= current     |
+| Decision                                            | Rationale                                                                                                                                                 |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| JavaScript (not TypeScript)                         | Faster iteration, lower entry barrier for team                                                                                                            |
+| CommonJS (require/module.exports)                   | Consistent with WordPress plugin ecosystem                                                                                                                |
+| Page Object Model                                   | Industry standard, maintainability, DRY                                                                                                                   |
+| Single fixture entry point (fixtures/index.js)      | One import for all fixtures in specs                                                                                                                      |
+| Auth state persisted to disk                        | Avoid re-logging in for every test, speeds up suite                                                                                                       |
+| Environment-based .env files                        | Clear separation of local/staging/CI config                                                                                                               |
+| Tags with @ prefix                                  | Consistent with Playwright grep pattern matching                                                                                                          |
+| loadTestData() / loadJsonConfig()                   | Centralized JSON data access, consistent path resolution                                                                                                  |
+| retryApiCall() wrapping                             | API flakiness handled transparently                                                                                                                       |
+| winston logger                                      | Structured logging, log levels, file output                                                                                                               |
+| test.describe.serial() for multi-scenario flows     | Enforces sequential execution and allows module-level runtimeState sharing without file I/O                                                               |
+| Module-level runtimeState singleton                 | Cross-scenario data (API key, partner name, selected attributes) shared in-memory across all three onboarding scenarios                                   |
+| connectorSettingsPage uses separate browser context | Partner site context isolated from Connector Hub admin session (different origin, different credentials)                                                  |
+| WpCliService SSH + REST fallback                    | WP-CLI preferred for Scenario 3 attribute validation; REST API used when SSH is unavailable (SaaS/cloud envs)                                             |
+| expect.soft() in Scenario 3                         | All attribute validations run to completion even if individual checks fail; failures aggregated in report                                                 |
+| generateCustomPrice(minPrice) for B2C rule          | Guarantees custom price >= current price at data-generation time, preventing form submission failures                                                     |
+| Custom prices are whole numbers                     | The Primed/Paint Ready custom-price field only accepts integers; generator rounds UP (Math.ceil) to stay >= current                                       |
 | Custom price shows as "Current Price" on partner    | The custom price set at Partner Creation is displayed in the imported product's Current Price column (Custom Price is the partner's own, empty, override) |
 
 ### Standing convention — toggle buttons (enable-if-disabled, skip-if-enabled)
@@ -391,3 +417,85 @@ and conditional test logic.
 
 > Migration history moved to `docs/migration-notes.md` (was the mis-named
 > `docs/margememory.md`).
+
+---
+
+## 12. Attribute Types Suite + Attribute→Product→Import (2026-07-17)
+
+### 12.1 Attribute Types (`AttributeTypesPage` / `attribute-types.spec.js`)
+
+Serial suite: **TC-AT-001** create type (random input Type + random "Show in
+Partner Page") → **TC-AT-002** add value → **TC-AT-003** edit type →
+**TC-AT-004** edit value → **TC-AT-005** own-filter visibility → **TC-AT-006**
+opposite-filter hidden. TC-005/006 reuse the TC-001 type and assert against the
+**stored** toggle state.
+
+Conventions pinned from live DOM:
+
+- **"Show in Partner Page" toggle** = `<label>` wrapping a `sr-only`
+  `input[type=checkbox]` (the true state) + a visible `.w-11` track. Read state
+  with `checkbox.isChecked()` (works despite sr-only); **flip by clicking the
+  `.w-11` track** (clicking the sr-only input fails actionability).
+  `setShowInPartnerPage(enabled)` is idempotent and returns the **verified**
+  post-set state — callers store what the switch actually landed on, not intent.
+- **Attribute-type filter** `<select>` values: `all` / `0` = Product Attribute
+  Type / `1` = Partner Attribute Type. Located by its "Partner Attribute Type"
+  option (stable vs class hashes).
+- **Filter persists across views** in the SPA — `_openTypeRow` resets the filter
+  to `all` before searching so edit/manage actions find the row regardless of a
+  leftover filter.
+- `ensureProductAttributeType(name)` — if the type only shows under the Partner
+  filter, edit it and disable the toggle so it becomes a Product Attribute Type
+  (required before it can be added to a product).
+- Random input Type via `selectRandomType(exclude)` /
+  `createAttributeType({ excludeTypes })`. **Text/Textarea render a free text
+  input** (an "Enable for this product" switch in the editor, no value/price) —
+  exclude them from flows that validate a value/Base Price.
+
+### 12.2 Attribute → Product → Import (`attribute-product-import.spec.js`, TC-AT-007)
+
+Self-contained: create Product-type attribute+value → add it to the **Double
+Curved** hub product (`addAttributeTypeToProduct`) → **clear caches** → import
+on partner → validate on the partner **product view (storefront)** page.
+
+- **Add value to product (hub Attributes tab):** each value is a `<label>` with
+  a visible checkbox + name span + price badges (no clean accessible name) —
+  select via `label:has-text(valueName) > input[type=checkbox]`.
+- **Clear caches after Update Product** (`ProductCreationPage.clearAllCaches`,
+  admin-bar Clear Caches → Clear All Caches) before importing, so the partner
+  import sees fresh data (same remedy as after partner create/update).
+- **Resolve the imported Double Curved product by SKU**, not title — it imports
+  under the partner's custom title. Use `buildDoubleCurvedSkuCandidates()` (DBC
+  / DBC-DC suffixes).
+- **Heavy WooCommerce edit/view pages:** navigate with
+  `waitUntil: 'domcontentloaded'` + element waits — the default `load` event
+  exceeds 30 s on the admin editor (remote widgets/iframes).
+- **Storefront (`PartnerProductViewPage`)** — open by id via `?p=<id>`
+  (redirects to permalink). Each option renders under the control
+  `name = type slug`:
+  - **Type is exact:** Radio→`input[type=radio]`, Dropdown/Select→`<select>`,
+    Checkbox→`input[type=checkbox]` (`expectedControlForType`).
+  - **Base Price** is embedded per Type: `<select>` → in the `<option>` text
+    (`… ($68)`); radio/checkbox → in the input `value`/adjacent label
+    (`… ($54)`). `hasOptionPrice` reads both shapes in one pass.
+
+### 12.3 Product edit hydration (`ProductCreationPage`)
+
+The Connector Hub product edit form hydrates asynchronously — the title field
+renders before SKU. `openProductForEdit` waits for the SKU field to be non-empty
+(`expect(skuInput).not.toHaveValue('')`) before any edit/submit (else the save
+fails "Title and SKU are required."). `editProductTitle` waits for the "Product
+updated." toast rather than logging blind success. List helpers wait for the
+"Loading…" placeholder to clear and use auto-retrying `waitFor` (not one-shot
+`isVisible`).
+
+### 12.4 Cleanup (2026-07-17)
+
+Removed unreferenced debug/codegen leftovers under `scripts/`: all `probe-*.js`,
+`verify-sku-helper.js`, `_raw-attributes.json`, `_raw-products.json`,
+`shop-snippet.html` (kept `inspect-api.js` — used by `npm run inspect:*`).
+`eslint . --fix` cleared all `curly` errors → **0 lint errors** across pages +
+tests. Remaining warnings are advisory `no-wait-for-timeout` (intentional SPA
+debounces) + conditional-in-test in the multi-branch flows — left as-is to avoid
+destabilizing untested live-SPA timing. `no-unused-vars` is an error rule and
+passes, so there are no unused imports/vars anywhere.

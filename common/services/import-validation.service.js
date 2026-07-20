@@ -262,32 +262,40 @@ class ImportValidationService {
         uiLabel: 'Color',
         taxonomy: 'pa_color',
         expected: expectedColors,
+        mode: 'subset',
       });
     });
 
-    await steps('Validate Partner Ventilations — all selected, no extras', async () => {
-      await this._validateAttributeSet(expect, resolveProduct, {
-        label: 'Partner Ventilations',
-        uiLabel: 'Ventilation',
-        taxonomy: 'pa_ventilation',
-        expected: this.runtimeState.selectedVentilations,
-      });
-    });
+    // Business rule: an imported product shows only the INTERSECTION of the
+    // options the product carries AND the options enabled at partner creation.
+    // Any option not enabled for the partner is hidden even if the product has
+    // it. So each partner attribute is validated as a SUBSET — every option shown
+    // must be in the partner's selected set (no extras); a product may show fewer
+    // (or none) of the selected options depending on what it supports.
+    await steps(
+      'Validate Partner Ventilations — subset of partner-enabled, no extras',
+      async () => {
+        await this._validateAttributeSet(expect, resolveProduct, {
+          label: 'Partner Ventilations',
+          uiLabel: 'Ventilation',
+          taxonomy: 'pa_ventilation',
+          expected: this.runtimeState.selectedVentilations,
+          mode: 'subset',
+        });
+      }
+    );
 
-    await steps('Validate Partner Trims — all selected, no extras', async () => {
+    await steps('Validate Partner Trims — subset of partner-enabled, no extras', async () => {
       await this._validateAttributeSet(expect, resolveProduct, {
         label: 'Partner Trims',
         uiLabel: 'Trim',
         taxonomy: 'pa_trim',
         expected: this.runtimeState.selectedTrims,
+        mode: 'subset',
       });
     });
 
-    await steps('Validate Partner Sizes — product-supported subset of selection', async () => {
-      // Sizes are selected at PARTNER level, but a single product only carries the
-      // sizes valid for it (e.g. Double Curved has no 30" widths). Validate as a
-      // subset: every size shown on the product must have been selected (no
-      // unexpected extras); not every selected size must appear on every product.
+    await steps('Validate Partner Sizes — subset of partner-enabled, no extras', async () => {
       await this._validateAttributeSet(expect, resolveProduct, {
         label: 'Partner Sizes',
         uiLabel: 'Size',
@@ -425,6 +433,13 @@ class ImportValidationService {
     const imported = await this.getAttributeValues(product.ID, taxonomy, uiLabel);
 
     if (imported.length === 0) {
+      if (mode === 'subset') {
+        // Empty intersection is legitimate: this product supports none of the
+        // partner-enabled options for this attribute (imported ⊆ selected holds
+        // trivially, no extras). Not a failure under the partner-filter rule.
+        logger.info(`[ImportValidation] ${label}: 0 imported — empty intersection, OK (subset)`);
+        return;
+      }
       expect
         .soft(false, `${label}: no imported attribute values could be read from the product`)
         .toBe(true);

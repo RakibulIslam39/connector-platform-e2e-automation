@@ -119,32 +119,63 @@ class ConnectorSettingsPage extends BasePage {
     const username = process.env.WP_PARTNER_USER;
     const password = process.env.WP_PARTNER_PASS;
 
-    if (!baseUrl || !username || !password) {
-      throw new Error(
-        '[ConnectorSettingsPage] Missing PARTNER_SITE_BASE_URL, WP_PARTNER_USER, or WP_PARTNER_PASS in environment'
-      );
+    if (!baseUrl) {
+      throw new Error('[ConnectorSettingsPage] Missing PARTNER_SITE_BASE_URL in environment');
     }
 
-    logger.info(`[ConnectorSettingsPage] Logging in as partner: ${username}`);
-    await this.page.goto(`${baseUrl}/wp-login.php`);
-    await this.page.waitForLoadState('domcontentloaded');
+    const adminBar = this.page.locator('#wpadminbar');
 
+    // Session-first: go straight to wp-admin. If the context carries a valid
+    // partner session (auth-state/partner.json, loaded by the fixture), we land
+    // in the dashboard directly — same approach as the Connector Platform admin.
+    logger.info('[ConnectorSettingsPage] Opening partner wp-admin (reusing session if present)');
+    await this.page.goto(`${baseUrl}/wp-admin/`, { waitUntil: 'domcontentloaded' });
+    if (await adminBar.isVisible({ timeout: 5000 }).catch(() => false)) {
+      logger.info('[ConnectorSettingsPage] Already authenticated — skipped form login');
+      return;
+    }
+
+    // No valid session → fall back to the wp-login.php form.
+    if (!username || !password) {
+      throw new Error(
+        '[ConnectorSettingsPage] Not authenticated and WP_PARTNER_USER/WP_PARTNER_PASS are missing'
+      );
+    }
+    logger.info(`[ConnectorSettingsPage] Logging in as partner: ${username}`);
+    if (!/wp-login\.php/i.test(this.page.url())) {
+      await this.page.goto(`${baseUrl}/wp-login.php`, { waitUntil: 'domcontentloaded' });
+    }
     await this.loginUsernameInput.waitFor({ state: 'visible', timeout: 15000 });
+    await this.loginUsernameInput.fill(''); // clear any autofilled value first
     await this.loginUsernameInput.fill(username);
+    await this.loginPasswordInput.fill('');
     await this.loginPasswordInput.fill(password);
     await this.loginSubmitBtn.click();
     await this.page.waitForLoadState('domcontentloaded');
 
-    // WordPress sometimes shows a "Confirm admin email" interstitial before the
-    // dashboard — bypass it by going straight to wp-admin.
+    // Bypass the "Confirm admin email" interstitial if shown.
     if (/action=confirm_admin_email/i.test(this.page.url())) {
       await this.page.goto(`${baseUrl}/wp-admin/`, { waitUntil: 'domcontentloaded' });
     }
 
-    // Readiness = the WP admin bar is present. Avoids waitForURL's default 'load'
-    // wait, which the heavy partner dashboard (WooCommerce + remote news widgets)
-    // can exceed even though navigation already succeeded.
-    await this.page.locator('#wpadminbar').waitFor({ state: 'visible', timeout: 30000 });
+    // Failed credentials leave us on wp-login.php — fail fast with the WP error
+    // instead of a 30s admin-bar timeout.
+    if (/wp-login\.php/i.test(this.page.url())) {
+      const err =
+        (await this.page
+          .locator('#login_error')
+          .textContent()
+          .catch(() => '')) || '';
+      throw new Error(
+        `[ConnectorSettingsPage] Partner login failed${
+          err
+            ? `: ${err.replace(/\s+/g, ' ').trim()}`
+            : ' — still on wp-login.php (check WP_PARTNER_USER/WP_PARTNER_PASS)'
+        }`
+      );
+    }
+
+    await adminBar.waitFor({ state: 'visible', timeout: 30000 });
     logger.info('[ConnectorSettingsPage] Partner login successful');
   }
 

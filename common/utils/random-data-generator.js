@@ -161,6 +161,26 @@ function generateProductCreationDataSet(count = 1, overrides = {}) {
   return Array.from({ length: count }, () => generateProductCreationData(overrides));
 }
 
+/**
+ * Random data for creating an Attribute Value (name, SKU, base/distro price).
+ * Distro price is always < base price. Prices are whole numbers.
+ * @param {object} [overrides]
+ * @returns {{ name: string, sku: string, basePrice: number, distroPrice: number, status: string }}
+ */
+function generateAttributeValueData(overrides = {}) {
+  const suffix = faker.string.alpha({ length: 4, casing: 'upper' });
+  const basePrice = faker.number.int({ min: 20, max: 99 });
+  const distroPrice = faker.number.int({ min: 1, max: basePrice - 1 });
+  return {
+    name: `Test Attribute Value ${suffix}`,
+    sku: suffix,
+    basePrice,
+    distroPrice,
+    status: 'Active',
+    ...overrides,
+  };
+}
+
 // ─── Array helpers ────────────────────────────────────────────────────────────
 
 /**
@@ -211,6 +231,7 @@ module.exports = {
   generateProductStatus,
   generateProductCreationData,
   generateProductCreationDataSet,
+  generateAttributeValueData,
   pickRandom,
   pickRandomIndices,
 };

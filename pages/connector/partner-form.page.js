@@ -35,7 +35,9 @@ class PartnerFormPage extends BasePage {
 
     // ── Tab navigation ────────────────────────────────────────────────────────
     this.basicInfoTab = page.getByRole('button', { name: 'Basic Info' });
-    this.productsTab = page.getByRole('button', { name: 'Products' });
+    // exact:true — otherwise the substring match also resolves the "Add Products"
+    // button, causing a strict-mode violation once the Products panel is open.
+    this.productsTab = page.getByRole('button', { name: 'Products', exact: true });
     this.attributesTab = page.getByRole('button', { name: 'Attributes' });
     this.billingTab = page.getByRole('button', { name: 'Billing' });
     this.faqsShippingTab = page.getByRole('button', { name: 'FAQs & Shipping' });
@@ -1389,6 +1391,13 @@ class PartnerFormPage extends BasePage {
     try {
       await this._waitForPartnerCreationResult(60000);
     } catch (firstError) {
+      // "Website may already exist" is a data-isolation conflict, not a transient
+      // UI failure — retrying re-submits the identical payload and fails the same
+      // way. Fail fast so the real cause (leftover partner / cleanup miss) surfaces.
+      if (/already exist/i.test(firstError.message)) {
+        throw firstError;
+      }
+
       logger.warn(`[PartnerFormPage] First submit attempt failed: ${firstError.message}`);
       logger.warn('[PartnerFormPage] Retrying Create Partner click once');
 
@@ -1435,6 +1444,21 @@ class PartnerFormPage extends BasePage {
       await search.waitFor({ state: 'visible', timeout: 20000 });
       await search.fill(searchTerm);
       await this.page.waitForTimeout(600);
+    }
+
+    // Fail fast with a clear message when the list is empty — this flow requires a
+    // partner for PARTNER_SITE_BASE_URL to already exist (e.g. created by the
+    // partner-onboarding suite). Avoids a cryptic 15s locator timeout.
+    if (
+      await this.page
+        .getByText('No partners found.')
+        .isVisible()
+        .catch(() => false)
+    ) {
+      throw new Error(
+        `[PartnerFormPage] No partner found for "${searchTerm ?? '(any)'}". ` +
+          'A partner for this website must exist before it can be edited.'
+      );
     }
 
     // Open the matching partner, or the first available one when no term is given.

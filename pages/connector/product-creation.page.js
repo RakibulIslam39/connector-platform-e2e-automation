@@ -23,6 +23,7 @@
  * idempotent `enable*Toggle` helpers.
  */
 
+const { expect } = require('@playwright/test');
 const { BasePage } = require('../base.page');
 const { CONNECTOR_PATHS } = require('../../constants/urls');
 const { pickRandom } = require('../../common/utils/random-data-generator');
@@ -75,6 +76,11 @@ class ProductCreationPage extends BasePage {
     // the explicit one to avoid a strict-mode multi-match.
     this.saveProductBtn = page.getByRole('button', { name: 'Create Product' }).first();
 
+    // ── Products list (edit / duplicate / trash / restore / delete) ────────────
+    this.productSearchInput = page.locator('input[placeholder="Search products..."]');
+    // Second combobox on the list is the status filter ('' = all, 'trash' = Trash).
+    this.statusFilterSelect = page.getByRole('combobox').nth(1);
+
     // ── Edit page — "Update Product" button ────────────────────────────────
     // After creation the SPA auto-redirects to #/products?action=edit&id={id}.
     // Attributes can only be persisted via the edit-page POST /products/{id}.
@@ -83,6 +89,35 @@ class ProductCreationPage extends BasePage {
     // ── Success indicators ──────────────────────────────────────────────────
     this.successMessage = page.getByText('Product created.');
     this.updateSuccessMessage = page.getByText('Product updated.');
+
+    // ── Admin-bar cache control (rendered as a menuitem; submenu on hover) ─────
+    this.adminBar = page.locator('#wpadminbar');
+    this.clearCachesToolbar = this.adminBar.getByText('Clear Caches', { exact: true });
+    this.clearAllCachesItem = this.adminBar.getByText('Clear All Caches', { exact: true });
+  }
+
+  /**
+   * Clears all Connector Hub caches via the admin-bar "Clear Caches → Clear All
+   * Caches" control, so a subsequent partner import sees the freshly-saved
+   * product/attribute data instead of stale cached data.
+   */
+  async clearAllCaches() {
+    logger.info('[ProductCreationPage] Clearing all Connector Hub caches');
+    await this.clearCachesToolbar.waitFor({ state: 'visible', timeout: 15000 });
+    await this.clearCachesToolbar.hover();
+
+    // Submenu may be hover- or click-triggered — handle both.
+    await this.clearAllCachesItem.waitFor({ state: 'visible', timeout: 2000 }).catch(async () => {
+      await this.clearCachesToolbar.click();
+      await this.clearAllCachesItem.waitFor({ state: 'visible', timeout: 5000 });
+    });
+
+    const cacheResponse = this.page
+      .waitForResponse((r) => /cache/i.test(r.url()), { timeout: 15000 })
+      .catch(() => null);
+    await this.clearAllCachesItem.click();
+    await cacheResponse;
+    logger.info('[ProductCreationPage] Connector Hub caches cleared');
   }
 
   // ─── Navigation ───────────────────────────────────────────────────────────────
@@ -349,18 +384,34 @@ class ProductCreationPage extends BasePage {
       let values = [];
       let skippedCount = 0;
       if (revealed.length > 0) {
-        const leaveOut =
-          revealed.length <= 1 ? 0 : Math.min(randomInt(1, maxLeaveOut), revealed.length - 1);
+        // Keep at least MIN_SELECT options selected per group (or all, when the
+        // group exposes fewer than MIN_SELECT). This caps how many we may skip.
+        const MIN_SELECT = 2;
+        const maxSkippable = Math.max(0, revealed.length - MIN_SELECT);
+        const leaveOut = maxSkippable === 0 ? 0 : Math.min(randomInt(1, maxLeaveOut), maxSkippable);
         const skip = new Set(pickRandom(revealed, leaveOut));
         values = revealed.filter((name) => !skip.has(name));
         skippedCount = leaveOut;
 
         for (const name of values) {
-          await this.page
+          // Standard options have a clean accessible name; value labels that carry
+          // price badges (e.g. "Test Attribute Value VREB$52Distro $2") don't, so
+          // fall back to the checkbox inside the matching <label>.
+          const ok = await this.page
             .getByRole('checkbox', { name, exact: true })
             .first()
             .check()
-            .catch(() => logger.debug(`[ProductCreationPage] Could not check "${name}"`));
+            .then(() => true)
+            .catch(() => false);
+          if (!ok) {
+            await this.page
+              .locator('label')
+              .filter({ hasText: name })
+              .locator('input[type="checkbox"]')
+              .first()
+              .check()
+              .catch(() => logger.debug(`[ProductCreationPage] Could not check "${name}"`));
+          }
         }
       }
 
@@ -425,9 +476,7 @@ class ProductCreationPage extends BasePage {
     await this.updateProductBtn.waitFor({ state: 'visible', timeout });
     const url = this.page.url();
     const productId = url.match(/[?&]id=(\d+)/)?.[1] ?? null;
-    logger.info(
-      `[ProductCreationPage] Edit page loaded — product id: ${productId} (${url})`
-    );
+    logger.info(`[ProductCreationPage] Edit page loaded — product id: ${productId} (${url})`);
     return productId;
   }
 
@@ -451,6 +500,243 @@ class ProductCreationPage extends BasePage {
     } catch {
       return false;
     }
+  }
+
+  // ─── Products list: edit / duplicate / trash / restore / delete ──────────────
+
+  /** Navigates to the Connector Hub Products list and waits for the search box. */
+  async openProductsList() {
+    await this.navigate(CONNECTOR_PATHS.PRODUCTS);
+    await this.page.waitForLoadState('domcontentloaded');
+    await this.productSearchInput.waitFor({ state: 'visible', timeout: 20000 });
+  }
+
+  /** Filters the list by title using the search box. */
+  async searchProduct(title) {
+    await this.productSearchInput.click();
+    await this.productSearchInput.fill(title);
+    await this.page.waitForTimeout(500); // debounce before the SPA re-fetches
+    // The list shows a "Loading..." placeholder row while fetching; wait for it
+    // to clear so callers don't assert against a still-loading table. Resolves
+    // immediately if no placeholder is present.
+    await this.page
+      .locator('table tbody tr', { hasText: 'Loading...' })
+      .first()
+      .waitFor({ state: 'hidden', timeout: 15000 })
+      .catch(() => {});
+  }
+
+  /** Filters the list by status ('' = all active, 'trash' = Trash). */
+  async filterByStatus(value) {
+    await this.statusFilterSelect.selectOption(value);
+    await this.page.waitForTimeout(500);
+  }
+
+  /** The product list row (in the table) whose text contains the given title. */
+  _productRow(title) {
+    return this.page.locator('table tbody tr').filter({ hasText: title }).first();
+  }
+
+  /** @returns {Promise<boolean>} whether a product with this title is visible. */
+  async isProductVisible(title, timeout = 10000) {
+    // Use the table row (not getByText, which also matches the search input value)
+    // and waitFor — an auto-retrying wait that survives the list's async re-render,
+    // rather than a one-shot isVisible() that can fire while the row is "Loading...".
+    return this._productRow(title)
+      .waitFor({ state: 'visible', timeout })
+      .then(() => true)
+      .catch(() => false);
+  }
+
+  /**
+   * Reads ALL visible toast/alert texts joined (best-effort). The SPA can stack
+   * multiple toasts (e.g. "Product deleted." + "Product permanently deleted."),
+   * so returning just the first would miss the relevant one.
+   */
+  async _readNotice(timeout = 8000) {
+    const alerts = this.page.getByRole('alert');
+    await alerts
+      .first()
+      .waitFor({ state: 'visible', timeout })
+      .catch(() => {});
+    const texts = await alerts.allTextContents().catch(() => []);
+    return texts
+      .map((t) => t.trim())
+      .filter(Boolean)
+      .join(' | ');
+  }
+
+  /**
+   * Confirms an action modal. The dialog's aria-label matches its heading, and
+   * the confirm button shares the action name — so scope the click to the dialog
+   * to avoid hitting the identically-named row button.
+   * @param {string} headingName - e.g. "Duplicate Product", "Move to Trash"
+   * @param {string} confirmBtnName - confirm button label, e.g. "Duplicate", "Move to Trash"
+   * @param {string} [expectedText] - product title the modal should reference
+   */
+  async _confirmActionModal(headingName, confirmBtnName, expectedText) {
+    await this.page
+      .getByRole('heading', { name: headingName })
+      .waitFor({ state: 'visible', timeout: 10000 });
+    const dialog = this.page.getByLabel(headingName);
+    if (expectedText) {
+      await dialog
+        .getByText(expectedText, { exact: true })
+        .first()
+        .waitFor({ state: 'visible', timeout: 5000 })
+        .catch(() => {});
+    }
+    await dialog.getByRole('button', { name: confirmBtnName }).click();
+  }
+
+  /** Opens the Edit form for a product found by title. */
+  async openProductForEdit(title) {
+    await this.openProductsList();
+    await this.searchProduct(title);
+    const row = this._productRow(title);
+    await row.waitFor({ state: 'visible', timeout: 15000 });
+    // Row Edit is an icon link (title="Edit"); scope to the row and match exactly
+    // so it doesn't resolve to the sidebar "Editor" link.
+    await row.getByRole('link', { name: 'Edit', exact: true }).click();
+    await this.productTitleInput.waitFor({ state: 'visible', timeout: 20000 });
+    // The SPA fetches and hydrates the edit form asynchronously. The title field
+    // renders before SKU is populated, so submitting too early fails validation
+    // ("Title and SKU are required."). Wait for SKU to hydrate as the readiness
+    // signal before allowing any edit/submit.
+    await expect(this.productSkuInput).not.toHaveValue('', { timeout: 20000 });
+  }
+
+  /** Edits a product's title and clicks Update Product. */
+  async editProductTitle(currentTitle, newTitle) {
+    await this.openProductForEdit(currentTitle);
+    await this.productTitleInput.click();
+    await this.productTitleInput.press('ControlOrMeta+a');
+    await this.productTitleInput.fill(newTitle);
+    await this.updateProductBtn.click();
+    // Confirm the save was accepted rather than logging blind success — a
+    // validation error here (e.g. empty SKU) must fail the step, not pass silently.
+    await this.updateSuccessMessage.waitFor({ state: 'visible', timeout: 20000 });
+    logger.info(`[ProductCreationPage] Updated product title → "${newTitle}"`);
+  }
+
+  /**
+   * Adds a specific attribute type (by name) to an existing product via the
+   * product Edit → Attributes tab, selects its revealed option(s), and Updates.
+   *
+   * The attribute type must be a Product Attribute Type to appear here (see
+   * AttributeTypesPage.ensureProductAttributeType). Mirrors selectAllAttributes'
+   * confirmed group pattern (`div.cursor-pointer` header + revealed checkboxes).
+   * Each value renders as a <label> wrapping a visible checkbox + a name span +
+   * price badges, so the checkbox has no clean accessible name — we target the
+   * checkbox inside the label filtered by the value name.
+   * @param {string} productTitle
+   * @param {string} attributeTypeName
+   * @param {string} [valueName] - the specific value to select; if omitted, all
+   *   revealed values in the group are selected.
+   * @returns {Promise<string[]>} the option values selected
+   */
+  async addAttributeTypeToProduct(productTitle, attributeTypeName, valueName = null) {
+    await this.openProductForEdit(productTitle);
+    await this.attributesTab.click();
+
+    const header = this.page
+      .locator('div.cursor-pointer')
+      .filter({ hasText: attributeTypeName })
+      .first();
+    await header.waitFor({ state: 'visible', timeout: 20000 });
+    await header.scrollIntoViewIfNeeded();
+    await header.click();
+    await this.page.waitForTimeout(300);
+
+    const selected = [];
+    if (valueName) {
+      const label = this.page.locator('label').filter({ hasText: valueName }).first();
+      await label.scrollIntoViewIfNeeded();
+      await label.locator('input[type="checkbox"]').check();
+      selected.push(valueName);
+    } else {
+      // Fallback: check every revealed value checkbox in the expanded group.
+      const boxes = this.page.locator('label:has(input[type="checkbox"]) input[type="checkbox"]');
+      const count = await boxes.count();
+      for (let i = 0; i < count; i += 1) {
+        await boxes
+          .nth(i)
+          .check()
+          .catch(() => {});
+      }
+      selected.push(...(await this._getVisibleCheckboxNames()));
+    }
+
+    await this.updateProductBtn.click();
+    await this.updateSuccessMessage.waitFor({ state: 'visible', timeout: 20000 });
+    // Clear caches so the partner import picks up the newly added attribute.
+    await this.clearAllCaches().catch((e) =>
+      logger.warn(`[ProductCreationPage] clearAllCaches skipped: ${e.message}`)
+    );
+    logger.info(
+      `[ProductCreationPage] Added attribute "${attributeTypeName}" (${selected.length} option(s)) to "${productTitle}"`
+    );
+    return selected;
+  }
+
+  /**
+   * Duplicates a product (by title) and confirms the modal.
+   * @returns {Promise<string>} the copy title ("<title> (Copy)").
+   */
+  async duplicateProduct(title) {
+    await this.openProductsList();
+    await this.searchProduct(title);
+    await this._productRow(title).getByRole('button', { name: 'Duplicate', exact: true }).click();
+    await this._confirmActionModal('Duplicate Product', 'Duplicate', title);
+
+    const copyTitle = `${title} (Copy)`;
+    await this.page.getByText(copyTitle).first().waitFor({ state: 'visible', timeout: 15000 });
+    logger.info(`[ProductCreationPage] Duplicated product → "${copyTitle}"`);
+    return copyTitle;
+  }
+
+  /** Moves a product (by title) to Trash and confirms the modal. */
+  async moveProductToTrash(title) {
+    await this.openProductsList();
+    await this.searchProduct(title);
+    await this._productRow(title)
+      .getByRole('button', { name: 'Move to Trash', exact: true })
+      .click();
+    await this._confirmActionModal('Move to Trash', 'Move to Trash', title);
+    logger.info(`[ProductCreationPage] Moved to Trash: "${title}"`);
+  }
+
+  /**
+   * Restores a product (by title) from Trash and confirms the modal.
+   * @returns {Promise<string>} the visible notice (expect "Product restored.").
+   */
+  async restoreProduct(title) {
+    await this.openProductsList();
+    await this.filterByStatus('trash');
+    await this.searchProduct(title);
+    await this._productRow(title).getByRole('button', { name: 'Restore', exact: true }).click();
+    await this._confirmActionModal('Restore Product', 'Restore', title);
+    const notice = await this._readNotice();
+    logger.info(`[ProductCreationPage] Restore notice: ${notice}`);
+    return notice;
+  }
+
+  /**
+   * Permanently deletes a product (by title) from Trash and confirms the modal.
+   * The product must already be in Trash.
+   * @returns {Promise<string>} the visible notice (expect "Product permanently deleted.").
+   */
+  async deleteProductPermanently(title) {
+    await this.openProductsList();
+    await this.filterByStatus('trash');
+    await this.searchProduct(title);
+    await this._productRow(title)
+      .getByRole('button', { name: 'Delete Permanently', exact: true })
+      .click();
+    await this._confirmActionModal('Delete Permanently', 'Delete Permanently', title);
+    const notice = await this._readNotice();
+    logger.info(`[ProductCreationPage] Delete notice: ${notice}`);
+    return notice;
   }
 
   // ─── Full creation flow ─────────────────────────────────────────────────────

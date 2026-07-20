@@ -29,8 +29,10 @@ class PartnerProductEditPage extends BasePage {
   async openProductEdit(productId) {
     const url = `${this.baseUrl}/wp-admin/post.php?post=${productId}&action=edit`;
     logger.info(`[PartnerProductEditPage] Opening product edit: ${productId}`);
-    await this.page.goto(url);
-    await this.page.waitForLoadState('domcontentloaded');
+    // Wait for DOM readiness, not the full 'load' event — this heavy WooCommerce
+    // admin page (remote widgets/iframes) can exceed goto's default 'load' wait
+    // even though the editor is already usable. Element waits below gate readiness.
+    await this.page.goto(url, { waitUntil: 'domcontentloaded' });
     await this.page.locator('#title').waitFor({ state: 'visible', timeout: 20000 });
     await this.page
       .locator('#woocommerce-product-data')
@@ -39,6 +41,20 @@ class PartnerProductEditPage extends BasePage {
 
   async getProductTitle() {
     return (await this.page.locator('#title').inputValue()).trim();
+  }
+
+  /**
+   * @param {string|RegExp} name - the attribute type name / accordion header label
+   * @returns {Promise<boolean>} whether an accordion for that attribute exists in
+   *   the Product data → Custom Price panel (i.e. the attribute was imported).
+   */
+  async hasCustomPriceSection(name) {
+    await this.openCustomPriceTab();
+    const header = this._accordionHeader(this._customPricePanel(), { label: name });
+    return header.waitFor({ state: 'visible', timeout: 10000 }).then(
+      () => true,
+      () => false
+    );
   }
 
   async openCustomPriceTab() {
@@ -145,6 +161,59 @@ class PartnerProductEditPage extends BasePage {
   }
 
   /**
+   * Reads EVERY Custom Price accordion in a single DOM pass. The option tables
+   * are present in the markup even while the accordion is collapsed, so no
+   * per-section expand/click is needed (fast + reliable on remote hosts).
+   *
+   * Each section is keyed by its stable `slug` (from the accordion's id /
+   * `data-target`, e.g. "ventilation_options_36", "non-duct_kit_broan"), which
+   * uniquely identifies a group even when the visible header repeats
+   * ("Non-Duct Kit" appears 5×). `header` is the visible label; `options` are the
+   * Option Name cells.
+   * @returns {Promise<Array<{ slug: string, header: string, options: string[] }>>}
+   */
+  async getAllCustomPriceSections() {
+    await this.openCustomPriceTab();
+    return this._customPricePanel().evaluate((panel) => {
+      const sections = [];
+      for (const item of panel.querySelectorAll('.accordion-item')) {
+        const header = (item.querySelector('.accordion-header')?.textContent || '')
+          .replace(/\s+/g, ' ')
+          .trim();
+        const collapse = item.querySelector('.accordion-collapse, [id^="accordion-"]');
+        const slug = (collapse?.id || '').replace(/^accordion-/, '');
+        const options = [];
+        for (const row of item.querySelectorAll('table.widefat tbody tr')) {
+          const cell = row.querySelector('td');
+          const name = (cell?.textContent || '').replace(/\s+/g, ' ').trim();
+          if (name && !/option name/i.test(name)) {
+            options.push(name);
+          }
+        }
+        sections.push({ slug, header, options });
+      }
+      return sections;
+    });
+  }
+
+  /**
+   * Reads the option names under a Custom Price accordion, located by its exact
+   * header label (e.g. "Ventilation Options 36", "Trim Options"). Reusable
+   * building block for exact per-group validation. Returns [] if not present.
+   * @param {string|RegExp} headerLabel
+   * @returns {Promise<string[]>}
+   */
+  async getSectionOptionNames(headerLabel) {
+    try {
+      const collapse = await this.expandAccordion(headerLabel);
+      const rows = await this._readAccordionTable(collapse);
+      return rows.map((r) => r.optionName).filter(Boolean);
+    } catch {
+      return [];
+    }
+  }
+
+  /**
    * Color Options accordion — Our Color Options, Custom Color Match Options, Primed/Paint Ready.
    */
   async getColorOptionsPricingTable() {
@@ -232,13 +301,46 @@ class PartnerProductEditPage extends BasePage {
   }
 
   /**
-   * Partner Trims from #accordion-trim_options.
+   * Partner Trims — the "Trim Options" accordion (Classic Trim, Flat Trim, …).
+   *
+   * A product can also render a separate "How would you like your trim?" accordion
+   * (options: Installed / Removed / Remove Side Trim). That is a DIFFERENT attribute,
+   * not the partner Trims taxonomy, so it must be excluded — otherwise its options
+   * leak in as false "extra" trims. Match "trim" headers but drop the question form.
    */
   async getPartnerTrimNames() {
-    const rows = await this.getAccordionTableRows('accordion-trim_options');
-    const names = rows.map((r) => r.optionName).filter(Boolean);
-    logger.info(`[PartnerProductEditPage] Partner trims: ${names.length}`);
-    return names;
+    await this.openCustomPriceTab();
+    const panel = this._customPricePanel();
+    const headers = panel
+      .locator('h5[data-target], h5.accordion-header')
+      .filter({ hasText: /trim/i })
+      .filter({ hasNotText: /how would you like/i });
+    const count = await headers.count();
+    const trims = new Set();
+
+    for (let i = 0; i < count; i++) {
+      const header = headers.nth(i);
+      const target = ((await header.getAttribute('data-target')) || '').replace('#', '');
+      if (!target) {
+        continue;
+      }
+      const collapse = panel.locator(`#${target}`);
+      if ((await header.getAttribute('aria-expanded')) !== 'true') {
+        await header.click();
+        await collapse.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+      }
+      const rows = await this._readAccordionTable(collapse);
+      for (const row of rows) {
+        if (!row.optionName || /^none$/i.test(row.optionName)) {
+          continue;
+        }
+        trims.add(row.optionName.trim());
+      }
+    }
+
+    const result = [...trims];
+    logger.info(`[PartnerProductEditPage] Partner trims: ${result.length}`);
+    return result;
   }
 
   /**

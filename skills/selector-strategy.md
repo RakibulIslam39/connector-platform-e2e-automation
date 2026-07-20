@@ -132,3 +132,60 @@ page.getByRole('button', { name: 'Save & Continue' });
 '.select2-search__field'      // Search input
 '.select2-results__option'    // Options
 ```
+
+---
+
+## Connector Hub / Partner patterns (learned)
+
+### sr-only toggle switches (Tailwind)
+
+`<label>` wraps a `sr-only` `<input type=checkbox>` (true state) + a visible
+`.w-11` track. Read the state from the checkbox; flip by clicking the track.
+
+```javascript
+const label = page
+  .locator('label.relative:has(input[type="checkbox"].peer)')
+  .first();
+const checkbox = label.locator('input[type="checkbox"]');
+const track = label.locator('.w-11');
+const isOn = await checkbox.isChecked(); // reliable despite sr-only
+if (isOn !== desired) await track.click(); // clicking the sr-only input fails actionability
+```
+
+### <select> located by a known option (stable vs Emotion/CSS hashes)
+
+```javascript
+page
+  .locator('select')
+  .filter({ has: page.getByRole('option', { name: 'Partner Attribute Type' }) })
+  .first();
+```
+
+### SPA filter state persists across navigations
+
+Reset a list filter (e.g. to "all") before searching for a row, or a leftover
+filter from a prior step hides it.
+
+### Heavy WooCommerce admin/storefront pages
+
+Navigate with `waitUntil: 'domcontentloaded'` + explicit element waits — the
+default `load` event can exceed 30 s (remote widgets/iframes).
+
+```javascript
+await page.goto(url, { waitUntil: 'domcontentloaded' });
+await page.locator('#title').waitFor({ state: 'visible' });
+```
+
+### Storefront connector attribute controls
+
+Each option's control uses `name = attribute-type-slug`; the element/type
+encodes the Hub Type (Radio→`input[type=radio]`, Dropdown→`<select>`, Checkbox→
+`input[type=checkbox]`). Price is embedded per Type: `<select>` in the
+`<option>` text (`… ($68)`), radio/checkbox in the input `value`/adjacent label
+(`… ($54)`).
+
+### Open a WP post/product view by id (no slug needed)
+
+```javascript
+await page.goto(`${baseUrl}/?p=${productId}`); // redirects to the permalink
+```

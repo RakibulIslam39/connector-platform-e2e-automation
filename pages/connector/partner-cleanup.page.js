@@ -87,8 +87,15 @@ class PartnerCleanupPage {
    */
   _urlMatchVariants(websiteUrl) {
     const trimmed = websiteUrl.trim();
-    const withoutSlash = trimmed.replace(/\/$/, '');
-    return [...new Set([trimmed, withoutSlash, `${withoutSlash}/`])].filter(Boolean);
+    const withoutSlash = trimmed.replace(/\/+$/, '');
+    // The Partners table renders the site WITHOUT the scheme, so matching on the
+    // full "https://…" URL finds nothing. Include scheme-stripped + bare-host
+    // variants so search + row filtering match regardless of how it's displayed.
+    const withoutScheme = withoutSlash.replace(/^https?:\/\//i, '');
+    const host = withoutScheme.replace(/\/.*$/, '');
+    return [...new Set([trimmed, withoutSlash, `${withoutSlash}/`, withoutScheme, host])].filter(
+      Boolean
+    );
   }
 
   /**
@@ -249,7 +256,12 @@ class PartnerCleanupPage {
         .first();
 
       await row.hover().catch(() => {});
-      await deleteBtn.waitFor({ state: 'visible', timeout: 5000 });
+      // The row count can be momentarily stale after a delete (SPA re-render lag),
+      // so the loop may re-enter with nothing left to delete. Probe the action
+      // instead of hard-waiting: if it isn't there, the list has emptied — stop.
+      if (!(await deleteBtn.isVisible({ timeout: 5000 }).catch(() => false))) {
+        break;
+      }
       await deleteBtn.click();
       await this._confirmDialog('Delete Permanently', 'Delete Permanently');
       await assertPartnerPermanentlyDeleted(this.page);
@@ -522,7 +534,12 @@ class PartnerCleanupPage {
         .first();
 
       await row.hover().catch(() => {});
-      await deleteBtn.waitFor({ state: 'visible', timeout: 5000 });
+      // The row count can be momentarily stale after a delete (SPA re-render lag),
+      // so the loop may re-enter with nothing left to delete. Probe the action
+      // instead of hard-waiting: if it isn't there, the list has emptied — stop.
+      if (!(await deleteBtn.isVisible({ timeout: 5000 }).catch(() => false))) {
+        break;
+      }
       await deleteBtn.click();
       await this._confirmDialog('Delete Permanently', 'Delete Permanently');
       await assertPartnerPermanentlyDeleted(this.page);
